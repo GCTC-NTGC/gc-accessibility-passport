@@ -1,0 +1,13 @@
+{
+  "LHT9F+": {
+    "defaultMessage": "Hello World"
+  },
+  "f3qFB3": {
+    "defaultMessage": "Visit Canada.ca",
+    "description": "Title for the Canada logo in the Header."
+  },
+  "kTHMa+": {
+    "defaultMessage": "Canada's Logo.",
+    "description": "Alt text for the Canada logo in the Header."
+  }
+}

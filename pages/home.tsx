@@ -1,13 +1,17 @@
 import * as React from "react";
+import { useIntl } from "react-intl";
 import Button from "../components/Button";
+import Header from "../components/Header";
 
-interface HomePageProps {}
-
-const HomePage: React.FunctionComponent<HomePageProps> = (props) => {
+const HomePage: React.FunctionComponent = () => {
+  const intl = useIntl();
   return (
     <div>
+      <Header />
       <Button color="primary" mode="outline">
-        Button
+        {intl.formatMessage({
+          defaultMessage: "Hello World",
+        })}
       </Button>
     </div>
   );
