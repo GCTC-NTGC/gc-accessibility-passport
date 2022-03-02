@@ -6,7 +6,6 @@ import { useIntl } from "react-intl";
 export const Header: React.FunctionComponent = () => {
   const intl = useIntl();
   const { locale, pathname } = useRouter();
-  console.log(pathname);
   return (
     <header data-h2-border="b(gray, bottom, solid, s)">
       <div data-h2-flex-grid="b(middle, contained, flush, xl)">

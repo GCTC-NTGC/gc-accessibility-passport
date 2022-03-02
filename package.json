@@ -15,9 +15,11 @@
   "dependencies": {
     "iron-session": "^6.0.5",
     "next": "12.0.10",
+    "octokit": "^1.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-intl": "^5.24.6"
+    "react-intl": "^5.24.6",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@formatjs/cli": "^4.8.2",

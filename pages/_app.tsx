@@ -6,6 +6,8 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { IntlProvider } from "react-intl";
+import { SWRConfig } from "swr";
+import fetchJson from "../lib/fetchJson";
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   const { locale = "en" } = useRouter();
@@ -23,7 +25,16 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
 
   return (
     <IntlProvider locale={locale} messages={messages}>
-      <Component {...pageProps} />
+      <SWRConfig
+        value={{
+          fetcher: fetchJson,
+          onError: (err) => {
+            console.error(err);
+          },
+        }}
+      >
+        <Component {...pageProps} />
+      </SWRConfig>
     </IntlProvider>
   );
 }
