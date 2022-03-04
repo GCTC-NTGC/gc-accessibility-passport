@@ -1,21 +1,24 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Home from "../components/Home";
 import Nav from "../components/Nav";
 
 const HomePage: React.FunctionComponent = () => {
-  const intl = useIntl();
   return (
-    <div>
-      <Header />
-      <Nav />
-      <Button color="primary" mode="outline">
-        {intl.formatMessage({
-          defaultMessage: "Hello World",
-        })}
-      </Button>
-    </div>
+    <section
+      data-h2-display="b(flex)"
+      data-h2-flex-direction="b(column)"
+      data-h2-justify-content="b(space-between)"
+      style={{ height: "100vh" }}
+    >
+      <div>
+        <Header />
+        <Home />
+      </div>
+      <Footer />
+    </section>
   );
 };
 

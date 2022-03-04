@@ -1,11 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
+import Nav from "./Nav";
 
-export const Header: React.FunctionComponent = () => {
+interface Header {
+  title?: string;
+}
+
+export const Header: React.FunctionComponent<Header> = ({ title }) => {
   const intl = useIntl();
   const { locale, pathname } = useRouter();
+  const homeLinksStyling = {
+    "data-h2-margin": "b(all, m)",
+    "data-h2-bg-color": "b(lightgray)",
+    "data-h2-font-color": "b(black)",
+    "data-h2-radius": "b(s)",
+    "data-h2-padding": "b(right-left, m) b(top-bottom, xxs)",
+    "data-h2-shadow": "b(xl)",
+  };
   return (
     <header data-h2-border="b(gray, bottom, solid, s)">
       <div data-h2-flex-grid="b(middle, contained, flush, xl)">
@@ -39,6 +53,80 @@ export const Header: React.FunctionComponent = () => {
           <Link href={`/${pathname}`} locale={locale === "en" ? "fr" : "en"}>
             {locale === "en" ? "English" : "Français"}
           </Link>
+        </div>
+      </div>
+      <div data-h2-position="b(relative)" data-h2-font-color="b(white)">
+        <Image
+          src={`${pathname === "/" ? "/beach.png" : "/waves.jpg"}`}
+          layout="fill"
+        />
+        <Nav />
+        <div
+          data-h2-position="b(relative)"
+          data-h2-padding="b(all, none) s(all, xxl) s(top, m)"
+        >
+          {title ? (
+            <>
+              <h1 data-h2-margin="b(all, none)">
+                {intl.formatMessage({
+                  defaultMessage: "Welcome back, Jake",
+                  description: "Heading for rest of pages.",
+                })}
+              </h1>
+            </>
+          ) : (
+            <>
+              <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
+                {intl.formatMessage({
+                  defaultMessage: "GC Accessibility Passport",
+                  description: "Heading for homepage.",
+                })}
+              </h1>
+              <p data-h2-text-align="b(center)" data-h2-margin="b(all, m)">
+                {intl.formatMessage({
+                  defaultMessage: "Private, secure accessibility documentation",
+                  description: "Sub-heading for homepage.",
+                })}
+              </p>
+              <div
+                data-h2-display="b(flex)"
+                data-h2-justify-content="b(center) s(space-evenly)"
+                data-h2-flex-wrap="b(wrap)"
+                data-h2-margin="b(all, m) s(right-left, xxl)"
+              >
+                <div {...homeLinksStyling}>
+                  <Link href="/">
+                    <a>
+                      {intl.formatMessage({
+                        defaultMessage: "Get started",
+                        description: "Get started button on homepage.",
+                      })}
+                    </a>
+                  </Link>
+                </div>
+                <div {...homeLinksStyling}>
+                  <Link href="/">
+                    <a>
+                      {intl.formatMessage({
+                        defaultMessage: "Sign in",
+                        description: "Sign in button on homepage.",
+                      })}
+                    </a>
+                  </Link>
+                </div>
+                <div {...homeLinksStyling}>
+                  <Link href="/">
+                    <a>
+                      {intl.formatMessage({
+                        defaultMessage: "Contact Us",
+                        description: "Contact us button on homepage.",
+                      })}
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </header>
