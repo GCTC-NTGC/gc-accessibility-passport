@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
@@ -42,11 +41,11 @@ const Nav: React.FunctionComponent = () => {
           {user?.isLoggedIn === true && (
             <>
               <li data-h2-margin="b(all, m)">
-                <Link href="/">
+                <Link href="/passport">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "My Dashboard",
-                      description: "My Dashboard nav link.",
+                      defaultMessage: "My passport",
+                      description: "My passport nav link.",
                     })}
                   </a>
                 </Link>
@@ -54,10 +53,6 @@ const Nav: React.FunctionComponent = () => {
               <li data-h2-margin="b(all, m)">
                 <Link href="/">
                   <a>
-                    {intl.formatMessage({
-                      defaultMessage: "My Dashboard",
-                      description: "My Dashboard nav link.",
-                    })}
                     {intl.formatMessage({
                       defaultMessage: "Help and Resources",
                       description: "Help and Resources nav link.",

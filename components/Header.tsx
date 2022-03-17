@@ -3,15 +3,18 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
+import useUser from "../lib/useUser";
 import Nav from "./Nav";
 
 interface Header {
   title?: string;
 }
 
-export const Header: React.FunctionComponent<Header> = ({ title }) => {
+const Header: React.FunctionComponent<Header> = ({ title }) => {
+  const { user, mutateUser } = useUser();
   const intl = useIntl();
   const { locale, pathname } = useRouter();
+  // TODO: Replace links with button wrapped in anchor tag.
   const homeLinksStyling = {
     "data-h2-margin": "b(all, m)",
     "data-h2-bg-color": "b(lightgray)",
@@ -61,73 +64,95 @@ export const Header: React.FunctionComponent<Header> = ({ title }) => {
           layout="fill"
         />
         <Nav />
-        <div
-          data-h2-position="b(relative)"
-          data-h2-padding="b(all, none) s(all, xxl) s(top, m)"
-        >
-          {title ? (
-            <>
-              <h1 data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage: "Welcome back, Jake",
-                  description: "Heading for rest of pages.",
-                })}
-              </h1>
-            </>
-          ) : (
-            <>
-              <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
-                {intl.formatMessage({
-                  defaultMessage: "GC Accessibility Passport",
-                  description: "Heading for homepage.",
-                })}
-              </h1>
-              <p data-h2-text-align="b(center)" data-h2-margin="b(all, m)">
-                {intl.formatMessage({
-                  defaultMessage: "Private, secure accessibility documentation",
-                  description: "Sub-heading for homepage.",
-                })}
-              </p>
+        {user?.isLoggedIn ? (
+          <div
+            data-h2-position="b(relative)"
+            data-h2-padding="b(all, m) s(left, xl)"
+          >
+            <h1
+              data-h2-margin="b(all, none) b(left, m)"
+              data-h2-font-weight="b(600)"
+            >
+              {intl.formatMessage({
+                defaultMessage: "Welcome back, Jake",
+                description: "Heading for rest of pages.",
+              })}
+            </h1>
+          </div>
+        ) : (
+          <>
+            {pathname === ("/login" || "register") ? (
               <div
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(center) s(space-evenly)"
-                data-h2-flex-wrap="b(wrap)"
-                data-h2-margin="b(all, m) s(right-left, xxl)"
+                data-h2-position="b(relative)"
+                data-h2-padding="b(all, m) s(left, xl)"
               >
-                <div {...homeLinksStyling}>
-                  <Link href="/">
-                    <a>
-                      {intl.formatMessage({
-                        defaultMessage: "Get started",
-                        description: "Get started button on homepage.",
-                      })}
-                    </a>
-                  </Link>
-                </div>
-                <div {...homeLinksStyling}>
-                  <Link href="/">
-                    <a>
-                      {intl.formatMessage({
-                        defaultMessage: "Sign in",
-                        description: "Sign in button on homepage.",
-                      })}
-                    </a>
-                  </Link>
-                </div>
-                <div {...homeLinksStyling}>
-                  <Link href="/">
-                    <a>
-                      {intl.formatMessage({
-                        defaultMessage: "Contact Us",
-                        description: "Contact us button on homepage.",
-                      })}
-                    </a>
-                  </Link>
+                <h1
+                  data-h2-margin="b(all, m)"
+                  data-h2-text-align="b(center)"
+                  data-h2-font-weight="b(600)"
+                >
+                  {title}
+                </h1>
+              </div>
+            ) : (
+              <div
+                data-h2-position="b(relative)"
+                data-h2-padding="b(all, none) s(all, xxl) s(top, m)"
+              >
+                <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
+                  {intl.formatMessage({
+                    defaultMessage: "GC Accessibility Passport",
+                    description: "Heading for homepage.",
+                  })}
+                </h1>
+                <p data-h2-text-align="b(center)" data-h2-margin="b(all, m)">
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Private, secure accessibility documentation",
+                    description: "Sub-heading for homepage.",
+                  })}
+                </p>
+                <div
+                  data-h2-display="b(flex)"
+                  data-h2-justify-content="b(center) s(space-evenly)"
+                  data-h2-flex-wrap="b(wrap)"
+                  data-h2-margin="b(all, m) s(right-left, xxl)"
+                >
+                  <div {...homeLinksStyling}>
+                    <Link href="/">
+                      <a>
+                        {intl.formatMessage({
+                          defaultMessage: "Get started",
+                          description: "Get started button on homepage.",
+                        })}
+                      </a>
+                    </Link>
+                  </div>
+                  <div {...homeLinksStyling}>
+                    <Link href="/">
+                      <a>
+                        {intl.formatMessage({
+                          defaultMessage: "Sign in",
+                          description: "Sign in button on homepage.",
+                        })}
+                      </a>
+                    </Link>
+                  </div>
+                  <div {...homeLinksStyling}>
+                    <Link href="/">
+                      <a>
+                        {intl.formatMessage({
+                          defaultMessage: "Contact Us",
+                          description: "Contact us button on homepage.",
+                        })}
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </>
-          )}
-        </div>
+            )}
+          </>
+        )}
       </div>
     </header>
   );

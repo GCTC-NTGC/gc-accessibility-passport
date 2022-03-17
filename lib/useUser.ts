@@ -6,7 +6,7 @@ import { User } from "../pages/api/user";
 export default function useUser({
   redirectTo = "",
   redirectIfFound = false,
-} = {}): { user: any; mutateUser: any } {
+} = {}): { user?: User; mutateUser: any } {
   const { data: user, mutate: mutateUser } = useSWR<User>("/api/user");
   useEffect(() => {
     // if no redirect needed, just return (example: already on /dashboard)

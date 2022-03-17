@@ -53,27 +53,26 @@ export const Footer: React.FunctionComponent = () => {
   ];
   return (
     <>
-      <div
-        data-h2-border="b(lightnavy, top-bottom, solid, s)"
-        data-h2-text-align="b(center)"
-        data-h2-padding="b(all, s)"
-      >
-        <Link href="/">
-          <a>
-            {intl.formatMessage({
-              defaultMessage:
-                "Accessibility statement, privacy statement, and notice",
-            })}
-          </a>
-        </Link>
-      </div>
-      <footer
-        className="footer"
-        data-h2-border="b(gray, top, solid, s)"
-        data-h2-bg-color="b(lightgray[.6])"
-        style={{ marginTop: "auto" }}
-      >
-        <div data-h2-flex-grid="b(middle, contained, flush, xl)">
+      <footer className="footer" style={{ marginTop: "auto" }}>
+        <div
+          data-h2-border="b(lightnavy, top-bottom, solid, s)"
+          data-h2-bg-color="b([light]lightnavy[.1])"
+          data-h2-text-align="b(center)"
+          data-h2-padding="b(all, s)"
+        >
+          <Link href="/">
+            <a>
+              {intl.formatMessage({
+                defaultMessage:
+                  "Accessibility statement, privacy statement, and notice",
+              })}
+            </a>
+          </Link>
+        </div>
+        <div
+          data-h2-bg-color="b(lightgray[.6])"
+          data-h2-flex-grid="b(middle, contained, flush, xl)"
+        >
           <div
             data-h2-flex-item="b(1of1) m(1of2)"
             data-h2-padding="b(left, xl)"
@@ -95,7 +94,7 @@ export const Footer: React.FunctionComponent = () => {
                     data-h2-margin="b(top-bottom, none)"
                   >
                     {/* These links must use real anchor links, not the history api, as they may direct to outside of this app. */}
-                    <Link href={`/${route}`}>
+                    <Link href={`${route}`}>
                       <a title={title}>{label}</a>
                     </Link>
                   </li>
@@ -114,7 +113,7 @@ export const Footer: React.FunctionComponent = () => {
                     "Header for the sites last date modification found in the footer.",
                 },
                 {
-                  modifiedDate: new Date(process.env.BUILD_DATE ?? "1970-01-01")
+                  modifiedDate: new Date(process.env.BUILD_DATE ?? "2022-03-01")
                     .toISOString()
                     .slice(0, 10),
                 },

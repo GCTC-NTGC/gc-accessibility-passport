@@ -13,12 +13,16 @@
     "i18n": "npm run extract:i18n && npm run compile:i18n && rm ./lang/temp.json"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "iron-session": "^6.0.5",
+    "lodash": "^4.17.21",
     "next": "12.0.10",
     "octokit": "^1.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.28.0",
     "react-intl": "^5.24.6",
+    "react-select": "^5.2.2",
     "swr": "^1.2.2"
   },
   "devDependencies": {
