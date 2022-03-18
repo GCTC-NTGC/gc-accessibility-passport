@@ -64,7 +64,7 @@ const Header: React.FunctionComponent<Header> = ({ title }) => {
           layout="fill"
         />
         <Nav />
-        {user?.isLoggedIn ? (
+        {user?.isLoggedIn && pathname !== "/" ? (
           <div
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(left, xl)"
@@ -73,10 +73,11 @@ const Header: React.FunctionComponent<Header> = ({ title }) => {
               data-h2-margin="b(all, none) b(left, m)"
               data-h2-font-weight="b(600)"
             >
-              {intl.formatMessage({
-                defaultMessage: "Welcome back, Jake",
-                description: "Heading for rest of pages.",
-              })}
+              {title ??
+                intl.formatMessage({
+                  defaultMessage: "Welcome back, Jake",
+                  description: "Heading for rest of pages.",
+                })}
             </h1>
           </div>
         ) : (

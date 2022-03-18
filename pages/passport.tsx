@@ -38,8 +38,13 @@ const HomePage: React.FunctionComponent = () => {
       <section
         data-h2-display="b(flex)"
         data-h2-flex-direction="b(column) s(row)"
+        data-h2-padding="b(top-bottom, xl)"
       >
-        <div data-h2-padding="b(all, l)" style={{ flex: 3 }}>
+        <div
+          data-h2-padding="b(right-left, l) b(top-bottom, none)"
+          data-h2-border="s(black, right, solid, s)"
+          style={{ flex: 3 }}
+        >
           <div>
             <h2 data-h2-margin="b(all, none)">
               {intl.formatMessage({ defaultMessage: "Tools" })}
@@ -73,6 +78,7 @@ const HomePage: React.FunctionComponent = () => {
               mode="outline"
               data-h2-border="b(lightnavy, all, dashed, s)"
               data-h2-margin="b(bottom, s)"
+              data-h2-font-style="b(underline)"
             >
               {intl.formatMessage({
                 defaultMessage: "Click to add a new barrier to your profile",
@@ -84,9 +90,10 @@ const HomePage: React.FunctionComponent = () => {
                 data-h2-display="b(flex)"
                 data-h2-justify-content="b(space-between)"
                 data-h2-align-items="b(center)"
-                data-h2-shadow="b(l)"
+                data-h2-shadow="b(m)"
                 data-h2-radius="b(s)"
                 data-h2-padding="b(top-bottom, xs) b(right-left, xxs)"
+                data-h2-margin="b(bottom, m)"
               >
                 <p data-h2-margin="b(all, s)">{title}</p>
                 <div
@@ -111,55 +118,60 @@ const HomePage: React.FunctionComponent = () => {
           </div>
         </div>
         <div
-          data-h2-padding="b(all, l)"
+          data-h2-padding="b(right-left, l) b(top-bottom, none)"
           style={{ flex: 2 }}
-          data-h2-display="b(flex)"
-          data-h2-flex-direction="b(column)"
         >
-          <div
-            data-h2-display="b(flex)"
-            data-h2-align-items="b(center)"
-            data-h2-justify-content="b(space-between)"
-          >
-            <h3 data-h2-margin="b(all, none) b(right, s)">
-              {intl.formatMessage({ defaultMessage: "Notifications" })}
-            </h3>
-            <Link href={`/notifications`}>
-              <a data-h2->
-                {intl.formatMessage({
-                  defaultMessage: "View all notifications",
-                })}
-              </a>
-            </Link>
-          </div>
-          {[1, 2, 3].map((id) => (
+          <div data-h2-display="b(flex)" data-h2-flex-direction="b(column)">
             <div
-              key={id}
               data-h2-display="b(flex)"
-              data-h2-flex-direction="b(column)"
-              data-h2-border="b(black, bottom, solid, s)"
+              data-h2-align-items="b(center)"
+              data-h2-justify-content="b(space-between)"
             >
-              <p>date</p>
-              <p>replace with notification</p>
-              <Button
-                color="white"
-                mode="inline"
-                data-h2-font-color="b(black)"
-                data-h2-font-style="b(underline)"
-                data-h2-font-size="b(caption)"
-                data-h2-text-align="b(right)"
-              >
-                {intl.formatMessage({
-                  defaultMessage: "Mark as read",
-                })}
-              </Button>
+              <h3 data-h2-margin="b(all, none) b(right, s)">
+                {intl.formatMessage({ defaultMessage: "Notifications" })}
+              </h3>
+              <Link href={`/notifications`}>
+                <a data-h2->
+                  {intl.formatMessage({
+                    defaultMessage: "View all notifications",
+                  })}
+                </a>
+              </Link>
             </div>
-          ))}
-          <Button color="secondary" mode="outline" data-h2-margin="b(top, m)">
-            {intl.formatMessage({
-              defaultMessage: "Mark all as read",
-            })}
-          </Button>
+            {[1, 2, 3].map((id) => (
+              <div
+                key={id}
+                data-h2-display="b(flex)"
+                data-h2-flex-direction="b(column)"
+                data-h2-border="b(black, bottom, solid, s)"
+              >
+                <p>date</p>
+                <p>replace with notification</p>
+                <Button
+                  color="white"
+                  mode="inline"
+                  data-h2-font-color="b(black)"
+                  data-h2-font-style="b(underline)"
+                  data-h2-font-size="b(caption)"
+                  data-h2-text-align="b(right)"
+                >
+                  {intl.formatMessage({
+                    defaultMessage: "Mark as read",
+                  })}
+                </Button>
+              </div>
+            ))}
+            <Button
+              color="secondary"
+              mode="outline"
+              data-h2-margin="b(top, m)"
+              data-h2-font-style="b(underline)"
+            >
+              {intl.formatMessage({
+                defaultMessage: "Mark all as read",
+              })}
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>

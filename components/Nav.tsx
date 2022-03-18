@@ -28,7 +28,7 @@ const Nav: React.FunctionComponent = () => {
           data-h2-justify-content="b(center) s(space-between)"
           data-h2-flex-wrap="b(wrap)"
         >
-          <li data-h2-margin="b(all, m)">
+          <li data-h2-margin="b(all, m) b(left, none)">
             <Link href="/">
               <a>
                 {intl.formatMessage({
@@ -51,11 +51,21 @@ const Nav: React.FunctionComponent = () => {
                 </Link>
               </li>
               <li data-h2-margin="b(all, m)">
-                <Link href="/">
+                <Link href="/share">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "Help and Resources",
-                      description: "Help and Resources nav link.",
+                      defaultMessage: "Share my barriers",
+                      description: "Share my barriers nav link.",
+                    })}
+                  </a>
+                </Link>
+              </li>
+              <li data-h2-margin="b(all, m)">
+                <Link href="/sharedWithMe">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "Barriers shared with me",
+                      description: "Barriers shared with me nav link.",
                     })}
                   </a>
                 </Link>
