@@ -28,7 +28,7 @@ const Nav: React.FunctionComponent = () => {
           data-h2-justify-content="b(center) s(space-between)"
           data-h2-flex-wrap="b(wrap)"
         >
-          <li data-h2-margin="b(all, m) b(left, none)">
+          <li data-h2-margin="b(all, s) b(left, none)">
             <Link href="/">
               <a>
                 {intl.formatMessage({
@@ -40,7 +40,7 @@ const Nav: React.FunctionComponent = () => {
           </li>
           {user?.isLoggedIn === true && (
             <>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/passport">
                   <a>
                     {intl.formatMessage({
@@ -49,7 +49,7 @@ const Nav: React.FunctionComponent = () => {
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/situations">
                   <a>
                     {intl.formatMessage({
@@ -58,7 +58,7 @@ const Nav: React.FunctionComponent = () => {
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/barriers">
                   <a>
                     {intl.formatMessage({
@@ -67,7 +67,7 @@ const Nav: React.FunctionComponent = () => {
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/solutions">
                   <a>
                     {intl.formatMessage({
@@ -76,7 +76,7 @@ const Nav: React.FunctionComponent = () => {
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/documents">
                   <a>
                     {intl.formatMessage({
@@ -89,7 +89,7 @@ const Nav: React.FunctionComponent = () => {
           )}
         </div>
         {user?.isLoggedIn === true && (
-          <li data-h2-margin="b(all, m)">
+          <li data-h2-margin="b(all, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             <a
               href="/api/logout"
@@ -110,7 +110,7 @@ const Nav: React.FunctionComponent = () => {
           </li>
         )}
         {user?.isLoggedIn === false && (
-          <li data-h2-margin="b(all, m)">
+          <li data-h2-margin="b(all, s)">
             <Link href="/login">
               <a>
                 {intl.formatMessage({

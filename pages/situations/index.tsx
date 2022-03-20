@@ -1,12 +1,12 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
-import Card from "../components/Card";
-import Layout from "../components/Layout";
-import Links from "../components/Links";
-import Page, { SectionOne, SectionTwo } from "../components/Page";
-import { Tab, TabSet } from "../components/tabs";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
+import Layout from "../../components/Layout";
+import Links from "../../components/Links";
+import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import { Tab, TabSet } from "../../components/tabs";
 
 interface SituationsProps {}
 
@@ -18,7 +18,7 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/situations/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),

@@ -7,6 +7,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   mode: "solid" | "outline" | "inline";
   /** The type of button. */
   type?: "button" | "submit" | "reset" | undefined;
+  /** Determines whether the element should be block level and 100% width. */
+  block?: boolean;
 }
 
 const colorMap: Record<
@@ -17,17 +19,17 @@ const colorMap: Record<
     solid: {
       "data-h2-border": "b(blue, all, solid, s)",
       "data-h2-bg-color": "b(blue)",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
     outline: {
       "data-h2-border": "b(blue, all, solid, s)",
       "data-h2-bg-color": "b(blue)",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
     inline: {
       "data-h2-border": "b(white[0], all, solid, s)",
       "data-h2-bg-color": "b(white[0])",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
   },
   lightblue: {
@@ -51,17 +53,17 @@ const colorMap: Record<
     solid: {
       "data-h2-border": "b(darkblue, all, solid, s)",
       "data-h2-bg-color": "b(darkblue)",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
     outline: {
       "data-h2-border": "b(darkblue, all, solid, s)",
       "data-h2-bg-color": "b(darkblue)",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
     inline: {
       "data-h2-border": "b(white[0], all, solid, s)",
       "data-h2-bg-color": "b(white[0])",
-      "data-h2-font-color": "b(black)",
+      "data-h2-font-color": "b(white)",
     },
   },
   white: {
@@ -88,6 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
   type,
   color,
   mode,
+  block = false,
   ...rest
 }): React.ReactElement => {
   return (
@@ -100,7 +103,7 @@ export const Button: React.FC<ButtonProps> = ({
       style={{
         cursor: "pointer",
         overflowWrap: "break-word",
-        width: "100%",
+        width: block ? "100%" : "auto",
       }}
       {...rest}
     >
