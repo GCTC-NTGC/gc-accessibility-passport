@@ -5,7 +5,7 @@ export const SectionOne: React.FunctionComponent = ({ children }) => {
     <div
       data-h2-padding="b(right-left, l) b(top-bottom, none)"
       data-h2-border="s(black, right, solid, s)"
-      style={{ flex: 3 }}
+      style={{ flex: 4 }}
     >
       {children}
     </div>
@@ -28,7 +28,7 @@ const Page: React.FunctionComponent = ({ children }) => {
     <section
       data-h2-display="b(flex)"
       data-h2-flex-direction="b(column) s(row)"
-      data-h2-padding="b(top-bottom, xl)"
+      data-h2-padding="b(top-bottom, xl) b(right-left, m)"
     >
       {children}
     </section>

@@ -45,27 +45,42 @@ const Nav: React.FunctionComponent = () => {
                   <a>
                     {intl.formatMessage({
                       defaultMessage: "My passport",
-                      description: "My passport nav link.",
                     })}
                   </a>
                 </Link>
               </li>
               <li data-h2-margin="b(all, m)">
-                <Link href="/share">
+                <Link href="/situations">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "Share my barriers",
-                      description: "Share my barriers nav link.",
+                      defaultMessage: "My situations",
                     })}
                   </a>
                 </Link>
               </li>
               <li data-h2-margin="b(all, m)">
-                <Link href="/sharedWithMe">
+                <Link href="/barriers">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "Barriers shared with me",
-                      description: "Barriers shared with me nav link.",
+                      defaultMessage: "My barriers",
+                    })}
+                  </a>
+                </Link>
+              </li>
+              <li data-h2-margin="b(all, m)">
+                <Link href="/solutions">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "My solutions",
+                    })}
+                  </a>
+                </Link>
+              </li>
+              <li data-h2-margin="b(all, m)">
+                <Link href="/documents">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "My documents",
                     })}
                   </a>
                 </Link>

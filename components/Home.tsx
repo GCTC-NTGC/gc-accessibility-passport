@@ -30,7 +30,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         </div>
         <div
           data-h2-padding="b(right-left, l) b(top-bottom, l)"
-          data-h2-bg-color="b([light]lightblue[.1])"
+          data-h2-bg-color="b(lightblue)"
           style={{ flexGrow: 1 }}
         >
           <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
