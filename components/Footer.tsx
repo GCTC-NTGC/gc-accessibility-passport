@@ -55,8 +55,8 @@ export const Footer: React.FunctionComponent = () => {
     <>
       <footer className="footer" style={{ marginTop: "auto" }}>
         <div
-          data-h2-border="b(lightnavy, top-bottom, solid, s)"
-          data-h2-bg-color="b([light]lightnavy[.1])"
+          data-h2-border="b(lightblue, top-bottom, solid, s)"
+          data-h2-bg-color="b([light]lightblue[.1])"
           data-h2-text-align="b(center)"
           data-h2-padding="b(all, s)"
         >

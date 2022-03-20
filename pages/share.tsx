@@ -31,7 +31,7 @@ const Share: React.FunctionComponent<ShareProps> = (props) => {
             <Button
               color="secondary"
               mode="outline"
-              data-h2-border="b(lightnavy, all, dashed, s)"
+              data-h2-border="b(lightblue, all, dashed, s)"
               data-h2-margin="b(bottom, s)"
               data-h2-font-style="b(underline)"
             >
@@ -127,8 +127,8 @@ const Share: React.FunctionComponent<ShareProps> = (props) => {
             <div
               data-h2-display="b(flex)"
               data-h2-align-items="b(flex-start)"
-              data-h2-bg-color="b([light]lightnavy[.1])"
-              data-h2-border="b(lightnavy, all, solid, s)"
+              data-h2-bg-color="b([light]lightblue[.1])"
+              data-h2-border="b(lightblue, all, solid, s)"
               data-h2-radius="b(s)"
               data-h2-padding="b(right-left, s)"
             >

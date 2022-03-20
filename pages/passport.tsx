@@ -76,7 +76,7 @@ const HomePage: React.FunctionComponent = () => {
             <Button
               color="secondary"
               mode="outline"
-              data-h2-border="b(lightnavy, all, dashed, s)"
+              data-h2-border="b(lightblue, all, dashed, s)"
               data-h2-margin="b(bottom, s)"
               data-h2-font-style="b(underline)"
             >
