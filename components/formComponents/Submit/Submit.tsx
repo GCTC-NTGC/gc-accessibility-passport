@@ -6,9 +6,19 @@ export const Submit: React.FunctionComponent<{
   text?: string;
   submittedText?: string;
   isSubmittingText?: string;
-  color?: "primary" | "secondary" | "cta" | "white";
+  color?: "blue" | "lightblue" | "darkblue" | "white";
   mode?: "solid" | "outline" | "inline";
-}> = ({ text, submittedText, isSubmittingText, color, mode, ...rest }) => {
+  /** Determines whether the element should be block level and 100% width. */
+  block?: boolean;
+}> = ({
+  text,
+  submittedText,
+  isSubmittingText,
+  color,
+  mode,
+  block,
+  ...rest
+}) => {
   const defaultText = "Submit";
   const defaultSubmittedText = "Submitted";
   const defaultIsSubmittingText = "Submitting";
@@ -23,10 +33,11 @@ export const Submit: React.FunctionComponent<{
 
   return (
     <Button
-      color={color || "primary"}
+      color={color || "blue"}
       mode={mode || "solid"}
       type="submit"
       disabled={isSubmitting}
+      block={block}
       {...rest}
     >
       {currentText}

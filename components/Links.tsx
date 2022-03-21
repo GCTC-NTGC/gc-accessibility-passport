@@ -26,6 +26,7 @@ const Links: React.FunctionComponent<LinksProps> = ({ links }) => {
       link: "/",
     },
   ];
+
   return (
     <ul
       data-h2-padding="b(left, m)"

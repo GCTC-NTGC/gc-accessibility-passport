@@ -3,6 +3,7 @@ import { ClockIcon, ShareIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
+import Alert from "../../components/Alert";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
@@ -204,25 +205,13 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
                 {intl.formatMessage({ defaultMessage: "Permissions" })}
               </h2>
             </div>
-            <div
-              data-h2-display="b(flex)"
-              data-h2-align-items="b(flex-start)"
-              data-h2-bg-color="b(lightblue)"
-              data-h2-border="b(darkblue, all, solid, s)"
-              data-h2-radius="b(s)"
-              data-h2-padding="b(right-left, s)"
-              data-h2-margin="b(top-bottom, m)"
-            >
-              <span data-h2-margin="b(top-right, s)">
-                <ExclamationCircleIcon style={{ width: "1.25rem" }} />
-              </span>
-              <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Please note that by sharing this situation, the recipient can see linked barriers, solutions, and documents.",
-                })}
-              </p>
-            </div>
+            <Alert
+              icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
+              message={intl.formatMessage({
+                defaultMessage:
+                  "Please note that by sharing this situation, the recipient can see linked barriers, solutions, and documents.",
+              })}
+            />
             <div
               data-h2-display="b(flex)"
               data-h2-justify-content="b(space-between)"
