@@ -106,6 +106,14 @@ const Edit: React.FunctionComponent<EditProps> = (props) => {
                 }}
                 rows={10}
               />
+              <Input
+                id="file"
+                name="file"
+                type="file"
+                label={intl.formatMessage({
+                  defaultMessage: "Upload file",
+                })}
+              />
               {checklists.map(({ legend, description, title }) => (
                 <div key={title} data-h2-margin="b(top-bottom, xl)">
                   <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">

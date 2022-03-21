@@ -19,7 +19,15 @@ export interface InputProps
   /** Set of validation rules and error messages to impose on input. */
   rules?: RegisterOptions;
   /** Set the type of the input. */
-  type: "text" | "number" | "email" | "tel" | "password" | "date" | "search";
+  type:
+    | "text"
+    | "number"
+    | "email"
+    | "tel"
+    | "password"
+    | "date"
+    | "search"
+    | "file";
   /** If input is not required, hide the 'Optional' label */
   hideOptional?: boolean;
   errorPosition?: "top" | "bottom";
