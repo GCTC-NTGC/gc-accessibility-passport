@@ -5,11 +5,13 @@ import Header from "./Header";
 interface LayoutProps {
   title?: string;
   editButton?: { title: string; link: string };
+  center?: boolean;
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = ({
   title,
   editButton,
+  center,
   children,
 }) => {
   return (
@@ -20,7 +22,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
       style={{ height: "100vh" }}
     >
       <div>
-        <Header title={title} editButton={editButton} />
+        <Header title={title} editButton={editButton} center={center} />
         {children}
       </div>
       <Footer />

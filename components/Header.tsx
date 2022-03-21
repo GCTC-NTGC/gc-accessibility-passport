@@ -10,9 +10,14 @@ import Nav from "./Nav";
 interface Header {
   title?: string;
   editButton?: { title: string; link: string };
+  center?: boolean;
 }
 
-const Header: React.FunctionComponent<Header> = ({ title, editButton }) => {
+const Header: React.FunctionComponent<Header> = ({
+  title,
+  editButton,
+  center,
+}) => {
   const { user, mutateUser } = useUser();
   const intl = useIntl();
   const { locale, pathname } = useRouter();
@@ -71,7 +76,10 @@ const Header: React.FunctionComponent<Header> = ({ title, editButton }) => {
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(right-left, xl)"
             data-h2-display="b(flex)"
-            data-h2-justify-content="b(space-between)"
+            // data-h2-justify-content="b(space-between)"
+            {...(center
+              ? { "data-h2-justify-content": "b(center)" }
+              : { "data-h2-justify-content": "b(space-between)" })}
             data-h2-align-items="b(center)"
             data-h2-margin="b(top, xl)"
           >
