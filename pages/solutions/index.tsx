@@ -8,17 +8,17 @@ import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
 
-interface SituationsProps {}
+interface SolutionsProps {}
 
-const Situations: React.FunctionComponent<SituationsProps> = (props) => {
+const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
   const intl = useIntl();
-  const situations = [
+  const solutions = [
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #1" }),
+      title: intl.formatMessage({ defaultMessage: "Example solutions #1" }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/situation/1",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
@@ -31,7 +31,7 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
       ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #2" }),
+      title: intl.formatMessage({ defaultMessage: "Example solutions #2" }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
@@ -48,7 +48,7 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
       ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #3" }),
+      title: intl.formatMessage({ defaultMessage: "Example solutions #3" }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
@@ -66,12 +66,12 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
     },
   ];
   return (
-    <Layout title={intl.formatMessage({ defaultMessage: "My situations" })}>
+    <Layout title={intl.formatMessage({ defaultMessage: "My solutions" })}>
       <Page>
         <SectionOne>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
             {intl.formatMessage({
-              defaultMessage: "Situations in my passport",
+              defaultMessage: "Solutions in my passport",
             })}
           </h2>
           <div data-h2-margin="b(top, m)">
@@ -97,11 +97,11 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
                   >
                     {intl.formatMessage({
                       defaultMessage:
-                        "Click to add a new situation to your profile",
+                        "Click to add a new solutions to your profile",
                     })}
                   </Button>
                   <div data-h2-margin="b(top, m)">
-                    {situations.map(({ title, buttons }) => (
+                    {solutions.map(({ title, buttons }) => (
                       <Card id={title} key={title} title={title}>
                         {buttons.map(({ link, title }) => (
                           <Link href={link} key={title}>
@@ -139,11 +139,11 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
                   >
                     {intl.formatMessage({
                       defaultMessage:
-                        "Click to add a new situation to your profile",
+                        "Click to add a new solutions to your profile",
                     })}
                   </Button>
                   <div data-h2-margin="b(top, m)">
-                    {situations.map(({ title, buttons }) => (
+                    {solutions.map(({ title, buttons }) => (
                       <Card id={title} key={title} title={title}>
                         {buttons.map(({ link, title }) => (
                           <Link href={link} key={title}>
@@ -181,4 +181,4 @@ const Situations: React.FunctionComponent<SituationsProps> = (props) => {
   );
 };
 
-export default Situations;
+export default Solutions;

@@ -9,10 +9,25 @@ import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 
-interface BarrierProps {}
+interface SolutionProps {}
 
-const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
+const Solution: React.FunctionComponent<SolutionProps> = (props) => {
   const intl = useIntl();
+  const linkedBarriers = [
+    {
+      title: intl.formatMessage({ defaultMessage: "Example barriers #1" }),
+      buttons: [
+        {
+          title: intl.formatMessage({ defaultMessage: "View" }),
+          link: "/barriers/view",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "Unlink" }),
+          link: "",
+        },
+      ],
+    },
+  ];
   const linkedSituations = [
     {
       title: intl.formatMessage({ defaultMessage: "Example situations #1" }),
@@ -28,28 +43,13 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
       ],
     },
   ];
-  const linkedSolutions = [
-    {
-      title: intl.formatMessage({ defaultMessage: "Example solution #1" }),
-      buttons: [
-        {
-          title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/solution/view",
-        },
-        {
-          title: intl.formatMessage({ defaultMessage: "Unlink" }),
-          link: "",
-        },
-      ],
-    },
-  ];
   const linkedDocuments = [
     {
-      title: intl.formatMessage({ defaultMessage: "Example document #1" }),
+      title: intl.formatMessage({ defaultMessage: "Example documents #1" }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/document/view",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -64,22 +64,22 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
       date: new Date().toISOString().slice(0, 10),
       message: intl.formatMessage({
         defaultMessage:
-          "You linked “Example situation #1” and “Example solution #1” to this situation.",
+          "You linked “Example situation #1” and “Example barrier #1” to this solution.",
       }),
     },
     {
       date: new Date().toISOString().slice(0, 10),
       message: intl.formatMessage({
-        defaultMessage: "You created this barrier.",
+        defaultMessage: "You created this solution.",
       }),
     },
   ];
 
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "Example barrier #1" })}
+      title={intl.formatMessage({ defaultMessage: "Example solution #1" })}
       editButton={{
-        title: intl.formatMessage({ defaultMessage: "Edit this barrier" }),
+        title: intl.formatMessage({ defaultMessage: "Edit this solution" }),
         link: "edit",
       }}
     >
@@ -97,8 +97,39 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
             })}
           </p>
           <div>
+            <h2
+              data-h2-margin="b(all, none) b(top-bottom, m)"
+              data-h2-font-size="b(h3)"
+            >
+              {intl.formatMessage({
+                defaultMessage: "Status",
+              })}
+            </h2>
+            <div
+              data-h2-display="b(flex)"
+              data-h2-justify-content="b(space-between)"
+              data-h2-align-items="b(center)"
+            >
+              <p data-h2-font-weight="b(600)">
+                {intl.formatMessage({
+                  defaultMessage: "This solution has been proposed",
+                })}
+              </p>
+              <Button
+                color="blue"
+                mode="solid"
+                data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                data-h2-font-style="b(underline)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Request manager approval",
+                })}
+              </Button>
+            </div>
+          </div>
+          <div>
             <div data-h2-margin="b(top, xl)">
-              {linkedSituations.map(({ title, buttons }) => (
+              {linkedBarriers.map(({ title, buttons }) => (
                 <>
                   <h2
                     data-h2-margin="b(all, none) b(bottom, s)"
@@ -129,14 +160,14 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
               ))}
             </div>
             <div data-h2-margin="b(top, xl)">
-              {linkedSolutions.map(({ title, buttons }) => (
+              {linkedSituations.map(({ title, buttons }) => (
                 <>
                   <h2
                     data-h2-margin="b(all, none) b(bottom, s)"
                     data-h2-font-size="b(h3)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "Linked solutions",
+                      defaultMessage: "Linked situations",
                     })}
                   </h2>
                   <Card id={title} key={title} title={title}>
@@ -209,7 +240,7 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
               icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
               message={intl.formatMessage({
                 defaultMessage:
-                  "Please note that by sharing this barrier, the recipient can see linked situations, solutions and documents.",
+                  "Please note that by sharing this solution, the recipient can see linked situations, barriers and documents.",
               })}
             />
             <div
@@ -288,4 +319,4 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
   );
 };
 
-export default Barrier;
+export default Solution;
