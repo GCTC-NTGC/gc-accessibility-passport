@@ -77,6 +77,10 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "Example situation #1" })}
+      editButton={{
+        title: intl.formatMessage({ defaultMessage: "Edit this situation" }),
+        link: "edit",
+      }}
     >
       <Page>
         <SectionOne>
@@ -240,17 +244,27 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
                 })}
               </Button>
             </div>
-            <Button
-              color="blue"
-              mode="solid"
-              data-h2-padding="b(top-bottom, s) b(left-right, s)"
-              data-h2-font-style="b(underline)"
-              data-h2-margin="b(bottom, xl) b(top, m)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Share with someone new",
-              })}
-            </Button>
+            <Link href="/situation/share">
+              <a
+                title={intl.formatMessage({
+                  defaultMessage: "Share with someone new",
+                })}
+              >
+                <Button
+                  color="blue"
+                  mode="solid"
+                  data-h2-padding="b(top-bottom, s) b(left-right, s)"
+                  data-h2-font-style="b(underline)"
+                  data-h2-margin="b(bottom, xl) b(top, m)"
+                  block
+                >
+                  {intl.formatMessage({
+                    defaultMessage: "Share with someone new",
+                  })}
+                </Button>
+              </a>
+            </Link>
+
             <div data-h2-display="b(flex)" data-h2-align-items="b(center)">
               <ClockIcon style={{ width: "1.25rem" }} />
               <h2

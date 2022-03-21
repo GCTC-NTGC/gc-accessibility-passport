@@ -22,7 +22,7 @@ const colorMap: Record<
       "data-h2-font-color": "b(white)",
     },
     outline: {
-      "data-h2-border": "b(blue, all, solid, s)",
+      "data-h2-border": "b(white, all, solid, s)",
       "data-h2-bg-color": "b(blue)",
       "data-h2-font-color": "b(white)",
     },

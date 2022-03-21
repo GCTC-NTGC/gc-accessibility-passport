@@ -4,13 +4,15 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
 import useUser from "../lib/useUser";
+import Button from "./Button";
 import Nav from "./Nav";
 
 interface Header {
   title?: string;
+  editButton?: { title: string; link: string };
 }
 
-const Header: React.FunctionComponent<Header> = ({ title }) => {
+const Header: React.FunctionComponent<Header> = ({ title, editButton }) => {
   const { user, mutateUser } = useUser();
   const intl = useIntl();
   const { locale, pathname } = useRouter();
@@ -67,7 +69,11 @@ const Header: React.FunctionComponent<Header> = ({ title }) => {
         {user?.isLoggedIn && pathname !== "/" ? (
           <div
             data-h2-position="b(relative)"
-            data-h2-padding="b(all, m) s(left, xl)"
+            data-h2-padding="b(all, m) s(right-left, xl)"
+            data-h2-display="b(flex)"
+            data-h2-justify-content="b(space-between)"
+            data-h2-align-items="b(center)"
+            data-h2-margin="b(top, xl)"
           >
             <h1
               data-h2-margin="b(all, none) b(left, m)"
@@ -79,6 +85,19 @@ const Header: React.FunctionComponent<Header> = ({ title }) => {
                   description: "Heading for rest of pages.",
                 })}
             </h1>
+            {editButton && (
+              <Link href={editButton.link} key={editButton.title}>
+                <a title={editButton.title}>
+                  <Button
+                    color="blue"
+                    mode="outline"
+                    data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                  >
+                    {editButton.title}
+                  </Button>
+                </a>
+              </Link>
+            )}
           </div>
         ) : (
           <>

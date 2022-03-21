@@ -16,7 +16,7 @@ const Nav: React.FunctionComponent = () => {
       data-h2-display="b(flex)"
       data-h2-flex-direction="b(column)"
       data-h2-justify-content="b(space-between)"
-      data-h2-margin="b(right-left, xl)"
+      data-h2-margin="b(right-left, l)"
     >
       <ul
         data-h2-display="b(flex)"
@@ -89,7 +89,7 @@ const Nav: React.FunctionComponent = () => {
           )}
         </div>
         {user?.isLoggedIn === true && (
-          <li data-h2-margin="b(all, s)">
+          <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             <a
               href="/api/logout"
