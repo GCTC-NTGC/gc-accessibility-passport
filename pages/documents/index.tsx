@@ -8,9 +8,7 @@ import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
 
-interface DocumentsProps {}
-
-const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
+const Documents: React.FunctionComponent = () => {
   const intl = useIntl();
   const documents = [
     {
@@ -35,15 +33,15 @@ const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/view/id",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/documents/share",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
-          link: "/edit/id",
+          link: "/documents/edit",
         },
       ],
     },
@@ -52,15 +50,15 @@ const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/view/id",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/documents/share",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
-          link: "/edit/id",
+          link: "/documents/edit",
         },
       ],
     },

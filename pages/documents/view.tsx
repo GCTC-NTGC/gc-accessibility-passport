@@ -9,9 +9,7 @@ import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 
-interface DocumentProps {}
-
-const Document: React.FunctionComponent<DocumentProps> = (props) => {
+const Document: React.FunctionComponent = () => {
   const intl = useIntl();
   const linkedBarriers = [
     {
