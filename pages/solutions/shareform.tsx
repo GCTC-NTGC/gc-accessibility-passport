@@ -6,9 +6,7 @@ import Form from "../../components/ShareForm";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
 
-interface ShareFormProps {}
-
-const ShareForm: React.FunctionComponent<ShareFormProps> = (props) => {
+const ShareForm: React.FunctionComponent = () => {
   const intl = useIntl();
 
   return (

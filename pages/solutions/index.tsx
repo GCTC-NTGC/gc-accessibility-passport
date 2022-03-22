@@ -8,9 +8,7 @@ import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
 
-interface SolutionsProps {}
-
-const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
+const Solutions: React.FunctionComponent = () => {
   const intl = useIntl();
   const solutions = [
     {
@@ -22,11 +20,11 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/share",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },
@@ -35,15 +33,15 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/share",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },
@@ -52,15 +50,15 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/share",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },
