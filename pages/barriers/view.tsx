@@ -9,9 +9,7 @@ import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 
-interface BarrierProps {}
-
-const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
+const Barrier: React.FunctionComponent = () => {
   const intl = useIntl();
   const linkedSituations = [
     {
@@ -34,7 +32,7 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/solution/view",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -49,7 +47,7 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/document/view",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -233,7 +231,7 @@ const Barrier: React.FunctionComponent<BarrierProps> = (props) => {
                 })}
               </Button>
             </div>
-            <Link href="/situation/share">
+            <Link href="/barriers/share">
               <a
                 title={intl.formatMessage({
                   defaultMessage: "Share with someone new",

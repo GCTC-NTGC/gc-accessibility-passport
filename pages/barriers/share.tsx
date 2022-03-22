@@ -9,9 +9,7 @@ import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import ShareForm from "../../components/ShareForm";
 
-interface ShareProps {}
-
-const Share: React.FunctionComponent<ShareProps> = (props) => {
+const Share: React.FunctionComponent = () => {
   const intl = useIntl();
   const examples = [
     {
