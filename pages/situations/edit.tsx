@@ -5,12 +5,10 @@ import Alert from "../../components/Alert";
 import EditForm from "../../components/EditForm";
 import { Checklist, Input, TextArea } from "../../components/formComponents";
 import Layout from "../../components/Layout";
-import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import Page from "../../components/Page";
 import { errorMessages } from "../../messages";
 
-interface EditProps {}
-
-const Edit: React.FunctionComponent<EditProps> = (props) => {
+const Edit: React.FunctionComponent = () => {
   const intl = useIntl();
 
   const examples = [

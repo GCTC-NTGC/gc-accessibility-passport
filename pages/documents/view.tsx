@@ -231,7 +231,7 @@ const Document: React.FunctionComponent = () => {
                 })}
               </Button>
             </div>
-            <Link href="/situation/share">
+            <Link href="/documents/share">
               <a
                 title={intl.formatMessage({
                   defaultMessage: "Share with someone new",

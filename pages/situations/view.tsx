@@ -9,9 +9,7 @@ import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 
-interface SituationProps {}
-
-const Situation: React.FunctionComponent<SituationProps> = (props) => {
+const Situation: React.FunctionComponent = () => {
   const intl = useIntl();
   const linkedBarriers = [
     {
@@ -19,7 +17,7 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/barrier/1",
+          link: "/barriers/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -34,7 +32,7 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/solution/id",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -49,7 +47,7 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/document/id",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Unlink" }),
@@ -233,7 +231,7 @@ const Situation: React.FunctionComponent<SituationProps> = (props) => {
                 })}
               </Button>
             </div>
-            <Link href="/situation/share">
+            <Link href="/situations/share">
               <a
                 title={intl.formatMessage({
                   defaultMessage: "Share with someone new",
