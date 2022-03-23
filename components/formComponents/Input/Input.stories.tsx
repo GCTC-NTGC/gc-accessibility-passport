@@ -4,7 +4,6 @@ import { action } from "@storybook/addon-actions";
 import Input, { InputProps } from ".";
 import Form from "../BasicForm";
 import Submit from "../Submit";
-import { phoneNumberRegex } from "../../../constants/regularExpressions";
 
 export default {
   component: Input,
@@ -79,7 +78,7 @@ TelephoneInput.args = {
   rules: {
     required: "This field is required",
     pattern: {
-      value: phoneNumberRegex,
+      value: "",
       message: "This field must follow the pattern +123243234.",
     },
   },
