@@ -20,7 +20,7 @@ const Barriers: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/barriers/share",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
@@ -37,7 +37,7 @@ const Barriers: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/barriers/share",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
@@ -54,7 +54,7 @@ const Barriers: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/barriers/share",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),

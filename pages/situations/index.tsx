@@ -7,8 +7,13 @@ import Layout from "../../components/Layout";
 import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
+import useUser from "../../lib/useUser";
 
 const Situations: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const situations = [
     {
@@ -20,7 +25,7 @@ const Situations: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/situations/share",
+          link: "/situations/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
@@ -37,7 +42,7 @@ const Situations: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/situations/share",
+          link: "/situations/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
@@ -54,7 +59,7 @@ const Situations: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/situations/share",
+          link: "/situations/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),

@@ -5,8 +5,13 @@ import Alert from "../../components/Alert";
 import Form from "../../components/ShareForm";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
+import useUser from "../../lib/useUser";
 
 const ShareForm: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
 
   return (

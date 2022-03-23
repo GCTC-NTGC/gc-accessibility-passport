@@ -6,9 +6,14 @@ import EditForm from "../../components/EditForm";
 import { Checklist, Input, TextArea } from "../../components/formComponents";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
+import useUser from "../../lib/useUser";
 import { errorMessages } from "../../messages";
 
 const Edit: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
 
   const examples = [
@@ -36,6 +41,7 @@ const Edit: React.FunctionComponent = () => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more situations...",
       }),
+      name: "situations",
     },
     {
       title: intl.formatMessage({ defaultMessage: "Link to barriers" }),
@@ -46,6 +52,7 @@ const Edit: React.FunctionComponent = () => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more barriers...",
       }),
+      name: "barriers",
     },
     {
       title: intl.formatMessage({ defaultMessage: "Link to documents" }),
@@ -56,6 +63,7 @@ const Edit: React.FunctionComponent = () => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more documents...",
       }),
+      name: "documents",
     },
   ];
   return (
@@ -104,16 +112,16 @@ const Edit: React.FunctionComponent = () => {
                 }}
                 rows={10}
               />
-              {checklists.map(({ legend, description, title }) => (
+              {checklists.map(({ legend, description, title, name }) => (
                 <div key={title} data-h2-margin="b(top-bottom, xl)">
                   <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
                     {title}
                   </h2>
                   <p>{description}</p>
                   <Checklist
-                    idPrefix="examples"
+                    idPrefix={name}
                     legend={legend}
-                    name="examples"
+                    name={name}
                     items={examples}
                   />
                 </div>

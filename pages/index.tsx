@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const HomePage: React.FunctionComponent = () => {
   return (
-    <Layout>
+    <Layout title="GC Accessibility Passport">
       <Home />
     </Layout>
   );

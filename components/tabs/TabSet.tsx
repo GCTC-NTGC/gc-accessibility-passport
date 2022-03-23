@@ -61,6 +61,7 @@ export const TabSet: React.FC<TabSetProps> = ({
         data-h2-display="b(flex)"
         data-h2-align-items="b(center)"
         data-h2-margin="b(bottom, s)"
+        role="tablist"
       >
         {childrenWithProps}
       </div>

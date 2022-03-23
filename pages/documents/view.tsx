@@ -8,8 +8,13 @@ import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import useUser from "../../lib/useUser";
 
 const Document: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const linkedBarriers = [
     {

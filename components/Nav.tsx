@@ -7,9 +7,15 @@ import useUser from "../lib/useUser";
 
 const Nav: React.FunctionComponent = () => {
   const { user, mutateUser } = useUser();
-  const router = useRouter();
+  const { pathname, push } = useRouter();
   const intl = useIntl();
-
+  const activeLink: {
+    "data-h2-font-weight": string;
+    "aria-current": "page";
+  } = {
+    "data-h2-font-weight": "b(600)",
+    "aria-current": "page",
+  };
   return (
     <nav
       data-h2-position="b(relative)"
@@ -30,7 +36,7 @@ const Nav: React.FunctionComponent = () => {
         >
           <li data-h2-margin="b(all, s) b(left, none)">
             <Link href="/">
-              <a>
+              <a {...(pathname === "/" && activeLink)}>
                 {intl.formatMessage({
                   defaultMessage: "Home",
                   description: "Home nav link.",
@@ -42,7 +48,7 @@ const Nav: React.FunctionComponent = () => {
             <>
               <li data-h2-margin="b(all, s)">
                 <Link href="/passport">
-                  <a>
+                  <a {...(pathname === "/passport" && activeLink)}>
                     {intl.formatMessage({
                       defaultMessage: "My passport",
                     })}
@@ -51,7 +57,7 @@ const Nav: React.FunctionComponent = () => {
               </li>
               <li data-h2-margin="b(all, s)">
                 <Link href="/situations">
-                  <a>
+                  <a {...(pathname === "/situations" && activeLink)}>
                     {intl.formatMessage({
                       defaultMessage: "My situations",
                     })}
@@ -60,7 +66,7 @@ const Nav: React.FunctionComponent = () => {
               </li>
               <li data-h2-margin="b(all, s)">
                 <Link href="/barriers">
-                  <a>
+                  <a {...(pathname === "/barriers" && activeLink)}>
                     {intl.formatMessage({
                       defaultMessage: "My barriers",
                     })}
@@ -69,7 +75,7 @@ const Nav: React.FunctionComponent = () => {
               </li>
               <li data-h2-margin="b(all, s)">
                 <Link href="/solutions">
-                  <a>
+                  <a {...(pathname === "/solutions" && activeLink)}>
                     {intl.formatMessage({
                       defaultMessage: "My solutions",
                     })}
@@ -78,7 +84,7 @@ const Nav: React.FunctionComponent = () => {
               </li>
               <li data-h2-margin="b(all, s)">
                 <Link href="/documents">
-                  <a>
+                  <a {...(pathname === "/documents" && activeLink)}>
                     {intl.formatMessage({
                       defaultMessage: "My documents",
                     })}
@@ -99,7 +105,7 @@ const Nav: React.FunctionComponent = () => {
                   await fetchJson("/api/logout", { method: "POST" }),
                   false,
                 );
-                router.push("/");
+                push("/");
               }}
             >
               {intl.formatMessage({

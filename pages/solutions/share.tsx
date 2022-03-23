@@ -8,8 +8,13 @@ import Layout from "../../components/Layout";
 import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import ShareForm from "../../components/ShareForm";
+import useUser from "../../lib/useUser";
 
 const Share: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const examples = [
     {

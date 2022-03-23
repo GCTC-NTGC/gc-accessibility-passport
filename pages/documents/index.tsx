@@ -7,8 +7,13 @@ import Layout from "../../components/Layout";
 import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
+import useUser from "../../lib/useUser";
 
 const Documents: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const documents = [
     {
@@ -20,7 +25,7 @@ const Documents: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/documents/share",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -37,7 +42,7 @@ const Documents: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/documents/share",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -54,7 +59,7 @@ const Documents: React.FunctionComponent = () => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/documents/share",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
