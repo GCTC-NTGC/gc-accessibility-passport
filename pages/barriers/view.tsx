@@ -67,7 +67,7 @@ const Barrier: React.FunctionComponent = () => {
       date: new Date().toISOString().slice(0, 10),
       message: intl.formatMessage({
         defaultMessage:
-          "You linked “Example situation #1” and “Example solution #1” to this situation.",
+          "You linked “Example work situation #1” and “Example solution #1” to this work situation.",
       }),
     },
     {

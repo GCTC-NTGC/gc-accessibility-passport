@@ -18,21 +18,27 @@ const Share: React.FunctionComponent = () => {
   const intl = useIntl();
   const examples = [
     {
-      label: intl.formatMessage({ defaultMessage: "My example situation #1" }),
+      label: intl.formatMessage({
+        defaultMessage: "My example work situation #1",
+      }),
       value: "1",
     },
     {
-      label: intl.formatMessage({ defaultMessage: "My example situation #2" }),
+      label: intl.formatMessage({
+        defaultMessage: "My example work situation #2",
+      }),
       value: "2",
     },
     {
-      label: intl.formatMessage({ defaultMessage: "My example situation #3" }),
+      label: intl.formatMessage({
+        defaultMessage: "My example work situation #3",
+      }),
       value: "3",
     },
   ];
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "Share my situations" })}
+      title={intl.formatMessage({ defaultMessage: "Share my work situations" })}
     >
       <Page>
         <SectionOne>
@@ -44,35 +50,35 @@ const Share: React.FunctionComponent = () => {
           <p>
             {intl.formatMessage({
               defaultMessage:
-                "Below you can select one or more of your situations to share with an individual. Once shared, an invitation will be sent, requiring them to accept. You can remove their access to your situations at any time.",
+                "Below you can select one or more of your work situations to share with an individual. Once shared, an invitation will be sent, requiring them to accept. You can remove their access to your work situations at any time.",
             })}
           </p>
           <Alert
             icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
             message={intl.formatMessage({
               defaultMessage:
-                "Please note that by sharing this situation, the recipient can see linked barriers, solutions, and documents.",
+                "Please note that by sharing this work situation, the recipient can see linked barriers, solutions, and documents.",
             })}
           />
           <ShareForm
             checklistOptions={examples}
             checklistLabel={intl.formatMessage({
-              defaultMessage: "Select one or more situations to share...",
+              defaultMessage: "Select one or more work situations to share...",
             })}
             submitText={intl.formatMessage({
-              defaultMessage: "Share the selected situations",
+              defaultMessage: "Share the selected work situations",
             })}
           />
           <div>
             <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
               {intl.formatMessage({
-                defaultMessage: "Manage situations I’ve shared",
+                defaultMessage: "Manage work situations I’ve shared",
               })}
             </h2>
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "The list below summarizes who has access to your situations. You can remove their access at any time.",
+                  "The list below summarizes who has access to your work situations. You can remove their access at any time.",
               })}
             </p>
             <div>
@@ -107,7 +113,7 @@ const Share: React.FunctionComponent = () => {
                   >
                     <p data-h2-margin="b(all, none)">
                       {intl.formatMessage({
-                        defaultMessage: "Example situation #1",
+                        defaultMessage: "Example work situation #1",
                       })}
                     </p>
                     <Button
@@ -132,7 +138,7 @@ const Share: React.FunctionComponent = () => {
                   >
                     <p data-h2-margin="b(all, none)">
                       {intl.formatMessage({
-                        defaultMessage: "Example situation #3",
+                        defaultMessage: "Example work situation #3",
                       })}
                     </p>
                     <Button

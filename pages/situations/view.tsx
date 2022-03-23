@@ -67,22 +67,26 @@ const Situation: React.FunctionComponent = () => {
       date: new Date().toISOString().slice(0, 10),
       message: intl.formatMessage({
         defaultMessage:
-          "You linked “Example barrier #1” and “Example solution #1” to this situation.",
+          "You linked “Example barrier #1” and “Example solution #1” to this work situation.",
       }),
     },
     {
       date: new Date().toISOString().slice(0, 10),
       message: intl.formatMessage({
-        defaultMessage: "You created this situation.",
+        defaultMessage: "You created this work situation.",
       }),
     },
   ];
 
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "Example situation #1" })}
+      title={intl.formatMessage({
+        defaultMessage: "Example work situation #1",
+      })}
       editButton={{
-        title: intl.formatMessage({ defaultMessage: "Edit this situation" }),
+        title: intl.formatMessage({
+          defaultMessage: "Edit this work situation",
+        }),
         link: "edit",
       }}
     >
@@ -212,7 +216,7 @@ const Situation: React.FunctionComponent = () => {
               icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
               message={intl.formatMessage({
                 defaultMessage:
-                  "Please note that by sharing this situation, the recipient can see linked barriers, solutions, and documents.",
+                  "Please note that by sharing this work situation, the recipient can see linked barriers, solutions, and documents.",
               })}
             />
             <div

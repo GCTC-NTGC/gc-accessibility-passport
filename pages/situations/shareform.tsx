@@ -18,7 +18,7 @@ const ShareForm: React.FunctionComponent = () => {
     <Layout
       center
       title={intl.formatMessage({
-        defaultMessage: "Share “Example situation #1”",
+        defaultMessage: "Share “Example work situation #1”",
       })}
     >
       <Page
@@ -34,19 +34,19 @@ const ShareForm: React.FunctionComponent = () => {
           <p>
             {intl.formatMessage({
               defaultMessage:
-                "Below you can share “Example situation #1” with an individual. Once shared, an invitation will be sent, requiring them to accept. You can remove their access to your situations at any time.",
+                "Below you can share “Example work situation #1” with an individual. Once shared, an invitation will be sent, requiring them to accept. You can remove their access to your work situations at any time.",
             })}
           </p>
           <Alert
             icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
             message={intl.formatMessage({
               defaultMessage:
-                "Please note that by sharing this situation, the recipient can see linked barriers, solutions, and documents.",
+                "Please note that by sharing this work situation, the recipient can see linked barriers, solutions, and documents.",
             })}
           />
           <Form
             submitText={intl.formatMessage({
-              defaultMessage: "Share this situation",
+              defaultMessage: "Share this work situation",
             })}
             cancelButton
           />

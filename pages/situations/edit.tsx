@@ -36,7 +36,7 @@ const Edit: React.FunctionComponent = () => {
       title: intl.formatMessage({ defaultMessage: "Link to barriers" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the barriers in your passport to create a link between this situation and that barrier. You can create and link these later too.",
+          "Below you can select from the barriers in your passport to create a link between this work situation and that barrier. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more barriers...",
@@ -47,7 +47,7 @@ const Edit: React.FunctionComponent = () => {
       title: intl.formatMessage({ defaultMessage: "Link to solutions" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the solutions in your passport to create a link between this situation and that solution. You can create and link these later too.",
+          "Below you can select from the solutions in your passport to create a link between this work situation and that solution. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more solutions...",
@@ -58,7 +58,7 @@ const Edit: React.FunctionComponent = () => {
       title: intl.formatMessage({ defaultMessage: "Link to documents" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the documents in your passport to create a link between this situation and that file. You can create and link these later too.",
+          "Below you can select from the documents in your passport to create a link between this work situation and that file. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more documents...",
@@ -69,7 +69,9 @@ const Edit: React.FunctionComponent = () => {
   return (
     <Layout
       center
-      title={intl.formatMessage({ defaultMessage: "Create/edit a situation" })}
+      title={intl.formatMessage({
+        defaultMessage: "Create/edit a work situation",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"
@@ -78,7 +80,7 @@ const Edit: React.FunctionComponent = () => {
         <div data-h2-width="s(50)" style={{ margin: "auto" }}>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
             {intl.formatMessage({
-              defaultMessage: "Situation information",
+              defaultMessage: "Work situation information",
             })}
           </h2>
           <Alert
@@ -95,7 +97,7 @@ const Edit: React.FunctionComponent = () => {
                 name="name"
                 type="text"
                 label={intl.formatMessage({
-                  defaultMessage: "Situation name",
+                  defaultMessage: "Work situation name",
                 })}
                 rules={{
                   required: intl.formatMessage(errorMessages.required),
@@ -105,7 +107,7 @@ const Edit: React.FunctionComponent = () => {
                 id="description"
                 name="description"
                 label={intl.formatMessage({
-                  defaultMessage: "Situation description",
+                  defaultMessage: "Work situation description",
                 })}
                 rules={{
                   required: intl.formatMessage(errorMessages.required),

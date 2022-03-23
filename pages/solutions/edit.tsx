@@ -33,13 +33,13 @@ const Edit: React.FunctionComponent = () => {
 
   const checklists = [
     {
-      title: intl.formatMessage({ defaultMessage: "Link to situations" }),
+      title: intl.formatMessage({ defaultMessage: "Link to work situations" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the situations in your passport to create a link between this barrier and that situation. You can create and link these later too.",
+          "Below you can select from the work situations in your passport to create a link between this barrier and that work situation. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
-        defaultMessage: "Select one or more situations...",
+        defaultMessage: "Select one or more work situations...",
       }),
       name: "situations",
     },

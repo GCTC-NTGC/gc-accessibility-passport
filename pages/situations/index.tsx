@@ -17,7 +17,9 @@ const Situations: React.FunctionComponent = () => {
   const intl = useIntl();
   const situations = [
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #1" }),
+      title: intl.formatMessage({
+        defaultMessage: "Example work situation #1",
+      }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
@@ -34,7 +36,9 @@ const Situations: React.FunctionComponent = () => {
       ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #2" }),
+      title: intl.formatMessage({
+        defaultMessage: "Example work situation #2",
+      }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
@@ -51,7 +55,9 @@ const Situations: React.FunctionComponent = () => {
       ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Example situation #3" }),
+      title: intl.formatMessage({
+        defaultMessage: "Example work situation #3",
+      }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
@@ -74,7 +80,7 @@ const Situations: React.FunctionComponent = () => {
         <SectionOne>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
             {intl.formatMessage({
-              defaultMessage: "Situations in my passport",
+              defaultMessage: "Work situations in my passport",
             })}
           </h2>
           <div data-h2-margin="b(top, m)">
@@ -100,7 +106,7 @@ const Situations: React.FunctionComponent = () => {
                   >
                     {intl.formatMessage({
                       defaultMessage:
-                        "Click to add a new situation to your profile",
+                        "Click to add a new work situation to your profile",
                     })}
                   </Button>
                   <div data-h2-margin="b(top, m)">
@@ -142,7 +148,7 @@ const Situations: React.FunctionComponent = () => {
                   >
                     {intl.formatMessage({
                       defaultMessage:
-                        "Click to add a new situation to your profile",
+                        "Click to add a new work situation to your profile",
                     })}
                   </Button>
                   <div data-h2-margin="b(top, m)">

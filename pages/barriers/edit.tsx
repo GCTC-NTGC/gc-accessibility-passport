@@ -33,10 +33,10 @@ const Edit: React.FunctionComponent = () => {
 
   const checklists = [
     {
-      title: intl.formatMessage({ defaultMessage: "Link to situations" }),
+      title: intl.formatMessage({ defaultMessage: "Link to work situations" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the situations in your passport to create a link between this barrier and that situation. You can create and link these later too.",
+          "Below you can select from the work situations in your passport to create a link between this barrier and that work situation. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more situations...",
@@ -47,7 +47,7 @@ const Edit: React.FunctionComponent = () => {
       title: intl.formatMessage({ defaultMessage: "Link to solutions" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the solutions in your passport to create a link between this situation and that solution. You can create and link these later too.",
+          "Below you can select from the solutions in your passport to create a link between this work situation and that solution. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more solutions...",
@@ -58,7 +58,7 @@ const Edit: React.FunctionComponent = () => {
       title: intl.formatMessage({ defaultMessage: "Link to documents" }),
       description: intl.formatMessage({
         defaultMessage:
-          "Below you can select from the documents in your passport to create a link between this situation and that file. You can create and link these later too.",
+          "Below you can select from the documents in your passport to create a link between this work situation and that file. You can create and link these later too.",
       }),
       legend: intl.formatMessage({
         defaultMessage: "Select one or more documents...",

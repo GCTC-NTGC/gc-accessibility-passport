@@ -16,18 +16,24 @@ const Passport: React.FunctionComponent = () => {
 
   const tools = [
     {
-      title: intl.formatMessage({ defaultMessage: "Situations" }),
+      title: intl.formatMessage({ defaultMessage: "Work situations" }),
       buttons: [
         {
-          title: intl.formatMessage({ defaultMessage: "Identify a situation" }),
+          title: intl.formatMessage({
+            defaultMessage: "Identify a work situation",
+          }),
           link: "/situations/edit",
         },
         {
-          title: intl.formatMessage({ defaultMessage: "View my situations" }),
+          title: intl.formatMessage({
+            defaultMessage: "View my work situations",
+          }),
           link: "/situations",
         },
         {
-          title: intl.formatMessage({ defaultMessage: "Share my situations" }),
+          title: intl.formatMessage({
+            defaultMessage: "Share my work situations",
+          }),
           link: "/situations/share",
         },
       ],
