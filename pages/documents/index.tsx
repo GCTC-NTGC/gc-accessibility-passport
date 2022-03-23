@@ -51,7 +51,7 @@ const Documents: React.FunctionComponent = () => {
       ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Example fle #3" }),
+      title: intl.formatMessage({ defaultMessage: "Example file #3" }),
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
