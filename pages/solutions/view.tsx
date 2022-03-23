@@ -142,7 +142,7 @@ const Solution: React.FunctionComponent = () => {
                     data-h2-font-size="b(h3)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "Linked situations",
+                      defaultMessage: "Linked barriers",
                     })}
                   </h2>
                   <Card id={title} key={title} title={title}>

@@ -104,7 +104,7 @@ const Situations: React.FunctionComponent = () => {
                   data-h2-flex-direction="b(column)"
                 >
                   <NewButton
-                    href="/barriers/edit"
+                    href="/situations/edit"
                     title={intl.formatMessage({
                       defaultMessage:
                         "Click to add a new work situation to your profile",
@@ -140,7 +140,7 @@ const Situations: React.FunctionComponent = () => {
                   data-h2-flex-direction="b(column)"
                 >
                   <NewButton
-                    href="/barriers/edit"
+                    href="/situations/edit"
                     title={intl.formatMessage({
                       defaultMessage:
                         "Click to add a new work situation to your profile",
