@@ -78,7 +78,7 @@ TelephoneInput.args = {
   rules: {
     required: "This field is required",
     pattern: {
-      value: "",
+      value: /^\+[1-9]\d{1,14}$/,
       message: "This field must follow the pattern +123243234.",
     },
   },
