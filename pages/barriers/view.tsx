@@ -4,7 +4,7 @@ import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import Alert from "../../components/Alert";
-import Button from "../../components/Button";
+import Button, { colorMap } from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
@@ -117,16 +117,15 @@ const Barrier: React.FunctionComponent = () => {
                   <Card id={title} key={title} title={title}>
                     {buttons.map(({ link, title }) => (
                       <Link href={link} key={title}>
-                        <a title={title}>
-                          <Button
-                            color="white"
-                            mode="solid"
-                            data-h2-margin="b(right, s)"
-                            data-h2-font-style="b(underline)"
-                            data-h2-font-size="b(caption)"
-                          >
-                            {title}
-                          </Button>
+                        <a
+                          {...colorMap["white"]["solid"]}
+                          data-h2-margin="b(right, s)"
+                          data-h2-font-style="b(underline)"
+                          data-h2-font-size="b(caption)"
+                          data-h2-radius="b(s)"
+                          title={title}
+                        >
+                          {title}
                         </a>
                       </Link>
                     ))}
@@ -148,16 +147,15 @@ const Barrier: React.FunctionComponent = () => {
                   <Card id={title} key={title} title={title}>
                     {buttons.map(({ link, title }) => (
                       <Link href={link} key={title}>
-                        <a title={title}>
-                          <Button
-                            color="white"
-                            mode="solid"
-                            data-h2-margin="b(right, s)"
-                            data-h2-font-style="b(underline)"
-                            data-h2-font-size="b(caption)"
-                          >
-                            {title}
-                          </Button>
+                        <a
+                          {...colorMap["white"]["solid"]}
+                          data-h2-margin="b(right, s)"
+                          data-h2-font-style="b(underline)"
+                          data-h2-font-size="b(caption)"
+                          data-h2-radius="b(s)"
+                          title={title}
+                        >
+                          {title}
                         </a>
                       </Link>
                     ))}
@@ -179,16 +177,15 @@ const Barrier: React.FunctionComponent = () => {
                   <Card id={title} key={title} title={title}>
                     {buttons.map(({ link, title }) => (
                       <Link href={link} key={title}>
-                        <a title={title}>
-                          <Button
-                            color="white"
-                            mode="solid"
-                            data-h2-margin="b(right, s)"
-                            data-h2-font-style="b(underline)"
-                            data-h2-font-size="b(caption)"
-                          >
-                            {title}
-                          </Button>
+                        <a
+                          {...colorMap["white"]["solid"]}
+                          data-h2-margin="b(right, s)"
+                          data-h2-font-style="b(underline)"
+                          data-h2-font-size="b(caption)"
+                          data-h2-radius="b(s)"
+                          title={title}
+                        >
+                          {title}
                         </a>
                       </Link>
                     ))}
@@ -241,22 +238,20 @@ const Barrier: React.FunctionComponent = () => {
             </div>
             <Link href="/barriers/shareform">
               <a
+                {...colorMap["blue"]["solid"]}
+                data-h2-padding="b(top-bottom, s) b(left-right, s)"
+                data-h2-font-style="b(underline)"
+                data-h2-margin="b(bottom, xl) b(top, m)"
+                data-h2-radius="b(s)"
+                data-h2-font-size="b(caption) m(normal)"
+                data-h2-text-align="b(center)"
                 title={intl.formatMessage({
                   defaultMessage: "Share with someone new",
                 })}
               >
-                <Button
-                  color="blue"
-                  mode="solid"
-                  data-h2-padding="b(top-bottom, s) b(left-right, s)"
-                  data-h2-font-style="b(underline)"
-                  data-h2-margin="b(bottom, xl) b(top, m)"
-                  block
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Share with someone new",
-                  })}
-                </Button>
+                {intl.formatMessage({
+                  defaultMessage: "Share with someone new",
+                })}
               </a>
             </Link>
 

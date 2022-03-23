@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../../components/Button";
+import Button, { colorMap } from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Links from "../../components/Links";
@@ -119,16 +119,15 @@ const Situations: React.FunctionComponent = () => {
                       <Card id={title} key={title} title={title}>
                         {buttons.map(({ link, title }) => (
                           <Link href={link} key={title}>
-                            <a title={title}>
-                              <Button
-                                color="white"
-                                mode="solid"
-                                data-h2-margin="b(right, s)"
-                                data-h2-font-style="b(underline)"
-                                data-h2-font-size="b(caption)"
-                              >
-                                {title}
-                              </Button>
+                            <a
+                              {...colorMap["white"]["solid"]}
+                              data-h2-margin="b(right, s)"
+                              data-h2-font-style="b(underline)"
+                              data-h2-font-size="b(caption)"
+                              data-h2-radius="b(s)"
+                              title={title}
+                            >
+                              {title}
                             </a>
                           </Link>
                         ))}
@@ -161,16 +160,15 @@ const Situations: React.FunctionComponent = () => {
                       <Card id={title} key={title} title={title}>
                         {buttons.map(({ link, title }) => (
                           <Link href={link} key={title}>
-                            <a title={title}>
-                              <Button
-                                color="white"
-                                mode="solid"
-                                data-h2-margin="b(right, s)"
-                                data-h2-font-style="b(underline)"
-                                data-h2-font-size="b(caption)"
-                              >
-                                {title}
-                              </Button>
+                            <a
+                              {...colorMap["white"]["solid"]}
+                              data-h2-margin="b(right, s)"
+                              data-h2-font-style="b(underline)"
+                              data-h2-font-size="b(caption)"
+                              data-h2-radius="b(s)"
+                              title={title}
+                            >
+                              {title}
                             </a>
                           </Link>
                         ))}

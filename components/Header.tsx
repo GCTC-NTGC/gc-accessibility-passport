@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
 import useUser from "../lib/useUser";
-import Button from "./Button";
+import Button, { colorMap } from "./Button";
 import Nav from "./Nav";
 
 interface Header {
@@ -63,7 +63,7 @@ const Header: React.FunctionComponent<Header> = ({
           data-h2-text-align="b(center) m(right)"
         >
           <Link href={`/${pathname}`} locale={locale === "en" ? "fr" : "en"}>
-            {locale === "en" ? "English" : "Français"}
+            {locale === "en" ? "Français" : "English"}
           </Link>
         </div>
       </div>
@@ -93,14 +93,14 @@ const Header: React.FunctionComponent<Header> = ({
             </h1>
             {editButton && (
               <Link href={editButton.link} key={editButton.title}>
-                <a title={editButton.title}>
-                  <Button
-                    color="blue"
-                    mode="outline"
-                    data-h2-padding="b(top-bottom, s) b(right-left, m)"
-                  >
-                    {editButton.title}
-                  </Button>
+                <a
+                  data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                  data-h2-radius="b(s)"
+                  data-h2-font-size="b(caption) m(normal)"
+                  {...colorMap["blue"]["outline"]}
+                  title={editButton.title}
+                >
+                  {editButton.title}
                 </a>
               </Link>
             )}

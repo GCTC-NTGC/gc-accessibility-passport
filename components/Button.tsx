@@ -11,7 +11,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   block?: boolean;
 }
 
-const colorMap: Record<
+export const colorMap: Record<
   "blue" | "lightblue" | "darkblue" | "white",
   Record<"solid" | "outline" | "inline", Record<string, string>>
 > = {

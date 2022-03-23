@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
+import Button, { colorMap } from "../components/Button";
 import Layout from "../components/Layout";
 import Links from "../components/Links";
 import Page, { SectionOne, SectionTwo } from "../components/Page";
@@ -117,17 +117,18 @@ const Passport: React.FunctionComponent = () => {
                 >
                   {buttons.map(({ title, link }, index) => (
                     <Link href={link} key={title}>
-                      <a title={title}>
-                        <Button
-                          color={index === 0 ? "blue" : "darkblue"}
-                          mode="solid"
-                          data-h2-padding="b(top-bottom, s) b(right-left, m)"
-                          data-h2-margin="b(bottom, xxs)"
-                          data-h2-font-style="b(underline)"
-                          block
-                        >
-                          {title}
-                        </Button>
+                      <a
+                        data-h2-radius="b(s)"
+                        data-h2-font-size="b(caption) m(normal)"
+                        data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                        data-h2-margin="b(bottom, xxs)"
+                        data-h2-font-style="b(underline)"
+                        {...colorMap[index === 0 ? "blue" : "darkblue"][
+                          "solid"
+                        ]}
+                        title={title}
+                      >
+                        {title}
                       </a>
                     </Link>
                   ))}
