@@ -20,7 +20,6 @@ const Nav: React.FunctionComponent = () => {
     <nav
       data-h2-position="b(relative)"
       data-h2-display="b(flex)"
-      data-h2-flex-direction="b(column)"
       data-h2-justify-content="b(space-between)"
       data-h2-margin="b(right-left, l)"
     >
@@ -29,71 +28,67 @@ const Nav: React.FunctionComponent = () => {
         data-h2-justify-content="b(center) s(space-between)"
         data-h2-flex-wrap="b(wrap)"
       >
-        <div
-          data-h2-display="b(flex)"
-          data-h2-justify-content="b(center) s(space-between)"
-          data-h2-flex-wrap="b(wrap)"
-        >
-          <li data-h2-margin="b(all, s) b(left, none)">
-            <Link href="/">
-              <a {...(pathname === "/" && activeLink)}>
-                {intl.formatMessage({
-                  defaultMessage: "Home",
-                  description: "Home nav link.",
-                })}
-              </a>
-            </Link>
-          </li>
-          {user?.isLoggedIn === true && (
-            <>
-              <li data-h2-margin="b(all, s)">
-                <Link href="/passport">
-                  <a {...(pathname === "/passport" && activeLink)}>
-                    {intl.formatMessage({
-                      defaultMessage: "My passport",
-                    })}
-                  </a>
-                </Link>
-              </li>
-              <li data-h2-margin="b(all, s)">
-                <Link href="/situations">
-                  <a {...(pathname === "/situations" && activeLink)}>
-                    {intl.formatMessage({
-                      defaultMessage: "My situations",
-                    })}
-                  </a>
-                </Link>
-              </li>
-              <li data-h2-margin="b(all, s)">
-                <Link href="/barriers">
-                  <a {...(pathname === "/barriers" && activeLink)}>
-                    {intl.formatMessage({
-                      defaultMessage: "My barriers",
-                    })}
-                  </a>
-                </Link>
-              </li>
-              <li data-h2-margin="b(all, s)">
-                <Link href="/solutions">
-                  <a {...(pathname === "/solutions" && activeLink)}>
-                    {intl.formatMessage({
-                      defaultMessage: "My solutions",
-                    })}
-                  </a>
-                </Link>
-              </li>
-              <li data-h2-margin="b(all, s)">
-                <Link href="/documents">
-                  <a {...(pathname === "/documents" && activeLink)}>
-                    {intl.formatMessage({
-                      defaultMessage: "My documents",
-                    })}
-                  </a>
-                </Link>
-              </li>
-            </>
-          )}
-        </div>
+        <li data-h2-margin="b(all, s) b(left, none)">
+          <Link href="/">
+            <a {...(pathname === "/" && activeLink)}>
+              {intl.formatMessage({
+                defaultMessage: "Home",
+                description: "Home nav link.",
+              })}
+            </a>
+          </Link>
+        </li>
+        {user?.isLoggedIn === true && (
+          <>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/passport">
+                <a {...(pathname === "/passport" && activeLink)}>
+                  {intl.formatMessage({
+                    defaultMessage: "My passport",
+                  })}
+                </a>
+              </Link>
+            </li>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/situations">
+                <a {...(pathname === "/situations" && activeLink)}>
+                  {intl.formatMessage({
+                    defaultMessage: "My situations",
+                  })}
+                </a>
+              </Link>
+            </li>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/barriers">
+                <a {...(pathname === "/barriers" && activeLink)}>
+                  {intl.formatMessage({
+                    defaultMessage: "My barriers",
+                  })}
+                </a>
+              </Link>
+            </li>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/solutions">
+                <a {...(pathname === "/solutions" && activeLink)}>
+                  {intl.formatMessage({
+                    defaultMessage: "My solutions",
+                  })}
+                </a>
+              </Link>
+            </li>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/documents">
+                <a {...(pathname === "/documents" && activeLink)}>
+                  {intl.formatMessage({
+                    defaultMessage: "My documents",
+                  })}
+                </a>
+              </Link>
+            </li>
+          </>
+        )}
+      </ul>
+      <ul>
         {user?.isLoggedIn === true && (
           <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
