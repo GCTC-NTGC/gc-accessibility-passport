@@ -8,7 +8,7 @@ import Page, { SectionOne, SectionTwo } from "../components/Page";
 import useUser from "../lib/useUser";
 
 const Passport: React.FunctionComponent = () => {
-  useUser({
+  const { user } = useUser({
     redirectTo: "/login",
     redirectIfFound: false,
   });
@@ -87,7 +87,9 @@ const Passport: React.FunctionComponent = () => {
 
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "Welcome back, Jake" })}
+      title={`${intl.formatMessage({ defaultMessage: "Welcome back" })}, ${
+        user?.name
+      }`}
       headTitle={intl.formatMessage({ defaultMessage: "My passport" })}
     >
       <Page>

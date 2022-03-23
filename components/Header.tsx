@@ -18,7 +18,7 @@ const Header: React.FunctionComponent<Header> = ({
   editButton,
   center,
 }) => {
-  const { user, mutateUser } = useUser();
+  const { user } = useUser();
   const intl = useIntl();
   const { locale, pathname } = useRouter();
   // TODO: Replace links with button wrapped in anchor tag.
@@ -49,7 +49,6 @@ const Header: React.FunctionComponent<Header> = ({
           >
             <Image
               src="/logo_goc_colour.svg"
-              // layout="fill"
               alt={intl.formatMessage({
                 defaultMessage: "Canada's Logo.",
                 description: "Alt text for the Canada logo in the Header.",
@@ -57,14 +56,6 @@ const Header: React.FunctionComponent<Header> = ({
               width="300"
               height="30"
             />
-            {/* <img
-              style={{ width: "20rem" }}
-              src={"logo_goc_colour.svg"}
-              alt={intl.formatMessage({
-                defaultMessage: "Canada's Logo.",
-                description: "Alt text for the Canada logo in the Header.",
-              })}
-            /> */}
           </a>
         </div>
         <div
@@ -88,7 +79,6 @@ const Header: React.FunctionComponent<Header> = ({
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(right-left, xl)"
             data-h2-display="b(flex)"
-            // data-h2-justify-content="b(space-between)"
             {...(center
               ? { "data-h2-justify-content": "b(center)" }
               : { "data-h2-justify-content": "b(space-between)" })}

@@ -4,8 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export type User = {
   isLoggedIn: boolean;
-  login: string;
-  avatarUrl: string;
+  name: string;
 };
 
 export default withIronSessionApiRoute(userRoute, sessionOptions);
@@ -24,8 +23,7 @@ async function userRoute(
   } else {
     res.json({
       isLoggedIn: false,
-      login: "",
-      avatarUrl: "",
+      name: "",
     });
   }
 }

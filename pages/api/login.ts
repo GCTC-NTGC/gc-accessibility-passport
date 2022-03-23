@@ -1,10 +1,8 @@
 import type { User } from "./user";
-
 import { Octokit } from "octokit";
 import { withIronSessionApiRoute } from "iron-session/next";
 import { sessionOptions } from "../../lib/session";
 import { NextApiRequest, NextApiResponse } from "next";
-const octokit = new Octokit();
 
 export default withIronSessionApiRoute(loginRoute, sessionOptions);
 
@@ -12,14 +10,10 @@ async function loginRoute(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
-  const { username } = await req.body;
+  const { name } = await req.body;
 
   try {
-    const {
-      data: { login, avatar_url },
-    } = await octokit.rest.users.getByUsername({ username });
-
-    const user = { isLoggedIn: true, login, avatarUrl: avatar_url } as User;
+    const user = { isLoggedIn: true, name } as User;
     req.session.user = user;
     await req.session.save();
     res.json(user);

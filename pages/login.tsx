@@ -3,12 +3,13 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import { Input, Submit } from "../components/formComponents";
 import Layout from "../components/Layout";
+import Page from "../components/Page";
 import fetchJson, { FetchError } from "../lib/fetchJson";
 import useUser from "../lib/useUser";
 import { errorMessages } from "../messages";
 
 type FormValues = {
-  username: string;
+  name: string;
 };
 
 const Login: React.FunctionComponent = () => {
@@ -24,7 +25,7 @@ const Login: React.FunctionComponent = () => {
   const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     const body = {
-      username: data.username,
+      name: data.name,
     };
 
     try {
@@ -51,26 +52,40 @@ const Login: React.FunctionComponent = () => {
         description: "Heading for login page.",
       })}
     >
-      <section data-h2-container="b(center, s)">
-        <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Input
-              id="username"
-              name="username"
-              type="text"
-              label={intl.formatMessage({ defaultMessage: "Username" })}
-              rules={{
-                required: intl.formatMessage(errorMessages.required),
-              }}
-            />
-            <Submit
-              data-h2-padding="b(top-bottom, s) b(right-left, m)"
-              data-h2-margin="b(top, s)"
-              data-h2-font-style="b(underline)"
-            />
-          </form>
-        </FormProvider>
-      </section>
+      <Page
+        data-h2-justify-content="b(center)"
+        data-h2-flex-direction="b(column)"
+      >
+        <div data-h2-width="s(50)" style={{ margin: "auto" }}>
+          <FormProvider {...methods}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                label={intl.formatMessage({ defaultMessage: "Name" })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+              />
+              <Input
+                id="email"
+                name="email"
+                type="text"
+                label={intl.formatMessage({ defaultMessage: "Email" })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+              />
+              <Submit
+                data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                data-h2-margin="b(top, s)"
+                data-h2-font-style="b(underline)"
+              />
+            </form>
+          </FormProvider>
+        </div>
+      </Page>
     </Layout>
   );
 };

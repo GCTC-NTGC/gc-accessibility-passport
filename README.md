@@ -32,3 +32,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+TODO:
+
+- [x] Add missing upload file input to document form.
+- [x] Ensure all links connect to correct page.
+- [x] Ensure all copy is correct on each page.
+- [ ] Start accessibility testing. Running lighthouse. Run through accessibility checklist resource Josh sent.
