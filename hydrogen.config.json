@@ -20,10 +20,6 @@
       "color": "#1E1E23"
     },
     {
-      "key": "gray",
-      "color": "#B9B9B9"
-    },
-    {
       "key": "darkgray",
       "color": "#646464"
     },
@@ -43,44 +39,16 @@
       ]
     },
     {
-      "key": "gold",
-      "color": "#F9C160",
-      "opacities": [
-        ".1"
-      ]
+      "key": "blue",
+      "color": "#22598A"
     },
     {
-      "key": "darkgold",
-      "color": "#F8A812",
-      "opacities": [
-        ".1"
-      ]
+      "key": "lightblue",
+      "color": "#E8F2FB"
     },
     {
-      "key": "lightgold",
-      "color": "#FBDCA5"
-    },
-    {
-      "key": "darknavy",
-      "color": "#072131"
-    },
-    {
-      "key": "lightnavy",
-      "color": "#1D2C4C",
-      "opacities": [
-        ".1"
-      ]
-    },
-    {
-      "key": "darkpurple",
-      "color": "#363661"
-    },
-    {
-      "key": "lightpurple",
-      "color": "#674C90",
-      "opacities": [
-        ".1"
-      ]
+      "key": "darkblue",
+      "color": "#06335B"
     }
   ],
   "flexgrid": {
@@ -97,22 +65,6 @@
   ],
   "fontBaseSize": "112.5%",
   "fontScale": "1.25",
-  "gradients": [
-    {
-      "type": "linear",
-      "angle": "70deg",
-      "colorStops": [
-        {
-          "key": "lightpurple",
-          "color": "#674C90"
-        },
-        {
-          "key": "lightnavy",
-          "color": "#1D2C4C"
-        }
-      ]
-    }
-  ],
   "radius": [
     {
       "key": "s",

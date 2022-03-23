@@ -46,6 +46,7 @@ export const Tab: React.FC<TabProps> = ({
   isTabSelected,
   onSelect,
   onToggleOpen,
+  ...rest
 }): React.ReactElement => {
   // start by calculating the icon to show
   let effectiveIcon;
@@ -98,7 +99,7 @@ export const Tab: React.FC<TabProps> = ({
   // build the data attribute collection for this tab
   const tabAttributes: Record<string, unknown> = {
     // margin & padding same for each tab
-    "data-h2-padding": "b(top-bottom, xs) b(right-left, s)",
+    "data-h2-padding": "b(top-bottom, xs) b(left, s)",
     // the *end* layout needs this margin to push it to the right
     ...(placement === "end" && { "data-h2-margin": "b(left, auto)" }),
     // styles based on active/inactive
@@ -121,6 +122,7 @@ export const Tab: React.FC<TabProps> = ({
             onKeyPress={onSelect}
             style={{ cursor: "pointer" }}
             {...tabAttributes}
+            {...rest}
           >
             {label}
           </a>
@@ -136,6 +138,7 @@ export const Tab: React.FC<TabProps> = ({
           onKeyPress={onToggleOpen}
           style={{ cursor: "pointer" }}
           {...tabAttributes}
+          {...rest}
         >
           {label}
         </a>
@@ -144,7 +147,11 @@ export const Tab: React.FC<TabProps> = ({
 
     default:
       // just a text label
-      assembledTab = <div {...tabAttributes}>{label}</div>;
+      assembledTab = (
+        <div {...tabAttributes} {...rest}>
+          {label}
+        </div>
+      );
   }
 
   return assembledTab;

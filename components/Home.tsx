@@ -10,7 +10,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">
         <div
-          data-h2-border="s(darknavy, right, solid, s)"
+          data-h2-border="s(darkblue, right, solid, s)"
           data-h2-padding="b(right-left, l) b(top-bottom, l)"
           data-h2-bg-color="b(lightgray)"
           style={{ flexGrow: 2 }}
@@ -30,7 +30,7 @@ const Home: React.FunctionComponent<HomeProps> = (props) => {
         </div>
         <div
           data-h2-padding="b(right-left, l) b(top-bottom, l)"
-          data-h2-bg-color="b([light]lightnavy[.1])"
+          data-h2-bg-color="b(lightblue)"
           style={{ flexGrow: 1 }}
         >
           <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">

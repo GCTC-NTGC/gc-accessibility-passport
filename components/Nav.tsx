@@ -16,7 +16,7 @@ const Nav: React.FunctionComponent = () => {
       data-h2-display="b(flex)"
       data-h2-flex-direction="b(column)"
       data-h2-justify-content="b(space-between)"
-      data-h2-margin="b(right-left, xl)"
+      data-h2-margin="b(right-left, l)"
     >
       <ul
         data-h2-display="b(flex)"
@@ -28,7 +28,7 @@ const Nav: React.FunctionComponent = () => {
           data-h2-justify-content="b(center) s(space-between)"
           data-h2-flex-wrap="b(wrap)"
         >
-          <li data-h2-margin="b(all, m) b(left, none)">
+          <li data-h2-margin="b(all, s) b(left, none)">
             <Link href="/">
               <a>
                 {intl.formatMessage({
@@ -40,32 +40,47 @@ const Nav: React.FunctionComponent = () => {
           </li>
           {user?.isLoggedIn === true && (
             <>
-              <li data-h2-margin="b(all, m)">
+              <li data-h2-margin="b(all, s)">
                 <Link href="/passport">
                   <a>
                     {intl.formatMessage({
                       defaultMessage: "My passport",
-                      description: "My passport nav link.",
                     })}
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
-                <Link href="/share">
+              <li data-h2-margin="b(all, s)">
+                <Link href="/situations">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "Share my barriers",
-                      description: "Share my barriers nav link.",
+                      defaultMessage: "My situations",
                     })}
                   </a>
                 </Link>
               </li>
-              <li data-h2-margin="b(all, m)">
-                <Link href="/sharedWithMe">
+              <li data-h2-margin="b(all, s)">
+                <Link href="/barriers">
                   <a>
                     {intl.formatMessage({
-                      defaultMessage: "Barriers shared with me",
-                      description: "Barriers shared with me nav link.",
+                      defaultMessage: "My barriers",
+                    })}
+                  </a>
+                </Link>
+              </li>
+              <li data-h2-margin="b(all, s)">
+                <Link href="/solutions">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "My solutions",
+                    })}
+                  </a>
+                </Link>
+              </li>
+              <li data-h2-margin="b(all, s)">
+                <Link href="/documents">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "My documents",
                     })}
                   </a>
                 </Link>
@@ -74,7 +89,7 @@ const Nav: React.FunctionComponent = () => {
           )}
         </div>
         {user?.isLoggedIn === true && (
-          <li data-h2-margin="b(all, m)">
+          <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             <a
               href="/api/logout"
@@ -95,7 +110,7 @@ const Nav: React.FunctionComponent = () => {
           </li>
         )}
         {user?.isLoggedIn === false && (
-          <li data-h2-margin="b(all, m)">
+          <li data-h2-margin="b(all, s)">
             <Link href="/login">
               <a>
                 {intl.formatMessage({
