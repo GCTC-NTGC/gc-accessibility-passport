@@ -85,6 +85,9 @@ const Barrier: React.FunctionComponent = () => {
         title: intl.formatMessage({ defaultMessage: "Edit this barrier" }),
         link: "edit",
       }}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Example Barrier #1 - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

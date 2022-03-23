@@ -70,6 +70,9 @@ const Edit: React.FunctionComponent = () => {
     <Layout
       center
       title={intl.formatMessage({ defaultMessage: "Create/edit a solution" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Create/Edit a Solution - GC Accessibility Passport",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"

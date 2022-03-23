@@ -39,6 +39,9 @@ const Share: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "Share my work situations" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Share My Work Situations - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

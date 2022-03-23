@@ -51,6 +51,9 @@ const Login: React.FunctionComponent = () => {
         defaultMessage: "Login",
         description: "Heading for login page.",
       })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Login - GC Accessibility Passport",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"

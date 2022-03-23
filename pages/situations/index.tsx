@@ -75,7 +75,12 @@ const Situations: React.FunctionComponent = () => {
     },
   ];
   return (
-    <Layout title={intl.formatMessage({ defaultMessage: "My situations" })}>
+    <Layout
+      title={intl.formatMessage({ defaultMessage: "My situations" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "My Situations - GC Accessibility Passport",
+      })}
+    >
       <Page>
         <SectionOne>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">

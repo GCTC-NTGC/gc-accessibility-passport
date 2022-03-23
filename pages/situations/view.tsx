@@ -89,6 +89,9 @@ const Situation: React.FunctionComponent = () => {
         }),
         link: "edit",
       }}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Example Work Situation #1 - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

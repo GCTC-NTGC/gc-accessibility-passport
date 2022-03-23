@@ -71,6 +71,9 @@ const Documents: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "My documents and files" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "My Documents and Files - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

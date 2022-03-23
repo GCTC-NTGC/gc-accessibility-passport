@@ -85,6 +85,9 @@ const Solution: React.FunctionComponent = () => {
         title: intl.formatMessage({ defaultMessage: "Edit this solution" }),
         link: "edit",
       }}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Example Solution #1 - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

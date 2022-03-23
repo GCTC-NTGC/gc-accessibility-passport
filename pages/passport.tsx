@@ -96,7 +96,9 @@ const Passport: React.FunctionComponent = () => {
       title={`${intl.formatMessage({ defaultMessage: "Welcome back" })}, ${
         user?.name
       }`}
-      headTitle={intl.formatMessage({ defaultMessage: "My passport" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "My Passport - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

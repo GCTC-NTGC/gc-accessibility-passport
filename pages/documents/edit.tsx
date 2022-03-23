@@ -70,6 +70,9 @@ const Edit: React.FunctionComponent = () => {
     <Layout
       center
       title={intl.formatMessage({ defaultMessage: "Upload a file/document" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Upload a File/Document - GC Accessibility Passport",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"

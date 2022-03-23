@@ -85,6 +85,9 @@ const Document: React.FunctionComponent = () => {
         title: intl.formatMessage({ defaultMessage: "Edit this file" }),
         link: "edit",
       }}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Edit File #1 - GC Accessibility Passport",
+      })}
     >
       <Page>
         <SectionOne>

@@ -20,6 +20,10 @@ const ShareForm: React.FunctionComponent = () => {
       title={intl.formatMessage({
         defaultMessage: "Share “Example work situation #1”",
       })}
+      headTitle={intl.formatMessage({
+        defaultMessage:
+          "Share Example Work Situation #1 - GC Accessibility Passport",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"

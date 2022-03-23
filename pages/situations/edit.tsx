@@ -72,6 +72,10 @@ const Edit: React.FunctionComponent = () => {
       title={intl.formatMessage({
         defaultMessage: "Create/edit a work situation",
       })}
+      headTitle={intl.formatMessage({
+        defaultMessage:
+          "Create/Edit a Work Situation - GC Accessibility Passport",
+      })}
     >
       <Page
         data-h2-justify-content="b(center)"

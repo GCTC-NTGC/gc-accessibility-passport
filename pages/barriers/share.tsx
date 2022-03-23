@@ -31,7 +31,12 @@ const Share: React.FunctionComponent = () => {
     },
   ];
   return (
-    <Layout title={intl.formatMessage({ defaultMessage: "Share my barriers" })}>
+    <Layout
+      title={intl.formatMessage({ defaultMessage: "Share my barriers" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "Share My Barriers - GC Accessibility Passport",
+      })}
+    >
       <Page>
         <SectionOne>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">

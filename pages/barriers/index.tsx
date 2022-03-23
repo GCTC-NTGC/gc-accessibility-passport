@@ -64,7 +64,12 @@ const Barriers: React.FunctionComponent = () => {
     },
   ];
   return (
-    <Layout title={intl.formatMessage({ defaultMessage: "My barriers" })}>
+    <Layout
+      title={intl.formatMessage({ defaultMessage: "My barriers" })}
+      headTitle={intl.formatMessage({
+        defaultMessage: "My Barriers - GC Accessibility Passport",
+      })}
+    >
       <Page>
         <SectionOne>
           <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
