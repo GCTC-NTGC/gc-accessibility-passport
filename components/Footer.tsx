@@ -141,8 +141,8 @@ export const Footer: React.FunctionComponent = () => {
                     defaultMessage: "Canada's Logo.",
                     description: "Alt text for the Canada logo in the Footer.",
                   })}
-                  width="170rem"
-                  height="50rem"
+                  width="250"
+                  height="70"
                 />
               </a>
             </Link>
