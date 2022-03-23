@@ -36,6 +36,7 @@ const Header: React.FunctionComponent<Header> = ({
         <div
           data-h2-flex-item="b(1of1) m(1of2)"
           data-h2-text-align="b(center) m(left)"
+          data-h2-position="b(relative)"
         >
           <a
             href={`https://www.canada.ca/${locale}.html`}
@@ -46,14 +47,24 @@ const Header: React.FunctionComponent<Header> = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
+              src="/logo_goc_colour.svg"
+              // layout="fill"
+              alt={intl.formatMessage({
+                defaultMessage: "Canada's Logo.",
+                description: "Alt text for the Canada logo in the Header.",
+              })}
+              width="300"
+              height="30"
+            />
+            {/* <img
               style={{ width: "20rem" }}
               src={"logo_goc_colour.svg"}
               alt={intl.formatMessage({
                 defaultMessage: "Canada's Logo.",
                 description: "Alt text for the Canada logo in the Header.",
               })}
-            />
+            /> */}
           </a>
         </div>
         <div
@@ -69,6 +80,7 @@ const Header: React.FunctionComponent<Header> = ({
         <Image
           src={`${pathname === "/" ? "/beach.png" : "/waves.jpg"}`}
           layout="fill"
+          alt=""
         />
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
@@ -87,11 +99,7 @@ const Header: React.FunctionComponent<Header> = ({
               data-h2-margin="b(all, none) b(left, m)"
               data-h2-font-weight="b(600)"
             >
-              {title ??
-                intl.formatMessage({
-                  defaultMessage: "Welcome back, Jake",
-                  description: "Heading for rest of pages.",
-                })}
+              {title}
             </h1>
             {editButton && (
               <Link href={editButton.link} key={editButton.title}>
@@ -109,7 +117,7 @@ const Header: React.FunctionComponent<Header> = ({
           </div>
         ) : (
           <>
-            {pathname === ("/login" || "register") ? (
+            {pathname === ("/login" || "/register") ? (
               <div
                 data-h2-position="b(relative)"
                 data-h2-padding="b(all, m) s(left, xl)"
@@ -157,7 +165,7 @@ const Header: React.FunctionComponent<Header> = ({
                     </Link>
                   </div>
                   <div {...homeLinksStyling}>
-                    <Link href="/">
+                    <Link href="/login">
                       <a>
                         {intl.formatMessage({
                           defaultMessage: "Sign in",

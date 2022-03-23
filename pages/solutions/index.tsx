@@ -7,10 +7,13 @@ import Layout from "../../components/Layout";
 import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
+import useUser from "../../lib/useUser";
 
-interface SolutionsProps {}
-
-const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
+const Solutions: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const solutions = [
     {
@@ -22,11 +25,11 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },
@@ -35,15 +38,15 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },
@@ -52,15 +55,15 @@ const Solutions: React.FunctionComponent<SolutionsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/solutions/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/solutions/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/solutions/edit",
         },
       ],
     },

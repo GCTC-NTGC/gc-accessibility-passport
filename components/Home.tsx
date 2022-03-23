@@ -1,10 +1,7 @@
-import Image from "next/image";
 import * as React from "react";
 import { useIntl } from "react-intl";
 
-interface HomeProps {}
-
-const Home: React.FunctionComponent<HomeProps> = (props) => {
+const Home: React.FunctionComponent = () => {
   const intl = useIntl();
   return (
     <section>

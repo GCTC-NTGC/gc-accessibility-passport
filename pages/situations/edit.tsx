@@ -5,12 +5,15 @@ import Alert from "../../components/Alert";
 import EditForm from "../../components/EditForm";
 import { Checklist, Input, TextArea } from "../../components/formComponents";
 import Layout from "../../components/Layout";
-import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import Page from "../../components/Page";
+import useUser from "../../lib/useUser";
 import { errorMessages } from "../../messages";
 
-interface EditProps {}
-
-const Edit: React.FunctionComponent<EditProps> = (props) => {
+const Edit: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
 
   const examples = [
@@ -38,6 +41,7 @@ const Edit: React.FunctionComponent<EditProps> = (props) => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more barriers...",
       }),
+      name: "barriers",
     },
     {
       title: intl.formatMessage({ defaultMessage: "Link to solutions" }),
@@ -48,6 +52,7 @@ const Edit: React.FunctionComponent<EditProps> = (props) => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more solutions...",
       }),
+      name: "solutions",
     },
     {
       title: intl.formatMessage({ defaultMessage: "Link to documents" }),
@@ -58,6 +63,7 @@ const Edit: React.FunctionComponent<EditProps> = (props) => {
       legend: intl.formatMessage({
         defaultMessage: "Select one or more documents...",
       }),
+      name: "documents",
     },
   ];
   return (
@@ -106,16 +112,16 @@ const Edit: React.FunctionComponent<EditProps> = (props) => {
                 }}
                 rows={10}
               />
-              {checklists.map(({ legend, description, title }) => (
+              {checklists.map(({ legend, description, title, name }) => (
                 <div key={title} data-h2-margin="b(top-bottom, xl)">
                   <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
                     {title}
                   </h2>
                   <p>{description}</p>
                   <Checklist
-                    idPrefix="examples"
+                    idPrefix={name}
                     legend={legend}
-                    name="examples"
+                    name={name}
                     items={examples}
                   />
                 </div>

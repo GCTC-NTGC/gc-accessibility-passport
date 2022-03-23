@@ -17,10 +17,12 @@ type FormValues = {
 
 const EditForm: React.FunctionComponent<EditFormProps> = ({ children }) => {
   const intl = useIntl();
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {};
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+    push(`/${pathname.split("/")[1]}`);
+  };
 
   return (
     <section data-h2-margin="b(bottom, xl)">

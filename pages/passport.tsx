@@ -3,179 +3,140 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
-import useBarriers from "../lib/useBarriers";
+import Links from "../components/Links";
+import Page, { SectionOne, SectionTwo } from "../components/Page";
 import useUser from "../lib/useUser";
 
-const HomePage: React.FunctionComponent = () => {
-  const { user } = useUser({
+const Passport: React.FunctionComponent = () => {
+  useUser({
     redirectTo: "/login",
     redirectIfFound: false,
   });
-  const { barriers = [] } = useBarriers();
   const intl = useIntl();
+
   const tools = [
     {
-      title: intl.formatMessage({ defaultMessage: "My barriers" }),
-      link: "",
+      title: intl.formatMessage({ defaultMessage: "Situations" }),
+      buttons: [
+        {
+          title: intl.formatMessage({ defaultMessage: "Identify a situation" }),
+          link: "/situations/edit",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "View my situations" }),
+          link: "/situations",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "Share my situations" }),
+          link: "/situations/share",
+        },
+      ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Share my barriers" }),
-      link: "",
+      title: intl.formatMessage({ defaultMessage: "Barriers" }),
+      buttons: [
+        {
+          title: intl.formatMessage({ defaultMessage: "Identify a barrier" }),
+          link: "/barriers/edit",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "View my barriers" }),
+          link: "/barriers",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "Share my barriers" }),
+          link: "/barriers/share",
+        },
+      ],
     },
     {
-      title: intl.formatMessage({
-        defaultMessage: "Review barriers shared with me",
-      }),
-      link: "",
+      title: intl.formatMessage({ defaultMessage: "Solutions" }),
+      buttons: [
+        {
+          title: intl.formatMessage({ defaultMessage: "Identify a solution" }),
+          link: "/solutions/edit",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "View my solutions" }),
+          link: "/solutions",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "Share my solutions" }),
+          link: "/solutions/share",
+        },
+      ],
     },
     {
-      title: intl.formatMessage({ defaultMessage: "Download my passport" }),
-      link: "",
+      title: intl.formatMessage({ defaultMessage: "Documents" }),
+      buttons: [
+        {
+          title: intl.formatMessage({ defaultMessage: "Upload a document" }),
+          link: "/documents/edit",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "View my documents" }),
+          link: "/documents",
+        },
+        {
+          title: intl.formatMessage({ defaultMessage: "Share my documents" }),
+          link: "/documents/share",
+        },
+      ],
     },
   ];
+
   return (
-    <Layout>
-      <section
-        data-h2-display="b(flex)"
-        data-h2-flex-direction="b(column) s(row)"
-        data-h2-padding="b(top-bottom, xl)"
-      >
-        <div
-          data-h2-padding="b(right-left, l) b(top-bottom, none)"
-          data-h2-border="s(black, right, solid, s)"
-          style={{ flex: 3 }}
-        >
-          <div>
-            <h2 data-h2-margin="b(all, none)">
-              {intl.formatMessage({ defaultMessage: "Tools" })}
-            </h2>
-            <div data-h2-display="b(flex)" data-h2-flex-wrap="b(wrap)">
-              {tools.map(({ title, link }) => (
-                <Link key={title} href={link}>
-                  <a title={title} data-h2-margin="b(top, s) b(right, s)">
-                    <Button
-                      color="secondary"
-                      mode="solid"
-                      data-h2-font-style="b(underline)"
-                    >
-                      {title}
-                    </Button>
-                  </a>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div data-h2-display="b(flex)" data-h2-flex-direction="b(column)">
-            <h2>{intl.formatMessage({ defaultMessage: "My barriers" })}</h2>
-            <p>
-              {intl.formatMessage({
-                defaultMessage:
-                  "Below you can check and manage any of the barriers you’ve added to your passport. Clicking on a barrier will take you to a detailed page that showcases your solutions to that barrier, as well as its history over the course of your passport’s lifetime. You can also learn more about what constitutes a barrier.",
-              })}
-            </p>
-            <Button
-              color="secondary"
-              mode="outline"
-              data-h2-border="b(lightblue, all, dashed, s)"
-              data-h2-margin="b(bottom, s)"
-              data-h2-font-style="b(underline)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Click to add a new barrier to your profile",
-              })}
-            </Button>
-            {barriers.map(({ id, title, updates }) => (
-              <div
-                key={id}
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(space-between)"
-                data-h2-align-items="b(center)"
-                data-h2-shadow="b(m)"
-                data-h2-radius="b(s)"
-                data-h2-padding="b(top-bottom, xs) b(right-left, xxs)"
-                data-h2-margin="b(bottom, m)"
-              >
-                <p data-h2-margin="b(all, s)">{title}</p>
+    <Layout
+      title={intl.formatMessage({ defaultMessage: "Welcome back, Jake" })}
+      headTitle={intl.formatMessage({ defaultMessage: "My passport" })}
+    >
+      <Page>
+        <SectionOne>
+          <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
+            {intl.formatMessage({ defaultMessage: "Passport tools" })}
+          </h2>
+          <div data-h2-display="b(flex)" data-h2-flex-wrap="b(wrap)">
+            {tools.map(({ title, buttons }) => (
+              <div key={title} data-h2-margin="b(right, m)">
+                <h3 data-h2-font-size="b(h4)" data-h2-font-weight="b(600)">
+                  {title}
+                </h3>
                 <div
                   data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-align-items="b(center)"
+                  data-h2-flex-direction="b(column)"
                 >
-                  <p data-h2-margin="b(all, s)">
-                    {intl.formatMessage(
-                      { defaultMessage: "{updates} updates" },
-                      { updates },
-                    )}
-                  </p>
-                  <Link href={`/barrier/{id}`}>
-                    <a data-h2-margin="b(right, s)">
-                      {intl.formatMessage({ defaultMessage: "Check details" })}
-                    </a>
-                  </Link>
+                  {buttons.map(({ title, link }, index) => (
+                    <Link href={link} key={title}>
+                      <a title={title}>
+                        <Button
+                          color={index === 0 ? "blue" : "darkblue"}
+                          mode="solid"
+                          data-h2-padding="b(top-bottom, s) b(right-left, m)"
+                          data-h2-margin="b(bottom, xxs)"
+                          data-h2-font-style="b(underline)"
+                          block
+                        >
+                          {title}
+                        </Button>
+                      </a>
+                    </Link>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
-        </div>
-        <div
-          data-h2-padding="b(right-left, l) b(top-bottom, none)"
-          style={{ flex: 2 }}
-        >
-          <div data-h2-display="b(flex)" data-h2-flex-direction="b(column)">
-            <div
-              data-h2-display="b(flex)"
-              data-h2-align-items="b(center)"
-              data-h2-justify-content="b(space-between)"
-            >
-              <h3 data-h2-margin="b(all, none) b(right, s)">
-                {intl.formatMessage({ defaultMessage: "Notifications" })}
-              </h3>
-              <Link href={`/notifications`}>
-                <a data-h2->
-                  {intl.formatMessage({
-                    defaultMessage: "View all notifications",
-                  })}
-                </a>
-              </Link>
-            </div>
-            {[1, 2, 3].map((id) => (
-              <div
-                key={id}
-                data-h2-display="b(flex)"
-                data-h2-flex-direction="b(column)"
-                data-h2-border="b(black, bottom, solid, s)"
-              >
-                <p>date</p>
-                <p>replace with notification</p>
-                <Button
-                  color="white"
-                  mode="inline"
-                  data-h2-font-color="b(black)"
-                  data-h2-font-style="b(underline)"
-                  data-h2-font-size="b(caption)"
-                  data-h2-text-align="b(right)"
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Mark as read",
-                  })}
-                </Button>
-              </div>
-            ))}
-            <Button
-              color="secondary"
-              mode="outline"
-              data-h2-margin="b(top, m)"
-              data-h2-font-style="b(underline)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Mark all as read",
-              })}
-            </Button>
+        </SectionOne>
+        <SectionTwo>
+          <h2 data-h2-margin="b(all, none)" data-h2-font-size="b(h3)">
+            {intl.formatMessage({ defaultMessage: "Resources and links" })}
+          </h2>
+          <div data-h2-margin="b(top, m)">
+            <Links />
           </div>
-        </div>
-      </section>
+        </SectionTwo>
+      </Page>
     </Layout>
   );
 };
 
-export default HomePage;
+export default Passport;

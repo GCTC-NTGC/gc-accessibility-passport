@@ -63,7 +63,11 @@ const Login: React.FunctionComponent = () => {
                 required: intl.formatMessage(errorMessages.required),
               }}
             />
-            <Submit />
+            <Submit
+              data-h2-padding="b(top-bottom, s) b(right-left, m)"
+              data-h2-margin="b(top, s)"
+              data-h2-font-style="b(underline)"
+            />
           </form>
         </FormProvider>
       </section>
