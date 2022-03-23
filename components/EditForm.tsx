@@ -3,11 +3,7 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { errorMessages } from "../messages";
-import Button from "./Button";
-import { Checklist, Input, Select, Submit } from "./formComponents";
-
-interface EditFormProps {}
+import { Submit } from "./formComponents";
 
 type FormValues = {
   examples: string[];
@@ -15,7 +11,7 @@ type FormValues = {
   managerRelation: string;
 };
 
-const EditForm: React.FunctionComponent<EditFormProps> = ({ children }) => {
+const EditForm: React.FunctionComponent = ({ children }) => {
   const intl = useIntl();
   const { pathname, push } = useRouter();
   const methods = useForm<FormValues>();
