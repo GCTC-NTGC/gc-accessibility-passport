@@ -5,6 +5,7 @@ import Button, { colorMap } from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Links from "../../components/Links";
+import NewButton from "../../components/NewButton";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
 import useUser from "../../lib/useUser";
@@ -102,18 +103,13 @@ const Situations: React.FunctionComponent = () => {
                   data-h2-display="b(flex)"
                   data-h2-flex-direction="b(column)"
                 >
-                  <Button
-                    color="lightblue"
-                    mode="solid"
-                    data-h2-padding="b(top-bottom, s) b(right-left, l)"
-                    data-h2-font-style="b(underline)"
-                    data-h2-border="b(darkblue, all, dashed, s)"
-                  >
-                    {intl.formatMessage({
+                  <NewButton
+                    href="/barriers/edit"
+                    title={intl.formatMessage({
                       defaultMessage:
                         "Click to add a new work situation to your profile",
                     })}
-                  </Button>
+                  />
                   <div data-h2-margin="b(top, m)">
                     {situations.map(({ title, buttons }) => (
                       <Card id={title} key={title} title={title}>
@@ -143,18 +139,13 @@ const Situations: React.FunctionComponent = () => {
                   data-h2-display="b(flex)"
                   data-h2-flex-direction="b(column)"
                 >
-                  <Button
-                    color="lightblue"
-                    mode="solid"
-                    data-h2-padding="b(top-bottom, s) b(right-left, l)"
-                    data-h2-font-style="b(underline)"
-                    data-h2-border="b(darkblue, all, dashed, s)"
-                  >
-                    {intl.formatMessage({
+                  <NewButton
+                    href="/barriers/edit"
+                    title={intl.formatMessage({
                       defaultMessage:
                         "Click to add a new work situation to your profile",
                     })}
-                  </Button>
+                  />
                   <div data-h2-margin="b(top, m)">
                     {situations.map(({ title, buttons }) => (
                       <Card id={title} key={title} title={title}>
