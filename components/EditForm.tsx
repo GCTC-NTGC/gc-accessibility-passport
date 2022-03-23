@@ -34,7 +34,7 @@ const EditForm: React.FunctionComponent = ({ children }) => {
             data-h2-align-items="b(center)"
           >
             <Link
-              href={`/${pathname.split("/")[1]}`}
+              href={`/${pathname.split("/")[1]}/view`}
               key={intl.formatMessage({
                 defaultMessage: "cancel",
               })}
