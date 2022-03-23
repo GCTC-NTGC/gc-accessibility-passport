@@ -46,7 +46,6 @@ export const Tab: React.FC<TabProps> = ({
   isTabSelected,
   onSelect,
   onToggleOpen,
-  ...rest
 }): React.ReactElement => {
   // start by calculating the icon to show
   let effectiveIcon;
@@ -122,7 +121,6 @@ export const Tab: React.FC<TabProps> = ({
             onKeyPress={onSelect}
             style={{ cursor: "pointer" }}
             {...tabAttributes}
-            {...rest}
           >
             {label}
           </a>
@@ -138,7 +136,6 @@ export const Tab: React.FC<TabProps> = ({
           onKeyPress={onToggleOpen}
           style={{ cursor: "pointer" }}
           {...tabAttributes}
-          {...rest}
         >
           {label}
         </a>
@@ -147,11 +144,7 @@ export const Tab: React.FC<TabProps> = ({
 
     default:
       // just a text label
-      assembledTab = (
-        <div {...tabAttributes} {...rest}>
-          {label}
-        </div>
-      );
+      assembledTab = <div {...tabAttributes}>{label}</div>;
   }
 
   return assembledTab;
