@@ -8,9 +8,7 @@ import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
 
-interface BarriersProps {}
-
-const Barriers: React.FunctionComponent<BarriersProps> = (props) => {
+const Barriers: React.FunctionComponent = () => {
   const intl = useIntl();
   const barriers = [
     {
@@ -22,11 +20,11 @@ const Barriers: React.FunctionComponent<BarriersProps> = (props) => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/barriers/edit",
         },
       ],
     },
@@ -35,15 +33,15 @@ const Barriers: React.FunctionComponent<BarriersProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/barriers/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/barriers/edit",
         },
       ],
     },
@@ -52,15 +50,15 @@ const Barriers: React.FunctionComponent<BarriersProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "View" }),
-          link: "/view/id",
+          link: "/barriers/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/barriers/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Edit" }),
-          link: "/edit/id",
+          link: "/barriers/edit",
         },
       ],
     },

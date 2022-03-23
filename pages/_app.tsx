@@ -10,6 +10,7 @@ import { SWRConfig } from "swr";
 import fetchJson from "../lib/fetchJson";
 import { Header } from "../components/Header";
 import Footer from "../components/Footer";
+import useUser from "../lib/useUser";
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   const { locale = "en" } = useRouter();

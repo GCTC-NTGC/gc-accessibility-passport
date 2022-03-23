@@ -8,10 +8,13 @@ import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import useUser from "../../lib/useUser";
 
-interface DocumentProps {}
-
-const Document: React.FunctionComponent<DocumentProps> = (props) => {
+const Document: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const linkedBarriers = [
     {
@@ -233,7 +236,7 @@ const Document: React.FunctionComponent<DocumentProps> = (props) => {
                 })}
               </Button>
             </div>
-            <Link href="/situation/share">
+            <Link href="/documents/share">
               <a
                 title={intl.formatMessage({
                   defaultMessage: "Share with someone new",

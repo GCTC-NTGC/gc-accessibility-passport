@@ -7,10 +7,13 @@ import Layout from "../../components/Layout";
 import Links from "../../components/Links";
 import Page, { SectionOne, SectionTwo } from "../../components/Page";
 import { Tab, TabSet } from "../../components/tabs";
+import useUser from "../../lib/useUser";
 
-interface DocumentsProps {}
-
-const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
+const Documents: React.FunctionComponent = () => {
+  useUser({
+    redirectTo: "/login",
+    redirectIfFound: false,
+  });
   const intl = useIntl();
   const documents = [
     {
@@ -22,7 +25,7 @@ const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/documents/share",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -35,15 +38,15 @@ const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/view/id",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
-          link: "/edit/id",
+          link: "/documents/edit",
         },
       ],
     },
@@ -52,15 +55,15 @@ const Documents: React.FunctionComponent<DocumentsProps> = (props) => {
       buttons: [
         {
           title: intl.formatMessage({ defaultMessage: "Review" }),
-          link: "/view/id",
+          link: "/documents/view",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Share" }),
-          link: "/share/id",
+          link: "/documents/shareform",
         },
         {
           title: intl.formatMessage({ defaultMessage: "Delete" }),
-          link: "/edit/id",
+          link: "/documents/edit",
         },
       ],
     },

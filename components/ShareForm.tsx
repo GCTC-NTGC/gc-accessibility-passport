@@ -26,10 +26,12 @@ const ShareForm: React.FunctionComponent<ShareFormProps> = ({
   checklistOptions,
 }) => {
   const intl = useIntl();
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {};
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+    push(`/${pathname.split("/")[1]}/share`);
+  };
 
   return (
     <section data-h2-margin="b(bottom, xl)">
@@ -47,12 +49,8 @@ const ShareForm: React.FunctionComponent<ShareFormProps> = ({
             />
           )}
 
-          <div
-            data-h2-display="b(flex)"
-            data-h2-justify-content="b(space-between)"
-            data-h2-margin="b(top, m)"
-          >
-            <div data-h2-margin="b(right, m)">
+          <div data-h2-display="b(flex)" data-h2-margin="b(top, m)">
+            <div data-h2-margin="b(right, m)" style={{ flex: "1" }}>
               <Input
                 id="email"
                 name="email"
@@ -65,7 +63,7 @@ const ShareForm: React.FunctionComponent<ShareFormProps> = ({
                 }}
               />
             </div>
-            <div>
+            <div style={{ flex: "1" }}>
               <Select
                 id="managerRelation"
                 name="managerRelation"
