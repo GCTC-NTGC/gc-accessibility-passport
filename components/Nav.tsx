@@ -50,37 +50,19 @@ const Nav: React.FunctionComponent = () => {
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/situations">
-                <a {...(pathname === "/situations" && activeLink)}>
+              <Link href="/sharing-and-permissions">
+                <a {...(pathname === "/sharing-and-permissions" && activeLink)}>
                   {intl.formatMessage({
-                    defaultMessage: "My situations",
+                    defaultMessage: "Sharing and permissions",
                   })}
                 </a>
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/barriers">
-                <a {...(pathname === "/barriers" && activeLink)}>
+              <Link href="/resources">
+                <a {...(pathname === "/resources" && activeLink)}>
                   {intl.formatMessage({
-                    defaultMessage: "My barriers",
-                  })}
-                </a>
-              </Link>
-            </li>
-            <li data-h2-margin="b(all, s)">
-              <Link href="/solutions">
-                <a {...(pathname === "/solutions" && activeLink)}>
-                  {intl.formatMessage({
-                    defaultMessage: "My solutions",
-                  })}
-                </a>
-              </Link>
-            </li>
-            <li data-h2-margin="b(all, s)">
-              <Link href="/documents">
-                <a {...(pathname === "/documents" && activeLink)}>
-                  {intl.formatMessage({
-                    defaultMessage: "My documents",
+                    defaultMessage: "Resources",
                   })}
                 </a>
               </Link>
@@ -92,6 +74,7 @@ const Nav: React.FunctionComponent = () => {
         {user?.isLoggedIn === true && (
           <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
               href="/api/logout"
               onClick={async (e) => {

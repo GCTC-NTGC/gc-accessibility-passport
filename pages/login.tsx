@@ -20,7 +20,7 @@ const Login: React.FunctionComponent = () => {
   });
   const intl = useIntl();
 
-  const [errorMsg, setErrorMsg] = useState("");
+  const [, setErrorMsg] = useState("");
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
