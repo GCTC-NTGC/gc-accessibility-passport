@@ -85,10 +85,7 @@ const Header: React.FunctionComponent<Header> = ({
             data-h2-align-items="b(center)"
             data-h2-margin="b(top, xl)"
           >
-            <h1
-              data-h2-margin="b(all, none) b(left, m)"
-              data-h2-font-weight="b(600)"
-            >
+            <h1 data-h2-margin="b(all, none)" data-h2-font-weight="b(600)">
               {title}
             </h1>
             {editButton && (
