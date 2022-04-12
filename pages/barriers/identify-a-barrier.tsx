@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
+import Button from "../../components/Button";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
 import { Barrier } from "../api/barrier";
@@ -17,9 +17,13 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (data: FormValues): Promise<void> => {
-    // TODO: Save barrier to cookie.
+    // TODO: Save barrier to cookie?
     push(`/barriers/identify-a-barrier-2`);
   };
+
+  const help = (msg: string): React.ReactNode => (
+    <a href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}>{msg}</a>
+  );
 
   return (
     <Layout
@@ -36,7 +40,28 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "Your passport is a tool for communicating with your manager and actioning solutions that will empower your every day work. In order to provide the best context, we ask that you start by identifying a barrier you might face in the workplace. It can be hard to describe these barriers, so below you will find a robust tool that allows you to filter a curated list of barriers by a variety of helpful concepts. Once you’ve found the barrier you’d like to work with, select it from the list and move on to the next step. You’ll be able to add as many barriers as you need to your passport using this tool each time.",
+                    "Your GC Workplace Accessibility Passport is a tool to document the barriers you might face at work and the adaptive tools and support measures that you need to succeed in your job. In this section, please describe the barriers you face at work.",
+                })}
+              </p>
+              <p>
+                {intl.formatMessage({
+                  defaultMessage:
+                    "A Barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific. It can refer to how the employee interacts with their work environment. A barrier does not need to refer to a specific disability or health condition.",
+                })}
+              </p>
+              <p>
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "The tool below presents a list of barriers that can be filtered by the type of <help>Disability</help> that, in interaction with the conditions in your workplace, might hinder your full and equal participation.",
+                  },
+                  { help },
+                )}
+              </p>
+              <p>
+                {intl.formatMessage({
+                  defaultMessage:
+                    "You can use the tool below to select a barrier using the tool. Once you have selected a barrier from the list you can choose to elaborate on how this barrier might presents a challenge for you.  ",
                 })}
               </p>
               <p data-h2-font-weight="b(700)">
@@ -53,35 +78,34 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               >
                 <p>
                   {intl.formatMessage({
-                    defaultMessage: "Filter barriers by...",
+                    defaultMessage: "Filter to choose barriers by:",
                   })}
                 </p>
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "Can’t find a barrier that meets your needs? Define your own.",
+                      "Can't find a barrier that meets your needs? Define your own.",
                   })}
                 </p>
               </div>
-              <div data-h2-margin="b(bottom, l)">Add filter section here!!</div>
+              <div data-h2-margin="b(bottom, l)">ADD FILTER SECTION HERE</div>
             </div>
             <FormFooter
               cancelButton={{
-                href: "", // TODO: Replace with passport link
+                href: "/passport",
               }}
             >
-              <Link href="/passport">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Start with the barrier I’ve selected",
-                  })}
-                  data-h2-padding="b(all, s)"
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Start with the barrier I’ve selected",
-                  })}
-                </a>
-              </Link>
+              <Button
+                type="submit"
+                color="white"
+                mode="inline"
+                data-h2-font-style="b(underline)"
+                data-h2-padding="b(all, s)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Start with the barrier I've selected",
+                })}
+              </Button>
             </FormFooter>
           </form>
         </FormProvider>

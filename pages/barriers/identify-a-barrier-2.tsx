@@ -20,6 +20,11 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
     // TODO: Save barrier to cookie.
     push(`/solutions/identify-a-solution`);
   };
+
+  const solutions = (msg: string): React.ReactNode => <a href="">{msg}</a>;
+  const bold = (msg: string): React.ReactNode => (
+    <span data-h2-font-weight="b(700)">{msg}</span>
+  );
   return (
     <Layout
       title={intl.formatMessage({
@@ -35,10 +40,13 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div data-h2-margin="b(bottom, l)">
               <h2 data-h2-font-size="b(h3)" data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "You’ve selected “Example barrier #3” to add to your passport.",
-                })}
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "You've selected <bold>Attentiveness/Concentration</bold> to add to your passport.",
+                  },
+                  { bold },
+                )}
               </h2>
               <p
                 data-h2-bg-color="b(lightgray)"
@@ -46,7 +54,8 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, none)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Example barrier 3 is commonly defined as...",
+                  defaultMessage:
+                    "Attentiveness/Concentration is commonly defined as: Executive functions are high-level mental processes or abilities that influence and direct more basic abilities like attention and memory. The term executive function describes a set of cognitive abilities that include the ability to plan, organize and strategize, pay attention to and remember details, start and stop actions, and form concepts and think abstractly.",
                 })}
               </p>
               <p
@@ -64,7 +73,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "This step is optional, but if you’d like to elaborate on how this particular barrier affects you, feel free to add on to the definition we’ve provided.",
+                    "This step is optional, but if you'd like to elaborate on how this particular barrier affects you, feel free to add on to the definition we've provided.",
                 })}
               </p>
               <p data-h2-font-weight="b(700)">
@@ -82,15 +91,18 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
                 rows={8}
               />
               <p data-h2-margin="b(top, m)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Now that you’ve selected a barrier to add to your passport, it’s time to explore some possible solutions that will help alleviate or remove this barrier.",
-                })}
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "Please select the link below to explore some potential <solutions>solutions</solutions> for this barrier ",
+                  },
+                  { solutions },
+                )}
               </p>
             </div>
             <FormFooter
               cancelButton={{
-                href: "/passport", // TODO: Add href
+                href: "/passport",
               }}
               data-h2-flex-direction="b(column) m(row)"
             >
@@ -114,7 +126,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
               >
                 {intl.formatMessage({
                   defaultMessage:
-                    "I’m happy with this barrier, save and move to identifying solutions",
+                    "I'm happy with this barrier, save and move to identifying solutions",
                 })}
               </Button>
             </FormFooter>
