@@ -4,6 +4,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
 import { Input, Select } from "../components/formComponents";
+import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import { errorMessages } from "../messages";
 import jsonData from "../public/resources/departments.json";
@@ -115,7 +116,7 @@ const ManagerInfo: React.FunctionComponent = () => {
                 options={jsonData.departments}
               />
             </div>
-            {/* <FormFooter
+            <FormFooter
               cancelButton={{
                 href: "/passport",
               }}
@@ -131,7 +132,7 @@ const ManagerInfo: React.FunctionComponent = () => {
                   defaultMessage: "Save My Manager's Information",
                 })}
               </Button>
-            </FormFooter> */}
+            </FormFooter>
           </form>
         </FormProvider>
       </div>
