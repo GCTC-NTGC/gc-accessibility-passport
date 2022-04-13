@@ -1,0 +1,418 @@
+{"departments": [
+ {
+  "value": "001",
+  "label": "Agriculture and Agri-Food (Department of)"
+ },
+ {
+  "value": "002",
+  "label": "Office of the Auditor General"
+ },
+ {
+  "value": "004",
+  "label": "Public Service Commission"
+ },
+ {
+  "value": "005",
+  "label": "Foreign Affairs, Trade and Development (Department of)"
+ },
+ {
+  "value": "006",
+  "label": "Finance (Department of)"
+ },
+ {
+  "value": "007",
+  "label": "Environment (Department of the)"
+ },
+ {
+  "value": "008",
+  "label": "Office of the Governor General's Secretary"
+ },
+ {
+  "value": "009",
+  "label": "Senate"
+ },
+ {
+  "value": "011",
+  "label": "Office of the Superintendent of Financial Institutions"
+ },
+ {
+  "value": "012",
+  "label": "Economic Development Agency of Canada for the Regions of Quebec"
+ },
+ {
+  "value": "013",
+  "label": "Justice (Department of)"
+ },
+ {
+  "value": "014",
+  "label": "Employment and Social Development (Department of)"
+ },
+ {
+  "value": "015",
+  "label": "Office of the Chief Electoral Officer"
+ },
+ {
+  "value": "016",
+  "label": "Canadian Radio-television and Telecommunications Commission"
+ },
+ {
+  "value": "017",
+  "label": "Library of Parliament"
+ },
+ {
+  "value": "018",
+  "label": "National Defence (Department of)"
+ },
+ {
+  "value": "019",
+  "label": "Office of the Director of Public Prosecutions"
+ },
+ {
+  "value": "021",
+  "label": "Veterans Affairs (Department of)"
+ },
+ {
+  "value": "022",
+  "label": "Health (Department of)"
+ },
+ {
+  "value": "023",
+  "label": "Atlantic Canada Opportunities Agency"
+ },
+ {
+  "value": "024",
+  "label": "International Joint Commission (Canadian Section)"
+ },
+ {
+  "value": "025",
+  "label": "Privy Council Office"
+ },
+ {
+  "value": "027",
+  "label": "Natural Sciences and Engineering Research Council"
+ },
+ {
+  "value": "030",
+  "label": "Royal Canadian Mounted Police"
+ },
+ {
+  "value": "032",
+  "label": "Immigration and Refugee Board"
+ },
+ {
+  "value": "033",
+  "label": "Industry (Department of)"
+ },
+ {
+  "value": "034",
+  "label": "Transport (Department of)"
+ },
+ {
+  "value": "035",
+  "label": "National Research Council of Canada"
+ },
+ {
+  "value": "037",
+  "label": "Telefilm Canada"
+ },
+ {
+  "value": "038",
+  "label": "Canada Border Services Agency - (Administered Activities)"
+ },
+ {
+  "value": "039",
+  "label": "National Film Board"
+ },
+ {
+  "value": "040",
+  "label": "Canadian Transportation Agency"
+ },
+ {
+  "value": "041",
+  "label": "Natural Resources (Department of)"
+ },
+ {
+  "value": "042",
+  "label": "Department of Crown-Indigenous Relations and Northern Affairs"
+ },
+ {
+  "value": "043",
+  "label": "Canadian Intergovernmental Conference Secretariat"
+ },
+ {
+  "value": "044",
+  "label": "Western Economic Diversification (Department of)"
+ },
+ {
+  "value": "046",
+  "label": "Office of the Public Sector Integrity Commissioner"
+ },
+ {
+  "value": "047",
+  "label": "Canadian Nuclear Safety Commission"
+ },
+ {
+  "value": "050",
+  "label": "Citizenship and Immigration (Department of)"
+ },
+ {
+  "value": "051",
+  "label": "Office of the Commissioner for Federal Judicial Affairs"
+ },
+ {
+  "value": "052",
+  "label": "Canada School of Public Service"
+ },
+ {
+  "value": "053",
+  "label": "Correctional Service of Canada"
+ },
+ {
+  "value": "054",
+  "label": "Statistics Canada"
+ },
+ {
+  "value": "056",
+  "label": "Treasury Board Secretariat"
+ },
+ {
+  "value": "057",
+  "label": "Parole Board of Canada"
+ },
+ {
+  "value": "061",
+  "label": "Canadian Institutes of Health Research"
+ },
+ {
+  "value": "062",
+  "label": "Federal Economic Development Agency for Southern Ontario"
+ },
+ {
+  "value": "063",
+  "label": "Social Sciences and Humanities Research Council"
+ },
+ {
+  "value": "066",
+  "label": "Northern Pipeline Agency"
+ },
+ {
+  "value": "067",
+  "label": "House of Commons"
+ },
+ {
+  "value": "075",
+  "label": "Canadian Human Rights Commission"
+ },
+ {
+  "value": "076",
+  "label": "Office of the Commissioner of Official Languages"
+ },
+ {
+  "value": "078",
+  "label": "Canadian Northern Economic Development Agency"
+ },
+ {
+  "value": "079",
+  "label": "Payroll System General Ledger"
+ },
+ {
+  "value": "080",
+  "label": "Registrar of the Supreme Court of Canada"
+ },
+ {
+  "value": "085",
+  "label": "Canada Border Services Agency"
+ },
+ {
+  "value": "086",
+  "label": "Fisheries and Oceans (Department of)"
+ },
+ {
+  "value": "087",
+  "label": "Public Service Superannuation"
+ },
+ {
+  "value": "088",
+  "label": "Public Safety and Emergency Preparedness (Department of)"
+ },
+ {
+  "value": "091",
+  "label": "Canada Mortgage and Housing Corporation (Crown Corporation)"
+ },
+ {
+  "value": "095",
+  "label": "Canadian Security Intelligence Service"
+ },
+ {
+  "value": "096",
+  "label": "Offices of the Information and Privacy Commissioners of Canada"
+ },
+ {
+  "value": "097",
+  "label": "Receiver General"
+ },
+ {
+  "value": "100",
+  "label": "Canadian Centre for Occupational Health and Safety"
+ },
+ {
+  "value": "101",
+  "label": "Canadian Transportation Accident Investigation and Safety Board"
+ },
+ {
+  "value": "102",
+  "label": "The National Battlefields Commission"
+ },
+ {
+  "value": "109",
+  "label": "Patented Medicine Prices Review Board"
+ },
+ {
+  "value": "116",
+  "label": "Copyright Board"
+ },
+ {
+  "value": "119",
+  "label": "Canadian Space Agency"
+ },
+ {
+  "value": "122",
+  "label": "Canada Revenue Agency - (Administered Activities)"
+ },
+ {
+  "value": "123",
+  "label": "Export Development Canada (Crown Corporation)"
+ },
+ {
+  "value": "124",
+  "label": "Parks Canada Agency"
+ },
+ {
+  "value": "127",
+  "label": "Public Works and Government Services (Department of)"
+ },
+ {
+  "value": "130",
+  "label": "Canada Revenue Agency"
+ },
+ {
+  "value": "133",
+  "label": "Canadian Grain Commission"
+ },
+ {
+  "value": "134",
+  "label": "Canadian Dairy Commission"
+ },
+ {
+  "value": "135",
+  "label": "Canadian Heritage (Department of)"
+ },
+ {
+  "value": "136",
+  "label": "Canadian Food Inspection Agency"
+ },
+ {
+  "value": "137",
+  "label": "Military Police Complaints Commission"
+ },
+ {
+  "value": "138",
+  "label": "Military Grievances External Review Committee"
+ },
+ {
+  "value": "139",
+  "label": "Financial Transactions and Reports Analysis Centre of Canada"
+ },
+ {
+  "value": "141",
+  "label": "Financial Consumer Agency of Canada"
+ },
+ {
+  "value": "142",
+  "label": "Office of Infrastructure of Canada"
+ },
+ {
+  "value": "144",
+  "label": "Courts Administration Service"
+ },
+ {
+  "value": "145",
+  "label": "Library and Archives of Canada"
+ },
+ {
+  "value": "147",
+  "label": "Office of the Conflict of Interest and Ethics Commissioner"
+ },
+ {
+  "value": "148",
+  "label": "Public Health Agency of Canada"
+ },
+ {
+  "value": "151",
+  "label": "Office of the Senate Ethics Officer"
+ },
+ {
+  "value": "154",
+  "label": "Office of the Commissioner of Lobbying"
+ },
+ {
+  "value": "163",
+  "label": "Shared Services Canada"
+ },
+ {
+  "value": "165",
+  "label": "Communications Security Establishment"
+ },
+ {
+  "value": "170",
+  "label": "Administrative Tribunals Support Service of Canada"
+ },
+ {
+  "value": "171",
+  "label": "Canadian High Arctic Research Station"
+ },
+ {
+  "value": "176",
+  "label": "Parliamentary Protective Service"
+ },
+ {
+  "value": "180",
+  "label": "Invest in Canada Hub"
+ },
+ {
+  "value": "183",
+  "label": "Office of the Parliamentary Budget Officer"
+ },
+ {
+  "value": "190",
+  "label": "Department for Women and Gender Equality"
+ },
+ {
+  "value": "191",
+  "label": "Department of Indigenous Services"
+ },
+ {
+  "value": "192",
+  "label": "Secretariat of the National Security and Intelligence Committee of Parliamentarians"
+ },
+ {
+  "value": "193",
+  "label": "Leaders' Debates Commission"
+ },
+ {
+  "value": "195",
+  "label": "Canadian Energy Regulator"
+ },
+ {
+  "value": "196",
+  "label": "National Security and Intelligence Review Agency Secretariat"
+ },
+ {
+  "value": "197",
+  "label": "Office of the Intelligence Commissioner"
+ },
+ {
+  "value": "199",
+  "label": "Canadian Accessibility Standards Development Organization"
+ }
+]}

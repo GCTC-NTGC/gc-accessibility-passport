@@ -4,10 +4,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
 import { Input, Select } from "../components/formComponents";
-import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import { errorMessages } from "../messages";
-
+import jsonData from "../public/resources/departments.json";
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
   const { push } = useRouter();
@@ -113,20 +112,10 @@ const ManagerInfo: React.FunctionComponent = () => {
                 rules={{
                   required: intl.formatMessage(errorMessages.required),
                 }}
-                options={[
-                  { value: 1, label: "1" },
-                  { value: 2, label: "2" },
-                  { value: 3, label: "3" },
-                  { value: 4, label: "4" },
-                  { value: 5, label: "5" },
-                  { value: 6, label: "6" },
-                  { value: 7, label: "7" },
-                  { value: 8, label: "8" },
-                  { value: 9, label: "9" },
-                ]}
+                options={jsonData.departments}
               />
             </div>
-            <FormFooter
+            {/* <FormFooter
               cancelButton={{
                 href: "/passport",
               }}
@@ -142,7 +131,7 @@ const ManagerInfo: React.FunctionComponent = () => {
                   defaultMessage: "Save My Manager's Information",
                 })}
               </Button>
-            </FormFooter>
+            </FormFooter> */}
           </form>
         </FormProvider>
       </div>
