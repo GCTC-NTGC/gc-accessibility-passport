@@ -9,9 +9,7 @@ import { errorMessages } from "../messages";
 import jsonData from "../public/resources/departments.json";
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
-  const methods = useForm<FormValues>();
-  const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     // TODO: Save Manager Info to DB
   };
 
@@ -32,7 +30,7 @@ const ManagerInfo: React.FunctionComponent = () => {
         data-h2-justify-content="b(center)"
         data-h2-align-items="b(center)"
       >
-        <FormProvider {...methods}>
+        <FormProvider {...useForm()}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div data-h2-margin="b(bottom, l)">
               <p>
@@ -152,3 +150,8 @@ const ManagerInfo: React.FunctionComponent = () => {
 };
 
 export default ManagerInfo;
+function handleSubmit(
+  onSubmit: () => Promise<void>,
+): React.FormEventHandler<HTMLFormElement> | undefined {
+  throw new Error("Function not implemented.");
+}
