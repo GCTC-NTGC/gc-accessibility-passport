@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
@@ -10,16 +9,11 @@ import { errorMessages } from "../messages";
 import jsonData from "../public/resources/departments.json";
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
-  const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (data: FormValues): Promise<void> => {
     // TODO: Save Manager Info to DB
   };
-
-  const help = (msg: string): React.ReactNode => (
-    <a href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}>{msg}</a>
-  );
 
   return (
     <Layout
