@@ -25,10 +25,19 @@ const ManagerInfo: React.FunctionComponent = () => {
     <Layout
       title={intl.formatMessage({ defaultMessage: "My manager's Information" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My manager's Information",
+        defaultMessage: "My Manager's Information",
       })}
     >
-      <div data-h2-padding="b(all, xl)">
+      <div
+        data-h2-container="b(center, xl)"
+        data-h2-radius="b(s)"
+        data-h2-shadow="b(s)"
+        data-h2-padding="b(all, l) b(right, xxl)"
+        data-h2-bg-color="b(white)"
+        data-h2-display="b(flex)"
+        data-h2-justify-content="b(center)"
+        data-h2-align-items="b(center)"
+      >
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div data-h2-margin="b(bottom, l)">
@@ -47,32 +56,38 @@ const ManagerInfo: React.FunctionComponent = () => {
             </div>
 
             <div>
-              <Input
-                id="firstName"
-                name="firstName"
-                label={intl.formatMessage({
-                  defaultMessage: "Manager's First Name",
-                  description:
-                    "Label displayed on My manager's Information Form Manager's First Name field.",
-                })}
-                type="text"
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
-              />
-              <Input
-                id="lastName"
-                name="lastName"
-                label={intl.formatMessage({
-                  defaultMessage: "Manager's Last Name",
-                  description:
-                    "Label displayed on My manager's Information Form Manager's Last Name field.",
-                })}
-                type="text"
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
-              />
+              <div
+                data-h2-display="b(flex)"
+                data-h2-justify-content="b(space-between)"
+              >
+                <Input
+                  id="firstName"
+                  name="firstName"
+                  label={intl.formatMessage({
+                    defaultMessage: "Manager's First Name",
+                    description:
+                      "Label displayed on My manager's Information Form Manager's First Name field.",
+                  })}
+                  type="text"
+                  rules={{
+                    required: intl.formatMessage(errorMessages.required),
+                  }}
+                />
+                <Input
+                  id="lastName"
+                  name="lastName"
+                  label={intl.formatMessage({
+                    defaultMessage: "Manager's Last Name",
+                    description:
+                      "Label displayed on My manager's Information Form Manager's Last Name field.",
+                  })}
+                  type="text"
+                  rules={{
+                    required: intl.formatMessage(errorMessages.required),
+                  }}
+                />
+              </div>
+
               <Input
                 id="title"
                 name="title"
@@ -116,23 +131,25 @@ const ManagerInfo: React.FunctionComponent = () => {
                 options={jsonData.departments}
               />
             </div>
-            <FormFooter
-              cancelButton={{
-                href: "/passport",
-              }}
-            >
-              <Button
-                type="submit"
-                color="white"
-                mode="inline"
-                data-h2-font-style="b(underline)"
-                data-h2-padding="b(all, s)"
+            <div>
+              <FormFooter
+                cancelButton={{
+                  href: "/passport",
+                }}
               >
-                {intl.formatMessage({
-                  defaultMessage: "Save My Manager's Information",
-                })}
-              </Button>
-            </FormFooter>
+                <Button
+                  type="submit"
+                  color="white"
+                  mode="inline"
+                  data-h2-font-style="b(underline)"
+                  data-h2-padding="b(all, s)"
+                >
+                  {intl.formatMessage({
+                    defaultMessage: "Save My Manager's Information",
+                  })}
+                </Button>
+              </FormFooter>
+            </div>
           </form>
         </FormProvider>
       </div>
