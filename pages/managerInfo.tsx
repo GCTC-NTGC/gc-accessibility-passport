@@ -12,7 +12,6 @@ const ManagerInfo: React.FunctionComponent = () => {
   const onSubmit = async (): Promise<void> => {
     // TODO: Save Manager Info to DB
   };
-
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
@@ -153,5 +152,5 @@ export default ManagerInfo;
 function handleSubmit(
   onSubmit: () => Promise<void>,
 ): React.FormEventHandler<HTMLFormElement> | undefined {
-  throw new Error("Function not implemented.");
+  return;
 }
