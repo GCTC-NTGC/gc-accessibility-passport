@@ -23,7 +23,7 @@ const ManagerInfo: React.FunctionComponent = () => {
 
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "My manager's Information" })}
+      title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
       headTitle={intl.formatMessage({
         defaultMessage: "My Manager's Information",
       })}
