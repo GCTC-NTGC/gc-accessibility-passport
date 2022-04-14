@@ -130,7 +130,7 @@ const ManagerInfo: React.FunctionComponent = () => {
               >
                 <Button
                   type="submit"
-                  color="white"
+                  color="blue"
                   mode="inline"
                   data-h2-font-style="b(underline)"
                   data-h2-padding="b(all, s)"
