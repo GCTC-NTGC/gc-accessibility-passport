@@ -112,8 +112,8 @@ const Filters: React.FunctionComponent<{
   const [categories, setCategories] = React.useState<BarrierCategory[] | null>(
     barrierCategories,
   );
-  const [activeParent, setActiveParent] = React.useState(0);
-  const [activeCategory, setActiveCategory] = React.useState(0);
+  const [activeParent, setActiveParent] = React.useState(1);
+  const [activeCategory, setActiveCategory] = React.useState(1);
 
   const onParentBarrierCategoryClick = (id: number): void => {
     setActiveParent(id);
@@ -225,7 +225,11 @@ const Filters: React.FunctionComponent<{
       data-h2-position="b(relative)"
       data-h2-bg-color="b(lightgray)"
     >
-      <nav>
+      <nav
+        aria-label={intl.formatMessage({
+          defaultMessage: "Please select a filter.",
+        })}
+      >
         <ul>
           {parentBarrierCategories.map(({ id: parentId, name }) => {
             return (
@@ -235,6 +239,7 @@ const Filters: React.FunctionComponent<{
                   color="white"
                   mode="inline"
                   onClick={() => onParentBarrierCategoryClick(parentId)}
+                  aria-expanded={activeParent === parentId}
                 >
                   {name}
                 </Button>
@@ -274,6 +279,7 @@ const Filters: React.FunctionComponent<{
                                     )
                                   }
                                   data-category-id={categoryId}
+                                  aria-expanded={activeCategory === categoryId}
                                 >
                                   {name}
                                 </Button>
@@ -293,9 +299,9 @@ const Filters: React.FunctionComponent<{
                                           {intl.formatMessage(
                                             {
                                               defaultMessage:
-                                                "You are currently viewing barriers related to <bold>Autism Spectrum</bold>",
+                                                "You are currently viewing barriers related to <bold>{name}</bold>",
                                             },
-                                            { bold },
+                                            { bold, name },
                                           )}
                                         </p>
                                         <ul ref={barrierRef}>
@@ -318,6 +324,8 @@ const Filters: React.FunctionComponent<{
                                                     tabIndex={-1}
                                                     type="radio"
                                                     name="barrier"
+                                                    disabled={index !== 0} // Disable all inputs but attentiveness/concentration
+                                                    defaultChecked={index === 0} // also set it to checked
                                                     id={`barrier-${barrierId}`}
                                                     onKeyDown={(
                                                       e: React.KeyboardEvent<HTMLInputElement>,
@@ -334,30 +342,6 @@ const Filters: React.FunctionComponent<{
                                                   >
                                                     {name}
                                                   </label>
-                                                  {/* <Button
-                                                    innerRef={
-                                                      index === 0
-                                                        ? firstBarrierRef
-                                                        : null
-                                                    }
-                                                    color="white"
-                                                    mode="inline"
-                                                    onClick={() =>
-                                                      setBarrierValue(name)
-                                                    }
-                                                    onKeyDown={(
-                                                      e: React.KeyboardEvent<HTMLButtonElement>,
-                                                    ) =>
-                                                      onBarrierCategoryKeyDown(
-                                                        e,
-                                                        categoryId,
-                                                        parentId,
-                                                      )
-                                                    }
-                                                    data-h2-padding="b(all, none)"
-                                                  >
-                                                    {name}
-                                                  </Button> */}
                                                 </li>
                                               );
                                             },

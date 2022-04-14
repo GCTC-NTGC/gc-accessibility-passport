@@ -21,7 +21,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
     push(`/solutions/identify-a-solution`);
   };
 
-  const solutions = (msg: string): React.ReactNode => <a href="">{msg}</a>;
+  const solutions = (msg: string): React.ReactNode => <a href="#">{msg}</a>;
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(700)">{msg}</span>
   );
