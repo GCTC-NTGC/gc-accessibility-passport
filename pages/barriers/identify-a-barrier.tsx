@@ -27,61 +27,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     <a href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}>{msg}</a>
   );
 
-  const prevTabbedElement = React.useRef<HTMLElement | null>(null);
-  const handleTabableElements: (event: KeyboardEvent) => void =
-    React.useCallback((event) => {
-      if (event.key === "Tab") {
-        const tabableElements = Array.from(
-          document.querySelectorAll(
-            'a[href], button:not([disabled]):not([tabindex="-1"]), input:not([disabled]):not([tabindex="-1"]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
-          ),
-        ) as HTMLElement[];
-        if (tabableElements.length === 0) {
-          return;
-        }
-
-        const firstElement = tabableElements[0] as HTMLElement;
-
-        if (tabableElements.length === 1) {
-          // This check is to avoid strange behavior if firstElement == lastElement.
-          event.preventDefault();
-          firstElement.focus();
-          return;
-        }
-
-        // Because "non-tabable" may receive focus, we track the last "tabable" element we were at
-        // with prevTabbedElement, and calculate the next and prev tabable elements in reference to that.
-
-        // If prevTabbedElement is null, treat the current index as zero
-        const currentTabIndex =
-          prevTabbedElement.current !== null
-            ? tabableElements.findIndex(
-                (element) => element === prevTabbedElement.current,
-              )
-            : 0;
-
-        const forwardIndex = (currentTabIndex + 1) % tabableElements.length;
-        // backwardIndex loops around to the last tabable element if currently focused on the first.
-        const backwardIndex =
-          currentTabIndex <= 0
-            ? tabableElements.length - 1
-            : currentTabIndex - 1;
-
-        const targetElement = event.shiftKey
-          ? tabableElements[backwardIndex]
-          : tabableElements[forwardIndex];
-
-        event.preventDefault();
-        targetElement.focus();
-        prevTabbedElement.current = targetElement;
-      }
-    }, []);
-
-  React.useEffect(() => {
-    document.addEventListener("keydown", handleTabableElements);
-    return () => document.removeEventListener("keydown", handleTabableElements);
-  }, [handleTabableElements]);
-
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "Identify a barrier" })}
@@ -157,8 +102,8 @@ const IdentifyABarrier: React.FunctionComponent = () => {
             >
               <Button
                 type="submit"
-                color="white"
-                mode="inline"
+                color="blue"
+                mode="solid"
                 data-h2-font-style="b(underline)"
                 data-h2-padding="b(all, s)"
               >

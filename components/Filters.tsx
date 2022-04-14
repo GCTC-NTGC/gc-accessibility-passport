@@ -118,10 +118,6 @@ const Filters: React.FunctionComponent<{
   const onParentBarrierCategoryClick = (id: number): void => {
     setActiveParent(id);
     setCategories(barrierCategories.filter(({ parentId }) => parentId === id));
-    // if (categoryRef.current) {
-    //   const categoryElementList = getFocusableElements(categoryRef.current);
-    //   focusOnElement(categoryElementList[0]); // focus on first element
-    // }
   };
   const onBarrierCategoryClick = (id: number): void => {
     setActiveCategory(id);
@@ -130,20 +126,23 @@ const Filters: React.FunctionComponent<{
     );
   };
 
+  const parentRef = React.useRef<HTMLUListElement | null>(null);
   const categoryRef = React.useRef<HTMLUListElement | null>(null);
+  const barrierRef = React.useRef<HTMLUListElement | null>(null);
+
   const onBarrierCategoryKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
     categoryId: number,
     parentId: number,
   ): void => {
     e.preventDefault();
-    if (categoryRef.current) {
+    if (categoryRef.current && parentRef.current) {
       const categoryTabList =
         categoryRef.current.querySelectorAll<HTMLElement>(`[data-category-id]`);
-      // const tabableElements = document.querySelectorAll<HTMLElement>(
-      //   'a[href], button:not([disabled]):not([tabindex="-1"]), input:not([disabled]):not([tabindex="-1"]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
-      // );
-      // console.log(tabableElements);
+      const tabableElements = parentRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]):not([tabindex="-1"]), input:not([disabled]):not([tabindex="-1"]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
+      );
+      console.log(tabableElements);
       switch (e.key) {
         case "ArrowLeft":
           setCategories(null);
@@ -161,23 +160,27 @@ const Filters: React.FunctionComponent<{
         case "ArrowDown":
           focusNextItem(categoryTabList);
           break;
-        // case "Tab":
-        //   focusNextItem(tabableElements);
-        //   break;
+        case "Tab":
+          focusOnElement(`[data-parent-id="${parentId + 1}"]`);
+          break;
         default:
         // do nothing;
+      }
+
+      if (e.shiftKey && e.key === "Tab") {
+        focusOnElement(`[data-parent-id="${parentId}"]`);
       }
     }
   };
 
-  const barrierRef = React.useRef<HTMLUListElement | null>(null);
   const onBarrierKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
     barrierId: number,
     categoryId: number,
+    parentId: number,
   ): void => {
     e.preventDefault();
-    if (barrierRef.current) {
+    if (barrierRef.current && parentRef) {
       const barrierElementList = getFocusableElements(barrierRef.current);
       const radio = document.getElementById(
         `barrier-${barrierId}`,
@@ -198,8 +201,15 @@ const Filters: React.FunctionComponent<{
         case "ArrowDown":
           focusNextItem(barrierElementList);
           break;
+        case "Tab":
+          focusOnElement(`[data-parent-id="${parentId + 1}"]`);
+          break;
         default:
         // do nothing;
+      }
+
+      if (e.shiftKey && e.key === "Tab") {
+        focusOnElement(`[data-parent-id="${parentId}"]`);
       }
     }
   };
@@ -220,20 +230,25 @@ const Filters: React.FunctionComponent<{
   return (
     <section
       data-h2-border="b(black, all, solid, s)"
-      data-h2-padding="b(all, xs)"
-      style={{ minHeight: "16rem", overflow: "auto" }}
+      style={{ height: "19rem" }}
       data-h2-position="b(relative)"
-      data-h2-bg-color="b(lightgray)"
     >
       <nav
         aria-label={intl.formatMessage({
           defaultMessage: "Please select a filter.",
         })}
       >
-        <ul>
+        <ul data-h2-position="b(relative)" ref={parentRef}>
           {parentBarrierCategories.map(({ id: parentId, name }) => {
             return (
-              <li key={parentId} data-h2-margin="b(bottom, s) b(top, none)">
+              <li
+                key={parentId}
+                data-h2-margin="b(all, none)"
+                data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                {...(activeParent === parentId && {
+                  "data-h2-bg-color": "b(lightgray)",
+                })}
+              >
                 <Button
                   data-parent-id={parentId}
                   color="white"
@@ -250,14 +265,25 @@ const Filters: React.FunctionComponent<{
                       <>
                         <ul
                           data-h2-position="b(absolute)"
-                          style={{ top: "0", left: "20%" }}
+                          style={{
+                            top: "0",
+                            left: "20%",
+                            width: "40%",
+                            height: "19rem",
+                          }}
+                          data-h2-bg-color="b(lightgray)"
                           ref={categoryRef}
                         >
                           {categories.map(({ id: categoryId, name }, index) => {
                             return (
                               <li
                                 key={categoryId}
-                                data-h2-margin="b(bottom, s) b(top, xs)"
+                                data-h2-margin="b(all, none)"
+                                data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                {...(activeCategory === categoryId && {
+                                  "data-h2-bg-color": "b(darkgray)",
+                                  "data-h2-font-color": "b(white)",
+                                })}
                               >
                                 <Button
                                   innerRef={
@@ -280,6 +306,9 @@ const Filters: React.FunctionComponent<{
                                   }
                                   data-category-id={categoryId}
                                   aria-expanded={activeCategory === categoryId}
+                                  {...(activeCategory === categoryId && {
+                                    "data-h2-font-color": "b(white)",
+                                  })}
                                 >
                                   {name}
                                 </Button>
@@ -291,11 +320,19 @@ const Filters: React.FunctionComponent<{
                                         data-h2-position="b(absolute)"
                                         style={{
                                           top: "0",
-                                          left: "120%",
+                                          left: "100%",
                                           width: "100%",
+                                          height: "19rem",
                                         }}
+                                        {...(activeCategory === categoryId && {
+                                          "data-h2-bg-color": "b(darkgray)",
+                                        })}
                                       >
-                                        <p data-h2-margin="b(bottom, s) b(top, xs)">
+                                        <p
+                                          data-h2-margin="b(all, none)"
+                                          data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                          data-h2-font-color="b(white)"
+                                        >
                                           {intl.formatMessage(
                                             {
                                               defaultMessage:
@@ -312,8 +349,11 @@ const Filters: React.FunctionComponent<{
                                             ) => {
                                               return (
                                                 <li
-                                                  data-h2-margin="b(bottom, s) b(top, xs)"
+                                                  data-h2-margin="b(all, none)"
+                                                  data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
                                                   key={barrierId}
+                                                  data-h2-bg-color="b(darkgray)"
+                                                  data-h2-font-color="b(white)"
                                                 >
                                                   <input
                                                     ref={
@@ -334,6 +374,7 @@ const Filters: React.FunctionComponent<{
                                                         e,
                                                         barrierId,
                                                         categoryId,
+                                                        parentId,
                                                       )
                                                     }
                                                   />
@@ -351,13 +392,17 @@ const Filters: React.FunctionComponent<{
                                     ) : (
                                       <p
                                         role="status"
-                                        data-h2-font-size="b(caption)"
                                         data-h2-position="b(absolute)"
-                                        data-h2-margin="b(top-bottom, xs)"
+                                        data-h2-font-size="b(caption) m(normal)"
+                                        data-h2-margin="b(all, none)"
+                                        data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                        data-h2-bg-color="b(darkgray)"
+                                        data-h2-font-color="b(white)"
                                         style={{
                                           top: "0",
-                                          left: "120%",
+                                          left: "100%",
                                           width: "100%",
+                                          height: "19rem",
                                         }}
                                       >
                                         {intl.formatMessage({
@@ -375,12 +420,16 @@ const Filters: React.FunctionComponent<{
                     ) : (
                       <p
                         role="status"
-                        data-h2-font-size="b(caption)"
                         data-h2-position="b(absolute)"
-                        data-h2-margin="b(top-bottom, xs)"
+                        data-h2-font-size="b(caption) m(normal)"
+                        data-h2-margin="b(all, none)"
+                        data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                        data-h2-bg-color="b(lightgray)"
                         style={{
                           top: "0",
                           left: "20%",
+                          width: "80%",
+                          height: "19rem",
                         }}
                       >
                         {intl.formatMessage({
