@@ -31,8 +31,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
         defaultMessage: "Identify a new barrier (cont.)",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage:
-          "Step 2 of 2: Identify a new barrier - GC Accessibility Passport",
+        defaultMessage: "=Identify a new barrier - GC Accessibility Passport",
       })}
     >
       <div data-h2-padding="b(all, xl)">
@@ -119,8 +118,8 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
               </Button>
               <Button
                 type="submit"
-                color="white"
-                mode="inline"
+                color="blue"
+                mode="solid"
                 data-h2-font-style="b(underline)"
                 data-h2-padding="b(all, s)"
               >

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -26,13 +27,17 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const help = (msg: string): React.ReactNode => (
     <a href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}>{msg}</a>
   );
+  const barrierCont = (msg: string): React.ReactNode => (
+    <Link href="/barriers/identify-a-barrier-2">
+      <a title="msg">{msg}</a>
+    </Link>
+  );
 
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "Identify a barrier" })}
       headTitle={intl.formatMessage({
-        defaultMessage:
-          "Step 1 of 2: Identify a barrier - GC Accessibility Passport",
+        defaultMessage: "Identify a barrier - GC Accessibility Passport",
       })}
     >
       <div data-h2-padding="b(all, xl)">
@@ -85,10 +90,13 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   })}
                 </p>
                 <p data-h2-margin="b(top-bottom, xs)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "Can't find a barrier that meets your needs? Define your own.",
-                  })}
+                  {intl.formatMessage(
+                    {
+                      defaultMessage:
+                        "Can't find a barrier that meets your needs? <barrierCont>Define your own.</barrierCont>",
+                    },
+                    { barrierCont },
+                  )}
                 </p>
               </div>
               <div data-h2-margin="b(bottom, l)">

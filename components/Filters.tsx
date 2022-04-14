@@ -364,7 +364,6 @@ const Filters: React.FunctionComponent<{
                                                     tabIndex={-1}
                                                     type="radio"
                                                     name="barrier"
-                                                    disabled={index !== 0} // Disable all inputs but attentiveness/concentration
                                                     defaultChecked={index === 0} // also set it to checked
                                                     id={`barrier-${barrierId}`}
                                                     onKeyDown={(
