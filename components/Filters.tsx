@@ -76,7 +76,7 @@ const Filters: React.FunctionComponent<{
     {
       id: 1,
       name: intl.formatMessage({
-        defaultMessage: "Attentiveness/Concentration",
+        defaultMessage: "Noise in the Workplace",
       }),
       barrierCategoryId: 1,
     },

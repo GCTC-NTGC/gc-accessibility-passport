@@ -42,7 +42,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "You've selected <bold>Attentiveness/Concentration</bold> to add to your passport.",
+                      "You've selected <bold>Noise in the Workplace</bold> to add to your passport.",
                   },
                   { bold },
                 )}

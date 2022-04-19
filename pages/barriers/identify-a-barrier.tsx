@@ -17,15 +17,22 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit, setValue } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     // TODO: Save barrier to cookie?
     push(`/barriers/identify-a-barrier-2`);
   };
 
-  const setBarrierValue = (barrier: string) => setValue("barrier", barrier);
+  const setBarrierValue = (barrier: string): void =>
+    setValue("barrier", barrier);
 
   const help = (msg: string): React.ReactNode => (
-    <a href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}>{msg}</a>
+    <a
+      href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {msg}
+    </a>
   );
   const barrierCont = (msg: string): React.ReactNode => (
     <Link href="/barriers/identify-a-barrier-2">
