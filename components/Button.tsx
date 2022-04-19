@@ -9,6 +9,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   type?: "button" | "submit" | "reset" | undefined;
   /** Determines whether the element should be block level and 100% width. */
   block?: boolean;
+  /** Get access to the DOM element by passing a react ref.  */
+  innerRef?: React.LegacyRef<HTMLButtonElement>;
 }
 
 export const colorMap: Record<
@@ -68,17 +70,17 @@ export const colorMap: Record<
   },
   white: {
     solid: {
-      "data-h2-border": "b(white, all, solid, s)",
+      "data-h2-border": "b(white, all, solid, s) b:f(black, all, solid, s)",
       "data-h2-bg-color": "b(white)",
       "data-h2-font-color": "b(black)",
     },
     outline: {
-      "data-h2-border": "b(white, all, solid, s)",
+      "data-h2-border": "b(white, all, solid, s) b:f(black, all, solid, s)",
       "data-h2-bg-color": "b(white[0])",
       "data-h2-font-color": "b(black)",
     },
     inline: {
-      "data-h2-border": "b(white[0], all, solid, s)",
+      "data-h2-border": "b(white[0], all, solid, s) b:f(black, all, solid, s)",
       "data-h2-bg-color": "b(white[0])",
       "data-h2-font-color": "b(black)",
     },
@@ -91,6 +93,7 @@ export const Button: React.FC<ButtonProps> = ({
   color,
   mode,
   block = false,
+  innerRef,
   ...rest
 }): React.ReactElement => {
   return (
@@ -105,6 +108,7 @@ export const Button: React.FC<ButtonProps> = ({
         overflowWrap: "break-word",
         width: block ? "100%" : "auto",
       }}
+      ref={innerRef}
       {...rest}
     >
       {children}
