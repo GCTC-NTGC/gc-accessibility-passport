@@ -21,7 +21,7 @@ const Nav: React.FunctionComponent = () => {
       data-h2-position="b(relative)"
       data-h2-display="b(flex)"
       data-h2-justify-content="b(space-between)"
-      data-h2-margin="b(right-left, l)"
+      data-h2-margin="b(right-left, xl)"
     >
       <ul
         data-h2-display="b(flex)"
