@@ -85,7 +85,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 })}
               </p>
             </div>
-            <div>
+            <div data-h2-margin="b(bottom, xl)">
               <div
                 data-h2-display="b(flex)"
                 data-h2-justify-content="b(space-between)"
@@ -106,7 +106,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   )}
                 </p>
               </div>
-              <div data-h2-margin="b(bottom, l)">
+              <div>
                 <Filters setBarrierValue={setBarrierValue} />
               </div>
             </div>

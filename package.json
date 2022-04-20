@@ -15,6 +15,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "iron-session": "^6.0.5",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "next": "12.1.0",
     "octokit": "^1.7.1",

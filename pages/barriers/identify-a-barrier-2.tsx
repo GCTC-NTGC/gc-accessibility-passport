@@ -68,7 +68,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
                 })}
               </p>
             </div>
-            <div data-h2-margin="b(bottom, l)">
+            <div data-h2-margin="b(bottom, xl)">
               <p>
                 {intl.formatMessage({
                   defaultMessage:
