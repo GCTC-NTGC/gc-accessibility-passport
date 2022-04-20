@@ -7,8 +7,11 @@ import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import { errorMessages } from "../messages";
 import jsonData from "../public/resources/departments.json";
+
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
+  const methods = useForm();
+  const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
     // TODO: Save Manager Info to DB
   };
