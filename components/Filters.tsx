@@ -8,122 +8,58 @@ import {
 } from "../helpers/focus";
 import Button from "./Button";
 
-type BarrierCategory = {
+type Parent = {
+  id: number;
+  name: string;
+};
+
+type Category = {
   id: number;
   parentId: number;
   name: string;
 };
 
-type Barrier = {
+type Result = {
   id: number;
   name: string;
-  barrierCategoryId: number;
+  categoryId: number;
+  checked?: boolean;
 };
 
-const Filters: React.FunctionComponent<{
-  setBarrierValue: (barrier: string) => void;
-}> = ({ setBarrierValue }) => {
+interface FiltersProps {
+  parents: Parent[];
+  categories: Category[];
+  results: Result[];
+}
+
+const Filters: React.FunctionComponent<FiltersProps> = ({
+  parents,
+  categories,
+  results,
+}) => {
   const intl = useIntl();
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(700)">{msg}</span>
   );
-  const parentBarrierCategories = [
-    {
-      id: 1,
-      name: intl.formatMessage({ defaultMessage: "Disability" }),
-    },
-    {
-      id: 2,
-      name: intl.formatMessage({ defaultMessage: "Work Situation" }),
-    },
-  ];
-  const barrierCategories: BarrierCategory[] = [
-    {
-      id: 1,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Autism Spectrum" }),
-    },
-    {
-      id: 2,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Blindness" }),
-    },
-    {
-      id: 3,
-      parentId: 1,
-      name: intl.formatMessage({
-        defaultMessage: "Colourblind(ness)/Colour Vision Deficiency",
-      }),
-    },
-    {
-      id: 4,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Diabetes" }),
-    },
-    {
-      id: 5,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Learning Disability" }),
-    },
-    {
-      id: 6,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Mental Health Conditions" }),
-    },
-  ];
-
-  const barriers: Barrier[] = [
-    {
-      id: 1,
-      name: intl.formatMessage({
-        defaultMessage: "Noise in the Workplace",
-      }),
-      barrierCategoryId: 1,
-    },
-    {
-      id: 2,
-      name: intl.formatMessage({
-        defaultMessage: "Executive Function Challenges",
-      }),
-      barrierCategoryId: 1,
-    },
-    {
-      id: 3,
-      name: intl.formatMessage({
-        defaultMessage: "Time Management Challenges",
-      }),
-      barrierCategoryId: 1,
-    },
-    {
-      id: 4,
-      name: intl.formatMessage({ defaultMessage: "Memory Challenges" }),
-      barrierCategoryId: 1,
-    },
-    {
-      id: 5,
-      name: intl.formatMessage({ defaultMessage: "Noise sensitivity" }),
-      barrierCategoryId: 1,
-    },
-  ];
 
   // List of barriers that are displayed in the barriers section.
-  const [results, setResults] = React.useState<Barrier[] | null>(barriers);
-  // List of categories that are displayed in the categories section.
-  const [categories, setCategories] = React.useState<BarrierCategory[] | null>(
-    barrierCategories,
+  const [resultsState, setResultsState] = React.useState<Result[] | null>(
+    results,
   );
+  // List of categories that are displayed in the categories section.
+  const [categoriesState, setCategoriesState] = React.useState<
+    Category[] | null
+  >(categories);
   const [activeParent, setActiveParent] = React.useState(1);
   const [activeCategory, setActiveCategory] = React.useState(1);
 
   const onParentBarrierCategoryClick = (id: number): void => {
     setActiveParent(id);
-    setCategories(barrierCategories.filter(({ parentId }) => parentId === id));
+    setCategoriesState(categories.filter(({ parentId }) => parentId === id));
   };
   const onBarrierCategoryClick = (id: number): void => {
     setActiveCategory(id);
-    setResults(
-      barriers.filter(({ barrierCategoryId }) => barrierCategoryId === id),
-    );
+    setResultsState(results.filter(({ categoryId }) => categoryId === id));
   };
 
   const parentRef = React.useRef<HTMLUListElement | null>(null);
@@ -145,7 +81,7 @@ const Filters: React.FunctionComponent<{
       console.log(tabableElements);
       switch (e.key) {
         case "ArrowLeft":
-          setCategories(null);
+          setCategoriesState(null);
           focusOnElement(`[data-parent-id="${parentId}"]`);
           break;
         case "ArrowRight":
@@ -230,7 +166,7 @@ const Filters: React.FunctionComponent<{
   return (
     <section
       data-h2-border="b(black, all, solid, s)"
-      style={{ height: "19rem" }}
+      style={{ height: "19rem", overflow: "auto" }}
       data-h2-position="b(relative)"
     >
       <nav
@@ -239,7 +175,7 @@ const Filters: React.FunctionComponent<{
         })}
       >
         <ul data-h2-position="b(relative)" ref={parentRef}>
-          {parentBarrierCategories.map(({ id: parentId, name }) => {
+          {parents.map(({ id: parentId, name }) => {
             return (
               <li
                 key={parentId}
@@ -261,7 +197,7 @@ const Filters: React.FunctionComponent<{
                 {activeParent === parentId && (
                   // BARRIER CATEGORY RESULTS
                   <>
-                    {categories && categories.length > 0 ? (
+                    {categoriesState && categoriesState.length > 0 ? (
                       <>
                         <ul
                           data-h2-position="b(absolute)"
@@ -271,7 +207,6 @@ const Filters: React.FunctionComponent<{
                             width: "40%",
                             height: "19rem",
                           }}
-                          data-h2-bg-color="b(lightgray)"
                           ref={categoryRef}
                         >
                           {categories.map(({ id: categoryId, name }, index) => {
@@ -280,6 +215,7 @@ const Filters: React.FunctionComponent<{
                                 key={categoryId}
                                 data-h2-margin="b(all, none)"
                                 data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                data-h2-bg-color="b(lightgray)"
                                 {...(activeCategory === categoryId && {
                                   "data-h2-bg-color": "b(darkgray)",
                                   "data-h2-font-color": "b(white)",
@@ -309,13 +245,14 @@ const Filters: React.FunctionComponent<{
                                   {...(activeCategory === categoryId && {
                                     "data-h2-font-color": "b(white)",
                                   })}
+                                  data-h2-text-align="b(left)"
                                 >
                                   {name}
                                 </Button>
                                 {activeCategory === categoryId && (
                                   // BARRIER RESULTS
                                   <>
-                                    {results && results.length > 0 ? (
+                                    {resultsState && resultsState.length > 0 ? (
                                       <div
                                         data-h2-position="b(absolute)"
                                         style={{
@@ -342,9 +279,9 @@ const Filters: React.FunctionComponent<{
                                           )}
                                         </p>
                                         <ul ref={barrierRef}>
-                                          {results.map(
+                                          {resultsState.map(
                                             (
-                                              { id: barrierId, name },
+                                              { id: barrierId, name, checked },
                                               index,
                                             ) => {
                                               return (
@@ -364,7 +301,11 @@ const Filters: React.FunctionComponent<{
                                                     tabIndex={-1}
                                                     type="radio"
                                                     name="barrier"
-                                                    defaultChecked={index === 0} // also set it to checked
+                                                    defaultChecked={
+                                                      checked
+                                                        ? checked
+                                                        : index === 0
+                                                    } // also set it to checked
                                                     id={`barrier-${barrierId}`}
                                                     onKeyDown={(
                                                       e: React.KeyboardEvent<HTMLInputElement>,
