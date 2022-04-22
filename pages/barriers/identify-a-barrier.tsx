@@ -5,10 +5,14 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../../components/Button";
 import Filters from "../../components/Filters";
+import { Input, TextArea } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
+import { errorMessages } from "../../messages";
 
 type FormValues = {
+  name: string;
+  description: string;
   barrier: string;
 };
 
@@ -54,10 +58,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       id: 1,
       name: intl.formatMessage({ defaultMessage: "Disability" }),
     },
-    {
-      id: 2,
-      name: intl.formatMessage({ defaultMessage: "Work Situation" }),
-    },
   ];
   const barrierCategories: BarrierCategory[] = [
     {
@@ -68,29 +68,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     {
       id: 2,
       parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Blindness" }),
-    },
-    {
-      id: 3,
-      parentId: 1,
-      name: intl.formatMessage({
-        defaultMessage: "Colourblind(ness)/Colour Vision Deficiency",
-      }),
-    },
-    {
-      id: 4,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Diabetes" }),
-    },
-    {
-      id: 5,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Learning Disability" }),
-    },
-    {
-      id: 6,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Mental Health Conditions" }),
+      name: intl.formatMessage({ defaultMessage: "Hard of hearing" }),
     },
   ];
 
@@ -105,26 +83,9 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     {
       id: 2,
       name: intl.formatMessage({
-        defaultMessage: "Executive Function Challenges",
+        defaultMessage: "Background Noise",
       }),
-      categoryId: 1,
-    },
-    {
-      id: 3,
-      name: intl.formatMessage({
-        defaultMessage: "Time Management Challenges",
-      }),
-      categoryId: 1,
-    },
-    {
-      id: 4,
-      name: intl.formatMessage({ defaultMessage: "Memory Challenges" }),
-      categoryId: 1,
-    },
-    {
-      id: 5,
-      name: intl.formatMessage({ defaultMessage: "Noise sensitivity" }),
-      categoryId: 1,
+      categoryId: 2,
     },
   ];
 
@@ -139,41 +100,48 @@ const IdentifyABarrier: React.FunctionComponent = () => {
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div data-h2-margin="b(bottom, l)">
-              <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Your GC Workplace Accessibility Passport is a tool to document the barriers you might face at work and the adaptive tools and support measures that you need to succeed in your job. In this section, please describe the barriers you face at work.",
-                })}
-              </p>
-              <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "A Barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific. It can refer to how the employee interacts with their work environment. A barrier does not need to refer to a specific disability or health condition.",
-                })}
-              </p>
-              <p>
-                {intl.formatMessage(
-                  {
-                    defaultMessage:
-                      "The tool below presents a list of barriers that can be filtered by the type of <help>Disability</help> that, in interaction with the conditions in your workplace, might hinder your full and equal participation.",
-                  },
-                  { help },
-                )}
-              </p>
-              <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "You can use the tool below to select a barrier using the tool. Once you have selected a barrier from the list you can choose to elaborate on how this barrier might presents a challenge for you.  ",
-                })}
-              </p>
               <p data-h2-font-weight="b(700)">
                 {intl.formatMessage({
                   defaultMessage:
                     "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
                 })}
               </p>
+              <p>
+                {intl.formatMessage({
+                  defaultMessage:
+                    "Identify a barrier. A barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific.",
+                })}
+              </p>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                label={intl.formatMessage({
+                  defaultMessage: "Barrier name",
+                })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+              />
+              <TextArea
+                id="description"
+                name="description"
+                label={intl.formatMessage({
+                  defaultMessage: "Barrier description",
+                })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+                rows={10}
+              />
             </div>
             <div data-h2-margin="b(bottom, xl)">
+              <p data-h2-margin="b(top-bottom, l)">
+                {intl.formatMessage({
+                  defaultMessage:
+                    "Use the tool to select a barrier (a barrier means anything that prevents you from participating in your work environment). You can select the barrier from the drop-down menus below.",
+                })}
+              </p>
               <div
                 data-h2-display="b(flex)"
                 data-h2-justify-content="b(space-between)"
