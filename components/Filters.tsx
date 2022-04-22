@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useFormContext } from "react-hook-form";
 import { useIntl } from "react-intl";
 import {
   focusNextItem,
@@ -30,21 +31,24 @@ interface FiltersProps {
   parents: Parent[];
   categories: Category[];
   results: Result[];
+  setResultValue: (value: string) => void;
 }
 
 const Filters: React.FunctionComponent<FiltersProps> = ({
   parents,
   categories,
   results,
+  setResultValue,
 }) => {
   const intl = useIntl();
+  const { register } = useFormContext();
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(700)">{msg}</span>
   );
 
   // List of barriers that are displayed in the barriers section.
   const [resultsState, setResultsState] = React.useState<Result[] | null>(
-    results,
+    results.filter(({ categoryId }) => categoryId === 1),
   );
   // List of categories that are displayed in the categories section.
   const [categoriesState, setCategoriesState] = React.useState<
@@ -53,11 +57,11 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
   const [activeParent, setActiveParent] = React.useState(1);
   const [activeCategory, setActiveCategory] = React.useState(1);
 
-  const onParentBarrierCategoryClick = (id: number): void => {
+  const onParentCategoryClick = (id: number): void => {
     setActiveParent(id);
     setCategoriesState(categories.filter(({ parentId }) => parentId === id));
   };
-  const onBarrierCategoryClick = (id: number): void => {
+  const onCategoryClick = (id: number): void => {
     setActiveCategory(id);
     setResultsState(results.filter(({ categoryId }) => categoryId === id));
   };
@@ -75,20 +79,16 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
     if (categoryRef.current && parentRef.current) {
       const categoryTabList =
         categoryRef.current.querySelectorAll<HTMLElement>(`[data-category-id]`);
-      const tabableElements = parentRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]):not([tabindex="-1"]), input:not([disabled]):not([tabindex="-1"]), textarea, select, details, [tabindex]:not([tabindex="-1"])',
-      );
-      console.log(tabableElements);
       switch (e.key) {
         case "ArrowLeft":
           setCategoriesState(null);
           focusOnElement(`[data-parent-id="${parentId}"]`);
           break;
         case "ArrowRight":
-          onBarrierCategoryClick(categoryId);
+          onCategoryClick(categoryId);
           break;
         case "Enter":
-          onBarrierCategoryClick(categoryId);
+          onCategoryClick(categoryId);
           break;
         case "ArrowUp":
           focusPreviousItem(categoryTabList);
@@ -109,11 +109,12 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
     }
   };
 
-  const onBarrierKeyDown = (
+  const onKeyDown = (
     e: React.KeyboardEvent<HTMLInputElement>,
     barrierId: number,
     categoryId: number,
     parentId: number,
+    name: string,
   ): void => {
     e.preventDefault();
     if (barrierRef.current && parentRef) {
@@ -127,9 +128,11 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
           break;
         case "ArrowRight":
           radio.checked = !radio.checked;
+          setResultValue(name);
           break;
         case "Enter":
           radio.checked = !radio.checked;
+          setResultValue(name);
           break;
         case "ArrowUp":
           focusPreviousItem(barrierElementList);
@@ -152,16 +155,21 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
 
   const firstCategoryRef = React.useRef<HTMLButtonElement | null>(null); // first element in categories.
   React.useEffect(() => {
-    if (categories && categories.length !== 0 && firstCategoryRef.current) {
+    if (
+      categoriesState &&
+      categoriesState.length !== 0 &&
+      firstCategoryRef.current
+    ) {
       firstCategoryRef.current.focus();
     }
-  }, [categories]);
-  const firstBarrierRef = React.useRef<HTMLInputElement | null>(null); // first element in categories.
+  }, [categoriesState]);
   React.useEffect(() => {
-    if (results && results.length !== 0 && firstBarrierRef.current) {
-      firstBarrierRef.current.focus();
+    if (resultsState && resultsState.length !== 0 && barrierRef.current) {
+      const input =
+        barrierRef.current.querySelector<HTMLElement>(`input[type="radio"]`);
+      input && input.focus();
     }
-  }, [results]);
+  }, [resultsState]);
 
   return (
     <section
@@ -189,7 +197,7 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                   data-parent-id={parentId}
                   color="white"
                   mode="inline"
-                  onClick={() => onParentBarrierCategoryClick(parentId)}
+                  onClick={() => onParentCategoryClick(parentId)}
                   aria-expanded={activeParent === parentId}
                 >
                   {name}
@@ -228,9 +236,7 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                                   color="white"
                                   mode="inline"
                                   tabIndex={-1}
-                                  onClick={() =>
-                                    onBarrierCategoryClick(categoryId)
-                                  }
+                                  onClick={() => onCategoryClick(categoryId)}
                                   onKeyDown={(
                                     e: React.KeyboardEvent<HTMLButtonElement>,
                                   ) =>
@@ -280,10 +286,7 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                                         </p>
                                         <ul ref={barrierRef}>
                                           {resultsState.map(
-                                            (
-                                              { id: barrierId, name, checked },
-                                              index,
-                                            ) => {
+                                            ({ id: barrierId, name }) => {
                                               return (
                                                 <li
                                                   data-h2-margin="b(all, none)"
@@ -293,29 +296,29 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                                                   data-h2-font-color="b(white)"
                                                 >
                                                   <input
-                                                    ref={
-                                                      index === 0
-                                                        ? firstBarrierRef
-                                                        : null
-                                                    }
+                                                    {...register("barrier")}
+                                                    // ref={
+                                                    //   index === 0
+                                                    //     ? firstBarrierRef
+                                                    //     : null
+                                                    // }
                                                     tabIndex={-1}
                                                     type="radio"
-                                                    name="barrier"
-                                                    defaultChecked={
-                                                      checked
-                                                        ? checked
-                                                        : index === 0
-                                                    } // also set it to checked
+                                                    value={name}
                                                     id={`barrier-${barrierId}`}
                                                     onKeyDown={(
                                                       e: React.KeyboardEvent<HTMLInputElement>,
                                                     ) =>
-                                                      onBarrierKeyDown(
+                                                      onKeyDown(
                                                         e,
                                                         barrierId,
                                                         categoryId,
                                                         parentId,
+                                                        name,
                                                       )
+                                                    }
+                                                    onClick={() =>
+                                                      setResultValue(name)
                                                     }
                                                   />
                                                   <label

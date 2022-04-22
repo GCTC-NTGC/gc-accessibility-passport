@@ -8,7 +8,6 @@ import Filters from "../../components/Filters";
 import { Input, TextArea } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
-import { errorMessages } from "../../messages";
 
 type FormValues = {
   name: string;
@@ -20,6 +19,7 @@ type Barrier = {
   id: number;
   name: string;
   categoryId: number;
+  checked?: boolean;
 };
 
 type BarrierCategory = {
@@ -31,21 +31,20 @@ type BarrierCategory = {
 const IdentifyABarrier: React.FunctionComponent = () => {
   const intl = useIntl();
   const { push } = useRouter();
-  const methods = useForm<FormValues>();
-  const { handleSubmit } = methods;
-  const onSubmit = async (): Promise<void> => {
+  const methods = useForm<FormValues>({
+    defaultValues: { barrier: "Noise in the Workplace" },
+  });
+  const { handleSubmit, watch, setValue } = methods;
+  const watchBarrier = watch("barrier");
+  const setBarrierValue = (value: string): void => setValue("barrier", value);
+  const onSubmit = async (data: FormValues): Promise<void> => {
     // TODO: Save barrier to cookie?
-    push(`/barriers/identify-a-barrier-2`);
+    console.log(data);
+    push(`/solutions/identify-a-solution`);
   };
 
-  const help = (msg: string): React.ReactNode => (
-    <a
-      href={"https://laws.justice.gc.ca/eng/acts/A-0.6/page-1.html"}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {msg}
-    </a>
+  const bold = (msg: string): React.ReactNode => (
+    <span data-h2-font-weight="b(600)">{msg}</span>
   );
   const barrierCont = (msg: string): React.ReactNode => (
     <Link href="/barriers/identify-a-barrier-2">
@@ -79,6 +78,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
         defaultMessage: "Noise in the Workplace",
       }),
       categoryId: 1,
+      checked: true,
     },
     {
       id: 2,
@@ -119,9 +119,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 label={intl.formatMessage({
                   defaultMessage: "Barrier name",
                 })}
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
               />
               <TextArea
                 id="description"
@@ -129,14 +126,11 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 label={intl.formatMessage({
                   defaultMessage: "Barrier description",
                 })}
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
                 rows={10}
               />
             </div>
             <div data-h2-margin="b(bottom, xl)">
-              <p data-h2-margin="b(top-bottom, l)">
+              <p>
                 {intl.formatMessage({
                   defaultMessage:
                     "Use the tool to select a barrier (a barrier means anything that prevents you from participating in your work environment). You can select the barrier from the drop-down menus below.",
@@ -167,8 +161,18 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   parents={parentBarrierCategories}
                   categories={barrierCategories}
                   results={barriers}
+                  setResultValue={setBarrierValue}
                 />
               </div>
+              <p>
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "You've selected <bold>{watchBarrier}</bold> as the barrier you'd like to add to your passport.",
+                  },
+                  { bold, watchBarrier },
+                )}
+              </p>
             </div>
             <FormFooter
               cancelButton={{
@@ -183,7 +187,8 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 data-h2-padding="b(all, s)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Start with the barrier I've selected",
+                  defaultMessage:
+                    "I'm happy with this barrier, save and move to identifying solutions",
                 })}
               </Button>
             </FormFooter>
