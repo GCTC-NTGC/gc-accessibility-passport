@@ -162,6 +162,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   categories={barrierCategories}
                   results={barriers}
                   setResultValue={setBarrierValue}
+                  inputName="barrier"
                 />
               </div>
               <p>
