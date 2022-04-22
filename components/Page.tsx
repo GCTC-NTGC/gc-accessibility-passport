@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const SectionOne: React.FunctionComponent = ({ children }) => {
+export const LeftSection: React.FunctionComponent = ({ children }) => {
   return (
     <div
       data-h2-padding="b(right-left, l) b(top-bottom, none)"
@@ -12,7 +12,7 @@ export const SectionOne: React.FunctionComponent = ({ children }) => {
   );
 };
 
-export const SectionTwo: React.FunctionComponent = ({ children }) => {
+export const RightSection: React.FunctionComponent = ({ children }) => {
   return (
     <div
       data-h2-padding="b(right-left, l) b(top-bottom, none)"
