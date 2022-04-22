@@ -46,18 +46,6 @@ const IdentifyASolution: React.FunctionComponent = () => {
       id: 1,
       name: intl.formatMessage({ defaultMessage: "Recommendations" }),
     },
-    {
-      id: 2,
-      name: intl.formatMessage({ defaultMessage: "Disability" }),
-    },
-    {
-      id: 3,
-      name: intl.formatMessage({ defaultMessage: "Work Situation" }),
-    },
-    {
-      id: 4,
-      name: intl.formatMessage({ defaultMessage: "Topic" }),
-    },
   ];
   const solutionCategories: SolutionCategory[] = [
     {
@@ -233,7 +221,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "Please select the link below to customize the solution you have selected",
+                      "Please select the link below to customize the solution you have selected.",
                   })}
                 </p>
               </div>
