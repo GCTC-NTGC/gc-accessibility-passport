@@ -31,7 +31,7 @@ const IdentifyABarrier2: React.FunctionComponent = () => {
         defaultMessage: "Identify a new barrier (cont.)",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "=Identify a new barrier - GC Accessibility Passport",
+        defaultMessage: "Identify a new barrier - GC Accessibility Passport",
       })}
     >
       <div data-h2-padding="b(all, xl)">
