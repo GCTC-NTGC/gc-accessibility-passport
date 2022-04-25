@@ -46,11 +46,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(600)">{msg}</span>
   );
-  const barrierCont = (msg: string): React.ReactNode => (
-    <Link href="/barriers/identify-a-barrier-2">
-      <a title="msg">{msg}</a>
-    </Link>
-  );
 
   const parentBarrierCategories = [
     {
@@ -145,15 +140,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   {intl.formatMessage({
                     defaultMessage: "Filter to choose barriers by:",
                   })}
-                </p>
-                <p data-h2-margin="b(top-bottom, xs)">
-                  {intl.formatMessage(
-                    {
-                      defaultMessage:
-                        "Can't find a barrier that meets your needs? <barrierCont>Define your own.</barrierCont>",
-                    },
-                    { barrierCont },
-                  )}
                 </p>
               </div>
               <div>
