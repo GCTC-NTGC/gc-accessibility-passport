@@ -38,6 +38,17 @@ const Passport: React.FunctionComponent = () => {
           {intl.formatMessage({ defaultMessage: "Identify a solution" })}
         </a>
       </Link>
+      <Link href="solutions/identify-a-solution-2">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Identify a solution (cont.)",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Identify a solution (cont.)",
+          })}
+        </a>
+      </Link>
     </div>
   );
 };

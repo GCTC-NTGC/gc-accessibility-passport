@@ -9,16 +9,12 @@ import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
 import { errorMessages } from "../../messages";
 
-interface IdentifyASolution2Props {}
-
 type FormValues = {
   solutions: string[] | undefined;
   optionalContext: string;
 };
 
-const IdentifyASolution2: React.FunctionComponent<IdentifyASolution2Props> = (
-  props,
-) => {
+const IdentifyASolution2: React.FunctionComponent = () => {
   const intl = useIntl();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
@@ -29,6 +25,9 @@ const IdentifyASolution2: React.FunctionComponent<IdentifyASolution2Props> = (
     <Link href="/solutions/identify-a-solution">
       <a title={msg}>{msg}</a>
     </Link>
+  );
+  const bold = (msg: string): React.ReactNode => (
+    <span data-h2-font-weight="b(700)">{msg}</span>
   );
 
   const situations: Checkbox[] = [
@@ -83,6 +82,15 @@ const IdentifyASolution2: React.FunctionComponent<IdentifyASolution2Props> = (
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
+              <h2 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, m)">
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "You've selected <bold>Flexible Schedule</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
+                  },
+                  { bold },
+                )}
+              </h2>
               <p
                 data-h2-bg-color="b(lightgray)"
                 data-h2-padding="b(all, s)"
@@ -194,10 +202,13 @@ const IdentifyASolution2: React.FunctionComponent<IdentifyASolution2Props> = (
                 })}
               </p>
               <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "REMINDER: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
-                })}
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "<bold>REMINDER</bold>: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
+                  },
+                  { bold },
+                )}
               </p>
               <p>
                 {intl.formatMessage({
