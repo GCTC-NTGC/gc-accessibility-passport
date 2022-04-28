@@ -160,7 +160,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
 
                 <p data-h2-margin="b(left, s)">
                   {intl.formatMessage({
-                    defaultMessage: "Noisy Workplace",
+                    defaultMessage: " - Noisy Workplace",
                   })}
                 </p>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
@@ -267,7 +267,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
 
                 <p data-h2-margin="b(left, s)">
                   {intl.formatMessage({
-                    defaultMessage: "Noisy Workplace",
+                    defaultMessage: " - Noisy Workplace",
                   })}
                 </p>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
@@ -375,7 +375,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
 
                 <p data-h2-margin="b(left, s)">
                   {intl.formatMessage({
-                    defaultMessage: "Noisy Workplace",
+                    defaultMessage: " - Noisy Workplace",
                   })}
                 </p>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
