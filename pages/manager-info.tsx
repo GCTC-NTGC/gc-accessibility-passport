@@ -17,10 +17,11 @@ const ManagerInfo: React.FunctionComponent = () => {
   };
   return (
     <Layout
-      title={intl.formatMessage({ defaultMessage: "My manager's information" })}
+      title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My manager's information - GC Accessibility Passport",
+        defaultMessage: "My Manager's Information - GC Accessibility Passport",
       })}
+      center={true}
     >
       <div data-h2-padding="b(all, xl)">
         <FormProvider {...useForm()}>
@@ -29,7 +30,7 @@ const ManagerInfo: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "Your manager plays a key role in obtaining solutions for any barriers you might face in the workplace. Add your manager’s contact information into this section of your Passport. You will then have the option to share information from your Passport with your manager once it is documented or updated.",
+                    "Your manager is responsible for providing you with the tools and support measures to succeed in your work. Add your manager’s contact information into this section of your Passport. Adding your manager’s contact information here gives you the option to share your Passport information with your manager.",
                 })}
               </p>
               <p>
@@ -105,12 +106,12 @@ const ManagerInfo: React.FunctionComponent = () => {
                 id="department"
                 name="department"
                 label={intl.formatMessage({
-                  defaultMessage: "department",
+                  defaultMessage: "Organization",
                   description:
                     "Label displayed on the My manager's Information form department field.",
                 })}
                 nullSelection={intl.formatMessage({
-                  defaultMessage: "Select a department...",
+                  defaultMessage: "Select an organization...",
                   description:
                     "Placeholder displayed on the My manager's Information form department field.",
                 })}
