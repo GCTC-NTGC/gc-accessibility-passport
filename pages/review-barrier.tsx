@@ -35,7 +35,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                     "Below you will find a summary of your barrier and the solutions you have identified. Select the view or edit links within each interactive solution module to view or modify its details. Select the delete link within each module to remove a solution from your passport.",
                 })}
               </p>
-              <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+              <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                 {intl.formatMessage(
                   {
                     defaultMessage: "Barrier Description",
@@ -53,7 +53,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                     "A noisy workplace can impact a person’s concentration and hearing and may cause headaches or distraction.",
                 })}
               </p>
-              <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+              <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                 {intl.formatMessage(
                   {
                     defaultMessage: "Shared Solutions",
@@ -82,7 +82,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 >
                   <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
                     <p
-                      data-h2-font-size="b(h6)"
+                      data-h2-font-size="b(h5)"
                       data-h2-margin="b(left, s)"
                       data-h2-font-style="b(underline)"
                     >
@@ -188,7 +188,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 >
                   <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
                     <p
-                      data-h2-font-size="b(h6)"
+                      data-h2-font-size="b(h5)"
                       data-h2-margin="b(left, s)"
                       data-h2-font-style="b(underline)"
                     >
@@ -294,7 +294,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 >
                   <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
                     <p
-                      data-h2-font-size="b(h6)"
+                      data-h2-font-size="b(h5)"
                       data-h2-margin="b(left, s)"
                       data-h2-font-style="b(underline)"
                     >
@@ -390,7 +390,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   </p>
                 </p>
               </section>{" "}
-              <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+              <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                 {intl.formatMessage(
                   {
                     defaultMessage: "Current Solutions",
@@ -408,7 +408,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                     "You haven't marked any solutions as working for this particular barrier.",
                 })}
               </p>
-              <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+              <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                 {intl.formatMessage(
                   {
                     defaultMessage: "Attempted Solutions",
@@ -429,7 +429,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             </div>
           </LeftSection>
           <RightSection>
-            <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
                   defaultMessage: "Editing tools",
@@ -470,7 +470,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 })}
               </Button>
             </div>
-            <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
                   defaultMessage: "Permissions",
@@ -481,7 +481,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
-                  defaultMessage: "My manager(can approve)",
+                  defaultMessage: "My manager (can approve)",
                 },
                 { bold },
               )}
@@ -511,7 +511,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
-                  defaultMessage: "Others(can view only)",
+                  defaultMessage: "Others (can view only)",
                 },
                 { bold },
               )}
@@ -551,7 +551,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 })}
               </Button>
             </div>
-            <h4 data-h2-font-size="b(h3)" data-h2-margin="b(bottom, none)">
+            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
                   defaultMessage: "History",
@@ -568,6 +568,17 @@ const ReviewBarrier: React.FunctionComponent = () => {
               {intl.formatMessage({
                 defaultMessage:
                   "You proposed noise cancelling headphones as a solution to this barrier.",
+              })}
+            </p>
+            <hr data-h2-margin="b(top, s)"></hr>
+            <p data-h2-margin="b(bottom, none)">
+              {intl.formatMessage({
+                defaultMessage: "2022/April/03",
+              })}
+            </p>
+            <p data-h2-margin="b(bottom, none)">
+              {intl.formatMessage({
+                defaultMessage: "You added this barrier to your passport.",
               })}
             </p>
           </RightSection>
