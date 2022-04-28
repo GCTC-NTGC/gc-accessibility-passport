@@ -128,12 +128,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 <div
                   data-h2-display="b(flex)"
                   data-h2-justify-content="b(space-between)"
+                  data-h2-bg-color="b(lightblue)"
+                  data-h2-margin="b(all, s)"
                 >
                   <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-margin="b(left, s)"
-                      data-h2-bg-color="b(lightgray)"
-                    >
+                    <p data-h2-margin="b(left, s)">
                       {intl.formatMessage({
                         defaultMessage:
                           "This solution is awaiting confirmation from your manager.",
@@ -235,12 +234,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 <div
                   data-h2-display="b(flex)"
                   data-h2-justify-content="b(space-between)"
+                  data-h2-bg-color="b(lightblue)"
+                  data-h2-margin="b(all, s)"
                 >
                   <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-margin="b(left, s)"
-                      data-h2-bg-color="b(lightgray)"
-                    >
+                    <p data-h2-margin="b(left, s)">
                       {intl.formatMessage({
                         defaultMessage:
                           "This solution is awaiting confirmation from your manager.",
@@ -343,12 +341,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 <div
                   data-h2-display="b(flex)"
                   data-h2-justify-content="b(space-between)"
+                  data-h2-bg-color="b(lightblue)"
+                  data-h2-margin="b(all, s)"
                 >
                   <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-margin="b(left, s)"
-                      data-h2-bg-color="b(lightgray)"
-                    >
+                    <p data-h2-margin="b(left, s)">
                       {intl.formatMessage({
                         defaultMessage:
                           "This solution is awaiting confirmation from your manager.",
