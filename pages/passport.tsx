@@ -29,6 +29,15 @@ const Passport: React.FunctionComponent = () => {
           {intl.formatMessage({ defaultMessage: "Manager info form" })}
         </a>
       </Link>
+      <Link href="/review-barrier">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Review Barrier info form",
+          })}
+        >
+          {intl.formatMessage({ defaultMessage: "Review Barrier info form" })}
+        </a>
+      </Link>
     </div>
   );
 };

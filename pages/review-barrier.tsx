@@ -24,7 +24,6 @@ const ReviewBarrier: React.FunctionComponent = () => {
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(700)">{msg}</span>
   );
-  const solutions = (msg: string): React.ReactNode => <a href="#">{msg}</a>;
   return (
     <Layout
       title={intl.formatMessage({
@@ -197,6 +196,231 @@ const ReviewBarrier: React.FunctionComponent = () => {
                         <Link data-h2-margin="b(left, s)" href={""}>
                           {intl.formatMessage({
                             defaultMessage: "my_hearing_assessment.pdf(3MB)",
+                          })}
+                        </Link>
+                      </p>
+                    </p>
+                  </section>{" "}
+                  <section
+                    data-h2-border="b(lightgray, all, solid, s)"
+                    data-h2-margin="b(all, s)"
+                    data-h2-shadow="b(m)"
+                  >
+                    <div
+                      data-h2-display="b(flex)"
+                      data-h2-justify-content="b(space-between)"
+                    >
+                      <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
+                        <p
+                          data-h2-font-size="b(h6)"
+                          data-h2-margin="b(left, s)"
+                          data-h2-font-style="b(underline)"
+                        >
+                          {intl.formatMessage(
+                            {
+                              defaultMessage: "Access to quiet space",
+                            },
+                            { bold },
+                          )}
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "View",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Edit",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Delete",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      data-h2-display="b(flex)"
+                      data-h2-justify-content="b(space-between)"
+                    >
+                      <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
+                        <p
+                          data-h2-margin="b(left, s)"
+                          data-h2-bg-color="b(lightgray)"
+                        >
+                          {intl.formatMessage({
+                            defaultMessage:
+                              "This solution is awaiting confirmation from your manager.",
+                          })}
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(left, l)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Review",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage:
+                          "This solution applies to me in following situations:",
+                      })}
+                    </p>
+
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: "Noisy Workplace",
+                      })}
+                    </p>
+                    <p
+                      data-h2-margin="b(left, none)"
+                      data-h2-padding="b(all, s)"
+                    >
+                      {intl.formatMessage({
+                        defaultMessage:
+                          " Access to quiet space is particularly helpful for me because",
+                      })}
+                      <p>
+                        <PaperClipIcon style={{ width: "1.2rem" }}>
+                          {" "}
+                        </PaperClipIcon>
+                        <Link data-h2-margin="b(left, s)" href={""}>
+                          {intl.formatMessage({
+                            defaultMessage: "location_assessment.pdf(3MB)",
+                          })}
+                        </Link>
+                      </p>
+                    </p>
+                  </section>{" "}
+                  <section
+                    data-h2-border="b(lightgray, all, solid, s)"
+                    data-h2-margin="b(all, s)"
+                    data-h2-shadow="b(m)"
+                  >
+                    <div
+                      data-h2-display="b(flex)"
+                      data-h2-justify-content="b(space-between)"
+                    >
+                      <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
+                        <p
+                          data-h2-font-size="b(h6)"
+                          data-h2-margin="b(left, s)"
+                          data-h2-font-style="b(underline)"
+                        >
+                          {intl.formatMessage(
+                            {
+                              defaultMessage:
+                                "Organizer / task planning tool/software application",
+                            },
+                            { bold },
+                          )}
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "View",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Edit",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Delete",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      data-h2-display="b(flex)"
+                      data-h2-justify-content="b(space-between)"
+                    >
+                      <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
+                        <p
+                          data-h2-margin="b(left, s)"
+                          data-h2-bg-color="b(lightgray)"
+                        >
+                          {intl.formatMessage({
+                            defaultMessage:
+                              "This solution is awaiting confirmation from your manager.",
+                          })}
+                        </p>
+                      </div>
+                      <div style={{ flex: 1 }} data-h2-margin="b(left, l)">
+                        <p>
+                          {" "}
+                          <Link href={""}>
+                            {intl.formatMessage({
+                              defaultMessage: "Review",
+                            })}
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage:
+                          "This solution applies to me in following situations:",
+                      })}
+                    </p>
+
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: "Noisy Workplace",
+                      })}
+                    </p>
+                    <p
+                      data-h2-margin="b(left, none)"
+                      data-h2-padding="b(all, s)"
+                    >
+                      {intl.formatMessage({
+                        defaultMessage:
+                          " Organizer / task planning tool/software application is particularly helpful for me because",
+                      })}
+                      <p>
+                        <PaperClipIcon style={{ width: "1.2rem" }}>
+                          {" "}
+                        </PaperClipIcon>
+                        <Link data-h2-margin="b(left, s)" href={""}>
+                          {intl.formatMessage({
+                            defaultMessage: "software_assessment.pdf(3MB)",
                           })}
                         </Link>
                       </p>
