@@ -12,18 +12,27 @@ type FormValues = {
   barrier: string;
 };
 
+type Barrier = {
+  id: number;
+  name: string;
+  categoryId: number;
+};
+
+type BarrierCategory = {
+  id: number;
+  parentId: number;
+  name: string;
+};
+
 const IdentifyABarrier: React.FunctionComponent = () => {
   const intl = useIntl();
   const { push } = useRouter();
   const methods = useForm<FormValues>();
-  const { handleSubmit, setValue } = methods;
+  const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
     // TODO: Save barrier to cookie?
     push(`/barriers/identify-a-barrier-2`);
   };
-
-  const setBarrierValue = (barrier: string): void =>
-    setValue("barrier", barrier);
 
   const help = (msg: string): React.ReactNode => (
     <a
@@ -39,6 +48,85 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       <a title="msg">{msg}</a>
     </Link>
   );
+
+  const parentBarrierCategories = [
+    {
+      id: 1,
+      name: intl.formatMessage({ defaultMessage: "Disability" }),
+    },
+    {
+      id: 2,
+      name: intl.formatMessage({ defaultMessage: "Work Situation" }),
+    },
+  ];
+  const barrierCategories: BarrierCategory[] = [
+    {
+      id: 1,
+      parentId: 1,
+      name: intl.formatMessage({ defaultMessage: "Autism Spectrum" }),
+    },
+    {
+      id: 2,
+      parentId: 1,
+      name: intl.formatMessage({ defaultMessage: "Blindness" }),
+    },
+    {
+      id: 3,
+      parentId: 1,
+      name: intl.formatMessage({
+        defaultMessage: "Colourblind(ness)/Colour Vision Deficiency",
+      }),
+    },
+    {
+      id: 4,
+      parentId: 1,
+      name: intl.formatMessage({ defaultMessage: "Diabetes" }),
+    },
+    {
+      id: 5,
+      parentId: 1,
+      name: intl.formatMessage({ defaultMessage: "Learning Disability" }),
+    },
+    {
+      id: 6,
+      parentId: 1,
+      name: intl.formatMessage({ defaultMessage: "Mental Health Conditions" }),
+    },
+  ];
+
+  const barriers: Barrier[] = [
+    {
+      id: 1,
+      name: intl.formatMessage({
+        defaultMessage: "Noise in the Workplace",
+      }),
+      categoryId: 1,
+    },
+    {
+      id: 2,
+      name: intl.formatMessage({
+        defaultMessage: "Executive Function Challenges",
+      }),
+      categoryId: 1,
+    },
+    {
+      id: 3,
+      name: intl.formatMessage({
+        defaultMessage: "Time Management Challenges",
+      }),
+      categoryId: 1,
+    },
+    {
+      id: 4,
+      name: intl.formatMessage({ defaultMessage: "Memory Challenges" }),
+      categoryId: 1,
+    },
+    {
+      id: 5,
+      name: intl.formatMessage({ defaultMessage: "Noise sensitivity" }),
+      categoryId: 1,
+    },
+  ];
 
   return (
     <Layout
@@ -107,7 +195,11 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 </p>
               </div>
               <div>
-                <Filters setBarrierValue={setBarrierValue} />
+                <Filters
+                  parents={parentBarrierCategories}
+                  categories={barrierCategories}
+                  results={barriers}
+                />
               </div>
             </div>
             <FormFooter
