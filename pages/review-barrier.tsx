@@ -157,11 +157,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   })}
                 </p>
 
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage: " - Noisy Workplace",
-                  })}
-                </p>
+                <ul>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Office Workplace",
+                      })}
+                    </p>
+                  </li>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Remote Workplace",
+                      })}
+                    </p>
+                  </li>
+                </ul>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
                   {intl.formatMessage({
                     defaultMessage:
@@ -262,12 +273,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
                       "This solution applies to me in following situations:",
                   })}
                 </p>
-
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage: " - Noisy Workplace",
-                  })}
-                </p>
+                <ul>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Office Workplace",
+                      })}
+                    </p>
+                  </li>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Remote Workplace",
+                      })}
+                    </p>
+                  </li>
+                </ul>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
                   {intl.formatMessage({
                     defaultMessage:
@@ -370,11 +391,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   })}
                 </p>
 
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage: " - Noisy Workplace",
-                  })}
-                </p>
+                <ul>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Office Workplace",
+                      })}
+                    </p>
+                  </li>
+                  <li>
+                    <p data-h2-margin="b(left, s)">
+                      {intl.formatMessage({
+                        defaultMessage: " - Remote Workplace",
+                      })}
+                    </p>
+                  </li>
+                </ul>
                 <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
                   {intl.formatMessage({
                     defaultMessage:
