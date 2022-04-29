@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import * as React from "react";
-import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
