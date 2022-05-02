@@ -22,17 +22,20 @@ type SolutionCategory = {
 };
 
 type FormValues = {
-  barrier: string;
+  solution: string;
 };
 
 const IdentifyASolution: React.FunctionComponent = () => {
   const intl = useIntl();
   const { push } = useRouter();
-  const methods = useForm<FormValues>();
-  const { handleSubmit } = methods;
-  const onSubmit = async (): Promise<void> => {
+  const methods = useForm<FormValues>({
+    defaultValues: { solution: "Noise cancelling headphones" },
+  });
+  const { handleSubmit, setValue } = methods;
+  const setSolutionValue = (value: string): void => setValue("solution", value);
+  const onSubmit = async (data: FormValues): Promise<void> => {
     // TODO: Save solution to cookie?
-    push(`/barriers/identify-a-barrier-2`);
+    push(`/barriers/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
@@ -210,6 +213,8 @@ const IdentifyASolution: React.FunctionComponent = () => {
                 parents={parentSolutionCategories}
                 categories={solutionCategories}
                 results={solutions}
+                setResultValue={setSolutionValue}
+                inputName="solution"
               />
               <div>
                 <p>
