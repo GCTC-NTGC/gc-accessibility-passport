@@ -1,7 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
 import { PaperClipIcon } from "@heroicons/react/solid";
@@ -9,9 +8,6 @@ import { PaperClipIcon } from "@heroicons/react/solid";
 const ViewEmployeePassport: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
   return (
     <Layout
       title={intl.formatMessage({
@@ -34,33 +30,24 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
               <p data-h2-padding="b(all, s)" data-h2-margin="b(all, none)">
                 {intl.formatMessage({
                   defaultMessage:
-                    "Select View to action employee Passport information.",
+                    "You can action a barrier/solution package that an employee has shared with you by selecting the View link below.",
                 })}
               </p>
               <p data-h2-padding="b(all, s)" data-h2-margin="b(all, none)">
                 {intl.formatMessage({
                   defaultMessage:
-                    "You can action a barrier/solution package that an employee has shared with you by selecting the View link below.",
+                    "Select View to action employee Passport information.",
                 })}
               </p>
-              <div
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(space-between)"
-              >
-                <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                  <p data-h2-font-size="b(h5)" data-h2-margin="b(left, s)">
-                    {intl.formatMessage(
-                      {
-                        defaultMessage: "Barriers for review",
-                      },
-                      { bold },
-                    )}
-                  </p>
-                </div>
+              <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
+                <p data-h2-font-size="b(h4)" data-h2-margin="b(left, s)">
+                  {intl.formatMessage({
+                    defaultMessage: "Barriers for review",
+                  })}
+                </p>
               </div>
               <div
                 data-h2-display="b(flex)"
-                data-h2-justify-content="b(space-between)"
                 data-h2-bg-color="b(lightblue)"
                 data-h2-margin="b(all, s)"
               >
@@ -83,13 +70,14 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                   data-h2-justify-content="b(space-between)"
                 >
                   <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                    <p data-h2-font-size="b(h5)" data-h2-margin="b(left, s)">
-                      {intl.formatMessage(
-                        {
-                          defaultMessage: "Noise in the Workplace",
-                        },
-                        { bold },
-                      )}
+                    <p
+                      data-h2-font-size="b(h5)"
+                      data-h2-margin="b(left, s)"
+                      data-h2-font-weight="b(700)"
+                    >
+                      {intl.formatMessage({
+                        defaultMessage: "Noise in the Workplace",
+                      })}
                     </p>
                   </div>
                   <div style={{ flex: 5 }} data-h2-margin="b(right, s)">
@@ -111,54 +99,48 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                   </div>
                 </div>
               </section>{" "}
-              <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-                {intl.formatMessage(
-                  {
+              <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
+                <p
+                  data-h2-font-size="b(h4)"
+                  data-h2-margin="b(all, s)"
+                  data-h2-padding="b(top, s)"
+                >
+                  {intl.formatMessage({
                     defaultMessage: "Solutions in place",
-                  },
-                  { bold },
-                )}
-              </h4>
-              <p
-                data-h2-padding="b(all, s)"
-                data-h2-margin="b(bottom, none)"
-                data-h2-bg-color="b(lightgray)"
-              >
-                {intl.formatMessage({
-                  defaultMessage: "No solutions in place.",
-                })}
-              </p>
+                  })}
+                </p>
+                <p
+                  data-h2-padding="b(all, s)"
+                  data-h2-margin="b(left, s)"
+                  data-h2-bg-color="b(lightgray)"
+                >
+                  {intl.formatMessage({
+                    defaultMessage: "No solutions in place.",
+                  })}
+                </p>
+              </div>
             </div>
           </LeftSection>
           <RightSection>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Employee Contact Information",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Employee Contact Information",
+              })}
             </h4>
-            <p data-h2-margin="b(bottom, m)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Phone",
-                },
-                { bold },
-              )}
+            <p data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage: "Phone",
+              })}
             </p>
-            <p data-h2-margin="b(all, none)">
+            <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
                 defaultMessage: "(555)555-5555",
               })}
             </p>
-            <p data-h2-margin="b(bottom, m)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Email",
-                },
-                { bold },
-              )}
+            <p data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage: "Email",
+              })}
             </p>
             <p data-h2-margin="b(all, none)">
               {intl.formatMessage({
@@ -166,62 +148,56 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Employee Emergency Information",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Employee Emergency Information",
+              })}
             </h4>
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Critical Information",
-                },
-                { bold },
-              )}
+            <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage: "Critical Information",
+              })}
             </p>
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "In the event of an emergency...",
               })}
             </p>{" "}
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Emergency Contact",
-                },
-                { bold },
-              )}
+            <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage: "Emergency Contact",
+              })}
             </p>
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Gal Turot",
               })}
             </p>
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "(555)555-5555",
               })}
             </p>
-            <p data-h2-font-size="b(h5)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Emergency documentation",
-                },
-                { bold },
-              )}
+            <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage: "Emergency documentation",
+              })}
             </p>
-            <div>
-              <p>
-                <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                <Link href={""}>
-                  {intl.formatMessage({
-                    defaultMessage: "my_evacuation_plan.pdf(3MB)",
-                  })}
-                </Link>
-              </p>
-            </div>
+            <p data-h2-margin="b(bottom, m)">
+              <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+              <Link href={""}>
+                {intl.formatMessage({
+                  defaultMessage: "my_evacuation_plan.pdf(3MB)",
+                })}
+              </Link>
+            </p>
+            <p data-h2-margin="b(bottom, m)">
+              <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+              <Link href={""}>
+                {intl.formatMessage({
+                  defaultMessage: "my_paramedical_needs.pdf(3MB)",
+                })}
+              </Link>
+            </p>
           </RightSection>
         </Page>
       </div>
