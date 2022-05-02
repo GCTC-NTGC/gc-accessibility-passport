@@ -3,7 +3,9 @@ import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
-import { Checklist, Select } from "../components/formComponents";
+import {  Checklist, Select } from "../components/formComponents";
+import { Checkbox } from "../components/formComponents/Checklist";
+
 import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import { errorMessages } from "../messages";
