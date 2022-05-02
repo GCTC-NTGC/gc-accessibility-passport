@@ -35,8 +35,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
   const setSolutionValue = (value: string): void => setValue("solution", value);
   const onSubmit = async (data: FormValues): Promise<void> => {
     // TODO: Save solution to cookie?
-    console.log(data);
-    // push(`/barriers/identify-a-barrier-2`);
+    push(`/barriers/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
