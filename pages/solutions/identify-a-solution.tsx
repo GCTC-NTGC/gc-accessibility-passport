@@ -1,12 +1,16 @@
+import { ExclamationCircleIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
+import Alert from "../../components/Alert";
 import Button from "../../components/Button";
 import Filters from "../../components/Filters";
+import { Input, TextArea } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
+import { errorMessages } from "../../messages";
 
 type Solution = {
   id: number;
@@ -23,6 +27,8 @@ type SolutionCategory = {
 
 type FormValues = {
   solution: string;
+  name: string;
+  description: string;
 };
 
 const IdentifyASolution: React.FunctionComponent = () => {
@@ -34,14 +40,17 @@ const IdentifyASolution: React.FunctionComponent = () => {
   const { handleSubmit, setValue } = methods;
   const setSolutionValue = (value: string): void => setValue("solution", value);
   const onSubmit = async (data: FormValues): Promise<void> => {
-    // TODO: Save solution to cookie?
-    push(`/barriers/identify-a-solution-2`);
+    push(`/solutions/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
     <Link href="/barriers/identify-a-solution-2">
       <a title="msg">{msg}</a>
     </Link>
+  );
+
+  const bold = (msg: string): React.ReactNode => (
+    <span data-h2-font-weight="b(600)">{msg}</span>
   );
 
   const parentSolutionCategories = [
@@ -59,7 +68,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
     {
       id: 2,
       parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Time Management" }),
+      name: intl.formatMessage({ defaultMessage: "Attendance" }),
     },
     {
       id: 3,
@@ -181,13 +190,56 @@ const IdentifyASolution: React.FunctionComponent = () => {
                     "Now that you have selected the barrier in your workplace, this page allows you to identify solutions to address this barrier (e.g., adaptive tools, support measures, or any other accommodation or adjustment). ",
                 })}
               </p>
-              <p data-h2-font-weight="b(700)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Please use the tool below to identify and select a solution (or solutions) for this barrier. You can identify as many solutions to barrier as you choose on this page.",
-                })}
+              <p>
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "<bold>You can identify a solution and enter a description</bold> (a solution means the tools, support measures and any other accommodation or adjustment that address the barrier you have identified).",
+                  },
+                  { bold },
+                )}
               </p>
             </div>
+            <div>
+              <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
+                {intl.formatMessage({ defaultMessage: "Solution information" })}
+              </h2>
+              <Alert
+                icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
+                message={intl.formatMessage({
+                  defaultMessage:
+                    "Please ensure that you do not share any personal or medical information before saving.",
+                })}
+              />
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                label={intl.formatMessage({
+                  defaultMessage: "Solution name",
+                })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+              />
+              <TextArea
+                id="description"
+                name="description"
+                label={intl.formatMessage({
+                  defaultMessage: "Solution description",
+                })}
+                rules={{
+                  required: intl.formatMessage(errorMessages.required),
+                }}
+                rows={10}
+              />
+            </div>
+            <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "Or use the worksheet to identify and select a solution (or solutions) for this barrier.",
+              })}
+            </p>
             <div data-h2-margin="b(bottom, xl)">
               <div
                 data-h2-display="b(flex)"
