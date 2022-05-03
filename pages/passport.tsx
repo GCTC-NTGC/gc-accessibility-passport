@@ -40,6 +40,17 @@ const Passport: React.FunctionComponent = () => {
           })}
         </a>
       </Link>
+      <Link href="manager/view-action-solution">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "[MANAGER] View/Action a solution",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "[MANAGER] View/Action a solution",
+          })}
+        </a>
+      </Link>
     </div>
   );
 };
