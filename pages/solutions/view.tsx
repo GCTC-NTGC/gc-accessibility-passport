@@ -6,7 +6,7 @@ import { useIntl } from "react-intl";
 import Button, { colorMap } from "../../components/Button";
 import { Checkbox } from "../../components/formComponents";
 import Layout from "../../components/Layout";
-import Page, { SectionOne, SectionTwo } from "../../components/Page";
+import Page, { RightSection, LeftSection } from "../../components/Page";
 import { errorMessages } from "../../messages";
 
 type FormValues = {
@@ -36,7 +36,7 @@ const ViewSolution: React.FunctionComponent = () => {
       })}
     >
       <Page>
-        <SectionOne>
+        <RightSection>
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
@@ -207,8 +207,8 @@ const ViewSolution: React.FunctionComponent = () => {
               </form>
             </FormProvider>
           </div>
-        </SectionOne>
-        <SectionTwo>
+        </RightSection>
+        <LeftSection>
           <div data-h2-margin="b(bottom, l)">
             <h2
               data-h2-margin="b(top, none) b(bottom, s)"
@@ -286,7 +286,7 @@ const ViewSolution: React.FunctionComponent = () => {
               </p>
             </div>
           </div>
-        </SectionTwo>
+        </LeftSection>
       </Page>
     </Layout>
   );
