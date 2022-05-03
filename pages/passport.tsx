@@ -40,6 +40,17 @@ const Passport: React.FunctionComponent = () => {
           })}
         </a>
       </Link>
+      <Link href="/view-employee-barrier">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
+        </a>
+      </Link>
     </div>
   );
 };
