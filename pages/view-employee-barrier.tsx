@@ -67,7 +67,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 })}
               </p>
               <section
-                data-h2-border="b(lightgray, all, solid, s)"
+                data-h2-border="b(darkgray, left, solid, m)"
                 data-h2-margin="b(all, s)"
                 data-h2-shadow="b(m)"
               >
@@ -165,7 +165,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 </p>
               </section>{" "}
               <section
-                data-h2-border="b(lightgray, all, solid, s)"
+                data-h2-border="b(darkgray, left, solid, m)"
                 data-h2-margin="b(all, s)"
                 data-h2-shadow="b(m)"
               >
@@ -261,7 +261,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 </p>
               </section>{" "}
               <section
-                data-h2-border="b(lightgray, all, solid, s)"
+                data-h2-border="b(darkgray, left, solid, m)"
                 data-h2-margin="b(all, s)"
                 data-h2-shadow="b(m)"
               >
