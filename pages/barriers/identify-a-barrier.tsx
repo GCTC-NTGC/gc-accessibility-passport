@@ -102,10 +102,13 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 })}
               </p>
               <p>
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Identify a barrier. A barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific.",
-                })}
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "<bold>You can identify your barrier and enter a description</bold> (a barrier means anything that prevents you from participating in your work environment.)",
+                  },
+                  { bold },
+                )}
               </p>
               <Input
                 id="name"
@@ -124,6 +127,12 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 rows={10}
               />
             </div>
+            <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "Or use the worksheet to identify and select a solution (or solutions) for this barrier.",
+              })}
+            </p>
             <div data-h2-margin="b(bottom, xl)">
               <p>
                 {intl.formatMessage({
