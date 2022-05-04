@@ -9,9 +9,7 @@ export const BarrierCard: React.FunctionComponent<{
   actionLinks: string[];
 }> = ({ title, documentName, actionLinks }) => {
   const intl = useIntl();
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+
   return (
     <section
       data-h2-border="b(darkgray, left, solid, m)"
