@@ -1,9 +1,8 @@
-import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
-import { PaperClipIcon } from "@heroicons/react/solid";
+import { BarrierCard } from "../components/formComponents/BarrierCard";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -66,298 +65,35 @@ const ReviewBarrier: React.FunctionComponent = () => {
                     "The modules below present you with the solutions that you have shared with your manager to view or act on the solutions.",
                 })}
               </p>
-              <section
-                data-h2-border="b(darkgray, left, solid, m)"
-                data-h2-margin="b(all, s)"
-                data-h2-shadow="b(m)"
-              >
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                >
-                  <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-font-size="b(h5)"
-                      data-h2-margin="b(left, s)"
-                      data-h2-font-style="b(underline)"
-                    >
-                      {intl.formatMessage(
-                        {
-                          defaultMessage: "Noise cancelling headphones",
-                        },
-                        { bold },
-                      )}
-                    </p>
-                  </div>
+              <BarrierCard
+                title={intl.formatMessage({
+                  defaultMessage: "Noise cancelling headphones",
+                })}
+                documentName={intl.formatMessage({
+                  defaultMessage: "my_hearing_assessment.pdf(3MB)",
+                })}
+                actionLinks={["View"]}
+              />
+              <BarrierCard
+                title={intl.formatMessage({
+                  defaultMessage: "Access to quiet space",
+                })}
+                documentName={intl.formatMessage({
+                  defaultMessage: "location_assessment.pdf(3MB)",
+                })}
+                actionLinks={["View"]}
+              />
+              <BarrierCard
+                title={intl.formatMessage({
+                  defaultMessage:
+                    "Organizer / task planning tool/software application",
+                })}
+                documentName={intl.formatMessage({
+                  defaultMessage: "software_assessment.pdf(3MB)",
+                })}
+                actionLinks={["View"]}
+              />
 
-                  <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "View",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-bg-color="b(lightblue)"
-                  data-h2-margin="b(all, s)"
-                >
-                  <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage:
-                          "This solution is awaiting your approval.",
-                      })}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(left, l)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "Take action",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "This solution applies to me in following situations:",
-                  })}
-                </p>
-
-                <ul>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Office Workplace",
-                      })}
-                    </p>
-                  </li>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Remote Workplace",
-                      })}
-                    </p>
-                  </li>
-                </ul>
-                <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      " Noise cancelling headphones is particularly helpful for me because",
-                  })}
-                  <p>
-                    <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                    <Link data-h2-margin="b(left, s)" href={""}>
-                      {intl.formatMessage({
-                        defaultMessage: "my_hearing_assessment.pdf(3MB)",
-                      })}
-                    </Link>
-                  </p>
-                </p>
-              </section>{" "}
-              <section
-                data-h2-border="b(darkgray, left, solid, m)"
-                data-h2-margin="b(all, s)"
-                data-h2-shadow="b(m)"
-              >
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                >
-                  <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-font-size="b(h5)"
-                      data-h2-margin="b(left, s)"
-                      data-h2-font-style="b(underline)"
-                    >
-                      {intl.formatMessage(
-                        {
-                          defaultMessage: "Access to quiet space",
-                        },
-                        { bold },
-                      )}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "View",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-bg-color="b(lightblue)"
-                  data-h2-margin="b(all, s)"
-                >
-                  <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage:
-                          "This solution is awaiting your approval.",
-                      })}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(left, l)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "Review",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "This solution applies to me in following situations:",
-                  })}
-                </p>
-                <ul>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Office Workplace",
-                      })}
-                    </p>
-                  </li>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Remote Workplace",
-                      })}
-                    </p>
-                  </li>
-                </ul>
-                <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      " Access to quiet space is particularly helpful for me because",
-                  })}
-                  <p>
-                    <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                    <Link data-h2-margin="b(left, s)" href={""}>
-                      {intl.formatMessage({
-                        defaultMessage: "location_assessment.pdf(3MB)",
-                      })}
-                    </Link>
-                  </p>
-                </p>
-              </section>{" "}
-              <section
-                data-h2-border="b(darkgray, left, solid, m)"
-                data-h2-margin="b(all, s)"
-                data-h2-shadow="b(m)"
-              >
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                >
-                  <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-font-size="b(h5)"
-                      data-h2-margin="b(left, s)"
-                      data-h2-font-style="b(underline)"
-                    >
-                      {intl.formatMessage(
-                        {
-                          defaultMessage:
-                            "Organizer / task planning tool/software application",
-                        },
-                        { bold },
-                      )}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "View",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-bg-color="b(lightblue)"
-                  data-h2-margin="b(all, s)"
-                >
-                  <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage:
-                          "This solution is awaiting your approval.",
-                      })}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(left, l)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "Review",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "This solution applies to me in following situations:",
-                  })}
-                </p>
-
-                <ul>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Office Workplace",
-                      })}
-                    </p>
-                  </li>
-                  <li>
-                    <p data-h2-margin="b(left, s)">
-                      {intl.formatMessage({
-                        defaultMessage: " - Remote Workplace",
-                      })}
-                    </p>
-                  </li>
-                </ul>
-                <p data-h2-margin="b(left, none)" data-h2-padding="b(all, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      " Organizer / task planning tool/software application is particularly helpful for me because",
-                  })}
-                  <p>
-                    <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                    <Link data-h2-margin="b(left, s)" href={""}>
-                      {intl.formatMessage({
-                        defaultMessage: "software_assessment.pdf(3MB)",
-                      })}
-                    </Link>
-                  </p>
-                </p>
-              </section>{" "}
               <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                 {intl.formatMessage(
                   {
