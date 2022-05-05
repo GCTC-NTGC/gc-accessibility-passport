@@ -4,7 +4,7 @@ import { useIntl } from "react-intl";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
-import { BarrierCard } from "../components/formComponents/BarrierCard";
+import { BarrierCard } from "../components/BarrierCard";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -76,6 +76,14 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage: "my_hearing_assessment.pdf(3MB)",
               })}
               actionLinks={["View", "Edit", "Delete"]}
+              situations={[
+                intl.formatMessage({
+                  defaultMessage: "Office Workplace",
+                }),
+                intl.formatMessage({
+                  defaultMessage: "Remote Workplace",
+                }),
+              ]}
             />
             <BarrierCard
               title={intl.formatMessage({
@@ -85,6 +93,14 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage: "location_assessment.pdf(3MB)",
               })}
               actionLinks={["View", "Edit", "Delete"]}
+              situations={[
+                intl.formatMessage({
+                  defaultMessage: "Office Workplace",
+                }),
+                intl.formatMessage({
+                  defaultMessage: "Remote Workplace",
+                }),
+              ]}
             />
             <BarrierCard
               title={intl.formatMessage({
@@ -95,6 +111,14 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage: "software_assessment.pdf(3MB)",
               })}
               actionLinks={["View", "Edit", "Delete"]}
+              situations={[
+                intl.formatMessage({
+                  defaultMessage: "Office Workplace",
+                }),
+                intl.formatMessage({
+                  defaultMessage: "Remote Workplace",
+                }),
+              ]}
             />
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
