@@ -11,15 +11,6 @@ const Passport: React.FunctionComponent = () => {
           {intl.formatMessage({ defaultMessage: "Identify a barrier" })}
         </a>
       </Link>
-      <Link href="/barriers/identify-a-barrier-2">
-        <a
-          title={intl.formatMessage({
-            defaultMessage: "Identify a barrier (cont.)",
-          })}
-        >
-          {intl.formatMessage({ defaultMessage: "Identify a barrier (cont.)" })}
-        </a>
-      </Link>
       <Link href="/review-barrier">
         <a
           title={intl.formatMessage({
@@ -57,6 +48,39 @@ const Passport: React.FunctionComponent = () => {
           })}
         >
           {intl.formatMessage({ defaultMessage: "Manager info form" })}
+        </a>
+      </Link>
+      <Link href="/share-my-passport">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Share My Passport Information",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Share My Passport Information form",
+          })}
+        </a>
+      </Link>
+      <Link href="/view-employee-passport">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Employee Passport Information",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Employee Passport Information Form",
+          })}
+        </a>
+      </Link>
+      <Link href="/view-employee-barrier">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
         </a>
       </Link>
       <Link href="/solutions/view">
