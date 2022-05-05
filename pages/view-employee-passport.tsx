@@ -14,130 +14,109 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
         defaultMessage: "Frank Turot's passport",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Frank Turot's passport",
+        defaultMessage: "Frank Turot's passport - GC Accessibility Passport",
       })}
     >
-      <div data-h2-padding="b(all, xl)">
-        <Page>
-          <LeftSection>
-            <div data-h2-margin="b(bottom, l)">
-              <p data-h2-padding="b(all, s)" data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "As the employee’s manager, you can view and action Passport information shared with you. The employee can revoke access to their Passport at any time. The employee’s Passport documents all actions.",
-                })}
-              </p>
-              <p data-h2-padding="b(all, s)" data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "You can action a barrier/solution package that an employee has shared with you by selecting the View link below.",
-                })}
-              </p>
-              <p data-h2-padding="b(all, s)" data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Select View to action employee Passport information.",
-                })}
-              </p>
-              <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                <p data-h2-font-size="b(h4)" data-h2-margin="b(left, s)">
+      <Page>
+        <LeftSection>
+          <div data-h2-margin="b(bottom, l)">
+            <p data-h2-margin="b(top, none)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "As the employee’s manager, you can view and action Passport information shared with you. The employee can revoke access to their Passport at any time. The employee’s Passport documents all actions.",
+              })}
+            </p>
+            <p>
+              {intl.formatMessage({
+                defaultMessage:
+                  "You can action a barrier/solution package that an employee has shared with you by selecting the View link below.",
+              })}
+            </p>
+            <p data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "Select View to action employee Passport information.",
+              })}
+            </p>
+            <div></div>
+            <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, m)">
+              {intl.formatMessage({
+                defaultMessage: "Barriers for review",
+              })}
+            </h2>
+            <div data-h2-display="b(flex)" data-h2-bg-color="b(lightblue)">
+              <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
+                <p data-h2-margin="b(left, s)">
                   {intl.formatMessage({
-                    defaultMessage: "Barriers for review",
-                  })}
-                </p>
-              </div>
-              <div
-                data-h2-display="b(flex)"
-                data-h2-bg-color="b(lightblue)"
-                data-h2-margin="b(all, s)"
-              >
-                <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                  <p data-h2-margin="b(left, s)">
-                    {intl.formatMessage({
-                      defaultMessage:
-                        "The barriers below require your attention.",
-                    })}
-                  </p>
-                </div>
-              </div>
-              <section
-                data-h2-border="b(lightgray, all, solid, s)"
-                data-h2-margin="b(all, s)"
-                data-h2-shadow="b(m)"
-              >
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                >
-                  <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                    <p
-                      data-h2-font-size="b(h5)"
-                      data-h2-margin="b(left, s)"
-                      data-h2-font-weight="b(700)"
-                    >
-                      {intl.formatMessage({
-                        defaultMessage: "Noise in the Workplace",
-                      })}
-                    </p>
-                  </div>
-                  <div style={{ flex: 5 }} data-h2-margin="b(right, s)">
-                    <p>
-                      {intl.formatMessage({
-                        defaultMessage: "2 solutions awaiting action",
-                      })}
-                    </p>
-                  </div>
-                  <div style={{ flex: 1 }} data-h2-margin="b(right, s)">
-                    <p>
-                      {" "}
-                      <Link href={""}>
-                        {intl.formatMessage({
-                          defaultMessage: "View",
-                        })}
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </section>{" "}
-              <div style={{ flex: 7 }} data-h2-margin="b(right, l)">
-                <p
-                  data-h2-font-size="b(h4)"
-                  data-h2-margin="b(all, s)"
-                  data-h2-padding="b(top, s)"
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Solutions in place",
-                  })}
-                </p>
-                <p
-                  data-h2-padding="b(all, s)"
-                  data-h2-margin="b(left, s)"
-                  data-h2-bg-color="b(lightgray)"
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "No solutions in place.",
+                    defaultMessage:
+                      "The barriers below require your attention.",
                   })}
                 </p>
               </div>
             </div>
-          </LeftSection>
-          <RightSection>
-            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
+            <div
+              data-h2-border="b(darkgray, left, solid, m)"
+              data-h2-margin="b(top, s) b(bottom, m)"
+              data-h2-shadow="b(m)"
+              data-h2-display="b(flex)"
+              data-h2-justify-content="b(space-between)"
+              data-h2-align-items="b(center)"
+              data-h2-padding="b(right-left, m)"
+            >
+              <div>
+                <p data-h2-font-size="b(h5)" data-h2-font-weight="b(700)">
+                  {intl.formatMessage({
+                    defaultMessage: "Noise in the Workplace",
+                  })}
+                </p>
+              </div>
+              <div data-h2-display="b(flex)" data-h2-align-items="b(center)">
+                <p data-h2-margin="b(right, l)">
+                  {intl.formatMessage({
+                    defaultMessage: "2 solutions awaiting action",
+                  })}
+                </p>
+                <Link href="#">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "View",
+                    })}
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div data-h2-margin="b(top, m)">
+              <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
+                {intl.formatMessage({
+                  defaultMessage: "Solutions in place",
+                })}
+              </h2>
+              <p data-h2-padding="b(all, s)" data-h2-bg-color="b(lightgray)">
+                {intl.formatMessage({
+                  defaultMessage: "No solutions in place.",
+                })}
+              </p>
+            </div>
+          </div>
+        </LeftSection>
+        <RightSection>
+          <div data-h2-margin="b(bottom, l)">
+            <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top-bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Employee Contact Information",
               })}
-            </h4>
-            <p data-h2-font-weight="b(700)">
+            </h2>
+            <p data-h2-font-weight="b(700)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Phone",
               })}
             </p>
-            <p data-h2-margin="b(bottom, m)">
+            <p data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage: "(555)555-5555",
               })}
             </p>
-            <p data-h2-font-weight="b(700)">
+            <p data-h2-font-weight="b(700)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Email",
               })}
@@ -147,17 +126,19 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                 defaultMessage: "frank.turot@example.gov.ca",
               })}
             </p>
-            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
+          </div>
+          <div>
+            <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Employee Emergency Information",
               })}
-            </h4>
+            </h2>
             <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
               {intl.formatMessage({
                 defaultMessage: "Critical Information",
               })}
             </p>
-            <p data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage: "In the event of an emergency...",
               })}
@@ -167,40 +148,50 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                 defaultMessage: "Emergency Contact",
               })}
             </p>
-            <p data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(top-bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Gal Turot",
               })}
             </p>
-            <p data-h2-margin="b(bottom, none)">
+            <p data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage: "(555)555-5555",
               })}
             </p>
-            <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
-              {intl.formatMessage({
-                defaultMessage: "Emergency documentation",
-              })}
-            </p>
-            <p data-h2-margin="b(bottom, m)">
-              <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-              <Link href={""}>
+            <div>
+              <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
                 {intl.formatMessage({
-                  defaultMessage: "my_evacuation_plan.pdf(3MB)",
+                  defaultMessage: "Emergency documentation",
                 })}
-              </Link>
-            </p>
-            <p data-h2-margin="b(bottom, m)">
-              <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-              <Link href={""}>
-                {intl.formatMessage({
-                  defaultMessage: "my_paramedical_needs.pdf(3MB)",
-                })}
-              </Link>
-            </p>
-          </RightSection>
-        </Page>
-      </div>
+              </p>
+              <div data-h2-margin="b(top-bottom, s)" data-h2-display="b(flex)">
+                <span data-h2-display="b(flex)" data-h2-margin="b(right, xs)">
+                  <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+                </span>
+                <Link href="#">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "my_evacuation_plan.pdf(3MB)",
+                    })}
+                  </a>
+                </Link>
+              </div>
+              <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
+                <span data-h2-display="b(flex)" data-h2-margin="b(right, xs)">
+                  <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+                </span>
+                <Link href="#">
+                  <a>
+                    {intl.formatMessage({
+                      defaultMessage: "my_paramedical_needs.pdf(3MB)",
+                    })}
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </RightSection>
+      </Page>
     </Layout>
   );
 };
