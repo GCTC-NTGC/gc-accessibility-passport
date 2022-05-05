@@ -39,7 +39,11 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
       >
         <div>
           <Header title={title} editButton={editButton} center={center} />
-          <div id="content" tabIndex={-1} data-h2-padding="b(right-left, xxl)">
+          <div
+            id="content"
+            tabIndex={-1}
+            data-h2-padding="m(right-left, l) l(right-left, xxl)"
+          >
             {children}
           </div>
         </div>
