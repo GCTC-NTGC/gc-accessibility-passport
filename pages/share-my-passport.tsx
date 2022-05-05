@@ -3,15 +3,15 @@ import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../components/Button";
-import {  Checklist, Select } from "../components/formComponents";
+import { Checklist, Select } from "../components/formComponents";
 import { Checkbox } from "../components/formComponents/Checklist";
-
 import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import { errorMessages } from "../messages";
 
 type FormValues = {
-  barrier: string;
+  barriers: string[];
+  share: string;
 };
 
 const ShareMyPassport: React.FunctionComponent = () => {
@@ -20,9 +20,9 @@ const ShareMyPassport: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    push(`/barriers/identify-a-barrier-2`);
+    push(`/passport`);
   };
-  const barrierContainers: Checkbox[] = [
+  const barriers: Checkbox[] = [
     {
       value: "example_barrier_container_1",
       label: intl.formatMessage({
@@ -62,47 +62,53 @@ const ShareMyPassport: React.FunctionComponent = () => {
         defaultMessage: "Share my passport information",
       })}
     >
-      <div data-h2-padding="b(all, xl)">
+      <div
+        data-h2-width="m(50)"
+        data-h2-padding="b(top-bottom, l)"
+        data-h2-container="b(center, l)"
+      >
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div data-h2-margin="b(bottom, l)">
-              <p>
+              <p data-h2-margin="b(top, none)">
                 {intl.formatMessage({
                   defaultMessage:
-                    "Select one or more of the Passport information checkboxes and use the dropdown menu to share this information with  a manager or colleague",
+                    "Select one or more of the Passport information checkboxes and use the dropdown menu to share this information with a manager or colleague.",
                 })}
               </p>
-
-              <Checklist
-                idPrefix="solutions"
-                legend={intl.formatMessage({
-                  defaultMessage: "Select one or more barriers to share...",
-                })}
-                name="barriers"
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
-                items={barrierContainers}
-              />
-
-              <Select
-                id="department"
-                name="department"
-                label={intl.formatMessage({
-                  defaultMessage: "Share Passport information with",
-                  description: "Share Passport information with",
-                })}
-                nullSelection={intl.formatMessage({
-                  defaultMessage: "My manager",
-                  description: "My manager",
-                })}
-                options={[
-                  {
-                    label: intl.formatMessage({ defaultMessage: "My manager" }),
-                    value: "1",
-                  },
-                ]}
-              />
+              <div data-h2-margin="b(bottom, m)">
+                <Checklist
+                  idPrefix="solutions"
+                  legend={intl.formatMessage({
+                    defaultMessage: "Select one or more barriers to share...",
+                  })}
+                  name="barriers"
+                  rules={{
+                    required: intl.formatMessage(errorMessages.required),
+                  }}
+                  items={barriers}
+                />
+              </div>
+              <div>
+                <Select
+                  id="share"
+                  name="share"
+                  label={intl.formatMessage({
+                    defaultMessage: "Share Passport information with:",
+                  })}
+                  nullSelection={intl.formatMessage({
+                    defaultMessage: "Select an option...",
+                  })}
+                  options={[
+                    {
+                      label: intl.formatMessage({
+                        defaultMessage: "My manager",
+                      }),
+                      value: "my_manager",
+                    },
+                  ]}
+                />
+              </div>
             </div>
 
             <FormFooter
