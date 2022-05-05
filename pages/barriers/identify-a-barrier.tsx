@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -90,107 +89,106 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Identify a barrier - GC Accessibility Passport",
       })}
+      formLayout
     >
-      <div data-h2-padding="b(all, xl)">
-        <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div data-h2-margin="b(bottom, l)">
-              <p data-h2-font-weight="b(700)">
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
-                })}
-              </p>
-              <p>
-                {intl.formatMessage(
-                  {
-                    defaultMessage:
-                      "<bold>You can identify your barrier and enter a description</bold> (a barrier means anything that prevents you from participating in your work environment.)",
-                  },
-                  { bold },
-                )}
-              </p>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                label={intl.formatMessage({
-                  defaultMessage: "Barrier name",
-                })}
-              />
-              <TextArea
-                id="description"
-                name="description"
-                label={intl.formatMessage({
-                  defaultMessage: "Barrier description",
-                })}
-                rows={10}
-              />
-            </div>
-            <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div data-h2-margin="b(bottom, l)">
+            <p data-h2-font-weight="b(700)" data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Or use the worksheet to identify and select a solution (or solutions) for this barrier.",
+                  "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
               })}
             </p>
-            <div data-h2-margin="b(bottom, xl)">
-              <p>
-                {intl.formatMessage({
+            <p>
+              {intl.formatMessage(
+                {
                   defaultMessage:
-                    "Use the tool to select a barrier (a barrier means anything that prevents you from participating in your work environment). You can select the barrier from the drop-down menus below.",
+                    "<bold>You can identify your barrier and enter a description</bold> (a barrier means anything that prevents you from participating in your work environment.)",
+                },
+                { bold },
+              )}
+            </p>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              label={intl.formatMessage({
+                defaultMessage: "Barrier name",
+              })}
+            />
+            <TextArea
+              id="description"
+              name="description"
+              label={intl.formatMessage({
+                defaultMessage: "Barrier description",
+              })}
+              rows={10}
+            />
+          </div>
+          <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
+            {intl.formatMessage({
+              defaultMessage:
+                "Or use the worksheet to identify and select a solution (or solutions) for this barrier.",
+            })}
+          </p>
+          <div data-h2-margin="b(bottom, xl)">
+            <p>
+              {intl.formatMessage({
+                defaultMessage:
+                  "Use the tool to select a barrier (a barrier means anything that prevents you from participating in your work environment). You can select the barrier from the drop-down menus below.",
+              })}
+            </p>
+            <div
+              data-h2-display="b(flex)"
+              data-h2-justify-content="b(space-between)"
+              data-h2-align-items="b(center)"
+            >
+              <p data-h2-margin="b(top-bottom, xs)">
+                {intl.formatMessage({
+                  defaultMessage: "Filter to choose barriers by:",
                 })}
-              </p>
-              <div
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(space-between)"
-                data-h2-align-items="b(center)"
-              >
-                <p data-h2-margin="b(top-bottom, xs)">
-                  {intl.formatMessage({
-                    defaultMessage: "Filter to choose barriers by:",
-                  })}
-                </p>
-              </div>
-              <div>
-                <Filters
-                  parents={parentBarrierCategories}
-                  categories={barrierCategories}
-                  results={barriers}
-                  setResultValue={setBarrierValue}
-                  inputName="barrier"
-                />
-              </div>
-              <p>
-                {intl.formatMessage(
-                  {
-                    defaultMessage:
-                      "You've selected <bold>{watchBarrier}</bold> as the barrier you'd like to add to your passport.",
-                  },
-                  { bold, watchBarrier },
-                )}
               </p>
             </div>
-            <FormFooter
-              cancelButton={{
-                href: "/passport",
-              }}
-            >
-              <Button
-                type="submit"
-                color="blue"
-                mode="solid"
-                data-h2-font-style="b(underline)"
-                data-h2-padding="b(all, s)"
-              >
-                {intl.formatMessage({
+            <div>
+              <Filters
+                parents={parentBarrierCategories}
+                categories={barrierCategories}
+                results={barriers}
+                setResultValue={setBarrierValue}
+                inputName="barrier"
+              />
+            </div>
+            <p>
+              {intl.formatMessage(
+                {
                   defaultMessage:
-                    "I'm happy with this barrier, save and move to identifying solutions",
-                })}
-              </Button>
-            </FormFooter>
-          </form>
-        </FormProvider>
-      </div>
+                    "You've selected <bold>{watchBarrier}</bold> as the barrier you'd like to add to your passport.",
+                },
+                { bold, watchBarrier },
+              )}
+            </p>
+          </div>
+          <FormFooter
+            cancelButton={{
+              href: "/passport",
+            }}
+          >
+            <Button
+              type="submit"
+              color="blue"
+              mode="solid"
+              data-h2-font-style="b(underline)"
+              data-h2-padding="b(all, s)"
+            >
+              {intl.formatMessage({
+                defaultMessage:
+                  "I'm happy with this barrier, save and move to identifying solutions",
+              })}
+            </Button>
+          </FormFooter>
+        </form>
+      </FormProvider>
     </Layout>
   );
 };

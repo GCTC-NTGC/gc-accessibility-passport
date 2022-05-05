@@ -24,7 +24,7 @@ const FormFooter: React.FunctionComponent<FormFooterProps> = ({
       data-h2-flex-direction="b(column) s(row)"
       data-h2-justify-content="b(center) s(space-between)"
       data-h2-align-items="b(center)"
-      data-h2-padding="b(top, xl)"
+      data-h2-padding="b(top, l)"
       data-h2-border="b(darkgray, top, solid, s)"
       {...rest}
     >
