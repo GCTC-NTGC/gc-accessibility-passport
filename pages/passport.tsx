@@ -61,6 +61,17 @@ const Passport: React.FunctionComponent = () => {
           })}
         </a>
       </Link>
+      <Link href="/manager-dashboard">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Manager Dashboard",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Manager Dashboard",
+          })}
+        </a>
+      </Link>
     </div>
   );
 };
