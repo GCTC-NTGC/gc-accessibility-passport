@@ -8,9 +8,6 @@ import { PermissionsCard } from "../components/formComponents/PermissionsCard";
 const ManagePermissions: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
   return (
     <Layout
       title={intl.formatMessage({
@@ -24,12 +21,9 @@ const ManagePermissions: React.FunctionComponent = () => {
         <LeftSection>
           <div data-h2-margin="b(bottom, l)">
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, s)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Manage access to your Passport information",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Manage access to your Passport information",
+              })}
             </h4>
             <p data-h2-margin="b(bottom, l)">
               {intl.formatMessage({
