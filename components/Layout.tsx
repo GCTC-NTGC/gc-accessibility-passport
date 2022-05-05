@@ -9,6 +9,7 @@ interface LayoutProps {
   editButton?: { title: string; link: string };
   center?: boolean;
   headTitle?: string;
+  formLayout?: boolean;
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = ({
@@ -16,6 +17,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
   editButton,
   center,
   headTitle,
+  formLayout,
   children,
 }) => {
   const intl = useIntl();
@@ -42,7 +44,15 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
           <div
             id="content"
             tabIndex={-1}
-            data-h2-padding="m(right-left, l) l(right-left, xxl)"
+            {...(formLayout
+              ? {
+                  "data-h2-width": "m(50)",
+                  "data-h2-padding": "b(top-bottom, l)",
+                  "data-h2-container": "b(center, l)",
+                }
+              : {
+                  "data-h2-padding": "m(right-left, l) l(right-left, xxl)",
+                })}
           >
             {children}
           </div>
