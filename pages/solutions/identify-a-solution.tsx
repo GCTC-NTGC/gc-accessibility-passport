@@ -35,7 +35,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
   const setSolutionValue = (value: string): void => setValue("solution", value);
   const onSubmit = async (data: FormValues): Promise<void> => {
     // TODO: Save solution to cookie?
-    push(`/barriers/identify-a-solution-2`);
+    push(`/solutions/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
@@ -170,87 +170,86 @@ const IdentifyASolution: React.FunctionComponent = () => {
         defaultMessage:
           "Identify a solution for Noise in the Workplace - GC Accessibility Passport",
       })}
+      formLayout
     >
-      <div data-h2-padding="b(all, xl)">
-        <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div data-h2-margin="b(bottom, l)">
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div data-h2-margin="b(bottom, l)">
+            <p>
+              {intl.formatMessage({
+                defaultMessage:
+                  "Now that you have selected the barrier in your workplace, this page allows you to identify solutions to address this barrier (e.g., adaptive tools, support measures, or any other accommodation or adjustment). ",
+              })}
+            </p>
+            <p data-h2-font-weight="b(700)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "Please use the tool below to identify and select a solution (or solutions) for this barrier. You can identify as many solutions to barrier as you choose on this page.",
+              })}
+            </p>
+          </div>
+          <div data-h2-margin="b(bottom, xl)">
+            <div
+              data-h2-display="b(flex)"
+              data-h2-justify-content="b(space-between)"
+              data-h2-align-items="b(center)"
+            >
+              <p data-h2-margin="b(top-bottom, xs)">
+                {intl.formatMessage({
+                  defaultMessage: "Select your solutions:",
+                })}
+              </p>
+              <p data-h2-margin="b(top-bottom, xs)">
+                {intl.formatMessage(
+                  {
+                    defaultMessage:
+                      "Can't find a solution that meets your needs? <solutionCont>Define your own.</solutionCont>",
+                  },
+                  { solutionCont },
+                )}
+              </p>
+            </div>
+            <Filters
+              parents={parentSolutionCategories}
+              categories={solutionCategories}
+              results={solutions}
+              setResultValue={setSolutionValue}
+              inputName="solution"
+            />
+            <div>
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "Now that you have selected the barrier in your workplace, this page allows you to identify solutions to address this barrier (e.g., adaptive tools, support measures, or any other accommodation or adjustment). ",
+                    "When you share this barrier, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit solutions later if your situation changes.",
                 })}
               </p>
-              <p data-h2-font-weight="b(700)">
+              <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "Please use the tool below to identify and select a solution (or solutions) for this barrier. You can identify as many solutions to barrier as you choose on this page.",
+                    "Please select the link below to customize the solution you have selected.",
                 })}
               </p>
             </div>
-            <div data-h2-margin="b(bottom, xl)">
-              <div
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(space-between)"
-                data-h2-align-items="b(center)"
-              >
-                <p data-h2-margin="b(top-bottom, xs)">
-                  {intl.formatMessage({
-                    defaultMessage: "Select your solutions:",
-                  })}
-                </p>
-                <p data-h2-margin="b(top-bottom, xs)">
-                  {intl.formatMessage(
-                    {
-                      defaultMessage:
-                        "Can't find a solution that meets your needs? <solutionCont>Define your own.</solutionCont>",
-                    },
-                    { solutionCont },
-                  )}
-                </p>
-              </div>
-              <Filters
-                parents={parentSolutionCategories}
-                categories={solutionCategories}
-                results={solutions}
-                setResultValue={setSolutionValue}
-                inputName="solution"
-              />
-              <div>
-                <p>
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "When you share this barrier, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit solutions later if your situation changes.",
-                  })}
-                </p>
-                <p>
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "Please select the link below to customize the solution you have selected.",
-                  })}
-                </p>
-              </div>
-            </div>
-            <FormFooter
-              cancelButton={{
-                href: "/passport",
-              }}
+          </div>
+          <FormFooter
+            cancelButton={{
+              href: "/passport",
+            }}
+          >
+            <Button
+              type="submit"
+              color="blue"
+              mode="solid"
+              data-h2-font-style="b(underline)"
+              data-h2-padding="b(all, s)"
             >
-              <Button
-                type="submit"
-                color="blue"
-                mode="solid"
-                data-h2-font-style="b(underline)"
-                data-h2-padding="b(all, s)"
-              >
-                {intl.formatMessage({
-                  defaultMessage: "Customize the solution I've selected",
-                })}
-              </Button>
-            </FormFooter>
-          </form>
-        </FormProvider>
-      </div>
+              {intl.formatMessage({
+                defaultMessage: "Customize the solution I've selected",
+              })}
+            </Button>
+          </FormFooter>
+        </form>
+      </FormProvider>
     </Layout>
   );
 };
