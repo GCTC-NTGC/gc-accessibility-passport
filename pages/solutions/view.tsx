@@ -44,45 +44,14 @@ const ViewSolution: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <h2
-              data-h2-margin="b(top, none) b(bottom, m)"
-              data-h2-font-size="b(h3)"
-            >
+            <h2 data-h2-margin="b(top, none)" data-h2-font-size="b(h3)">
               {intl.formatMessage({ defaultMessage: "Solution Description" })}
             </h2>
             <div>
-              <h3
-                data-h2-margin="b(top, none)"
-                data-h2-font-size="b(h5)"
-                data-h2-font-weight="b(600)"
-              >
-                {intl.formatMessage({ defaultMessage: "Original Definition" })}
-              </h3>
               <p
                 data-h2-bg-color="b(lightgray)"
                 data-h2-padding="b(all, s)"
                 data-h2-margin="b(top, none)"
-              >
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Noise in the workplace: An office setting could be noisy due to its layout or type of work. In a noisy workplace, a person’s concentration may be affected by auditory distractions (that can be heard) and/or visual distractions (that can be seen).",
-                })}
-              </p>
-            </div>
-            <div>
-              <h3
-                data-h2-margin="b(top, none) "
-                data-h2-font-size="b(h5)"
-                data-h2-font-weight="b(600)"
-              >
-                {intl.formatMessage({
-                  defaultMessage: "Additional Information",
-                })}
-              </h3>
-              <p
-                data-h2-bg-color="b(lightgray)"
-                data-h2-padding="b(all, s)"
-                data-h2-margin="b(top, none) b(bottom, m)"
               >
                 {intl.formatMessage({
                   defaultMessage:
