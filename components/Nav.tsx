@@ -50,7 +50,7 @@ const Nav: React.FunctionComponent = () => {
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/sharing-and-permissions">
+              <Link href="#">
                 <a {...(pathname === "/sharing-and-permissions" && activeLink)}>
                   {intl.formatMessage({
                     defaultMessage: "Sharing and permissions",
@@ -59,7 +59,7 @@ const Nav: React.FunctionComponent = () => {
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/resources">
+              <Link href="#">
                 <a {...(pathname === "/resources" && activeLink)}>
                   {intl.formatMessage({
                     defaultMessage: "Resources",

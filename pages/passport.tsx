@@ -373,6 +373,8 @@ const Passport: React.FunctionComponent = () => {
                 data-h2-display="b(block)"
                 data-h2-text-align="b(center)"
                 data-h2-radius="b(s)"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {intl.formatMessage({
                   defaultMessage: "Contact the AAACT",

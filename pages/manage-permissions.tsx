@@ -88,7 +88,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <Link href="#">
+            <Link href="/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
