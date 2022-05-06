@@ -92,6 +92,17 @@ const Passport: React.FunctionComponent = () => {
           {intl.formatMessage({ defaultMessage: "View/Action a solution" })}
         </a>
       </Link>
+      <Link href="/manage-permissions">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+          })}
+        </a>
+      </Link>
     </div>
   );
 };
