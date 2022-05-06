@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import { PassportCard } from "../components/PassportCard";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
+import Button, { colorMap } from "../../components/Button";
+import { PassportCard } from "../../components/PassportCard";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
 import Link from "next/link";
 
 const ManagerDashboard: React.FunctionComponent = () => {

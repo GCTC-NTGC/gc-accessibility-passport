@@ -1,19 +1,29 @@
+import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
-import { Input, Select } from "../components/formComponents";
-import FormFooter from "../components/FormFooter";
-import Layout from "../components/Layout";
-import { errorMessages } from "../messages";
-import jsonData from "../public/resources/departments.json";
+import Button from "../../components/Button";
+import { Input, Select } from "../../components/formComponents";
+import FormFooter from "../../components/FormFooter";
+import Layout from "../../components/Layout";
+import { errorMessages } from "../../messages";
+import jsonData from "../../public/resources/departments.json";
+
+type FormValues = {
+  firstName: string;
+  lastName: string;
+  title: string;
+  workEmail: string;
+  department: string;
+};
 
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
-  const methods = useForm();
+  const { push } = useRouter();
+  const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (): Promise<void> => {
-    // TODO: Save Manager Info to DB
+  const onSubmit = async (data: FormValues): Promise<void> => {
+    push("/manager/manager-dashboard");
   };
   return (
     <Layout
@@ -24,7 +34,7 @@ const ManagerInfo: React.FunctionComponent = () => {
       center={true}
       formLayout
     >
-      <FormProvider {...useForm()}>
+      <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div data-h2-margin="b(bottom, l)">
             <p>
@@ -124,7 +134,7 @@ const ManagerInfo: React.FunctionComponent = () => {
           <div>
             <FormFooter
               cancelButton={{
-                href: "/passport",
+                href: "/manager/manager-dashboard",
               }}
             >
               <Button

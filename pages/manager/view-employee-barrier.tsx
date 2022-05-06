@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { BarrierCard } from "../components/BarrierCard";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { BarrierCard } from "../../components/BarrierCard";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -74,10 +74,21 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "my_hearing_assessment.pdf(3MB)",
               })}
-              actionLinks={["View"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/manager/view-action-solution",
+                },
+              ]}
               situations={[
                 intl.formatMessage({ defaultMessage: "Physical workplace. " }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Take action",
+                }),
+                href: "/manager/view-action-solution",
+              }}
               managerView
             />
             <BarrierCard
@@ -87,10 +98,21 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "location_assessment.pdf(3MB)",
               })}
-              actionLinks={["View"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/manager/view-employee-barrier",
+                },
+              ]}
               situations={[
                 intl.formatMessage({ defaultMessage: "Physical workplace. " }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Take action",
+                }),
+                href: "/manager/view-action-solution",
+              }}
               managerView
             />
             <BarrierCard
@@ -101,13 +123,23 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "software_assessment.pdf(3MB)",
               })}
-              actionLinks={["View"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/manager/view-action-solution",
+                },
+              ]}
               situations={[
                 intl.formatMessage({ defaultMessage: "Physical workplace. " }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Take action",
+                }),
+                href: "/manager/view-action-solution",
+              }}
               managerView
             />
-
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {

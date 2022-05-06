@@ -275,7 +275,7 @@ const Passport: React.FunctionComponent = () => {
                     defaultMessage: "Treasury Board of Canada Secretariat",
                   })}
                 </p>
-                <Link href="/manager-info">
+                <Link href="/manager/manager-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
 import { PaperClipIcon } from "@heroicons/react/solid";
 
 const ViewEmployeePassport: React.FunctionComponent = () => {
@@ -76,7 +76,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                     defaultMessage: "2 solutions awaiting action",
                   })}
                 </p>
-                <Link href="#">
+                <Link href="/manager/view-employee-barrier">
                   <a>
                     {intl.formatMessage({
                       defaultMessage: "View",

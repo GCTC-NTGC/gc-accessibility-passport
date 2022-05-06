@@ -18,7 +18,7 @@ const ViewSolution: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (data: FormValues): Promise<void> => {
-    alert("Marked as effective!");
+    alert("A notification has been sent!");
   };
   const bold = (msg: string): React.ReactNode => (
     <span data-h2-font-weight="b(700)">{msg}</span>

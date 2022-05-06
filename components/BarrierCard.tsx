@@ -6,10 +6,18 @@ import { PaperClipIcon } from "@heroicons/react/solid";
 export const BarrierCard: React.FunctionComponent<{
   title: string;
   documentName: string;
-  actionLinks: string[];
+  actionLinks: { title: string; href: string }[];
   situations: string[];
   managerView?: boolean;
-}> = ({ title, documentName, actionLinks, situations, managerView }) => {
+  confirmationLink: { title: string; href: string };
+}> = ({
+  title,
+  documentName,
+  actionLinks,
+  situations,
+  managerView,
+  confirmationLink,
+}) => {
   const intl = useIntl();
 
   return (
@@ -33,17 +41,10 @@ export const BarrierCard: React.FunctionComponent<{
         </p>
         <div>
           {actionLinks &&
-            actionLinks.map((element) => {
+            actionLinks.map(({ title, href }) => {
               return (
-                <Link href="#" key={""}>
-                  <a data-h2-margin="b(right, s)">
-                    {intl.formatMessage(
-                      {
-                        defaultMessage: "{element}",
-                      },
-                      { element },
-                    )}
-                  </a>
+                <Link href={href} key={""}>
+                  <a data-h2-margin="b(right, s)">{title}</a>
                 </Link>
               );
             })}
@@ -66,16 +67,8 @@ export const BarrierCard: React.FunctionComponent<{
               })}
         </p>
         <p data-h2-margin="b(right, s)">
-          <Link href="#">
-            <a>
-              {managerView
-                ? intl.formatMessage({
-                    defaultMessage: "Take action",
-                  })
-                : intl.formatMessage({
-                    defaultMessage: "Review",
-                  })}
-            </a>
+          <Link href={confirmationLink.href}>
+            <a>{confirmationLink.title}</a>
           </Link>
         </p>
       </div>

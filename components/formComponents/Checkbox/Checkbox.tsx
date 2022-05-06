@@ -70,8 +70,6 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
           required={!!rules.required}
           context={context}
           error={error}
-          data-h2-flex-direction="b(row)"
-          data-h2-align-items="b(center)"
         >
           <div
             data-h2-border="b(darkgray, all, solid, s)"
