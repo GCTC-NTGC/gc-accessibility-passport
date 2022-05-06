@@ -30,15 +30,8 @@ export const PermissionsCard: React.FunctionComponent<{
           {actionLinks &&
             actionLinks.map((element) => {
               return (
-                <Link href="#" key={""}>
-                  <a data-h2-margin="b(right, s)">
-                    {intl.formatMessage(
-                      {
-                        defaultMessage: "{element}",
-                      },
-                      { element },
-                    )}
-                  </a>
+                <Link href="#" key={element}>
+                  <a data-h2-margin="b(right, s)">{element}</a>
                 </Link>
               );
             })}

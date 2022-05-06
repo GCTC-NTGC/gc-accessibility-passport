@@ -20,18 +20,18 @@ const ManagePermissions: React.FunctionComponent = () => {
       <Page>
         <LeftSection>
           <div data-h2-margin="b(bottom, l)">
-            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, s)">
+            <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage: "Manage access to your Passport information",
               })}
-            </h4>
+            </h2>
             <p data-h2-margin="b(bottom, l)">
               {intl.formatMessage({
                 defaultMessage:
                   "View and manage access to your passport information.  Activate the links below to remove access.",
               })}
             </p>
-            <p
+            <h3
               data-h2-font-size="b(normal)"
               data-h2-font-weight="b(700)"
               data-h2-margin="b(bottom, s)"
@@ -39,16 +39,23 @@ const ManagePermissions: React.FunctionComponent = () => {
               {intl.formatMessage({
                 defaultMessage: "Shared with your Manager",
               })}
-            </p>
+            </h3>
             <div data-h2-margin="b(bottom, l)">
               <PermissionsCard
                 title={intl.formatMessage({
                   defaultMessage: "Sui Kiyoko",
                 })}
-                actionLinks={["Remove all access", "Remove Barrier access"]}
+                actionLinks={[
+                  intl.formatMessage({
+                    defaultMessage: "Remove all access",
+                  }),
+                  intl.formatMessage({
+                    defaultMessage: "Remove Barrier access",
+                  }),
+                ]}
               />
             </div>
-            <p
+            <h3
               data-h2-font-size="b(normal)"
               data-h2-font-weight="b(700)"
               data-h2-margin="b(bottom, s)"
@@ -56,17 +63,24 @@ const ManagePermissions: React.FunctionComponent = () => {
               {intl.formatMessage({
                 defaultMessage: "Shared with your colleagues",
               })}
-            </p>
+            </h3>
             <PermissionsCard
               title={intl.formatMessage({
                 defaultMessage: "Priyanka Luka",
               })}
-              actionLinks={["Remove all access", "Remove Barrier access"]}
+              actionLinks={[
+                intl.formatMessage({
+                  defaultMessage: "Remove all access",
+                }),
+                intl.formatMessage({
+                  defaultMessage: "Remove Barrier access",
+                }),
+              ]}
             />
           </div>
         </LeftSection>
         <RightSection>
-          <p data-h2-font-size="b(normal)" data-h2-margin="b(bottom, s)">
+          <p data-h2-font-size="b(normal)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
               defaultMessage:
                 "Activate the link to share information with a new colleagues or manager.",
@@ -85,7 +99,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 defaultMessage: "Share with someone new",
               })}
             </Button>
-            <p data-h2-font-size="b(normal)" data-h2-margin="b(bottom, s)">
+            <p data-h2-font-size="b(normal)">
               {intl.formatMessage({
                 defaultMessage:
                   "Activate the link to enter your manager’s information. This will make it easier to share your passport information with them.",
