@@ -7,7 +7,9 @@ export const BarrierCard: React.FunctionComponent<{
   title: string;
   documentName: string;
   actionLinks: string[];
-}> = ({ title, documentName, actionLinks }) => {
+  situations: string[];
+  managerView?: boolean;
+}> = ({ title, documentName, actionLinks, situations, managerView }) => {
   const intl = useIntl();
 
   return (
@@ -54,17 +56,25 @@ export const BarrierCard: React.FunctionComponent<{
         data-h2-bg-color="b(lightblue)"
       >
         <p data-h2-margin="b(left, s) b(right, m)">
-          {intl.formatMessage({
-            defaultMessage:
-              "This solution is awaiting confirmation from your manager.",
-          })}
+          {managerView
+            ? intl.formatMessage({
+                defaultMessage: "This solution is awaiting your approval.",
+              })
+            : intl.formatMessage({
+                defaultMessage:
+                  "This solution is awaiting confirmation from your manager.",
+              })}
         </p>
         <p data-h2-margin="b(right, s)">
           <Link href="#">
             <a>
-              {intl.formatMessage({
-                defaultMessage: "Review",
-              })}
+              {managerView
+                ? intl.formatMessage({
+                    defaultMessage: "Take action",
+                  })
+                : intl.formatMessage({
+                    defaultMessage: "Review",
+                  })}
             </a>
           </Link>
         </p>
@@ -76,20 +86,11 @@ export const BarrierCard: React.FunctionComponent<{
         })}
       </p>
       <ul data-h2-margin="b(bottom-left, m)" style={{ listStyleType: "disc" }}>
-        <li>
-          <p data-h2-margin="b(all, none)">
-            {intl.formatMessage({
-              defaultMessage: "Office Workplace",
-            })}
-          </p>
-        </li>
-        <li>
-          <p data-h2-margin="b(all, none)">
-            {intl.formatMessage({
-              defaultMessage: "Remote Workplace",
-            })}
-          </p>
-        </li>
+        {situations.map((situation) => (
+          <li key={situation}>
+            <p data-h2-margin="b(all, none)">{situation}</p>
+          </li>
+        ))}
       </ul>
       <div>
         <p>
