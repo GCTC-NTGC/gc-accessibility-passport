@@ -1,9 +1,10 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
+import Button, { colorMap } from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
 import { PermissionsCard } from "../components/formComponents/PermissionsCard";
+import Link from "next/link";
 
 const ManagePermissions: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -87,35 +88,42 @@ const ManagePermissions: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <Button
-              type="submit"
-              color="blue"
-              mode="solid"
-              data-h2-font-style="b(underline)"
-              data-h2-padding="b(all, s)"
-              data-h2-margin="b(bottom, m)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Share with someone new",
-              })}
-            </Button>
+            <Link href="/share-my-passport">
+              <a
+                {...colorMap.blue.solid}
+                data-h2-padding="b(all, s)"
+                data-h2-width="b(100)"
+                data-h2-text-align="b(center)"
+                data-h2-radius="b(s)"
+                data-h2-display="b(block)"
+                data-h2-margin="b(bottom, m)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Share with someone new",
+                })}
+              </a>
+            </Link>
             <p data-h2-font-size="b(normal)">
               {intl.formatMessage({
                 defaultMessage:
                   "Activate the link to enter your manager’s information. This will make it easier to share your passport information with them.",
               })}
             </p>
-            <Button
-              type="submit"
-              color="blue"
-              mode="solid"
-              data-h2-font-style="b(underline)"
-              data-h2-padding="b(all, s)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Edit my manager info",
-              })}
-            </Button>
+            <Link href="/manager/manager-info">
+              <a
+                {...colorMap.blue.solid}
+                data-h2-padding="b(all, s)"
+                data-h2-width="b(100)"
+                data-h2-text-align="b(center)"
+                data-h2-radius="b(s)"
+                data-h2-display="b(block)"
+                data-h2-margin="b(bottom, m)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Edit my manager info",
+                })}
+              </a>
+            </Link>
           </div>
         </RightSection>
       </Page>

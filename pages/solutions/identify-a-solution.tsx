@@ -215,9 +215,6 @@ const IdentifyASolution: React.FunctionComponent = () => {
               label={intl.formatMessage({
                 defaultMessage: "Solution name",
               })}
-              rules={{
-                required: intl.formatMessage(errorMessages.required),
-              }}
             />
             <TextArea
               id="description"
@@ -225,9 +222,6 @@ const IdentifyASolution: React.FunctionComponent = () => {
               label={intl.formatMessage({
                 defaultMessage: "Solution description",
               })}
-              rules={{
-                required: intl.formatMessage(errorMessages.required),
-              }}
               rows={10}
             />
           </div>

@@ -37,8 +37,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const watchBarrier = watch("barrier");
   const setBarrierValue = (value: string): void => setValue("barrier", value);
   const onSubmit = async (data: FormValues): Promise<void> => {
-    // TODO: Save barrier to cookie?
-    console.log(data);
     push(`/solutions/identify-a-solution`);
   };
 

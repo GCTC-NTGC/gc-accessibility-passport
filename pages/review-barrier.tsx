@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
+import Button, { colorMap } from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
 import { BarrierCard } from "../components/BarrierCard";
@@ -75,7 +75,20 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "my_hearing_assessment.pdf(3MB)",
               })}
-              actionLinks={["View", "Edit", "Delete"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Edit" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Delete" }),
+                  href: "#",
+                },
+              ]}
               situations={[
                 intl.formatMessage({
                   defaultMessage: "Office Workplace",
@@ -84,6 +97,12 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   defaultMessage: "Remote Workplace",
                 }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Review",
+                }),
+                href: "solutions/view",
+              }}
             />
             <BarrierCard
               title={intl.formatMessage({
@@ -92,7 +111,20 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "location_assessment.pdf(3MB)",
               })}
-              actionLinks={["View", "Edit", "Delete"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Edit" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Delete" }),
+                  href: "#",
+                },
+              ]}
               situations={[
                 intl.formatMessage({
                   defaultMessage: "Office Workplace",
@@ -101,6 +133,12 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   defaultMessage: "Remote Workplace",
                 }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Review",
+                }),
+                href: "solutions/view",
+              }}
             />
             <BarrierCard
               title={intl.formatMessage({
@@ -110,7 +148,20 @@ const ReviewBarrier: React.FunctionComponent = () => {
               documentName={intl.formatMessage({
                 defaultMessage: "software_assessment.pdf(3MB)",
               })}
-              actionLinks={["View", "Edit", "Delete"]}
+              actionLinks={[
+                {
+                  title: intl.formatMessage({ defaultMessage: "View" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Edit" }),
+                  href: "/solutions/view",
+                },
+                {
+                  title: intl.formatMessage({ defaultMessage: "Delete" }),
+                  href: "#",
+                },
+              ]}
               situations={[
                 intl.formatMessage({
                   defaultMessage: "Office Workplace",
@@ -119,6 +170,12 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   defaultMessage: "Remote Workplace",
                 }),
               ]}
+              confirmationLink={{
+                title: intl.formatMessage({
+                  defaultMessage: "Review",
+                }),
+                href: "solutions/view",
+              }}
             />
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
@@ -173,31 +230,37 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   "Select the tools below to edit the barrier/solution information that appears on this page or identify a new solution for this barrier.",
               })}
             </p>
-
-            <Button
-              type="submit"
-              color="blue"
-              mode="solid"
-              data-h2-font-style="b(underline)"
-              data-h2-padding="b(all, s)"
-              data-h2-margin="b(bottom, m)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Edit this barrier's information",
-              })}
-            </Button>
-            <Button
-              type="submit"
-              color="blue"
-              mode="solid"
-              data-h2-font-style="b(underline)"
-              data-h2-padding="b(all, s)"
-            >
-              {intl.formatMessage({
-                defaultMessage:
-                  "Identify an additional solution for this barrier",
-              })}
-            </Button>
+            <Link href="/barriers/identify-a-barrier">
+              <a
+                {...colorMap.blue.solid}
+                data-h2-padding="b(all, s)"
+                data-h2-width="b(100)"
+                data-h2-text-align="b(center)"
+                data-h2-radius="b(s)"
+                data-h2-display="b(block)"
+                data-h2-margin="b(bottom, m)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Edit this barrier's information",
+                })}
+              </a>
+            </Link>
+            <Link href="/solutions/identify-a-solution">
+              <a
+                {...colorMap.blue.solid}
+                data-h2-padding="b(all, s)"
+                data-h2-width="b(100)"
+                data-h2-text-align="b(center)"
+                data-h2-radius="b(s)"
+                data-h2-display="b(block)"
+                data-h2-margin="b(bottom, m)"
+              >
+                {intl.formatMessage({
+                  defaultMessage:
+                    "Identify an additional solution for this barrier",
+                })}
+              </a>
+            </Link>
           </div>
           <div data-h2-margin="b(top-bottom, l)">
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
@@ -262,18 +325,21 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 </a>
               </Link>
             </div>
-            <Button
-              type="submit"
-              color="blue"
-              mode="solid"
-              data-h2-font-style="b(underline)"
-              data-h2-padding="b(all, s)"
-              data-h2-margin="b(top, m)"
-            >
-              {intl.formatMessage({
-                defaultMessage: "Share with someone new",
-              })}
-            </Button>
+            <Link href="/share-my-passport">
+              <a
+                {...colorMap.blue.solid}
+                data-h2-padding="b(all, s)"
+                data-h2-width="b(100)"
+                data-h2-text-align="b(center)"
+                data-h2-radius="b(s)"
+                data-h2-display="b(block)"
+                data-h2-margin="b(top-bottom, m)"
+              >
+                {intl.formatMessage({
+                  defaultMessage: "Share with someone new",
+                })}
+              </a>
+            </Link>
           </div>
           <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
             {intl.formatMessage(

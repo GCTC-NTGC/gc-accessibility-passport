@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import { PassportCard } from "../components/PassportCard";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
+import Button, { colorMap } from "../../components/Button";
+import { PassportCard } from "../../components/PassportCard";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
 import Link from "next/link";
 
 const ManagerDashboard: React.FunctionComponent = () => {
@@ -39,16 +39,34 @@ const ManagerDashboard: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Frank Turot",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
             <PassportCard
               title={intl.formatMessage({
                 defaultMessage: "Shannon Ghiles",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
             <PassportCard
               title={intl.formatMessage({
                 defaultMessage: "Margaret Turing",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
           </div>
         </LeftSection>
@@ -131,6 +149,8 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 data-h2-display="b(block)"
                 data-h2-text-align="b(center)"
                 data-h2-radius="b(s)"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {intl.formatMessage({
                   defaultMessage: "Contact the AAACT",
