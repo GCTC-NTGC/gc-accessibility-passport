@@ -33,7 +33,7 @@ const ViewSolution: React.FunctionComponent = () => {
       })}
     >
       <Page>
-        <RightSection>
+        <LeftSection>
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
@@ -111,7 +111,7 @@ const ViewSolution: React.FunctionComponent = () => {
                     id="managerConversation"
                     label={intl.formatMessage({
                       defaultMessage:
-                        "My manager and I have had a conversation about the barrier and solution(s)",
+                        "My employee and I have had a conversation about the barrier and solution(s)",
                     })}
                     name="managerConversation"
                     rules={{
@@ -177,8 +177,8 @@ const ViewSolution: React.FunctionComponent = () => {
               </form>
             </FormProvider>
           </div>
-        </RightSection>
-        <LeftSection>
+        </LeftSection>
+        <RightSection>
           <div data-h2-margin="b(bottom, l)">
             <h2
               data-h2-margin="b(top, none) b(bottom, s)"
@@ -212,7 +212,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "Frank proposed <bold>Example solution #2</bold> as a solution to this barrier.",
+                      "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
                   },
                   { bold },
                 )}
@@ -229,7 +229,7 @@ const ViewSolution: React.FunctionComponent = () => {
               </p>
             </div>
           </div>
-        </LeftSection>
+        </RightSection>
       </Page>
     </Layout>
   );
