@@ -4,7 +4,7 @@ import English from "../lang/en.json";
 import French from "../lang/fr.json";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { IntlProvider } from "react-intl";
 import { SWRConfig } from "swr";
 import fetchJson from "../lib/fetchJson";
@@ -22,6 +22,14 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
         return English;
     }
   }, [locale]);
+
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    // some browsers (like safari) may require a timeout to delay calling this
+    // function after a page has loaded; otherwise, it may not update the position
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <IntlProvider locale={locale} messages={messages}>
