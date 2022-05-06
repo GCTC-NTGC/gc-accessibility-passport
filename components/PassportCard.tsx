@@ -3,7 +3,8 @@ import { useIntl } from "react-intl";
 
 export const PassportCard: React.FunctionComponent<{
   title: string;
-}> = ({ title }) => {
+  link: { title: string; href: string };
+}> = ({ title, link }) => {
   const intl = useIntl();
 
   return (
@@ -23,12 +24,13 @@ export const PassportCard: React.FunctionComponent<{
       >
         {title}
       </p>
-      <Link href="#">
-        <a data-h2-margin="b(right, s)">
-          {intl.formatMessage({
-            defaultMessage: "View passport",
-          })}
-        </a>
+      <p data-h2-margin="b(right, l)">
+        {intl.formatMessage({
+          defaultMessage: "2 solutions awaiting action",
+        })}
+      </p>
+      <Link href={link.href}>
+        <a data-h2-margin="b(right, s)">{link.title}</a>
       </Link>
     </section>
   );

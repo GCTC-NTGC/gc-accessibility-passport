@@ -39,16 +39,34 @@ const ManagerDashboard: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Frank Turot",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
             <PassportCard
               title={intl.formatMessage({
                 defaultMessage: "Shannon Ghiles",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
             <PassportCard
               title={intl.formatMessage({
                 defaultMessage: "Margaret Turing",
               })}
+              link={{
+                title: intl.formatMessage({
+                  defaultMessage: "View passport",
+                }),
+                href: "/passport",
+              }}
             />
           </div>
         </LeftSection>
