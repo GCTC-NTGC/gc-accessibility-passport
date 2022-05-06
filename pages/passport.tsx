@@ -61,6 +61,59 @@ const Passport: React.FunctionComponent = () => {
           })}
         </a>
       </Link>
+      <Link href="/view-employee-passport">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Employee Passport Information",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Employee Passport Information Form",
+          })}
+        </a>
+      </Link>
+      <Link href="/view-employee-barrier">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "View Employee Barrier",
+          })}
+        </a>
+      </Link>
+      <Link href="/solutions/view">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "View/Action a solution",
+          })}
+        >
+          {intl.formatMessage({ defaultMessage: "View/Action a solution" })}
+        </a>
+      </Link>
+      <Link href="manager/view-action-solution">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "[MANAGER] View/Action a solution",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "[MANAGER] View/Action a solution",
+          })}
+        </a>
+      </Link>
+      <Link href="/manage-permissions">
+        <a
+          title={intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+          })}
+        >
+          {intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+          })}
+        </a>
+      </Link>
       <Link href="/manager-dashboard">
         <a
           title={intl.formatMessage({
