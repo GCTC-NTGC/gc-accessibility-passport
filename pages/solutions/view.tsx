@@ -1,4 +1,4 @@
-import { CheckCircleIcon, LinkIcon } from "@heroicons/react/outline";
+import { CheckCircleIcon, PaperClipIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -32,11 +32,11 @@ const ViewSolution: React.FunctionComponent = () => {
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "View/Action your solution: Noise-cancelling headphones",
+          "View/Action your solution: Noise-cancelling headphones - GC Accessibility Passport",
       })}
     >
       <Page>
-        <RightSection>
+        <LeftSection>
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
@@ -44,45 +44,14 @@ const ViewSolution: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <h2
-              data-h2-margin="b(top, none) b(bottom, m)"
-              data-h2-font-size="b(h3)"
-            >
+            <h2 data-h2-margin="b(top, none)" data-h2-font-size="b(h3)">
               {intl.formatMessage({ defaultMessage: "Solution Description" })}
             </h2>
             <div>
-              <h3
-                data-h2-margin="b(top, none)"
-                data-h2-font-size="b(h5)"
-                data-h2-font-weight="b(600)"
-              >
-                {intl.formatMessage({ defaultMessage: "Original Definition" })}
-              </h3>
               <p
                 data-h2-bg-color="b(lightgray)"
                 data-h2-padding="b(all, s)"
                 data-h2-margin="b(top, none)"
-              >
-                {intl.formatMessage({
-                  defaultMessage:
-                    "Noise in the workplace: An office setting could be noisy due to its layout or type of work. In a noisy workplace, a person’s concentration may be affected by auditory distractions (that can be heard) and/or visual distractions (that can be seen).",
-                })}
-              </p>
-            </div>
-            <div>
-              <h3
-                data-h2-margin="b(top, none) "
-                data-h2-font-size="b(h5)"
-                data-h2-font-weight="b(600)"
-              >
-                {intl.formatMessage({
-                  defaultMessage: "Additional Information",
-                })}
-              </h3>
-              <p
-                data-h2-bg-color="b(lightgray)"
-                data-h2-padding="b(all, s)"
-                data-h2-margin="b(top, none) b(bottom, m)"
               >
                 {intl.formatMessage({
                   defaultMessage:
@@ -207,8 +176,8 @@ const ViewSolution: React.FunctionComponent = () => {
               </form>
             </FormProvider>
           </div>
-        </RightSection>
-        <LeftSection>
+        </LeftSection>
+        <RightSection>
           <div data-h2-margin="b(bottom, l)">
             <h2
               data-h2-margin="b(top, none) b(bottom, s)"
@@ -222,7 +191,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   "Select the link below to edit the solution information that appears on this page.",
               })}
             </p>
-            <Link href="solutions/edit">
+            <Link href="solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-font-style="b(underline)"
@@ -245,7 +214,7 @@ const ViewSolution: React.FunctionComponent = () => {
             </h2>
             <div data-h2-display="b(flex)">
               <span data-h2-margin="b(right, s)" data-h2-display="b(flex)">
-                <LinkIcon style={{ width: "1rem" }} />
+                <PaperClipIcon style={{ width: "1.25rem" }} />
               </span>
               <a href="#" data-h2-display="b(inline-block)">
                 {intl.formatMessage({
@@ -269,7 +238,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "Frank proposed <bold>Example solution #2</bold> as a solution to this barrier.",
+                      "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
                   },
                   { bold },
                 )}
@@ -286,7 +255,7 @@ const ViewSolution: React.FunctionComponent = () => {
               </p>
             </div>
           </div>
-        </LeftSection>
+        </RightSection>
       </Page>
     </Layout>
   );
