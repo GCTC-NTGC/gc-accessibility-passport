@@ -184,7 +184,15 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
           defaultMessage: "Please select a filter.",
         })}
       >
-        <ul data-h2-position="b(relative)" ref={parentRef}>
+        <ul
+          data-h2-position="b(relative)"
+          ref={parentRef}
+          style={{
+            top: "0",
+            width: "105%", // {Todo: This is a hack for now until the designers comes back }
+            height: "19rem",
+          }}
+        >
           {parents.map(({ id: parentId, name }) => {
             return (
               <li

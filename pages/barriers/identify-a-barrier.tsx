@@ -102,7 +102,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "<bold>You can identify your barrier and enter a description</bold> (a barrier means anything that prevents you from participating in your work environment.)",
+                    "You can identify your barrier and enter a description (a barrier means anything that prevents you from participating in your work environment.)",
                 },
                 { bold },
               )}

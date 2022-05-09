@@ -88,7 +88,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <bold>Flexible Schedule</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
+                    "You've selected <bold>Noise-cancelling headphones</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
                 },
                 { bold },
               )}
@@ -100,7 +100,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "Flexible Schedule is commonly defined as: Employees who experience certain limitations may need a flexible schedule to work optimally during hours of increased attentiveness. Flexible schedules can also be used to have a period of mental rest to refocus and reorient into his/her work. Examples of a flexible schedule would be adjusting starting and ending times of the workday, combining regularly scheduled breaks to create one extended break, or dividing large breaks into smaller segments, and allowing work to be completed during hours when the employee is most mentally alert.",
+                  "Noise canceling headphones are designed to reduce exposure to unwanted background noise.",
               })}
             </p>
             <p
