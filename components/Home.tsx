@@ -69,7 +69,7 @@ const Home: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manager-info">
+              <Link href="manager/manager-info">
                 <a
                   title={intl.formatMessage({
                     defaultMessage: "Manager info form",
@@ -89,7 +89,7 @@ const Home: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/view-employee-passport">
+              <Link href="manager/view-employee-passport">
                 <a
                   title={intl.formatMessage({
                     defaultMessage: "Employee Passport Information",
@@ -100,7 +100,7 @@ const Home: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/view-employee-barrier">
+              <Link href="manager/view-employee-barrier">
                 <a
                   title={intl.formatMessage({
                     defaultMessage: "View Employee Barrier",
@@ -144,7 +144,7 @@ const Home: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manager-dashboard">
+              <Link href="manager/manager-dashboard">
                 <a
                   title={intl.formatMessage({
                     defaultMessage: "Manager Dashboard",
@@ -155,7 +155,7 @@ const Home: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manager-dashboard">
+              <Link href="/passport">
                 <a
                   title={intl.formatMessage({
                     defaultMessage: "Employee Dashboard",
