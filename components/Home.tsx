@@ -96,9 +96,10 @@ const Home: React.FunctionComponent = () => {
                 data-h2-shadow="b(l)"
                 data-h2-radius="b(s)"
                 data-h2-display="b(flex)"
+                data-h2-flex-direction="b(column)"
                 data-h2-justify-content="b(center)"
                 data-h2-align-items="b(center)"
-                style={{ width: "100%", minHeight: "7rem" }}
+                style={{ width: "100%", minHeight: "7rem", gap: "1rem" }}
               >
                 <Link href="/barriers/identify-a-barrier">
                   <a
@@ -108,6 +109,17 @@ const Home: React.FunctionComponent = () => {
                   >
                     {intl.formatMessage({
                       defaultMessage: "Create a passport",
+                    })}
+                  </a>
+                </Link>
+                <Link href="/passport">
+                  <a
+                    title={intl.formatMessage({
+                      defaultMessage: "View my passport",
+                    })}
+                  >
+                    {intl.formatMessage({
+                      defaultMessage: "View my passport",
                     })}
                   </a>
                 </Link>
