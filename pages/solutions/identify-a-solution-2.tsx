@@ -142,33 +142,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               items={situations}
             />
           </div>
-          <div>
-            <h4 data-h2-font-weight="b(600)" data-h2-font-size="b(h5)">
-              {intl.formatMessage({
-                defaultMessage: "Adding optional context",
-              })}
-            </h4>
-            <p>
-              {intl.formatMessage({
-                defaultMessage:
-                  "Use this text box to share how this barrier might impact your work and note the ways that this solution can help you to succeed in the work situations you have identified.",
-              })}
-            </p>
-            <p data-h2-font-weight="b(600)">
-              {intl.formatMessage({
-                defaultMessage:
-                  "Please ensure that you have not included medical information.",
-              })}
-            </p>
-            <TextArea
-              id="optionalContext"
-              label={intl.formatMessage({
-                defaultMessage: "Add optional context...",
-              })}
-              name="optionalContext"
-              rows={8}
-            />
-          </div>
+
           <div>
             <h4 data-h2-font-weight="b(600)" data-h2-font-size="b(h5)">
               {intl.formatMessage({
@@ -245,7 +219,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               data-h2-padding="b(all, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Save and view the barrier",
+                defaultMessage: "Save and review the barrier info",
               })}
             </Button>
           </FormFooter>

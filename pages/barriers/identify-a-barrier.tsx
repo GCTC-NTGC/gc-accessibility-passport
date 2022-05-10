@@ -92,20 +92,17 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div data-h2-margin="b(bottom, l)">
-            <p data-h2-font-weight="b(700)" data-h2-margin="b(top, none)">
+            <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
+                  "A barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific.",
               })}
             </p>
-            <p>
-              {intl.formatMessage(
-                {
-                  defaultMessage:
-                    "You can identify your barrier and enter a description (a barrier means anything that prevents you from participating in your work environment.)",
-                },
-                { bold },
-              )}
+            <p data-h2-font-weight="b(600)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "You can identify a barrier and enter a description using the boxes below",
+              })}
             </p>
             <Input
               id="name"
@@ -127,7 +124,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
           <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
             {intl.formatMessage({
               defaultMessage:
-                "Or use the worksheet to identify and select a solution (or solutions) for this barrier.",
+                "Or, use the worksheet to select a barrier (only your barrier information will be saved).",
             })}
           </p>
           <div data-h2-margin="b(bottom, xl)">
@@ -157,6 +154,12 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 inputName="barrier"
               />
             </div>
+            <p data-h2-font-weight="b(700)" data-h2-margin="b(top, s)">
+              {intl.formatMessage({
+                defaultMessage:
+                  "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
+              })}
+            </p>
             <p>
               {intl.formatMessage(
                 {
@@ -181,7 +184,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "I'm happy with this barrier, save and move to identifying solutions",
+                  "I confirm that this is the barrier that I face",
               })}
             </Button>
           </FormFooter>

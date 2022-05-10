@@ -117,7 +117,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
               }}
             >
               <Button
-                type="submit"
+                type="button" // changing it for now as we want to stay on the page for the prototype
                 color="blue"
                 mode="solid"
                 data-h2-font-style="b(underline)"
