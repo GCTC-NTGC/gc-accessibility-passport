@@ -11,7 +11,7 @@ const Home: React.FunctionComponent = () => {
           data-h2-border="s(darkblue, right, solid, s)"
           data-h2-padding="b(right-left, l) b(top-bottom, l)"
           data-h2-bg-color="b(lightgray)"
-          style={{ flexGrow: 2 }}
+          style={{ flex: 2 }}
         >
           <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
@@ -24,155 +24,57 @@ const Home: React.FunctionComponent = () => {
             data-h2-shadow="b(l)"
             data-h2-radius="b(s)"
             style={{ width: "100%", minHeight: "23rem" }}
+            data-h2-padding="b(all, m)"
           >
-            <div data-h2-display="b(flex)" data-h2-flex-direction="b(column)">
-              <Link href="/barriers/identify-a-barrier">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Identify a barrier",
-                  })}
-                >
-                  {intl.formatMessage({ defaultMessage: "Identify a barrier" })}
-                </a>
-              </Link>
-              <Link href="/review-barrier">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Review Barrier info form",
-                  })}
-                >
+            <p>
+              {intl.formatMessage({
+                defaultMessage:
+                  "Your GC Workplace Accessibility Passport is a tool to document the barriers you might face at work and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
+              })}
+            </p>
+            <ul
+              data-h2-margin="b(bottom-left, m)"
+              style={{ listStyleType: "disc" }}
+            >
+              <li>
+                <p>
                   {intl.formatMessage({
-                    defaultMessage: "Review Barrier info form",
-                  })}{" "}
-                </a>
-              </Link>
-
-              <Link href="solutions/identify-a-solution">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Identify a solution",
+                    defaultMessage:
+                      "A barrier means anything that hinders full and equal participation in the workplace.",
                   })}
-                >
+                </p>
+              </li>
+              <li>
+                <p>
                   {intl.formatMessage({
-                    defaultMessage: "Identify a solution",
+                    defaultMessage:
+                      "A solution means the adaptive tools, supports or measures that will address the barrier and ensure full and equal participation in the workplace.",
                   })}
-                </a>
-              </Link>
-              <Link href="solutions/identify-a-solution-2">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Identify a solution (cont.)",
-                  })}
-                >
+                </p>
+              </li>
+              <li>
+                <p>
                   {intl.formatMessage({
-                    defaultMessage: "Identify a solution (cont.)",
+                    defaultMessage:
+                      "As you create the Passport, the information will be saved anonymously.",
                   })}
-                </a>
-              </Link>
-              <Link href="manager/manager-info">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Manager info form",
-                  })}
-                >
-                  {intl.formatMessage({ defaultMessage: "Manager info form" })}
-                </a>
-              </Link>
-              <Link href="/share-my-passport">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Share My Passport Information",
-                  })}
-                >
+                </p>
+              </li>
+              <li>
+                <p>
                   {intl.formatMessage({
-                    defaultMessage: "Share My Passport Information form",
+                    defaultMessage:
+                      "You will have a chance to review the barriers and solutions, and download a word version of the Passport before you create an account.",
                   })}
-                </a>
-              </Link>
-              <Link href="manager/view-employee-passport">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Employee Passport Information",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Employee Passport Information Form",
-                  })}
-                </a>
-              </Link>
-              <Link href="manager/view-employee-barrier">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "View Employee Barrier",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "View Employee Barrier",
-                  })}
-                </a>
-              </Link>
-              <Link href="/solutions/view">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "View/Action a solution",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "View/Action a solution",
-                  })}
-                </a>
-              </Link>
-              <Link href="manager/view-action-solution">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "[MANAGER] View/Action a solution",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "[MANAGER] View/Action a solution",
-                  })}
-                </a>
-              </Link>
-              <Link href="/manage-permissions">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Manage Permissions",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Manage Permissions",
-                  })}
-                </a>
-              </Link>
-              <Link href="manager/manager-dashboard">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Manager Dashboard",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Manager Dashboard",
-                  })}
-                </a>
-              </Link>
-              <Link href="/passport">
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "Employee Dashboard",
-                  })}
-                >
-                  {intl.formatMessage({
-                    defaultMessage: "Employee Dashboard",
-                  })}
-                </a>
-              </Link>
-            </div>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
         <div
           data-h2-padding="b(right-left, l) b(top-bottom, l)"
           data-h2-bg-color="b(lightblue)"
-          style={{ flexGrow: 1 }}
+          style={{ flex: 1 }}
         >
           <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
@@ -193,8 +95,23 @@ const Home: React.FunctionComponent = () => {
                 data-h2-bg-color="b(white)"
                 data-h2-shadow="b(l)"
                 data-h2-radius="b(s)"
+                data-h2-display="b(flex)"
+                data-h2-justify-content="b(center)"
+                data-h2-align-items="b(center)"
                 style={{ width: "100%", minHeight: "7rem" }}
-              ></div>
+              >
+                <Link href="/barriers/identify-a-barrier">
+                  <a
+                    title={intl.formatMessage({
+                      defaultMessage: "Create a passport",
+                    })}
+                  >
+                    {intl.formatMessage({
+                      defaultMessage: "Create a passport",
+                    })}
+                  </a>
+                </Link>
+              </div>
             </div>
             <div>
               <h3 data-h2-font-size="b(h5)">
@@ -208,8 +125,23 @@ const Home: React.FunctionComponent = () => {
                 data-h2-bg-color="b(white)"
                 data-h2-shadow="b(l)"
                 data-h2-radius="b(s)"
+                data-h2-display="b(flex)"
+                data-h2-justify-content="b(center)"
+                data-h2-align-items="b(center)"
                 style={{ width: "100%", minHeight: "7rem" }}
-              ></div>
+              >
+                <Link href="manager/manager-dashboard">
+                  <a
+                    title={intl.formatMessage({
+                      defaultMessage: "Manager Dashboard",
+                    })}
+                  >
+                    {intl.formatMessage({
+                      defaultMessage: "Manager Dashboard",
+                    })}
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

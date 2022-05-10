@@ -4,7 +4,10 @@ import Layout from "../components/Layout";
 
 const HomePage: React.FunctionComponent = () => {
   return (
-    <Layout title="Homepage - GC Accessibility Passport">
+    <Layout
+      title="Homepage - GC Accessibility Passport"
+      data-h2-padding="b(all, none)"
+    >
       <Home />
     </Layout>
   );
