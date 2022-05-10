@@ -19,6 +19,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
   headTitle,
   formLayout,
   children,
+  ...rest
 }) => {
   const intl = useIntl();
   return (
@@ -53,6 +54,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
               : {
                   "data-h2-padding": "m(right-left, l) l(right-left, xxl)",
                 })}
+            {...rest}
           >
             {children}
           </div>
