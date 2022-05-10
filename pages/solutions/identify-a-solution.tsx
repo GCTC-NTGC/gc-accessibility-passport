@@ -10,7 +10,6 @@ import Filters from "../../components/Filters";
 import { Input, TextArea } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
-import { errorMessages } from "../../messages";
 
 type Solution = {
   id: number;
@@ -64,50 +63,6 @@ const IdentifyASolution: React.FunctionComponent = () => {
       id: 1,
       parentId: 1,
       name: intl.formatMessage({ defaultMessage: "Noise in the Workplace" }),
-    },
-    {
-      id: 2,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Attendance" }),
-    },
-    {
-      id: 3,
-      parentId: 1,
-      name: intl.formatMessage({
-        defaultMessage: "Memory",
-      }),
-    },
-    {
-      id: 4,
-      parentId: 1,
-      name: intl.formatMessage({
-        defaultMessage: "Organization and prioritization",
-      }),
-    },
-    {
-      id: 5,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Multi-tasking" }),
-    },
-    {
-      id: 6,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Paperwork" }),
-    },
-    {
-      id: 7,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Social Skills" }),
-    },
-    {
-      id: 8,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Work Hours" }),
-    },
-    {
-      id: 9,
-      parentId: 1,
-      name: intl.formatMessage({ defaultMessage: "Attendance" }),
     },
   ];
 

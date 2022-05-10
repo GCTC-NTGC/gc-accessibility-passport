@@ -55,7 +55,7 @@ const ViewSolution: React.FunctionComponent = () => {
               >
                 {intl.formatMessage({
                   defaultMessage:
-                    "Noise in the workplace: An office setting could be noisy due to its layout or type of work. In a noisy workplace, a person’s concentration may be affected by auditory distractions (that can be heard) and/or visual distractions (that can be seen).",
+                    "Noise canceling headphones are designed to reduce exposure to unwanted background noise",
                 })}
               </p>
             </div>
@@ -191,7 +191,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   "Select the link below to edit the solution information that appears on this page.",
               })}
             </p>
-            <Link href="solutions/identify-a-solution">
+            <Link href="/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-font-style="b(underline)"

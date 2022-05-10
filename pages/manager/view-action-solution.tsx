@@ -55,7 +55,7 @@ const ViewSolution: React.FunctionComponent = () => {
               >
                 {intl.formatMessage({
                   defaultMessage:
-                    "Noise  in the workplace: In a noisy workplace, a person's concentration may be affected by auditory distractions (that can be heard) and/or visual distractions (that can be seen).",
+                    "Noise canceling headphones are designed to reduce exposure to unwanted background noise.",
                 })}
               </p>
             </div>

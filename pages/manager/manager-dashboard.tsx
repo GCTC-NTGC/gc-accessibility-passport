@@ -15,10 +15,10 @@ const ManagerDashboard: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "My manager dashboard",
+        defaultMessage: "Manager dashboard",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My manager dashboard - GC Accessibility Passport",
+        defaultMessage: "Manager dashboard - GC Accessibility Passport",
       })}
     >
       <Page>
@@ -43,7 +43,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
                 }),
-                href: "/passport",
+                href: "/manager/view-employee-passport",
               }}
             />
             <PassportCard
@@ -54,7 +54,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
                 }),
-                href: "/passport",
+                href: "#",
               }}
             />
             <PassportCard
@@ -65,7 +65,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
                 }),
-                href: "/passport",
+                href: "#",
               }}
             />
           </div>

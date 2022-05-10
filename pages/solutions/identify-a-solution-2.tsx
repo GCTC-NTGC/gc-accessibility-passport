@@ -88,7 +88,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <bold>Flexible Schedule</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
+                    "You've selected <bold>Noise-cancelling headphones</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
                 },
                 { bold },
               )}
@@ -100,7 +100,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "Flexible Schedule is commonly defined as: Employees who experience certain limitations may need a flexible schedule to work optimally during hours of increased attentiveness. Flexible schedules can also be used to have a period of mental rest to refocus and reorient into his/her work. Examples of a flexible schedule would be adjusting starting and ending times of the workday, combining regularly scheduled breaks to create one extended break, or dividing large breaks into smaller segments, and allowing work to be completed during hours when the employee is most mentally alert.",
+                  "Noise canceling headphones are designed to reduce exposure to unwanted background noise.",
               })}
             </p>
             <p
@@ -142,33 +142,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               items={situations}
             />
           </div>
-          <div>
-            <h4 data-h2-font-weight="b(600)" data-h2-font-size="b(h5)">
-              {intl.formatMessage({
-                defaultMessage: "Adding optional context",
-              })}
-            </h4>
-            <p>
-              {intl.formatMessage({
-                defaultMessage:
-                  "Use this text box to share how this barrier might impact your work and note the ways that this solution can help you to succeed in the work situations you have identified.",
-              })}
-            </p>
-            <p data-h2-font-weight="b(600)">
-              {intl.formatMessage({
-                defaultMessage:
-                  "Please ensure that you have not included medical information.",
-              })}
-            </p>
-            <TextArea
-              id="optionalContext"
-              label={intl.formatMessage({
-                defaultMessage: "Add optional context...",
-              })}
-              name="optionalContext"
-              rows={8}
-            />
-          </div>
+
           <div>
             <h4 data-h2-font-weight="b(600)" data-h2-font-size="b(h5)">
               {intl.formatMessage({
@@ -245,7 +219,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               data-h2-padding="b(all, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Save and view the barrier",
+                defaultMessage: "Save and review the barrier info",
               })}
             </Button>
           </FormFooter>

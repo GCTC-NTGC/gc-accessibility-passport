@@ -15,12 +15,10 @@ const ReviewBarrier: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage:
-          "Review or edit your barrier: Concentration in a noisy workplace",
+        defaultMessage: "Review or edit your barrier: Noise in the workplace",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage:
-          "Review or edit your barrier: Concentration in a noisy workplace",
+        defaultMessage: "Review or edit your barrier: Noise in the workplace",
       })}
     >
       <Page>
