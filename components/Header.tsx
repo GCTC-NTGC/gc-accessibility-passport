@@ -105,10 +105,7 @@ const Header: React.FunctionComponent<Header> = ({
         ) : (
           <>
             {pathname === ("/login" || "/register") ? (
-              <div
-                data-h2-position="b(relative)"
-                data-h2-padding="b(all, m) s(left, xl)"
-              >
+              <div data-h2-position="b(relative)" data-h2-padding="b(all, m)">
                 <h1
                   data-h2-margin="b(all, m)"
                   data-h2-text-align="b(center)"
