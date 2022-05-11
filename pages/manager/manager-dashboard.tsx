@@ -18,7 +18,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
         defaultMessage: "Manager dashboard",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Manager dashboard - GC Accessibility Passport",
+        defaultMessage: "Manager dashboard - GC Workplace Accessibility Passport",
       })}
     >
       <Page>

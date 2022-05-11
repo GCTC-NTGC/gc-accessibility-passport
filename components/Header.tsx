@@ -124,7 +124,7 @@ const Header: React.FunctionComponent<Header> = ({
               >
                 <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
                   {intl.formatMessage({
-                    defaultMessage: "GC Accessibility Passport",
+                    defaultMessage: "GC Workplace Accessibility Passport",
                     description: "Heading for homepage.",
                   })}
                 </h1>
