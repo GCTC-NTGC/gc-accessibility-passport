@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
 import useUser from "../lib/useUser";
-import Button, { colorMap } from "./Button";
+import { colorMap } from "./Button";
 import Nav from "./Nav";
 
 interface Header {
@@ -67,12 +67,11 @@ const Header: React.FunctionComponent<Header> = ({
           </Link>
         </div>
       </div>
-      <div data-h2-position="b(relative)" data-h2-font-color="b(white)">
-        <Image
-          src={`${pathname === "/" ? "/beach.png" : "/waves.jpg"}`}
-          layout="fill"
-          alt=""
-        />
+      <div
+        data-h2-position="b(relative)"
+        data-h2-font-color="b(white)"
+        data-h2-bg-color="b(darkblue)"
+      >
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
           <div
