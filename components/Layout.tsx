@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useIntl } from "react-intl";
 
 interface LayoutProps {
-  title?: string;
+  title?: string | React.ReactNode;
   editButton?: { title: string; link: string };
   center?: boolean;
   headTitle?: string;
