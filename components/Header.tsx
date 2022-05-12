@@ -70,7 +70,7 @@ const Header: React.FunctionComponent<Header> = ({
       <div
         data-h2-position="b(relative)"
         data-h2-font-color="b(white)"
-        data-h2-bg-color="b(darkblue)"
+        data-h2-bg-color="b(black)"
       >
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
