@@ -85,7 +85,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     <Layout
       title={intl.formatMessage({ defaultMessage: "Identify a barrier" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Identify a barrier - GC Accessibility Passport",
+        defaultMessage: "Identify a barrier - GC Workplace Accessibility Passport",
       })}
       formLayout
     >
