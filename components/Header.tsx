@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
 import useUser from "../lib/useUser";
-import Button, { colorMap } from "./Button";
+import { colorMap } from "./Button";
 import Nav from "./Nav";
 
 interface Header {
-  title?: string;
+  title?: string | React.ReactNode;
   editButton?: { title: string; link: string };
   center?: boolean;
 }
@@ -104,7 +104,7 @@ const Header: React.FunctionComponent<Header> = ({
           </div>
         ) : (
           <>
-            {pathname === ("/login" || "/register") ? (
+            {pathname === "/login" || pathname === "/register" ? (
               <div
                 data-h2-position="b(relative)"
                 data-h2-padding="b(all, m) s(left, xl)"
