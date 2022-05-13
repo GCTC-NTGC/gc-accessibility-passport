@@ -1,22 +1,27 @@
 import * as React from "react";
 
-export const LeftSection: React.FunctionComponent = ({ children }) => {
+export const LeftSection: React.FunctionComponent = ({ children, ...rest }) => {
   return (
     <div
       data-h2-padding="b(right-left, l) b(top-bottom, none)"
       data-h2-border="s(black, right, solid, s)"
       style={{ flex: 4 }}
+      {...rest}
     >
       {children}
     </div>
   );
 };
 
-export const RightSection: React.FunctionComponent = ({ children }) => {
+export const RightSection: React.FunctionComponent = ({
+  children,
+  ...rest
+}) => {
   return (
     <div
       data-h2-padding="b(right-left, l) b(top-bottom, none)"
       style={{ flex: 2 }}
+      {...rest}
     >
       {children}
     </div>

@@ -54,6 +54,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
               : {
                   "data-h2-padding": "m(right-left, l) l(right-left, xxl)",
                 })}
+            style={{ margin: "auto" }}
             {...rest}
           >
             {children}
