@@ -77,7 +77,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         defaultMessage: "Customize your solution",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Customize your solution - GC Accessibility Passport",
+        defaultMessage: "Customize your solution - GC Workplace Accessibility Passport",
       })}
       formLayout
     >

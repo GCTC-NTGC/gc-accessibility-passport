@@ -52,7 +52,7 @@ const Login: React.FunctionComponent = () => {
         description: "Heading for login page.",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Login - GC Accessibility Passport",
+        defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
     >
       <Page

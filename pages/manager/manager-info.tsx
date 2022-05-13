@@ -29,7 +29,7 @@ const ManagerInfo: React.FunctionComponent = () => {
     <Layout
       title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My Manager's Information - GC Accessibility Passport",
+        defaultMessage: "My Manager's Information - GC Workplace Accessibility Passport",
       })}
       center={true}
       formLayout
