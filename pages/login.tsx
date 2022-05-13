@@ -50,11 +50,11 @@ const Login: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Login",
+        defaultMessage: "Log in to your passport",
         description: "Heading for login page.",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Login - GC Accessibility Passport",
+        defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
       formLayout
       data-h2-width="b(75) s(50) m(25)"
