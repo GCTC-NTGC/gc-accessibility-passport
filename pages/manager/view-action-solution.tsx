@@ -29,7 +29,8 @@ const ViewSolution: React.FunctionComponent = () => {
         defaultMessage: "Frank’s Solution: Noise-cancelling headphones",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Frank’s Solution: Noise-cancelling headphones",
+        defaultMessage:
+          "Frank’s Solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
     >
       <Page>

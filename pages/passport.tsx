@@ -2,7 +2,7 @@ import { PaperClipIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
+import { colorMap } from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
 import { PassportCard } from "../components/PassportCard";
@@ -15,7 +15,7 @@ const Passport: React.FunctionComponent = () => {
         defaultMessage: "Welcome to your passport, Frank",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My Passport - GC Accessibility Passport",
+        defaultMessage: "My Passport - GC Workplace Accessibility Passport",
       })}
     >
       <Page>

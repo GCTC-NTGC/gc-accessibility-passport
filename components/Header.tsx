@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import { useIntl } from "react-intl";
 import useUser from "../lib/useUser";
-import Button, { colorMap } from "./Button";
+import { colorMap } from "./Button";
 import Nav from "./Nav";
 
 interface Header {
-  title?: string;
+  title?: string | React.ReactNode;
   editButton?: { title: string; link: string };
   center?: boolean;
 }
@@ -67,12 +67,11 @@ const Header: React.FunctionComponent<Header> = ({
           </Link>
         </div>
       </div>
-      <div data-h2-position="b(relative)" data-h2-font-color="b(white)">
-        <Image
-          src={`${pathname === "/" ? "/beach.png" : "/waves.jpg"}`}
-          layout="fill"
-          alt=""
-        />
+      <div
+        data-h2-position="b(relative)"
+        data-h2-font-color="b(white)"
+        data-h2-bg-color="b(black)"
+      >
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
           <div
@@ -104,8 +103,11 @@ const Header: React.FunctionComponent<Header> = ({
           </div>
         ) : (
           <>
-            {pathname === ("/login" || "/register") ? (
-              <div data-h2-position="b(relative)" data-h2-padding="b(all, m)">
+            {pathname === "/login" || pathname === "/register" ? (
+              <div
+                data-h2-position="b(relative)"
+                data-h2-padding="b(all, m) s(left, xl)"
+              >
                 <h1
                   data-h2-margin="b(all, m)"
                   data-h2-text-align="b(center)"
@@ -121,7 +123,7 @@ const Header: React.FunctionComponent<Header> = ({
               >
                 <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
                   {intl.formatMessage({
-                    defaultMessage: "GC Accessibility Passport",
+                    defaultMessage: "GC Workplace Accessibility Passport",
                     description: "Heading for homepage.",
                   })}
                 </h1>

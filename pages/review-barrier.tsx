@@ -18,7 +18,8 @@ const ReviewBarrier: React.FunctionComponent = () => {
         defaultMessage: "Review or edit your barrier: Noise in the workplace",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Review or edit your barrier: Noise in the workplace",
+        defaultMessage:
+          "Review or edit your barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
     >
       <Page>

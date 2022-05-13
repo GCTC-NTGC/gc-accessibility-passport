@@ -57,8 +57,8 @@ const Login: React.FunctionComponent = () => {
         defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
       formLayout
-      data-h2-width="b(75) s(50) m(25)"
-      data-h2-padding="b(top, xl) b(right-left, m)"
+      data-h2-width="b(75) s(50) m(50)"
+      data-h2-padding="b(top-bottom, xl) b(right-left, m) m(right-left, xl)"
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
