@@ -4,7 +4,7 @@ import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button, { colorMap } from "../../components/Button";
-import { Checklist, Input, TextArea } from "../../components/formComponents";
+import { Checklist, Input } from "../../components/formComponents";
 import { Checkbox } from "../../components/formComponents/Checklist";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
@@ -20,7 +20,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     push("/review-barrier");
   };
   const back = (msg: string): React.ReactNode => (
@@ -77,7 +77,8 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         defaultMessage: "Customize your solution",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Customize your solution - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Customize your solution - GC Workplace Accessibility Passport",
       })}
       formLayout
       crumbs={[

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { PermissionsCard } from "../components/formComponents/PermissionsCard";
+import { colorMap } from "../../components/Button";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { PermissionsCard } from "../../components/formComponents/PermissionsCard";
 import Link from "next/link";
 
 const ManagePermissions: React.FunctionComponent = () => {

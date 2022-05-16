@@ -36,7 +36,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const { handleSubmit, watch, setValue } = methods;
   const watchBarrier = watch("barrier");
   const setBarrierValue = (value: string): void => setValue("barrier", value);
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     push(`/solutions/identify-a-solution`);
   };
 
@@ -85,7 +85,8 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     <Layout
       title={intl.formatMessage({ defaultMessage: "Identify a barrier" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Identify a barrier - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Identify a barrier - GC Workplace Accessibility Passport",
       })}
       crumbs={[{ title: "My passport" }, { title: "Identify a barrier" }]}
       formLayout

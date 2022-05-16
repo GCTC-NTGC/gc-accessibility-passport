@@ -18,7 +18,7 @@ const ViewSolution: React.FunctionComponent = () => {
   const intl = useIntl();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     alert("Marked as effective!");
   };
   const bold = (msg: string): React.ReactNode => (
@@ -74,7 +74,8 @@ const ViewSolution: React.FunctionComponent = () => {
                     data-h2-font-size="b(h3)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "GC Workplace Accessibility Passport Agreement",
+                      defaultMessage:
+                        "GC Workplace Accessibility Passport Agreement",
                     })}
                   </h2>
                   <p data-h2-margin="b(top, none)">

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { BarrierCard } from "../components/BarrierCard";
+import { colorMap } from "../../components/Button";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { BarrierCard } from "../../components/BarrierCard";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();

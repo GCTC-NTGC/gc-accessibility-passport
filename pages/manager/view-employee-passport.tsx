@@ -14,9 +14,10 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
         defaultMessage: "Frank Turot's passport",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Frank Turot's passport - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Frank Turot's passport - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My Dashboard" },{ title: "Frank Turot" }]}
+      crumbs={[{ title: "My Dashboard" }, { title: "Frank Turot" }]}
     >
       <Page>
         <LeftSection>

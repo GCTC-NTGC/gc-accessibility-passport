@@ -25,7 +25,7 @@ const Login: React.FunctionComponent = () => {
   const [, setErrorMsg] = useState("");
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = async () => {
     const body = {
       name: "Frank", // Replace later with user name
     };

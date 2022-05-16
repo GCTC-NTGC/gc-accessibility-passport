@@ -22,17 +22,23 @@ const ManagerInfo: React.FunctionComponent = () => {
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
+  const onSubmit = async (): Promise<void> => {
     push("/manager/manager-dashboard");
   };
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My Manager's Information - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "My Manager's Information - GC Workplace Accessibility Passport",
       })}
       center={true}
       formLayout
+      crumbs={[
+        { title: "My passport" },
+        { title: "Manage Permissions" },
+        { title: "Manager Info" },
+      ]}
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
