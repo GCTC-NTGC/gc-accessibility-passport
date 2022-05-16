@@ -16,7 +16,9 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
   return (
     <>
       <Dialog
-        onDismiss={() => {}}
+        onDismiss={() => {
+          /* do nothing */
+        }}
         isOpen={isOpen}
         title={intl.formatMessage({ defaultMessage: "Select a role" })}
         footer={
