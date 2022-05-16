@@ -67,11 +67,8 @@ const Header: React.FunctionComponent<Header> = ({
           </Link>
         </div>
       </div>
-      <div
-        data-h2-position="b(relative)"
-        data-h2-font-color="b(white)"
-        data-h2-bg-color="b(black)"
-      >
+      <div data-h2-position="b(relative)" data-h2-font-color="b(black)">
+        <Image src="/TBS-OPSA-bg.png" alt="" layout="fill" objectFit="cover" />
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
           <div
@@ -119,7 +116,7 @@ const Header: React.FunctionComponent<Header> = ({
             ) : (
               <div
                 data-h2-position="b(relative)"
-                data-h2-padding="b(all, none) s(all, xxl) s(top, m)"
+                data-h2-padding="b(all, none) s(left-right, xxl) s(top-bottom, m)"
               >
                 <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
                   {intl.formatMessage({
