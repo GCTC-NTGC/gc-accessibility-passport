@@ -30,7 +30,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
   const links = [
     {
       title: intl.formatMessage({
-        defaultMessage: "My passport",
+        defaultMessage: "Home",
         description: "Breadcrumb from GC workplace Accessibility  wrapper.",
       }),
       // href: path.home(),

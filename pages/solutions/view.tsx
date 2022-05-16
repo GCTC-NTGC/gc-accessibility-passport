@@ -34,6 +34,11 @@ const ViewSolution: React.FunctionComponent = () => {
         defaultMessage:
           "View/Action your solution: Noise-cancelling headphones - GC Accessibility Passport",
       })}
+      crumbs={[
+        { title: "My passport" },
+        { title: "Noise in the workplace" },
+        { title: "Noise-cancelling headphones" },
+      ]}
     >
       <Page>
         <LeftSection>

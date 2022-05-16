@@ -19,6 +19,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
         defaultMessage:
           "Frank's Barrier: Noise in the workplace - GC Accessibility Passport",
       })}
+      crumbs={[{ title: "Frank Turot" }, { title: "Noise in the workplace" }]}
     >
       <Page>
         <LeftSection>

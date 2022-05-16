@@ -54,6 +54,7 @@ const Login: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Login - GC Accessibility Passport",
       })}
+      crumbs={[{ title: "Login" }]}
     >
       <Page
         data-h2-justify-content="b(center)"

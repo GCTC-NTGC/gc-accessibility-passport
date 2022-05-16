@@ -20,6 +20,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Manager dashboard - GC Accessibility Passport",
       })}
+      crumbs={[{ title: "My Dashboard" }]}
     >
       <Page>
         <LeftSection>

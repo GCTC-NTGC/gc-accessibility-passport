@@ -48,10 +48,6 @@ const IdentifyASolution: React.FunctionComponent = () => {
     </Link>
   );
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(600)">{msg}</span>
-  );
-
   const parentSolutionCategories = [
     {
       id: 1,

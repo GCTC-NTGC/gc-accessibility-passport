@@ -61,6 +61,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Share my passport information",
       })}
+      crumbs={[{ title: "My passport" }, { title: "Share my passport" }]}
     >
       <div
         data-h2-width="m(50)"

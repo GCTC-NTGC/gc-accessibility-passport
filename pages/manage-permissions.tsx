@@ -17,6 +17,7 @@ const ManagePermissions: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Manage permissions",
       })}
+      crumbs={[{ title: "My passport" }, { title: "Manage Permissions" }]}
     >
       <Page>
         <LeftSection>

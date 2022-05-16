@@ -31,6 +31,11 @@ const ViewSolution: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Frank’s Solution: Noise-cancelling headphones",
       })}
+      crumbs={[
+        { title: "Frank Turot" },
+        { title: "Noise in the workplace" },
+        { title: "Noise cancelling headphones" },
+      ]}
     >
       <Page>
         <LeftSection>

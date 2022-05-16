@@ -20,11 +20,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Review or edit your barrier: Noise in the workplace",
       })}
-      crumbs={[
-        { title: "Identify a barrier" },
-        { title: "My barriers" },
-        { title: "Noise in the workplace" },
-      ]}
+      crumbs={[{ title: "My passport" }, { title: "Noise in the workplace" }]}
     >
       <Page>
         <LeftSection>
