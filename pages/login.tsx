@@ -5,9 +5,11 @@ import Button from "../components/Button";
 import { Input } from "../components/formComponents";
 import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
+import SelectRoleDialog from "../components/SelectRoleDialog";
 import fetchJson, { FetchError } from "../lib/fetchJson";
 import useUser from "../lib/useUser";
 import { errorMessages } from "../messages";
+import { User } from "./api/user";
 
 type FormValues = {
   email: string;
@@ -15,19 +17,33 @@ type FormValues = {
 };
 
 const Login: React.FunctionComponent = () => {
+  const intl = useIntl();
+  const [, setErrorMsg] = useState("");
+  const [isOpen, setOpen] = React.useState<boolean>(false);
+  const [user, setUser] = React.useState<User>({
+    isLoggedIn: false,
+    name: "",
+    manager: false,
+  });
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser } = useUser({
-    redirectTo: "/passport",
+    redirectTo: `${user.manager ? "/manager/manager-dashboard" : "/passport"}`,
     redirectIfFound: true,
   });
-  const intl = useIntl();
 
-  const [, setErrorMsg] = useState("");
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+    setUser({
+      ...user,
+      manager: false,
+    });
+    setOpen(true); // Open select role dialog.
+  };
+
+  const handleLogin = async (userData: User): Promise<void> => {
     const body = {
-      name: "Frank", // Replace later with user name
+      name: "Frank", // Replace with user
     };
 
     try {
@@ -47,6 +63,15 @@ const Login: React.FunctionComponent = () => {
     }
   };
 
+  const handleSelectRole = (isManager: boolean): void => {
+    setUser({
+      ...user,
+      manager: isManager,
+    });
+
+    handleLogin(user);
+  };
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -57,8 +82,8 @@ const Login: React.FunctionComponent = () => {
         defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
       formLayout
-      data-h2-width="b(75) s(50) m(50)"
-      data-h2-padding="b(top-bottom, xl) b(right-left, m) m(right-left, xl)"
+      data-h2-width="b(75) s(50)"
+      data-h2-padding="b(top-bottom, l) b(right-left, m) m(right-left, xl)"
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -75,7 +100,7 @@ const Login: React.FunctionComponent = () => {
             <Input
               id="password"
               name="password"
-              type="text"
+              type="password"
               label={intl.formatMessage({ defaultMessage: "Password" })}
               rules={{
                 required: intl.formatMessage(errorMessages.required),
@@ -112,6 +137,7 @@ const Login: React.FunctionComponent = () => {
           </FormFooter>
         </form>
       </FormProvider>
+      <SelectRoleDialog isOpen={isOpen} handleSelectRole={handleSelectRole} />
     </Layout>
   );
 };
