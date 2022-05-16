@@ -15,7 +15,8 @@ const ManagePermissions: React.FunctionComponent = () => {
         defaultMessage: "Manage permissions",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Manage permissions",
+        defaultMessage:
+          "Manage permissions - GC Workplace Accessibility Passport",
       })}
       crumbs={[{ title: "My passport" }, { title: "Manage Permissions" }]}
     >

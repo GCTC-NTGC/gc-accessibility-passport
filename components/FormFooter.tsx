@@ -3,21 +3,24 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 
 interface FormFooterProps {
-  cancelButton: {
+  cancelButton?: {
     href: string;
     title?: string;
   };
+  leftSideActions?: {
+    href: string;
+    title?: string;
+  }[];
 }
 
 const FormFooter: React.FunctionComponent<FormFooterProps> = ({
   cancelButton,
+  leftSideActions,
   children,
   ...rest
 }) => {
   const intl = useIntl();
-  const { href, title = intl.formatMessage({ defaultMessage: "Cancel" }) } =
-    cancelButton;
-
+  const cancel = intl.formatMessage({ defaultMessage: "Cancel" });
   return (
     <div
       data-h2-display="b(flex)"
@@ -28,11 +31,40 @@ const FormFooter: React.FunctionComponent<FormFooterProps> = ({
       data-h2-border="b(darkgray, top, solid, s)"
       {...rest}
     >
-      <Link href={href}>
-        <a data-h2-font-size="b(caption) m(normal)" title={title}>
-          {title}
-        </a>
-      </Link>
+      {leftSideActions ? (
+        <div
+          data-h2-display="b(flex)"
+          data-h2-justify-content="b(center) s(space-between)"
+          data-h2-align-items="b(center)"
+        >
+          {leftSideActions.map(({ href, title }) => (
+            <Link href={href} key={title}>
+              <a
+                data-h2-font-size="b(caption) m(normal)"
+                data-h2-margin="b(right, m)"
+                title={title}
+              >
+                {title}
+              </a>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div
+          data-h2-display="b(flex)"
+          data-h2-justify-content="b(center) s(space-between)"
+          data-h2-align-items="b(center)"
+        >
+          <Link href={cancelButton?.href || "/"}>
+            <a
+              data-h2-font-size="b(caption) m(normal)"
+              title={cancelButton?.title || cancel}
+            >
+              {cancelButton?.title || cancel}
+            </a>
+          </Link>
+        </div>
+      )}
       <div
         data-h2-display="b(flex)"
         data-h2-justify-content="b(center) s(space-between)"

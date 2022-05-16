@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { Input, Submit } from "../components/formComponents";
+import Button from "../components/Button";
+import { Input } from "../components/formComponents";
+import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
-import Page from "../components/Page";
 import fetchJson, { FetchError } from "../lib/fetchJson";
 import useUser from "../lib/useUser";
 import { errorMessages } from "../messages";
 
 type FormValues = {
-  name: string;
+  email: string;
+  password: string;
 };
 
 const Login: React.FunctionComponent = () => {
@@ -25,7 +27,7 @@ const Login: React.FunctionComponent = () => {
   const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     const body = {
-      name: data.name,
+      name: "Frank", // Replace later with user name
     };
 
     try {
@@ -48,48 +50,69 @@ const Login: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Login",
+        defaultMessage: "Log in to your passport",
         description: "Heading for login page.",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Login - GC Accessibility Passport",
+        defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
       crumbs={[{ title: "Login" }]}
+      formLayout
+      data-h2-width="b(75) s(50) m(50)"
+      data-h2-padding="b(top-bottom, xl) b(right-left, m) m(right-left, xl)"
     >
-      <Page
-        data-h2-justify-content="b(center)"
-        data-h2-flex-direction="b(column)"
-      >
-        <div data-h2-width="s(50)" style={{ margin: "auto" }}>
-          <FormProvider {...methods}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                label={intl.formatMessage({ defaultMessage: "Name" })}
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
-              />
-              <Input
-                id="email"
-                name="email"
-                type="text"
-                label={intl.formatMessage({ defaultMessage: "Email" })}
-                rules={{
-                  required: intl.formatMessage(errorMessages.required),
-                }}
-              />
-              <Submit
-                data-h2-padding="b(top-bottom, s) b(right-left, m)"
-                data-h2-margin="b(top, s)"
-                data-h2-font-style="b(underline)"
-              />
-            </form>
-          </FormProvider>
-        </div>
-      </Page>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div data-h2-margin="b(bottom, l)">
+            <Input
+              id="email"
+              name="email"
+              type="text"
+              label={intl.formatMessage({ defaultMessage: "Email address" })}
+              rules={{
+                required: intl.formatMessage(errorMessages.required),
+              }}
+            />
+            <Input
+              id="password"
+              name="password"
+              type="text"
+              label={intl.formatMessage({ defaultMessage: "Password" })}
+              rules={{
+                required: intl.formatMessage(errorMessages.required),
+              }}
+            />
+          </div>
+          <FormFooter
+            leftSideActions={[
+              {
+                href: "/register",
+                title: intl.formatMessage({
+                  defaultMessage: "Register",
+                }),
+              },
+              {
+                href: "/#",
+                title: intl.formatMessage({
+                  defaultMessage: "Reset my password",
+                }),
+              },
+            ]}
+          >
+            <Button
+              type="submit"
+              color="blue"
+              mode="solid"
+              data-h2-font-style="b(underline)"
+              data-h2-padding="b(all, s)"
+            >
+              {intl.formatMessage({
+                defaultMessage: "Login",
+              })}
+            </Button>
+          </FormFooter>
+        </form>
+      </FormProvider>
     </Layout>
   );
 };

@@ -32,7 +32,7 @@ const ViewSolution: React.FunctionComponent = () => {
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "View/Action your solution: Noise-cancelling headphones - GC Accessibility Passport",
+          "View/Action your solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         { title: "My passport" },
@@ -74,7 +74,7 @@ const ViewSolution: React.FunctionComponent = () => {
                     data-h2-font-size="b(h3)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "GC Accessibility Passport Agreement",
+                      defaultMessage: "GC Workplace Accessibility Passport Agreement",
                     })}
                   </h2>
                   <p data-h2-margin="b(top, none)">

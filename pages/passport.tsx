@@ -15,7 +15,7 @@ const Passport: React.FunctionComponent = () => {
         defaultMessage: "Welcome to your passport, Frank",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My Passport - GC Accessibility Passport",
+        defaultMessage: "My Passport - GC Workplace Accessibility Passport",
       })}
       crumbs={[{ title: "My passport" }]}
     >

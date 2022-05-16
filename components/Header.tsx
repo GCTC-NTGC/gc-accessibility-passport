@@ -67,12 +67,11 @@ const Header: React.FunctionComponent<Header> = ({
           </Link>
         </div>
       </div>
-      <div data-h2-position="b(relative)" data-h2-font-color="b(white)">
-        <Image
-          src={`${pathname === "/" ? "/beach.png" : "/waves.jpg"}`}
-          layout="fill"
-          alt=""
-        />
+      <div
+        data-h2-position="b(relative)"
+        data-h2-font-color="b(white)"
+        data-h2-bg-color="b(black)"
+      >
         <Nav />
         {user?.isLoggedIn && pathname !== "/" ? (
           <div
@@ -124,7 +123,7 @@ const Header: React.FunctionComponent<Header> = ({
               >
                 <h1 data-h2-margin="b(all, m)" data-h2-text-align="b(center)">
                   {intl.formatMessage({
-                    defaultMessage: "GC Accessibility Passport",
+                    defaultMessage: "GC Workplace Accessibility Passport",
                     description: "Heading for homepage.",
                   })}
                 </h1>

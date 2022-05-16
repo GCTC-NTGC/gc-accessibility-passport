@@ -128,7 +128,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Identify a solution for Noise in the Workplace - GC Accessibility Passport",
+          "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         { title: "Identify a barrier" },
