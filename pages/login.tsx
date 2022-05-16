@@ -23,11 +23,13 @@ const Login: React.FunctionComponent = () => {
   const [user, setUser] = React.useState<User>({
     isLoggedIn: false,
     name: "",
-    manager: false,
+    isManager: false,
   });
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser } = useUser({
-    redirectTo: `${user.manager ? "/manager/manager-dashboard" : "/passport"}`,
+    redirectTo: `${
+      user.isManager ? "/manager/manager-dashboard" : "/passport"
+    }`,
     redirectIfFound: true,
   });
 
@@ -36,14 +38,15 @@ const Login: React.FunctionComponent = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     setUser({
       ...user,
-      manager: false,
+      isManager: false,
     });
     setOpen(true); // Open select role dialog.
   };
 
   const handleLogin = async (userData: User): Promise<void> => {
     const body = {
-      name: "Frank", // Replace with user
+      name: userData.name,
+      isManager: userData.isManager,
     };
 
     try {
@@ -66,7 +69,7 @@ const Login: React.FunctionComponent = () => {
   const handleSelectRole = (isManager: boolean): void => {
     setUser({
       ...user,
-      manager: isManager,
+      isManager,
     });
 
     handleLogin(user);
