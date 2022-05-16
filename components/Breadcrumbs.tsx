@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import Link from "next/Link";
+import Link from "next/link";
 
 export interface BreadcrumbsProps {
   links: { title: string; href?: string; icon?: JSX.Element }[];
