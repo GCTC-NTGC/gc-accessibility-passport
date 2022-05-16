@@ -80,6 +80,10 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         defaultMessage: "Customize your solution - GC Accessibility Passport",
       })}
       formLayout
+      crumbs={[
+        { title: "Identify a barrier" },
+        { title: "Identify a solution" },
+      ]}
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>

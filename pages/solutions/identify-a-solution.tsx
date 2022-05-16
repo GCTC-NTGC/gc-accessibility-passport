@@ -134,6 +134,10 @@ const IdentifyASolution: React.FunctionComponent = () => {
         defaultMessage:
           "Identify a solution for Noise in the Workplace - GC Accessibility Passport",
       })}
+      crumbs={[
+        { title: "Identify a barrier" },
+        { title: "Identify a solution" },
+      ]}
       formLayout
     >
       <FormProvider {...methods}>

@@ -17,6 +17,7 @@ const Passport: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "My Passport - GC Accessibility Passport",
       })}
+      crumbs={[{ title: "My passport" }]}
     >
       <Page>
         <LeftSection>

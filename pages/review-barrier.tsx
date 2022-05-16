@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
+import { colorMap } from "../components/Button";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
 import { BarrierCard } from "../components/BarrierCard";
@@ -20,6 +20,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Review or edit your barrier: Noise in the workplace",
       })}
+      crumbs={[
+        { title: "Identify a barrier" },
+        { title: "My barriers" },
+        { title: "Noise in the workplace" },
+      ]}
     >
       <Page>
         <LeftSection>
