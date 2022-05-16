@@ -1,16 +1,16 @@
-import { divide } from "lodash";
-import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "./Button";
+import Button from "./Button";
 import Dialog from "./Dialog";
 
 interface SelectRoleDialogProps {
   isOpen: boolean;
+  handleSelectRole: (isManager: boolean) => void;
 }
 
 const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
   isOpen,
+  handleSelectRole,
 }) => {
   const intl = useIntl();
   return (
@@ -20,35 +20,35 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
         isOpen={isOpen}
         title={intl.formatMessage({ defaultMessage: "Select a role" })}
         footer={
-          <div>
-            <Link href="/passport">
-              <a
-                {...colorMap.blue.solid}
+          <div data-h2-display="b(flex)">
+            <div style={{ flex: 1 }} data-h2-padding="b(right, m)">
+              <Button
+                type="button"
+                color="blue"
+                mode="solid"
+                data-h2-font-style="b(underline)"
                 data-h2-padding="b(all, s)"
-                data-h2-width="b(100)"
-                data-h2-display="b(block)"
-                data-h2-text-align="b(center)"
-                data-h2-radius="b(s)"
+                onClick={() => handleSelectRole(false)}
               >
                 {intl.formatMessage({
                   defaultMessage: "Log in to my own passport",
                 })}
-              </a>
-            </Link>
-            <Link href="/manager/manager-dashboard">
-              <a
-                {...colorMap.blue.solid}
+              </Button>
+            </div>
+            <div style={{ flex: 1 }}>
+              <Button
+                type="button"
+                color="blue"
+                mode="solid"
+                data-h2-font-style="b(underline)"
                 data-h2-padding="b(all, s)"
-                data-h2-width="b(100)"
-                data-h2-display="b(block)"
-                data-h2-text-align="b(center)"
-                data-h2-radius="b(s)"
+                onClick={() => handleSelectRole(true)}
               >
                 {intl.formatMessage({
                   defaultMessage: "Log in as a manager",
                 })}
-              </a>
-            </Link>
+              </Button>
+            </div>
           </div>
         }
       >
