@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import "../styles/hydrogen.css";
+import "@reach/dialog/styles.css";
+import "../styles/dialog.css";
 import English from "../lang/en.json";
 import French from "../lang/fr.json";
 import type { AppProps } from "next/app";

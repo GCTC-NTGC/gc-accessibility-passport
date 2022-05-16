@@ -6,9 +6,11 @@ import { Input } from "../components/formComponents";
 import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import Page from "../components/Page";
+import SelectRoleDialog from "../components/SelectRoleDialog";
 import fetchJson, { FetchError } from "../lib/fetchJson";
 import useUser from "../lib/useUser";
 import { errorMessages } from "../messages";
+import { User } from "./api/user";
 
 type FormValues = {
   firstName: string;
@@ -19,19 +21,33 @@ type FormValues = {
 };
 
 const Register: React.FunctionComponent = () => {
+  const intl = useIntl();
+  const [, setErrorMsg] = useState("");
+  const [isOpen, setOpen] = React.useState<boolean>(false);
+  const [user, setUser] = React.useState<User>({
+    isLoggedIn: false,
+    name: "",
+    manager: false,
+  });
+  const methods = useForm<FormValues>();
+  const { handleSubmit } = methods;
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser } = useUser({
     redirectTo: "/passport",
     redirectIfFound: true,
   });
-  const intl = useIntl();
-
-  const [, setErrorMsg] = useState("");
-  const methods = useForm<FormValues>();
-  const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
-    const body = {
+    setUser({
+      isLoggedIn: true,
       name: `${data.firstName}`,
+      manager: false,
+    });
+    setOpen(true); // Open select role dialog.
+  };
+
+  const handleLogin = async (userData: User): Promise<void> => {
+    const body = {
+      name: `${userData.name}`,
     };
 
     try {
@@ -49,6 +65,15 @@ const Register: React.FunctionComponent = () => {
         console.error("An unexpected error happened:", error);
       }
     }
+  };
+
+  const handleSelectRole = (isManager: boolean): void => {
+    setUser({
+      ...user,
+      manager: isManager,
+    });
+
+    handleLogin(user);
   };
 
   const passwordHints = [
@@ -191,6 +216,7 @@ const Register: React.FunctionComponent = () => {
             </form>
           </FormProvider>
         </div>
+        <SelectRoleDialog isOpen={isOpen} handleSelectRole={handleSelectRole} />
       </Page>
     </Layout>
   );

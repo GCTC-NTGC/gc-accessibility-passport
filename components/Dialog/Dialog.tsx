@@ -4,10 +4,7 @@ import { XIcon } from "@heroicons/react/outline";
 import Overlay from "./Overlay";
 import Content from "./Content";
 
-import "@reach/dialog/styles.css";
-import "./dialog.css";
-
-export type Color = "ts-primary" | "ia-primary" | "ia-secondary";
+export type Color = "ts-primary";
 
 export interface DialogProps {
   isOpen: boolean;
@@ -23,15 +20,7 @@ export interface DialogProps {
 
 export const colorMap: Record<Color, Record<string, string>> = {
   "ts-primary": {
-    "data-h2-bg-color": "b(linear-70[lightpurple][lightnavy])",
-    "data-h2-font-color": "b(white)",
-  },
-  "ia-primary": {
-    "data-h2-bg-color": "b(linear-90[ia-lightpurple][ia-darkpurple])",
-    "data-h2-font-color": "b(white)",
-  },
-  "ia-secondary": {
-    "data-h2-bg-color": "b(linear-90[ia-pink][ia-darkpink])",
+    "data-h2-bg-color": "b(blue)",
     "data-h2-font-color": "b(white)",
   },
 };
@@ -41,7 +30,7 @@ const Dialog: React.FC<DialogProps> = ({
   subtitle,
   onDismiss,
   isOpen,
-  color = "ia-primary",
+  color = "ts-primary",
   confirmation = false,
   centered = false,
   footer,
