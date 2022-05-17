@@ -33,9 +33,21 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-TODO:
+# Translation Utility script
 
-- [x] Add missing upload file input to document form.
-- [x] Ensure all links connect to correct page.
-- [x] Ensure all copy is correct on each page.
-- [ ] Start accessibility testing. Running lighthouse. Run through accessibility checklist resource Josh sent.
+This project contains a script (`./tools/checkIntl.js`) to help manage your react-intl translations files. It has been written to run without any dependencies or compilation. It is expected to be used along with the [formatjs cli](https://formatjs.io/docs/tooling/cli).
+
+### Directions
+The checkIntl script can be run with different flags and options. For more details on how individual options work, see the checkIntl file itself. In practice, it is easiest to save the commands, with options included, as **package.json** scripts.
+
+For example, to ensure translations in the project are up to date:
+
+1. Run `npm run extract:i18n`.
+2. Run `npm run check-intl`. This generates a **untranslated.json** file in the admin project's lang folder.
+3. Send **untranslated.json** for translation, asking them to only translate the "defaultMessage" fields.
+4. Save the translated version which comes back as **newTranslations.json** in the same lang folder.
+5. Run `npm run check-intl-merge`.
+6. If you see any warnings about untranslated entries which simply match in English and French, add the key to the array in **whitelist.json** and repeat step 4.
+
+### On source control
+Only **fr.json** and **whitelist.json** need to be checked into source control. The other files created during this process are generated as needed or only used to communicate with translators, should be added to .gitignore, and may be deleted after use.
