@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm h2-build && next build",
+    "build": "npm run h2-build && next build",
     "start": "next start",
     "lint": "next lint",
     "h2-watch": "h2-watch",
