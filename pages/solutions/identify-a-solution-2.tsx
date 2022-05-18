@@ -21,7 +21,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    push("/review-barrier");
+    push("barriers/review-barrier");
   };
   const back = (msg: string): React.ReactNode => (
     <Link href="/solutions/identify-a-solution">
