@@ -62,7 +62,7 @@ const Header: React.FunctionComponent<Header> = ({
           data-h2-flex-item="b(1of1) m(1of2)"
           data-h2-text-align="b(center) m(right)"
         >
-          <Link href={`/${pathname}`} locale={locale === "en" ? "fr" : "en"}>
+          <Link href={`${pathname}`} locale={locale === "en" ? "fr" : "en"}>
             {locale === "en" ? "Français" : "English"}
           </Link>
         </div>
