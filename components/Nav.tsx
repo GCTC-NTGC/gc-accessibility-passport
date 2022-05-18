@@ -70,7 +70,7 @@ const Nav: React.FunctionComponent = () => {
           </>
         )}
       </ul>
-      <ul>
+      <ul data-h2-display="b(flex)">
         {user?.isLoggedIn === true && (
           <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
@@ -94,16 +94,26 @@ const Nav: React.FunctionComponent = () => {
           </li>
         )}
         {user?.isLoggedIn === false && (
-          <li data-h2-margin="b(all, s)">
-            <Link href="/login">
-              <a>
-                {intl.formatMessage({
-                  defaultMessage: "Login",
-                  description: "Login nav link.",
-                })}
-              </a>
-            </Link>
-          </li>
+          <>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/register">
+                <a>
+                  {intl.formatMessage({
+                    defaultMessage: "Register",
+                  })}
+                </a>
+              </Link>
+            </li>
+            <li data-h2-margin="b(all, s)">
+              <Link href="/login">
+                <a>
+                  {intl.formatMessage({
+                    defaultMessage: "Login",
+                  })}
+                </a>
+              </Link>
+            </li>
+          </>
         )}
       </ul>
     </nav>
