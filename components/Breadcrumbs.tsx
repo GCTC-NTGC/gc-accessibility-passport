@@ -1,12 +1,21 @@
 import React, { Fragment } from "react";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export interface BreadcrumbsProps {
   links: { title: string; href?: string; icon?: JSX.Element }[];
 }
 
 const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ links }) => {
+  const { pathname } = useRouter();
+  const activeLink: {
+    "data-h2-font-weight": string;
+    "aria-current": "page";
+  } = {
+    "data-h2-font-weight": "b(600)",
+    "aria-current": "page",
+  };
   return (
     <div data-h2-display="b(flex)">
       {links.map((link, index) => (
@@ -27,7 +36,9 @@ const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ links }) => {
               key={link.title}
               href={link.href}
             >
-              {link.icon || ""} {link.title}
+              <a {...(pathname === "/" && activeLink)}>
+                {link.icon || ""} {link.title}{" "}
+              </a>
             </Link>
           ) : (
             <span

@@ -35,9 +35,9 @@ const ViewSolution: React.FunctionComponent = () => {
           "View/Action your solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport" },
-        { title: "Noise in the workplace" },
-        { title: "Noise-cancelling headphones" },
+        { title: "My passport", href: "/passport" },
+        { title: "Noise in the workplace", href: "barriers/review-barrier" },
+        { title: "Noise-cancelling headphones", href: "solutions/view" },
       ]}
     >
       <Page>

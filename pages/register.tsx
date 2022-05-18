@@ -75,7 +75,7 @@ const Register: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Register - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "Register" }]}
+      crumbs={[{ title: "Register", href: "/register" }]}
     >
       <Page
         data-h2-justify-content="b(center)"

@@ -82,8 +82,11 @@ const IdentifyASolution2: React.FunctionComponent = () => {
       })}
       formLayout
       crumbs={[
-        { title: "Identify a barrier" },
-        { title: "Identify a solution" },
+        { title: "Identify a barrier", href: "barriers/identify-a-barrier" },
+        {
+          title: "Identify a solution",
+          href: "solutions/identify-a-solution",
+        },
       ]}
     >
       <FormProvider {...methods}>

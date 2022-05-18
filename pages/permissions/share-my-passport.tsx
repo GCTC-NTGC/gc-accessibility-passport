@@ -63,9 +63,9 @@ const ShareMyPassport: React.FunctionComponent = () => {
           "Share my passport information - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport" },
-        { title: "Manage Permissions" },
-        { title: "Share my passport" },
+        { title: "My passport", href: "/passport" },
+        { title: "Manage permissions", href: "permissions/manage-permissions" },
+        { title: "Share my passport", href: "permissions/share-my-passport" },
       ]}
     >
       <div

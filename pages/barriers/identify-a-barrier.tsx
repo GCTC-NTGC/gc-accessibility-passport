@@ -88,7 +88,10 @@ const IdentifyABarrier: React.FunctionComponent = () => {
         defaultMessage:
           "Identify a barrier - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My passport" }, { title: "Identify a barrier" }]}
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        { title: "Identify a barrier", href: "/barriers/identify-a-barrier" },
+      ]}
       formLayout
     >
       <FormProvider {...methods}>

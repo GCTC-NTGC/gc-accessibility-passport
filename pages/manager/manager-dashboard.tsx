@@ -18,7 +18,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
         defaultMessage:
           "Manager dashboard - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My Dashboard" }]}
+      crumbs={[{ title: "My Dashboard", href: "/manager/manager-dashboard" }]}
     >
       <Page>
         <LeftSection>
