@@ -142,7 +142,7 @@ const Home: React.FunctionComponent = () => {
                 data-h2-align-items="b(center)"
                 style={{ width: "100%", minHeight: "7rem" }}
               >
-                <Link href="manager/manager-dashboard">
+                <Link href="/manager/manager-dashboard">
                   <a
                     title={intl.formatMessage({
                       defaultMessage: "Manager Dashboard",
