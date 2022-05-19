@@ -75,7 +75,7 @@ const Passport: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/share-my-passport">
+              <Link href="/permissions/share-my-passport">
                 <a
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
@@ -90,7 +90,7 @@ const Passport: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manage-permissions">
+              <Link href="/permissions/manage-permissions">
                 <a
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
@@ -279,7 +279,7 @@ const Passport: React.FunctionComponent = () => {
                     defaultMessage: "Treasury Board of Canada Secretariat",
                   })}
                 </p>
-                <Link href="/manager/manager-info">
+                <Link href="/permissions/manager-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"

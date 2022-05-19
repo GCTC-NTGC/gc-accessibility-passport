@@ -18,7 +18,13 @@ const ManagePermissions: React.FunctionComponent = () => {
         defaultMessage:
           "Manage permissions - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My passport" }, { title: "Manage Permissions" }]}
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        {
+          title: "Manage Permissions",
+          href: "/permissions/manage-permissions",
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -90,7 +96,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <Link href="/share-my-passport">
+            <Link href="/permissions/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -111,7 +117,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                   "Activate the link to enter your manager’s information. This will make it easier to share your passport information with them.",
               })}
             </p>
-            <Link href="/manager/manager-info">
+            <Link href="/permissions/manager-info">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
