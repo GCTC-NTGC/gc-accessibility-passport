@@ -3,14 +3,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run i18n && next build",
+    "build": "npm run h2-build && next build",
     "start": "next start",
     "lint": "next lint",
     "h2-watch": "h2-watch",
     "h2-build": "npx h2-build",
     "extract:i18n": "formatjs extract ./{pages,components}/**/*.{js,ts,tsx} --ignore ./**/*.d.ts --out-file ./lang/temp.json --id-interpolation-pattern [sha512:contenthash:base64:6]",
     "compile:i18n": "formatjs compile ./lang/temp.json --out-file ./lang/en.json",
-    "i18n": "npm run extract:i18n && npm run compile:i18n && rm ./lang/temp.json"
+    "i18n": "npm run extract:i18n && npm run compile:i18n && rm ./lang/temp.json",
+    "check-intl": "node ./tools/checkIntl.js --en ./lang/en.json --fr ./lang/fr.json --rm-orphaned --output-untranslated ./lang/untranslated.json --whitelist ./lang/whitelist.json",
+    "check-intl-merge": "node ./tools/checkIntl.js --en ./lang/en.json --fr ./lang/fr.json --rm-orphaned --output-untranslated ./lang/untranslated.json --whitelist ./lang/whitelist.json --merge-fr ./lang/newTranslations.json"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
@@ -45,6 +47,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "yargs": "^17.5.1"
   }
 }

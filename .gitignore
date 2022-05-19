@@ -38,3 +38,4 @@ yarn-error.log*
 
 # hydrogen
 /styles/hydrogen
+/styles/hydrogen.css
