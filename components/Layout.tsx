@@ -27,13 +27,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
       <Head>
         <title>{headTitle || title}</title>
       </Head>
-      <a
-        className="screen-reader-text"
-        data-h2-visibility="b(invisible)"
-        href="#content"
-      >
-        {intl.formatMessage({ defaultMessage: "Skip to main content" })}
-      </a>
       <section
         data-h2-display="b(flex)"
         data-h2-flex-direction="b(column)"
@@ -42,8 +35,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
       >
         <div>
           <Header title={title} editButton={editButton} center={center} />
-          <div
-            id="content"
+          <main
             tabIndex={-1}
             {...(formLayout
               ? {
@@ -58,7 +50,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
             {...rest}
           >
             {children}
-          </div>
+          </main>
         </div>
         <Footer />
       </section>
