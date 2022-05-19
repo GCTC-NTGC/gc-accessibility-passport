@@ -65,7 +65,8 @@ const Passport: React.FunctionComponent = () => {
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(block)"
+                  data-h2-display="b(flex)"
+                  data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
@@ -79,7 +80,8 @@ const Passport: React.FunctionComponent = () => {
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(block)"
+                  data-h2-display="b(flex)"
+                  data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
@@ -93,7 +95,8 @@ const Passport: React.FunctionComponent = () => {
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(block)"
+                  data-h2-display="b(flex)"
+                  data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
