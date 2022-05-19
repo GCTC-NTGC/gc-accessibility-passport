@@ -10,6 +10,7 @@ import { useEffect, useMemo } from "react";
 import { IntlProvider } from "react-intl";
 import { SWRConfig } from "swr";
 import fetchJson from "../lib/fetchJson";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   const { locale = "en" } = useRouter();
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
         }}
       >
         <Component {...pageProps} />
+        <Script src="https://paypal.github.io/skipto/downloads/js/skipto.min.js" />
       </SWRConfig>
     </IntlProvider>
   );
