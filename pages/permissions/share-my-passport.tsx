@@ -68,7 +68,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
           title: "Manage permissions",
           href: "/permissions/manage-permissions",
         },
-        { title: "Share my passport", href: "/permissions/share-my-passport" },
+        { title: "Share my passport" },
       ]}
     >
       <div

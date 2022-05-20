@@ -90,7 +90,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       })}
       crumbs={[
         { title: "My passport", href: "/passport" },
-        { title: "Identify a barrier", href: "/barriers/identify-a-barrier" },
+        { title: "Identify a barrier" },
       ]}
       formLayout
     >

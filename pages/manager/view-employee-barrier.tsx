@@ -23,7 +23,6 @@ const ReviewBarrier: React.FunctionComponent = () => {
         { title: "Frank Turot", href: "/manager/view-employee-passport" },
         {
           title: "Noise in the workplace",
-          href: "/manager/view-employee-barrier",
         },
       ]}
     >

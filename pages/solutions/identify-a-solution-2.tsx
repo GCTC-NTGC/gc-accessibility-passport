@@ -85,7 +85,6 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         { title: "Identify a barrier", href: "barriers/identify-a-barrier" },
         {
           title: "Identify a solution",
-          href: "solutions/identify-a-solution",
         },
       ]}
     >

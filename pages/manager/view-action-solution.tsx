@@ -40,7 +40,6 @@ const ViewSolution: React.FunctionComponent = () => {
         },
         {
           title: "Noise cancelling headphones",
-          href: "/manager/view-action-solution",
         },
       ]}
     >

@@ -40,7 +40,7 @@ const ManagerInfo: React.FunctionComponent = () => {
           title: "Manage Permissions",
           href: "/permissions/manage-permissions",
         },
-        { title: "Manager Info", href: "/permissions/manager-info" },
+        { title: "Manager Info" },
       ]}
     >
       <FormProvider {...methods}>

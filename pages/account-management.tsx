@@ -37,7 +37,7 @@ const AccountManagement: React.FunctionComponent = () => {
       data-h2-padding="b(all, none)"
       crumbs={[
         { title: "My passport", href: "/passport" },
-        { title: "Manage your account", href: "/account-management" },
+        { title: "Manage your account" },
       ]}
     >
       <Page>
