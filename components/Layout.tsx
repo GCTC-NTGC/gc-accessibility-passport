@@ -26,16 +26,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
 }) => {
   const intl = useIntl();
 
-  const links = [
-    {
-      title: intl.formatMessage({
-        defaultMessage: "Home",
-        description: "Breadcrumb from GC workplace Accessibility wrapper.",
-      }),
-      href: "/",
-    },
-    ...crumbs,
-  ];
+  const links = [...crumbs];
   return (
     <>
       <Head>
