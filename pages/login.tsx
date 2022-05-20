@@ -84,7 +84,15 @@ const Login: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Login - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "Login" }]}
+      crumbs={[
+        {
+          title: "Home",
+          href: "/",
+        },
+        {
+          title: "Login",
+        },
+      ]}
       formLayout
       data-h2-width="b(75) s(50)"
       data-h2-padding="b(top-bottom, l) b(right-left, m) m(right-left, xl)"
