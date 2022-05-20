@@ -17,7 +17,11 @@ const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ links }) => {
     "aria-current": "page",
   };
   return (
-    <div data-h2-display="b(flex)">
+    <div
+      data-h2-display="b(flex)"
+      data-h2-padding="b(all, s)"
+      data-h2-bg-color="b(lightgray)"
+    >
       {links.map((link, index) => (
         <Fragment key={link.title}>
           {index > 0 && (
