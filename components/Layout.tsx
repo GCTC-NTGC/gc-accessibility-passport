@@ -30,7 +30,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
     {
       title: intl.formatMessage({
         defaultMessage: "Home",
-        description: "Breadcrumb from GC workplace Accessibility  wrapper.",
+        description: "Breadcrumb from GC workplace Accessibility wrapper.",
       }),
       href: "/",
     },
