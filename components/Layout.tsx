@@ -4,7 +4,6 @@ import Header from "./Header";
 import Head from "next/head";
 import { useIntl } from "react-intl";
 import Breadcrumbs, { BreadcrumbsProps } from "./Breadcrumbs";
-import { useRouter } from "next/router";
 
 interface LayoutProps {
   title?: string | React.ReactNode;
