@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Alert from "../../components/Alert";
-import Button from "../../components/Button";
-import Filters from "../../components/Filters";
-import { Input, TextArea } from "../../components/formComponents";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
+import Alert from "../../../../components/Alert";
+import Button from "../../../../components/Button";
+import Filters from "../../../../components/Filters";
+import { Input, TextArea } from "../../../../components/formComponents";
+import FormFooter from "../../../../components/FormFooter";
+import Layout from "../../../../components/Layout";
 
 type Solution = {
   id: number;
@@ -38,12 +38,12 @@ const IdentifyASolution: React.FunctionComponent = () => {
   });
   const { handleSubmit, setValue } = methods;
   const setSolutionValue = (value: string): void => setValue("solution", value);
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push(`/solutions/identify-a-solution-2`);
+  const onSubmit = async (): Promise<void> => {
+    push(`/passport/barriers/solutions/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
-    <Link href="/barriers/identify-a-solution-2">
+    <Link href="/passport/barriers/identify-a-solution-2">
       <a title="msg">{msg}</a>
     </Link>
   );
@@ -131,7 +131,10 @@ const IdentifyASolution: React.FunctionComponent = () => {
           "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "Identify a barrier", href: "barriers/identify-a-barrier" },
+        {
+          title: "Identify a barrier",
+          href: "/passport/barriers/identify-a-barrier",
+        },
         {
           title: "Identify a solution",
         },

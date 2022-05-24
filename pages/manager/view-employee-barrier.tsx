@@ -83,7 +83,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/manager/view-action-solution",
+                  href: "/manager/view-employee-solution",
                 },
               ]}
               situations={[
@@ -93,7 +93,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Take action",
                 }),
-                href: "/manager/view-action-solution",
+                href: "/manager/view-employee-solution",
               }}
               managerView
             />
@@ -117,7 +117,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Take action",
                 }),
-                href: "/manager/view-action-solution",
+                href: "/manager/view-employee-solution",
               }}
               managerView
             />
@@ -132,7 +132,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/manager/view-action-solution",
+                  href: "/manager/view-employee-solution",
                 },
               ]}
               situations={[
@@ -142,7 +142,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Take action",
                 }),
-                href: "/manager/view-action-solution",
+                href: "/manager/view-employee-solution",
               }}
               managerView
             />

@@ -95,7 +95,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             })}
           </p>
           <div>
-            <Link href="/permissions/share-my-passport">
+            <Link href="/passport/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -116,7 +116,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                   "Activate the link to enter your manager’s information. This will make it easier to share your passport information with them.",
               })}
             </p>
-            <Link href="/permissions/manager-info">
+            <Link href="/passport/manager-info">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"

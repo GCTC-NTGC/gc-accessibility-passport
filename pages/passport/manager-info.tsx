@@ -38,7 +38,7 @@ const ManagerInfo: React.FunctionComponent = () => {
         { title: "My passport", href: "/passport" },
         {
           title: "Manage Permissions",
-          href: "/permissions/manage-permissions",
+          href: "/passport/manage-permissions",
         },
         { title: "Manager Info" },
       ]}

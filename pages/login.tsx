@@ -35,7 +35,7 @@ const Login: React.FunctionComponent = () => {
 
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = async () => {
     setUser({
       ...user,
       isManager: false,

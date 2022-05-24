@@ -3,11 +3,11 @@ import Link from "next/link";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
-import { Checkbox } from "../../components/formComponents";
-import Layout from "../../components/Layout";
-import Page, { RightSection, LeftSection } from "../../components/Page";
-import { errorMessages } from "../../messages";
+import Button, { colorMap } from "../../../../components/Button";
+import { Checkbox } from "../../../../components/formComponents";
+import Layout from "../../../../components/Layout";
+import Page, { RightSection, LeftSection } from "../../../../components/Page";
+import { errorMessages } from "../../../../messages";
 
 type FormValues = {
   managerConversation: boolean;
@@ -36,8 +36,14 @@ const ViewSolution: React.FunctionComponent = () => {
       })}
       crumbs={[
         { title: "My passport", href: "/passport" },
-        { title: "Noise in the workplace", href: "barriers/review-barrier" },
-        { title: "Noise-cancelling headphones", href: "solutions/view" },
+        {
+          title: "Noise in the workplace",
+          href: "/passport/barriers/review-barrier",
+        },
+        {
+          title: "Noise-cancelling headphones",
+          href: "/passport/barriers/solutions/review-solution",
+        },
       ]}
     >
       <Page>
@@ -197,7 +203,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   "Select the link below to edit the solution information that appears on this page.",
               })}
             </p>
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-font-style="b(underline)"

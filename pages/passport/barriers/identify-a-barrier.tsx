@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button from "../../components/Button";
-import Filters from "../../components/Filters";
-import { Input, TextArea } from "../../components/formComponents";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
+import Button from "../../../components/Button";
+import Filters from "../../../components/Filters";
+import { Input, TextArea } from "../../../components/formComponents";
+import FormFooter from "../../../components/FormFooter";
+import Layout from "../../../components/Layout";
 
 type FormValues = {
   name: string;
@@ -37,7 +37,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const watchBarrier = watch("barrier");
   const setBarrierValue = (value: string): void => setValue("barrier", value);
   const onSubmit = async (): Promise<void> => {
-    push(`/solutions/identify-a-solution`);
+    push(`/passport/barriers/solutions/identify-a-solution`);
   };
 
   const bold = (msg: string): React.ReactNode => (
