@@ -1,9 +1,9 @@
-import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
 
 const Home: React.FunctionComponent = () => {
   const intl = useIntl();
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">
@@ -27,10 +27,73 @@ const Home: React.FunctionComponent = () => {
             data-h2-padding="b(all, m)"
           >
             <p>
+              {intl.formatMessage(
+                {
+                  defaultMessage:
+                    "Your <strong>Government of Canada (GC) Workplace Accessibility Passport</strong> is the tool to document the barriers you might face in the workplace and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
+                },
+                { strong },
+              )}
+            </p>
+            <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Your GC Workplace Accessibility Passport is a tool to document the barriers you might face at work and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
+                  "For the purposes of the Passport, a barrier is anything that hinders the full and equal participation in the workplace. A solution is any adaptive tool or support measure that will address the barrier and enable you to perform tasks effectively and efficiently.",
               })}
+            </p>
+            <p>
+              {intl.formatMessage(
+                {
+                  defaultMessage:
+                    "You own your <strong>GC Workplace Accessibility Passport</strong>. It is designed to:",
+                },
+                { strong },
+              )}
+            </p>
+            <ol
+              data-h2-margin="b(bottom-left, m)"
+              style={{ listStyleType: "decimal" }}
+            >
+              <li>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Support conversations between you and your manager about what you might need",
+                  })}
+                </p>
+              </li>
+              <li>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Document the results of any consultations or assessments that help identify solutions",
+                  })}
+                </p>
+              </li>
+              <li>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Record the agreement between you and your manager about the workplace accommodation tools or measures to be provided",
+                  })}
+                </p>
+              </li>
+              <li>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Avoid the need to renegotiate workplace accommodations when you change managers or organizations throughout your public service career",
+                  })}
+                </p>
+              </li>
+            </ol>
+            <p>
+              {intl.formatMessage(
+                {
+                  defaultMessage: "To <strong>build your Passport</strong>:",
+                },
+                { strong },
+              )}
             </p>
             <ul
               data-h2-margin="b(bottom-left, m)"
@@ -40,7 +103,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "A barrier means anything that hinders full and equal participation in the workplace.",
+                      "Start by identifying barriers and solutions. This information will be saved by the application.",
                   })}
                 </p>
               </li>
@@ -48,7 +111,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "A solution means the adaptive tools, supports or measures that will address the barrier and ensure full and equal participation in the workplace.",
+                      "Review the barriers and solutions before creating an account.",
                   })}
                 </p>
               </li>
@@ -56,7 +119,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "As you create the Passport, the information will be saved anonymously.",
+                      "Download a Word version of your Passport, if needed.",
                   })}
                 </p>
               </li>
@@ -64,7 +127,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "You will have a chance to review the barriers and solutions, and download a word version of the Passport before you create an account.",
+                      "Create an account to store and share your Passport information.",
                   })}
                 </p>
               </li>
@@ -95,34 +158,81 @@ const Home: React.FunctionComponent = () => {
                 data-h2-bg-color="b(white)"
                 data-h2-shadow="b(l)"
                 data-h2-radius="b(s)"
-                data-h2-display="b(flex)"
-                data-h2-flex-direction="b(column)"
-                data-h2-justify-content="b(center)"
-                data-h2-align-items="b(center)"
-                style={{ width: "100%", minHeight: "7rem", gap: "1rem" }}
+                style={{ width: "100%" }}
+                data-h2-padding="b(all, m)"
               >
-                <Link href="/barriers/identify-a-barrier">
-                  <a
-                    title={intl.formatMessage({
-                      defaultMessage: "Create a passport",
-                    })}
-                  >
-                    {intl.formatMessage({
-                      defaultMessage: "Create a passport",
-                    })}
-                  </a>
-                </Link>
-                <Link href="/passport">
-                  <a
-                    title={intl.formatMessage({
-                      defaultMessage: "View my passport",
-                    })}
-                  >
-                    {intl.formatMessage({
-                      defaultMessage: "View my passport",
-                    })}
-                  </a>
-                </Link>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "The GC Workplace Accessibility Passport is one of the key initiatives of the Federal Public Service Accessibility Strategy. The following resources are designed to help you create and manage your Passport. ",
+                  })}
+                </p>
+                <ul
+                  data-h2-margin="b(bottom-left, m)"
+                  style={{ listStyleType: "disc" }}
+                >
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage: "Passport Canada.ca page",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/9/98/GC_Workplace_Accessibility_Passport_Form_(Jan_24_2022).docx">
+                        {intl.formatMessage({
+                          defaultMessage:
+                            "GC Workplace Accessibility Passport Form (Word Version)",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/4/43/Basic_Instructions_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_Basic_Instructions_(The_7_Steps).docx">
+                        {intl.formatMessage({
+                          defaultMessage: "Passport instructions",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
+                        {intl.formatMessage({
+                          defaultMessage: "Frequently Asked Questions (FAQs)",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage:
+                            "Library of barrier and solution examples",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage: "Examples of Completed Passports",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+                <p>
+                  Your Passport specifically relates to workplace situations.
+                  Please do not include any information about medical conditions
+                  or treatments.
+                </p>
               </div>
             </div>
             <div>
@@ -137,22 +247,66 @@ const Home: React.FunctionComponent = () => {
                 data-h2-bg-color="b(white)"
                 data-h2-shadow="b(l)"
                 data-h2-radius="b(s)"
-                data-h2-display="b(flex)"
-                data-h2-justify-content="b(center)"
-                data-h2-align-items="b(center)"
-                style={{ width: "100%", minHeight: "7rem" }}
+                style={{ width: "100%" }}
+                data-h2-padding="b(all, m)"
               >
-                <Link href="/manager/manager-dashboard">
-                  <a
-                    title={intl.formatMessage({
-                      defaultMessage: "Manager Dashboard",
-                    })}
-                  >
-                    {intl.formatMessage({
-                      defaultMessage: "Manager Dashboard",
-                    })}
-                  </a>
-                </Link>
+                <p>
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "The Government of Canada (GC) Workplace Accessibility Passport is designed to help managers create an inclusive work environment by providing the tools and measures each employee needs to succeed in their job.",
+                  })}
+                </p>
+                <ul
+                  data-h2-margin="b(bottom-left, m)"
+                  style={{ listStyleType: "disc" }}
+                >
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage: "Passport Canada.ca page",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/b/b1/Guidance_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_General_Guidance_.docx">
+                        {intl.formatMessage({
+                          defaultMessage: "Passport guidance",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
+                        {intl.formatMessage({
+                          defaultMessage: "Frequently Asked Questions (FAQs)",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage:
+                            "Library of barrier and solution examples",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="#">
+                        {intl.formatMessage({
+                          defaultMessage: "Examples of Completed Passports",
+                        })}
+                      </a>
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
