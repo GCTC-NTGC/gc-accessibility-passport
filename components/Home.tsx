@@ -3,9 +3,7 @@ import { useIntl } from "react-intl";
 
 const Home: React.FunctionComponent = () => {
   const intl = useIntl();
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">
@@ -32,9 +30,9 @@ const Home: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Your <bold>Government of Canada (GC) Workplace Accessibility Passport</bold> is the tool to document the barriers you might face in the workplace and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
+                    "Your <strong>Government of Canada (GC) Workplace Accessibility Passport</strong> is the tool to document the barriers you might face in the workplace and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <p>
@@ -47,9 +45,9 @@ const Home: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You own your <bold>GC Workplace Accessibility Passport</bold>. It is designed to:",
+                    "You own your <strong>GC Workplace Accessibility Passport</strong>. It is designed to:",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <ol
@@ -92,9 +90,9 @@ const Home: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage(
                 {
-                  defaultMessage: "To <bold>build your Passport</bold>:",
+                  defaultMessage: "To <strong>build your Passport</strong>:",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <ul
