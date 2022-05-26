@@ -7,9 +7,7 @@ import { BarrierCard } from "../../components/BarrierCard";
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <Layout
       title={intl.formatMessage({
@@ -40,12 +38,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               data-h2-font-size="b(h4)"
               data-h2-margin="b(top, m) b(bottom, none)"
             >
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Barrier Description",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Barrier Description",
+              })}
             </h2>
             <p
               data-h2-padding="b(all, s)"
@@ -61,12 +56,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               data-h2-font-size="b(h4)"
               data-h2-margin="b(top, m) b(bottom, none)"
             >
-              {intl.formatMessage(
-                {
-                  defaultMessage: "View/Action Shared Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "View/Action Shared Solutions",
+              })}
             </h2>
             <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
@@ -148,12 +140,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               managerView
             />
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Current Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Current Solutions",
+              })}
             </h2>
             <p
               data-h2-padding="b(all, s)"
@@ -166,12 +155,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               })}
             </p>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Attempted Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Attempted Solutions",
+              })}
             </h2>
             <p
               data-h2-padding="b(all, s)"
@@ -206,12 +192,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
 
           <div>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "History",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "History",
+              })}
             </h2>
             <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
@@ -222,9 +205,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
+                    "Frank proposed <strong>Noise cancelling headphones</strong> as a solution to this barrier.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <hr data-h2-margin="b(top, s)"></hr>
@@ -239,9 +222,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Frank proposed <bold>Access to quiet space</bold> as a solution to this barrier.",
+                    "Frank proposed <strong>Access to quiet space</strong> as a solution to this barrier.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <hr data-h2-margin="b(top, s)"></hr>
@@ -256,9 +239,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Frank proposed <bold>Organizer/task planning tool/software application</bold> as a solution to this barrier.",
+                    "Frank proposed <strong>Organizer/task planning tool/software application</strong> as a solution to this barrier.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <hr data-h2-margin="b(top, s)"></hr>

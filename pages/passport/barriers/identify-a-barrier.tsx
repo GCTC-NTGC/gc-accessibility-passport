@@ -40,9 +40,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
     push(`/passport/barriers/solutions/identify-a-solution`);
   };
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(600)">{msg}</span>
-  );
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
 
   const parentBarrierCategories = [
     {
@@ -169,9 +167,9 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <bold>{watchBarrier}</bold> as the barrier you'd like to add to your passport.",
+                    "You've selected <strong>{watchBarrier}</strong> as the barrier you'd like to add to your passport.",
                 },
-                { bold, watchBarrier },
+                { strong, watchBarrier },
               )}
             </p>
           </div>
