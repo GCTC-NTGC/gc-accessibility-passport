@@ -43,7 +43,7 @@ export const BarrierCard: React.FunctionComponent<{
           {actionLinks &&
             actionLinks.map(({ title, href }) => {
               return (
-                <Link href={href} key={""}>
+                <Link href={href} key={title}>
                   <a data-h2-margin="b(right, s)">{title}</a>
                 </Link>
               );

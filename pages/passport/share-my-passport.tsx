@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
-import { Checklist, Select } from "../components/formComponents";
-import { Checkbox } from "../components/formComponents/Checklist";
-import FormFooter from "../components/FormFooter";
-import Layout from "../components/Layout";
-import { errorMessages } from "../messages";
+import Button from "../../components/Button";
+import { Checklist, Select } from "../../components/formComponents";
+import { Checkbox } from "../../components/formComponents/Checklist";
+import FormFooter from "../../components/FormFooter";
+import Layout from "../../components/Layout";
+import { errorMessages } from "../../messages";
 
 type FormValues = {
   barriers: string[];
@@ -62,6 +62,10 @@ const ShareMyPassport: React.FunctionComponent = () => {
         defaultMessage:
           "Share my passport information - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        { title: "Share my passport" },
+      ]}
     >
       <div
         data-h2-width="m(50)"

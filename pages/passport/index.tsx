@@ -2,10 +2,10 @@ import { PaperClipIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { PassportCard } from "../components/PassportCard";
+import { colorMap } from "../../components/Button";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { PassportCard } from "../../components/PassportCard";
 
 const Passport: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -17,6 +17,7 @@ const Passport: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "My Passport - GC Workplace Accessibility Passport",
       })}
+      crumbs={[{ title: "My passport" }]}
     >
       <Page>
         <LeftSection>
@@ -59,7 +60,7 @@ const Passport: React.FunctionComponent = () => {
               data-h2-justify-content="b(space-between)"
               style={{ gap: "1rem" }}
             >
-              <Link href="/barriers/identify-a-barrier">
+              <Link href="/passport/barriers/identify-a-barrier">
                 <a
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
@@ -74,7 +75,7 @@ const Passport: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/share-my-passport">
+              <Link href="/passport/share-my-passport">
                 <a
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
@@ -89,7 +90,7 @@ const Passport: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manage-permissions">
+              <Link href="/passport/manage-permissions">
                 <a
                   {...colorMap.blue.solid}
                   data-h2-padding="b(all, s)"
@@ -130,7 +131,7 @@ const Passport: React.FunctionComponent = () => {
                   title: intl.formatMessage({
                     defaultMessage: "View",
                   }),
-                  href: "/review-barrier",
+                  href: "/passport/barriers/review-barrier",
                 }}
               />
             </div>
@@ -278,7 +279,7 @@ const Passport: React.FunctionComponent = () => {
                     defaultMessage: "Treasury Board of Canada Secretariat",
                   })}
                 </p>
-                <Link href="/manager/manager-info">
+                <Link href="/passport/manager-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { BarrierCard } from "../components/BarrierCard";
+import { colorMap } from "../../../components/Button";
+import Layout from "../../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../../components/Page";
+import { BarrierCard } from "../../../components/BarrierCard";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
@@ -21,6 +21,10 @@ const ReviewBarrier: React.FunctionComponent = () => {
         defaultMessage:
           "Review or edit your barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        { title: "Noise in the workplace" },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -77,11 +81,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -100,7 +104,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <BarrierCard
@@ -113,11 +117,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -136,7 +140,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <BarrierCard
@@ -150,11 +154,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -173,7 +177,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
@@ -229,7 +233,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   "Select the tools below to edit the barrier/solution information that appears on this page or identify a new solution for this barrier.",
               })}
             </p>
-            <Link href="/barriers/identify-a-barrier">
+            <Link href="/passport/barriers/identify-a-barrier">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -244,7 +248,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 })}
               </a>
             </Link>
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"

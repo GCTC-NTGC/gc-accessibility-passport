@@ -102,6 +102,15 @@ const Register: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Register - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: "Home",
+          href: "/",
+        },
+        {
+          title: "Register",
+        },
+      ]}
       formLayout
       data-h2-width="b(75) s(50)"
       data-h2-padding="b(top-bottom, l) b(right-left, m) m(right-left, xl)"

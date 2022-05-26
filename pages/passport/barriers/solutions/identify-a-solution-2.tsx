@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
-import { Checklist, Input, TextArea } from "../../components/formComponents";
-import { Checkbox } from "../../components/formComponents/Checklist";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
-import { errorMessages } from "../../messages";
+import Button, { colorMap } from "../../../../components/Button";
+import { Checklist, Input } from "../../../../components/formComponents";
+import { Checkbox } from "../../../../components/formComponents/Checklist";
+import FormFooter from "../../../../components/FormFooter";
+import Layout from "../../../../components/Layout";
+import { errorMessages } from "../../../../messages";
 
 type FormValues = {
   solutions: string[] | undefined;
@@ -20,11 +20,11 @@ const IdentifyASolution2: React.FunctionComponent = () => {
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push("/review-barrier");
+  const onSubmit = async (): Promise<void> => {
+    push("/passport/barriers/review-barrier");
   };
   const back = (msg: string): React.ReactNode => (
-    <Link href="/solutions/identify-a-solution">
+    <Link href="/passport/barriers/solutions/identify-a-solution">
       <a title={msg}>{msg}</a>
     </Link>
   );
@@ -77,9 +77,20 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         defaultMessage: "Customize your solution",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Customize your solution - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Customize your solution - GC Workplace Accessibility Passport",
       })}
       formLayout
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        {
+          title: "Identify a barrier",
+          href: "/passport/barriers/identify-a-barrier",
+        },
+        {
+          title: "Propose Solutions",
+        },
+      ]}
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -198,7 +209,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               href: "/passport",
             }}
           >
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"

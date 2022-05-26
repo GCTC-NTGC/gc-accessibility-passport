@@ -7,6 +7,7 @@ const HomePage: React.FunctionComponent = () => {
     <Layout
       title="Homepage - GC Workplace Accessibility Passport"
       data-h2-padding="b(all, none)"
+      crumbs={[]}
     >
       <Home />
     </Layout>

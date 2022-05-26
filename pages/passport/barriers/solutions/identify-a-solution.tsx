@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Alert from "../../components/Alert";
-import Button from "../../components/Button";
-import Filters from "../../components/Filters";
-import { Input, TextArea } from "../../components/formComponents";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
+import Alert from "../../../../components/Alert";
+import Button from "../../../../components/Button";
+import Filters from "../../../../components/Filters";
+import { Input, TextArea } from "../../../../components/formComponents";
+import FormFooter from "../../../../components/FormFooter";
+import Layout from "../../../../components/Layout";
 
 type Solution = {
   id: number;
@@ -38,18 +38,14 @@ const IdentifyASolution: React.FunctionComponent = () => {
   });
   const { handleSubmit, setValue } = methods;
   const setSolutionValue = (value: string): void => setValue("solution", value);
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push(`/solutions/identify-a-solution-2`);
+  const onSubmit = async (): Promise<void> => {
+    push(`/passport/barriers/solutions/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
-    <Link href="/barriers/identify-a-solution-2">
+    <Link href="/passport/barriers/identify-a-solution-2">
       <a title="msg">{msg}</a>
     </Link>
-  );
-
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(600)">{msg}</span>
   );
 
   const parentSolutionCategories = [
@@ -134,6 +130,16 @@ const IdentifyASolution: React.FunctionComponent = () => {
         defaultMessage:
           "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        { title: "My passport", href: "/passport" },
+        {
+          title: "Identify a barrier",
+          href: "/passport/barriers/identify-a-barrier",
+        },
+        {
+          title: "Propose Solutions",
+        },
+      ]}
       formLayout
     >
       <FormProvider {...methods}>
