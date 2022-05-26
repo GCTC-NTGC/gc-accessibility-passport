@@ -5,7 +5,7 @@ import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import { colorMap } from "../components/Button";
-import { Input, Submit, TextArea } from "../components/formComponents";
+import { Input, TextArea } from "../components/formComponents";
 import FormFooter from "../components/FormFooter";
 import Layout from "../components/Layout";
 import Page, { LeftSection, RightSection } from "../components/Page";
