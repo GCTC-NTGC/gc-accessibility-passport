@@ -50,7 +50,7 @@ const Header: React.FunctionComponent<Header> = ({
             <Image
               src="/logo_goc_colour.svg"
               alt={intl.formatMessage({
-                defaultMessage: "Canada's Logo.",
+                defaultMessage: "Government of Canada",
                 description: "Alt text for the Canada logo in the Header.",
               })}
               width="300"

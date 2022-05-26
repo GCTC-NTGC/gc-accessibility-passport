@@ -138,7 +138,7 @@ export const Footer: React.FunctionComponent = () => {
                 <Image
                   src="/logo_canada.png"
                   alt={intl.formatMessage({
-                    defaultMessage: "Canada's Logo.",
+                    defaultMessage: "Symbol of the Government of Canada",
                     description: "Alt text for the Canada logo in the Footer.",
                   })}
                   width="250"
