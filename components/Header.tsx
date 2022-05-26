@@ -138,21 +138,11 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-margin="b(all, m) s(right-left, xxl)"
                 >
                   <div {...homeLinksStyling}>
-                    <Link href="/">
+                    <Link href="/login">
                       <a>
                         {intl.formatMessage({
                           defaultMessage: "Get started",
                           description: "Get started button on homepage.",
-                        })}
-                      </a>
-                    </Link>
-                  </div>
-                  <div {...homeLinksStyling}>
-                    <Link href="/login">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "Sign in",
-                          description: "Sign in button on homepage.",
                         })}
                       </a>
                     </Link>
