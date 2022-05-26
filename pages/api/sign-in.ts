@@ -12,7 +12,7 @@ async function signInRoute(
   const { name, isManager } = await req.body;
 
   try {
-    const user = { isLoggedIn: true, name, isManager } as User;
+    const user = { isSignedIn: true, name, isManager } as User;
     req.session.user = user;
     await req.session.save();
     res.json(user);

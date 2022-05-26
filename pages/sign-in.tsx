@@ -21,7 +21,7 @@ const SignIn: React.FunctionComponent = () => {
   const [, setErrorMsg] = useState("");
   const [isOpen, setOpen] = React.useState<boolean>(false);
   const [user, setUser] = React.useState<User>({
-    isLoggedIn: false,
+    isSignedIn: false,
     name: "",
     isManager: false,
   });

@@ -24,7 +24,7 @@ const Register: React.FunctionComponent = () => {
   const [, setErrorMsg] = useState("");
   const [isOpen, setOpen] = React.useState<boolean>(false);
   const [user, setUser] = React.useState<User>({
-    isLoggedIn: false,
+    isSignedIn: false,
     name: "",
     isManager: false,
   });
@@ -39,7 +39,7 @@ const Register: React.FunctionComponent = () => {
   });
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     setUser({
-      isLoggedIn: true,
+      isSignedIn: true,
       name: `${data.firstName}`,
       isManager: false,
     });

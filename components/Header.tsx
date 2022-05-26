@@ -72,7 +72,7 @@ const Header: React.FunctionComponent<Header> = ({
       <div data-h2-position="b(relative)" data-h2-font-color="b(black)">
         <Image src="/TBS-OPSA-bg.png" alt="" layout="fill" objectFit="cover" />
         <Nav />
-        {user?.isLoggedIn && pathname !== "/" ? (
+        {user?.isSignedIn && pathname !== "/" ? (
           <div
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(right-left, xl)"

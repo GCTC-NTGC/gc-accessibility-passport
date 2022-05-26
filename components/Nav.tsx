@@ -38,7 +38,7 @@ const Nav: React.FunctionComponent = () => {
             </a>
           </Link>
         </li>
-        {user?.isLoggedIn === true && (
+        {user?.isSignedIn === true && (
           <>
             <li data-h2-margin="b(all, s)">
               <Link href="/passport">
@@ -71,7 +71,7 @@ const Nav: React.FunctionComponent = () => {
         )}
       </ul>
       <ul data-h2-display="b(flex)">
-        {user?.isLoggedIn === true && (
+        {user?.isSignedIn === true && (
           <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
@@ -93,7 +93,7 @@ const Nav: React.FunctionComponent = () => {
             </a>
           </li>
         )}
-        {user?.isLoggedIn === false && (
+        {user?.isSignedIn === false && (
           <>
             <li data-h2-margin="b(all, s)">
               <Link href="/register">
