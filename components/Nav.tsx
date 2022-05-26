@@ -76,19 +76,19 @@ const Nav: React.FunctionComponent = () => {
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
-              href="/api/logout"
+              href="/api/sign-out"
               onClick={async (e) => {
                 e.preventDefault();
                 mutateUser(
-                  await fetchJson("/api/logout", { method: "POST" }),
+                  await fetchJson("/api/sign-out", { method: "POST" }),
                   false,
                 );
                 push("/");
               }}
             >
               {intl.formatMessage({
-                defaultMessage: "Logout",
-                description: "Logout nav link.",
+                defaultMessage: "Sign out",
+                description: "Sign out nav link.",
               })}
             </a>
           </li>
