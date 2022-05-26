@@ -50,7 +50,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
           <Breadcrumbs links={links}></Breadcrumbs>
           <div
             id="content"
-            tabIndex={-1}
             {...(formLayout
               ? {
                   "data-h2-width": "m(50)",
