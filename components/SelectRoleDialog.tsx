@@ -57,7 +57,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
         <p>
           {intl.formatMessage({
             defaultMessage:
-              "When logging into the passport application, you have the opportunity to access two different roles: a passport owner, and a manager.",
+              "When signing in to the passport application, you have the opportunity to access two different roles: a passport owner, and a manager.",
           })}
         </p>
         <p>
