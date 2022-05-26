@@ -105,10 +105,10 @@ const Nav: React.FunctionComponent = () => {
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/login">
+              <Link href="/sign-in">
                 <a>
                   {intl.formatMessage({
-                    defaultMessage: "Login",
+                    defaultMessage: "Sign in",
                   })}
                 </a>
               </Link>

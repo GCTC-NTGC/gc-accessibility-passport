@@ -46,7 +46,7 @@ const Register: React.FunctionComponent = () => {
     setOpen(true); // Open select role dialog.
   };
 
-  const handleLogin = async (userData: User): Promise<void> => {
+  const handleSignIn = async (userData: User): Promise<void> => {
     const body = {
       name: userData.name,
       isManager: userData.isManager,
@@ -54,7 +54,7 @@ const Register: React.FunctionComponent = () => {
 
     try {
       mutateUser(
-        await fetchJson("/api/login", {
+        await fetchJson("/api/sign-in", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -75,7 +75,7 @@ const Register: React.FunctionComponent = () => {
       isManager,
     });
 
-    handleLogin(user);
+    handleSignIn(user);
   };
 
   const passwordHints = [
@@ -206,7 +206,7 @@ const Register: React.FunctionComponent = () => {
             cancelButton={{
               href: "/",
               title: intl.formatMessage({
-                defaultMessage: "Already have an account? Log in instead.",
+                defaultMessage: "Already have an account? Sign in instead.",
               }),
             }}
           >

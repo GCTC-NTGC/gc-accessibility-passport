@@ -33,7 +33,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
                 onClick={() => handleSelectRole(false)}
               >
                 {intl.formatMessage({
-                  defaultMessage: "Log in to my own passport",
+                  defaultMessage: "Sign in to my own passport",
                 })}
               </Button>
             </div>
@@ -47,7 +47,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
                 onClick={() => handleSelectRole(true)}
               >
                 {intl.formatMessage({
-                  defaultMessage: "Log in as a manager",
+                  defaultMessage: "Sign in as a manager",
                 })}
               </Button>
             </div>

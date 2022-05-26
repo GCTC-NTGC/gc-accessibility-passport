@@ -3,9 +3,9 @@ import { withIronSessionApiRoute } from "iron-session/next";
 import { sessionOptions } from "../../lib/session";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default withIronSessionApiRoute(loginRoute, sessionOptions);
+export default withIronSessionApiRoute(signInRoute, sessionOptions);
 
-async function loginRoute(
+async function signInRoute(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
