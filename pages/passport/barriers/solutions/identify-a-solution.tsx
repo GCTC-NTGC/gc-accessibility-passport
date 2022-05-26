@@ -131,12 +131,13 @@ const IdentifyASolution: React.FunctionComponent = () => {
           "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
+        { title: "My passport", href: "/passport" },
         {
           title: "Identify a barrier",
           href: "/passport/barriers/identify-a-barrier",
         },
         {
-          title: "Identify a solution",
+          title: "Propose Solutions",
         },
       ]}
       formLayout

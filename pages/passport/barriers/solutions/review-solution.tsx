@@ -42,7 +42,6 @@ const ViewSolution: React.FunctionComponent = () => {
         },
         {
           title: "Noise-cancelling headphones",
-          href: "/passport/barriers/solutions/review-solution",
         },
       ]}
     >

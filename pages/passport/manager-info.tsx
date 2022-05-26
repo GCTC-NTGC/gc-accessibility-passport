@@ -36,10 +36,6 @@ const ManagerInfo: React.FunctionComponent = () => {
       formLayout
       crumbs={[
         { title: "My passport", href: "/passport" },
-        {
-          title: "Manage Permissions",
-          href: "/passport/manage-permissions",
-        },
         { title: "Manager Info" },
       ]}
     >
