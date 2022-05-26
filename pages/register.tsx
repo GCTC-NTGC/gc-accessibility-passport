@@ -30,7 +30,7 @@ const Register: React.FunctionComponent = () => {
   });
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  // here we just check if user is already logged in and redirect to profile
+  // here we just check if user is already signed in and redirect to profile
   const { mutateUser } = useUser({
     redirectTo: `${
       user.isManager ? "/manager/manager-dashboard" : "/passport"
