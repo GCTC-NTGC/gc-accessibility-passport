@@ -19,8 +19,8 @@ const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ links }) => {
   return (
     <div
       data-h2-display="b(flex)"
-      data-h2-padding="b(all, s)"
-      data-h2-bg-color="b(lightgray)"
+      data-h2-padding="b(all, m) s(right-left, xl)"
+      data-h2-bg-color="b(lightblue)"
     >
       {links.map((link, index) => (
         <Fragment key={link.title}>
