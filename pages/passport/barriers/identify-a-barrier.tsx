@@ -7,7 +7,6 @@ import Filters from "../../../components/Filters";
 import { Input, TextArea } from "../../../components/formComponents";
 import FormFooter from "../../../components/FormFooter";
 import Layout from "../../../components/Layout";
-import { errorMessages } from "../../../messages";
 
 type FormValues = {
   name: string;
