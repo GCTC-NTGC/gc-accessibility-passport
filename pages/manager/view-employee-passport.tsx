@@ -49,16 +49,6 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                 defaultMessage: "Barriers for review",
               })}
             </h2>
-            <div data-h2-display="b(flex)" data-h2-bg-color="b(lightblue)">
-              <div style={{ flex: 4 }} data-h2-margin="b(right, l)">
-                <p data-h2-margin="b(left, s)">
-                  {intl.formatMessage({
-                    defaultMessage:
-                      "The barriers below require your attention.",
-                  })}
-                </p>
-              </div>
-            </div>
             <div
               data-h2-border="b(darkgray, left, solid, m)"
               data-h2-margin="b(top, s) b(bottom, m)"
