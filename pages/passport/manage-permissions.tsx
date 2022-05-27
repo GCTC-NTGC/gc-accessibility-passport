@@ -59,9 +59,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             </h3>
             <div data-h2-margin="b(bottom, l)">
               <PermissionsCard
-                title={intl.formatMessage({
-                  defaultMessage: "Sui Kiyoko",
-                })}
+                title="Sui Kiyoko"
                 actionLinks={[
                   intl.formatMessage({
                     defaultMessage: "Remove all access",
@@ -82,9 +80,7 @@ const ManagePermissions: React.FunctionComponent = () => {
               })}
             </h3>
             <PermissionsCard
-              title={intl.formatMessage({
-                defaultMessage: "Priyanka Luka",
-              })}
+              title="Priyanka Luka"
               actionLinks={[
                 intl.formatMessage({
                   defaultMessage: "Remove all access",
