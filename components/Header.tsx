@@ -72,7 +72,7 @@ const Header: React.FunctionComponent<Header> = ({
       <div data-h2-position="b(relative)" data-h2-font-color="b(black)">
         <Image src="/TBS-OPSA-bg.png" alt="" layout="fill" objectFit="cover" />
         <Nav />
-        {user?.isLoggedIn && pathname !== "/" ? (
+        {user?.isSignedIn && pathname !== "/" ? (
           <div
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(right-left, xl)"
@@ -93,7 +93,6 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-radius="b(s)"
                   data-h2-font-size="b(caption) m(normal)"
                   {...colorMap["blue"]["outline"]}
-                  title={editButton.title}
                 >
                   {editButton.title}
                 </a>
@@ -102,7 +101,7 @@ const Header: React.FunctionComponent<Header> = ({
           </div>
         ) : (
           <>
-            {pathname === "/login" || pathname === "/register" ? (
+            {pathname === "/sign-in" || pathname === "/register" ? (
               <div
                 data-h2-position="b(relative)"
                 data-h2-padding="b(all, m) s(left, xl)"
@@ -140,7 +139,7 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-margin="b(all, m) s(right-left, xxl)"
                 >
                   <div {...homeLinksStyling}>
-                    <Link href="/login">
+                    <Link href="/sign-in">
                       <a>
                         {intl.formatMessage({
                           defaultMessage: "Get started",

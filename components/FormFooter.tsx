@@ -42,7 +42,6 @@ const FormFooter: React.FunctionComponent<FormFooterProps> = ({
               <a
                 data-h2-font-size="b(caption) m(normal)"
                 data-h2-margin="b(right, m)"
-                title={title}
               >
                 {title}
               </a>
@@ -56,10 +55,7 @@ const FormFooter: React.FunctionComponent<FormFooterProps> = ({
           data-h2-align-items="b(center)"
         >
           <Link href={cancelButton?.href || "/"}>
-            <a
-              data-h2-font-size="b(caption) m(normal)"
-              title={cancelButton?.title || cancel}
-            >
+            <a data-h2-font-size="b(caption) m(normal)">
               {cancelButton?.title || cancel}
             </a>
           </Link>

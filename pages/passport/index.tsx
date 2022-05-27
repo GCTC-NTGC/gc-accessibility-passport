@@ -120,11 +120,6 @@ const Passport: React.FunctionComponent = () => {
                   defaultMessage: "Solutions in place",
                 })}
               </h2>
-              <p data-h2-bg-color="b(lightblue)" data-h2-padding="b(all, m)">
-                {intl.formatMessage({
-                  defaultMessage: "The barriers below require your attention.",
-                })}
-              </p>
               <PassportCard
                 title="Noise in the workplace"
                 link={{

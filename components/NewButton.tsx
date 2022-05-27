@@ -21,7 +21,6 @@ const NewButton: React.FunctionComponent<NewButtonProps> = ({
         data-h2-radius="b(s)"
         data-h2-font-size="b(caption) m(normal)"
         data-h2-text-align="b(center)"
-        title={title}
       >
         {title}
       </a>
