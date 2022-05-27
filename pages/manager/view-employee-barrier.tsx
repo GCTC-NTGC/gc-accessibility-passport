@@ -63,7 +63,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
                 defaultMessage:
-                  "The modules below present you with the solutions that your employee has shared with you to view or action. You can select the links in the upper right-hand corner of each solution box to view or act on the solutions.",
+                  "The modules below present you with the solutions that your employee has shared with you to view or action.",
               })}
             </p>
             <BarrierCard

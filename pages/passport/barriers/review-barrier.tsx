@@ -60,7 +60,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "The modules below present you with the solutions that you have shared with your manager to view or action. You can select the links in the upper right-hand corner of each solution box to view details, edit its content, or delete it from your Passport.",
+                  "The modules below present you with the solutions that you have shared with your manager to view or action. Links to view, edit or delete each of the solutions linked to this barrier are provided.",
               })}
             </p>
             <BarrierCard
