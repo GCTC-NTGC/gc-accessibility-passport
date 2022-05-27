@@ -137,7 +137,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
               {intl.formatMessage({
                 defaultMessage: "In the event of an emergency...",
               })}
-            </p>{" "}
+            </p>
             <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
               {intl.formatMessage({
                 defaultMessage: "Emergency Contact",
@@ -161,7 +161,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
               </p>
               <div data-h2-margin="b(top-bottom, s)" data-h2-display="b(flex)">
                 <span data-h2-display="b(flex)" data-h2-margin="b(right, xs)">
-                  <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+                  <PaperClipIcon style={{ width: "1.2rem" }} />
                 </span>
                 <Link href="#">
                   <a>
@@ -173,7 +173,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
               </div>
               <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
                 <span data-h2-display="b(flex)" data-h2-margin="b(right, xs)">
-                  <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
+                  <PaperClipIcon style={{ width: "1.2rem" }} />
                 </span>
                 <Link href="#">
                   <a>

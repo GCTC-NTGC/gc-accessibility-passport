@@ -41,7 +41,7 @@ const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({ links }) => {
               href={link.href}
             >
               <a {...(pathname === "/" && activeLink)}>
-                {link.icon || ""} {link.title}{" "}
+                {link.icon || ""} {link.title}
               </a>
             </Link>
           ) : (
