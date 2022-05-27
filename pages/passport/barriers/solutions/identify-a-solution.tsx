@@ -43,8 +43,8 @@ const IdentifyASolution: React.FunctionComponent = () => {
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
-    <Link href="/passport/barriers/identify-a-solution-2">
-      <a>{msg}</a>
+    <Link href="/passport/barriers/solutions/identify-a-solution-2">
+      <a title="msg">{msg}</a>
     </Link>
   );
 

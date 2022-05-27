@@ -28,9 +28,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
       <a>{msg}</a>
     </Link>
   );
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
 
   const situations: Checkbox[] = [
     {
@@ -99,9 +97,9 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <bold>Noise-cancelling headphones</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
+                    "You've selected <strong>Noise-cancelling headphones</strong> as a proposed solution to <strong>Noise in the Workplace</strong>",
                 },
-                { bold },
+                { strong },
               )}
             </h2>
             <p
@@ -192,9 +190,9 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "<bold>REMINDER</bold>: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
+                    "<strong>REMINDER</strong>: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <p>

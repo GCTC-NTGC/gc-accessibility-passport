@@ -21,9 +21,7 @@ const ViewSolution: React.FunctionComponent = () => {
   const onSubmit = async (): Promise<void> => {
     alert("Marked as effective!");
   };
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <Layout
       title={intl.formatMessage({
@@ -249,9 +247,9 @@ const ViewSolution: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
+                      "Frank proposed <strong>Noise cancelling headphones</strong> as a solution to this barrier.",
                   },
-                  { bold },
+                  { strong },
                 )}
               </p>
             </div>
