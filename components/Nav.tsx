@@ -38,7 +38,7 @@ const Nav: React.FunctionComponent = () => {
             </a>
           </Link>
         </li>
-        {user?.isLoggedIn === true && (
+        {user?.isSignedIn === true && (
           <>
             <li data-h2-margin="b(all, s)">
               <Link href="/passport">
@@ -71,29 +71,29 @@ const Nav: React.FunctionComponent = () => {
         )}
       </ul>
       <ul data-h2-display="b(flex)">
-        {user?.isLoggedIn === true && (
+        {user?.isSignedIn === true && (
           <li data-h2-margin="b(top-bottom, s) b(left, s)">
             {/* In this case, we're fine with linking with a regular a in case of no JavaScript */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
-              href="/api/logout"
+              href="/api/sign-out"
               onClick={async (e) => {
                 e.preventDefault();
                 mutateUser(
-                  await fetchJson("/api/logout", { method: "POST" }),
+                  await fetchJson("/api/sign-out", { method: "POST" }),
                   false,
                 );
                 push("/");
               }}
             >
               {intl.formatMessage({
-                defaultMessage: "Logout",
-                description: "Logout nav link.",
+                defaultMessage: "Sign out",
+                description: "Sign out nav link.",
               })}
             </a>
           </li>
         )}
-        {user?.isLoggedIn === false && (
+        {user?.isSignedIn === false && (
           <>
             <li data-h2-margin="b(all, s)">
               <Link href="/register">
@@ -105,10 +105,10 @@ const Nav: React.FunctionComponent = () => {
               </Link>
             </li>
             <li data-h2-margin="b(all, s)">
-              <Link href="/login">
+              <Link href="/sign-in">
                 <a>
                   {intl.formatMessage({
-                    defaultMessage: "Login",
+                    defaultMessage: "Sign in",
                   })}
                 </a>
               </Link>
