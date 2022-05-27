@@ -168,7 +168,7 @@ const Passport: React.FunctionComponent = () => {
                   {intl.formatMessage({
                     defaultMessage: "In the event of an emergency...",
                   })}
-                </p>{" "}
+                </p>
                 <p
                   data-h2-margin="b(bottom, none)"
                   data-h2-font-weight="b(700)"
@@ -204,9 +204,7 @@ const Passport: React.FunctionComponent = () => {
                       data-h2-display="b(flex)"
                       data-h2-margin="b(right, xs)"
                     >
-                      <PaperClipIcon style={{ width: "1.2rem" }}>
-                        {" "}
-                      </PaperClipIcon>
+                      <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
                       <a>
@@ -221,9 +219,7 @@ const Passport: React.FunctionComponent = () => {
                       data-h2-display="b(flex)"
                       data-h2-margin="b(right, xs)"
                     >
-                      <PaperClipIcon style={{ width: "1.2rem" }}>
-                        {" "}
-                      </PaperClipIcon>
+                      <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
                       <a>
