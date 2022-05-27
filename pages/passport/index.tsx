@@ -184,16 +184,8 @@ const Passport: React.FunctionComponent = () => {
                     defaultMessage: "Emergency Contact",
                   })}
                 </p>
-                <p data-h2-margin="b(top-bottom, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "Gal Turot",
-                  })}
-                </p>
-                <p data-h2-margin="b(top, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "(555)555-5555",
-                  })}
-                </p>
+                <p data-h2-margin="b(top-bottom, none)">Gal Turot</p>
+                <p data-h2-margin="b(top, none)">(555)555-5555</p>
                 <div>
                   <p
                     data-h2-margin="b(bottom, none)"
@@ -255,14 +247,10 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-margin="b(bottom, none)"
                   data-h2-font-weight="b(700)"
                 >
-                  {intl.formatMessage({
-                    defaultMessage: "Tracy Huddle",
-                  })}
+                  Tracy Huddle
                 </p>
                 <p data-h2-margin="b(top-bottom, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "tracy.huddle@example.gov.ca",
-                  })}
+                  tracy.huddle@example.gov.ca
                 </p>
                 <p data-h2-margin="b(top, none)">
                   {intl.formatMessage({

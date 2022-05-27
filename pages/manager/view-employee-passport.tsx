@@ -26,10 +26,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
           href: "/manager/manager-dashboard",
         },
         {
-          title: intl.formatMessage({
-            defaultMessage: "Frank Turot",
-            description: "Breadcrumb title.",
-          }),
+          title: "Frank Turot",
         },
       ]}
     >
