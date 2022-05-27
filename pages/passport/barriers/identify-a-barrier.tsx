@@ -7,6 +7,7 @@ import Filters from "../../../components/Filters";
 import { Input, TextArea } from "../../../components/formComponents";
 import FormFooter from "../../../components/FormFooter";
 import Layout from "../../../components/Layout";
+import { errorMessages } from "../../../messages";
 
 type FormValues = {
   name: string;
@@ -33,8 +34,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const methods = useForm<FormValues>({
     defaultValues: { barrier: "Noise in the Workplace" },
   });
-  const { handleSubmit, watch, setValue } = methods;
-  const watchBarrier = watch("barrier");
+  const { handleSubmit, setValue } = methods;
   const setBarrierValue = (value: string): void => setValue("barrier", value);
   const onSubmit = async (): Promise<void> => {
     push(`/passport/barriers/solutions/identify-a-solution`);
@@ -101,16 +101,14 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                   "A barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific.",
               })}
             </p>
-            <p data-h2-font-weight="b(600)">
-              {intl.formatMessage({
-                defaultMessage:
-                  "You can identify a barrier and enter a description using the boxes below",
-              })}
-            </p>
+
             <Input
               id="name"
               name="name"
               type="text"
+              rules={{
+                required: intl.formatMessage(errorMessages.required),
+              }}
               label={intl.formatMessage({
                 defaultMessage: "Barrier name",
               })}
@@ -121,22 +119,24 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               label={intl.formatMessage({
                 defaultMessage: "Barrier description",
               })}
+              rules={{
+                required: intl.formatMessage(errorMessages.required),
+              }}
               rows={10}
             />
           </div>
-          <p data-h2-margin="b(top-bottom, l)" data-h2-font-weight="b(600)">
-            {intl.formatMessage({
-              defaultMessage:
-                "Or, use the worksheet to select a barrier (only your barrier information will be saved).",
-            })}
-          </p>
-          <div data-h2-margin="b(bottom, xl)">
-            <p>
-              {intl.formatMessage({
+          <p>
+            {" "}
+            {intl.formatMessage(
+              {
                 defaultMessage:
-                  "Use the tool to select a barrier (a barrier means anything that prevents you from participating in your work environment). You can select the barrier from the drop-down menus below.",
-              })}
-            </p>
+                  "<strong>Use the tool to select a barrier </strong> (a barrier means anything that prevents you from participating in your work environment). You can select the barriers from the dropdown menus below.",
+              },
+              { strong },
+            )}
+          </p>
+
+          <div data-h2-margin="b(bottom, xl)">
             <div
               data-h2-display="b(flex)"
               data-h2-justify-content="b(space-between)"
@@ -157,21 +157,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
                 inputName="barrier"
               />
             </div>
-            <p data-h2-font-weight="b(700)" data-h2-margin="b(top, s)">
-              {intl.formatMessage({
-                defaultMessage:
-                  "Please note that only the barrier you select will be recorded on your passport - none of the filters or sorting tools you use will be saved or shared with anyone else.",
-              })}
-            </p>
-            <p>
-              {intl.formatMessage(
-                {
-                  defaultMessage:
-                    "You've selected <strong>{watchBarrier}</strong> as the barrier you'd like to add to your passport.",
-                },
-                { strong, watchBarrier },
-              )}
-            </p>
           </div>
           <FormFooter
             cancelButton={{
