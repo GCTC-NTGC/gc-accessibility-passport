@@ -43,7 +43,7 @@ The checkIntl script can be run with different flags and options. For more detai
 
 For example, to ensure translations in the project are up to date:
 
-1. Run `npm run extract:i18n`.
+1. Run `npm run i18n`.
 2. Run `npm run check-intl`. This generates a **untranslated.json** file in the admin project's lang folder.
 3. Send **untranslated.json** for translation, asking them to only translate the "defaultMessage" fields.
 4. Save the translated version which comes back as **newTranslations.json** in the same lang folder.
