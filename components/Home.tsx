@@ -229,9 +229,10 @@ const Home: React.FunctionComponent = () => {
                   </li>
                 </ul>
                 <p>
-                  Your Passport specifically relates to workplace situations.
-                  Please do not include any information about medical conditions
-                  or treatments.
+                  {intl.formatMessage({
+                    defaultMessage:
+                      "Your Passport specifically relates to workplace situations. Please do not include any information about medical conditions or treatments.",
+                  })}
                 </p>
               </div>
             </div>

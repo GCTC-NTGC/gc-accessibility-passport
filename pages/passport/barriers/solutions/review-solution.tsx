@@ -33,13 +33,25 @@ const ViewSolution: React.FunctionComponent = () => {
           "View/Action your solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport", href: "/passport" },
         {
-          title: "Noise in the workplace",
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
           href: "/passport/barriers/review-barrier",
         },
         {
-          title: "Noise-cancelling headphones",
+          title: intl.formatMessage({
+            defaultMessage: "Noise-cancelling headphones",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
     >
@@ -226,9 +238,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 <PaperClipIcon style={{ width: "1.25rem" }} />
               </span>
               <a href="#" data-h2-display="b(inline-block)">
-                {intl.formatMessage({
-                  defaultMessage: "my_ergonomic_assessment.pdf(3MB)",
-                })}
+                my_ergonomic_assessment.pdf(3MB)
               </a>
             </div>
           </div>

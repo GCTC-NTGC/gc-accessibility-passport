@@ -20,8 +20,19 @@ const ReviewBarrier: React.FunctionComponent = () => {
           "Review or edit barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport", href: "/passport" },
-        { title: "Noise in the workplace" },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
+        },
       ]}
     >
       <Page>
@@ -67,9 +78,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Noise cancelling headphones",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "my_hearing_assessment.pdf(3MB)",
-              })}
+              documentName="my_hearing_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -103,9 +112,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Access to quiet space",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "location_assessment.pdf(3MB)",
-              })}
+              documentName="location_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -140,9 +147,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage:
                   "Organizer / task planning tool/software application",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "software_assessment.pdf(3MB)",
-              })}
+              documentName="software_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -268,11 +273,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-justify-content="b(space-between)"
                 data-h2-align-items="b(center)"
               >
-                <p data-h2-margin="b(all, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "Jennifer Rotterdam",
-                  })}
-                </p>
+                <p data-h2-margin="b(all, none)">Jennifer Rotterdam</p>
                 <Link href="#">
                   <a>
                     {intl.formatMessage({
@@ -295,11 +296,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               data-h2-justify-content="b(space-between)"
               data-h2-align-items="b(center)"
             >
-              <p data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage: "Barnabus Sui",
-                })}
-              </p>
+              <p data-h2-margin="b(all, none)">Barnabus Sui</p>
               <Link href="#">
                 <a>
                   {intl.formatMessage({

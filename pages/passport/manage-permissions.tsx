@@ -19,9 +19,18 @@ const ManagePermissions: React.FunctionComponent = () => {
           "Manage permissions - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport", href: "/passport" },
         {
-          title: "Manage Permissions",
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
     >
@@ -50,9 +59,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             </h3>
             <div data-h2-margin="b(bottom, l)">
               <PermissionsCard
-                title={intl.formatMessage({
-                  defaultMessage: "Sui Kiyoko",
-                })}
+                title="Sui Kiyoko"
                 actionLinks={[
                   intl.formatMessage({
                     defaultMessage: "Remove all access",
@@ -73,9 +80,7 @@ const ManagePermissions: React.FunctionComponent = () => {
               })}
             </h3>
             <PermissionsCard
-              title={intl.formatMessage({
-                defaultMessage: "Priyanka Luka",
-              })}
+              title="Priyanka Luka"
               actionLinks={[
                 intl.formatMessage({
                   defaultMessage: "Remove all access",

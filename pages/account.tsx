@@ -36,7 +36,12 @@ const AccountManagement: React.FunctionComponent = () => {
       data-h2-width="b(100) l(75)"
       data-h2-padding="b(all, none)"
       crumbs={[
-        { title: "Manage your account" },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manage your account",
+            description: "Breadcrumb title.",
+          }),
+        },
       ]}
     >
       <Page>

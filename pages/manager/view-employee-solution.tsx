@@ -31,14 +31,29 @@ const ViewSolution: React.FunctionComponent = () => {
           "Frank’s Solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My Dashboard", href: "/manager/manager-dashboard" },
-        { title: "Frank Turot", href: "/manager/view-employee-passport" },
         {
-          title: "Noise in the workplace",
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+          href: "/manager/manager-dashboard",
+        },
+        {
+          title: "Frank Turot",
+          href: "/manager/view-employee-passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
           href: "/manager/view-employee-barrier",
         },
         {
-          title: "Noise cancelling headphones",
+          title: intl.formatMessage({
+            defaultMessage: "Noise cancelling headphones",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
     >
@@ -173,9 +188,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 <LinkIcon style={{ width: "1rem" }} />
               </span>
               <a href="#" data-h2-display="b(inline-block)">
-                {intl.formatMessage({
-                  defaultMessage: "my_ergonomic_assessment.pdf(3MB)",
-                })}
+                my_ergonomic_assessment.pdf(3MB)
               </a>
             </div>
           </div>

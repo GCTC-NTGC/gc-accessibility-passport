@@ -35,8 +35,19 @@ const ManagerInfo: React.FunctionComponent = () => {
       center={true}
       formLayout
       crumbs={[
-        { title: "My passport", href: "/passport" },
-        { title: "Manager Info" },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manager Info",
+            description: "Breadcrumb title.",
+          }),
+        },
       ]}
     >
       <FormProvider {...methods}>

@@ -18,8 +18,19 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
           "Frank Turot's passport - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My Dashboard", href: "/manager/manager-dashboard" },
-        { title: "Frank Turot" },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+          href: "/manager/manager-dashboard",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Frank Turot",
+            description: "Breadcrumb title.",
+          }),
+        },
       ]}
     >
       <Page>
@@ -106,21 +117,13 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                 defaultMessage: "Phone",
               })}
             </p>
-            <p data-h2-margin="b(top, none)">
-              {intl.formatMessage({
-                defaultMessage: "(555)555-5555",
-              })}
-            </p>
+            <p data-h2-margin="b(top, none)">(555)555-5555</p>
             <p data-h2-font-weight="b(700)" data-h2-margin="b(bottom, none)">
               {intl.formatMessage({
                 defaultMessage: "Email",
               })}
             </p>
-            <p data-h2-margin="b(all, none)">
-              {intl.formatMessage({
-                defaultMessage: "frank.turot@example.gov.ca",
-              })}
-            </p>
+            <p data-h2-margin="b(all, none)">frank.turot@example.gov.ca</p>
           </div>
           <div>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
@@ -143,16 +146,8 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                 defaultMessage: "Emergency Contact",
               })}
             </p>
-            <p data-h2-margin="b(top-bottom, none)">
-              {intl.formatMessage({
-                defaultMessage: "Gal Turot",
-              })}
-            </p>
-            <p data-h2-margin="b(top, none)">
-              {intl.formatMessage({
-                defaultMessage: "(555)555-5555",
-              })}
-            </p>
+            <p data-h2-margin="b(top-bottom, none)">Gal Turot</p>
+            <p data-h2-margin="b(top, none)">(555)555-5555</p>
             <div>
               <p data-h2-margin="b(bottom, none)" data-h2-font-weight="b(700)">
                 {intl.formatMessage({
@@ -164,11 +159,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                   <PaperClipIcon style={{ width: "1.2rem" }} />
                 </span>
                 <Link href="#">
-                  <a>
-                    {intl.formatMessage({
-                      defaultMessage: "my_evacuation_plan.pdf(3MB)",
-                    })}
-                  </a>
+                  <a>my_evacuation_plan.pdf(3MB)</a>
                 </Link>
               </div>
               <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
@@ -176,11 +167,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
                   <PaperClipIcon style={{ width: "1.2rem" }} />
                 </span>
                 <Link href="#">
-                  <a>
-                    {intl.formatMessage({
-                      defaultMessage: "my_paramedical_needs.pdf(3MB)",
-                    })}
-                  </a>
+                  <a>my_paramedical_needs.pdf(3MB)</a>
                 </Link>
               </div>
             </div>

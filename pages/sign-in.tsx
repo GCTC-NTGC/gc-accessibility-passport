@@ -86,11 +86,17 @@ const SignIn: React.FunctionComponent = () => {
       })}
       crumbs={[
         {
-          title: "Home",
+          title: intl.formatMessage({
+            defaultMessage: "Home",
+            description: "Breadcrumb title.",
+          }),
           href: "/",
         },
         {
-          title: "Sign in",
+          title: intl.formatMessage({
+            defaultMessage: "Sign in",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
       formLayout
