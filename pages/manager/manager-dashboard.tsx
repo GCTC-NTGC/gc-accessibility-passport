@@ -18,7 +18,14 @@ const ManagerDashboard: React.FunctionComponent = () => {
         defaultMessage:
           "Manager dashboard - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My Dashboard" }]}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -35,9 +42,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               })}
             </h2>
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Frank Turot",
-              })}
+              title="Frank Turot"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
@@ -46,9 +51,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               }}
             />
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Shannon Ghiles",
-              })}
+              title="Shannon Ghiles"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
@@ -57,9 +60,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               }}
             />
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Margaret Turing",
-              })}
+              title="Margaret Turing"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",

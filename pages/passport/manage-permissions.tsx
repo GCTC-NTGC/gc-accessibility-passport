@@ -19,9 +19,18 @@ const ManagePermissions: React.FunctionComponent = () => {
           "Manage permissions - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport", href: "/passport" },
         {
-          title: "Manage Permissions",
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
     >

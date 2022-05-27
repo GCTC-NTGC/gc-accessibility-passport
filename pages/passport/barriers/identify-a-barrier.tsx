@@ -87,8 +87,19 @@ const IdentifyABarrier: React.FunctionComponent = () => {
           "Identify a barrier - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My passport", href: "/passport" },
-        { title: "Identify a barrier" },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Identify a barrier",
+            description: "Breadcrumb title.",
+          }),
+        },
       ]}
       formLayout
     >

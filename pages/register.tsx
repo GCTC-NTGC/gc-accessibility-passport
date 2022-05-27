@@ -104,11 +104,17 @@ const Register: React.FunctionComponent = () => {
       })}
       crumbs={[
         {
-          title: "Home",
+          title: intl.formatMessage({
+            defaultMessage: "Home",
+            description: "Breadcrumb title.",
+          }),
           href: "/",
         },
         {
-          title: "Register",
+          title: intl.formatMessage({
+            defaultMessage: "Register",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
       formLayout

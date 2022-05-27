@@ -17,7 +17,14 @@ const Passport: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "My Passport - GC Workplace Accessibility Passport",
       })}
-      crumbs={[{ title: "My passport" }]}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -209,11 +216,7 @@ const Passport: React.FunctionComponent = () => {
                       </PaperClipIcon>
                     </span>
                     <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_evacuation_plan.pdf(3MB)",
-                        })}
-                      </a>
+                      <a>my_evacuation_plan.pdf(3MB)</a>
                     </Link>
                   </div>
                   <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
@@ -226,11 +229,7 @@ const Passport: React.FunctionComponent = () => {
                       </PaperClipIcon>
                     </span>
                     <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_paramedical_needs.pdf(3MB)",
-                        })}
-                      </a>
+                      <a>my_paramedical_needs.pdf(3MB)</a>
                     </Link>
                   </div>
                 </div>

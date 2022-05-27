@@ -18,10 +18,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
           "Frank's Barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
-        { title: "My Dashboard", href: "/manager/manager-dashboard" },
-        { title: "Frank Turot", href: "/manager/view-employee-passport" },
         {
-          title: "Noise in the workplace",
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+          href: "/manager/manager-dashboard",
+        },
+        {
+          title: "Frank Turot",
+          href: "/manager/view-employee-passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
         },
       ]}
     >
@@ -70,9 +82,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Noise cancelling headphones",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "my_hearing_assessment.pdf(3MB)",
-              })}
+              documentName="my_hearing_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -94,9 +104,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               title={intl.formatMessage({
                 defaultMessage: "Access to quiet space",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "location_assessment.pdf(3MB)",
-              })}
+              documentName="location_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -119,9 +127,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage:
                   "Organizer / task planning tool/software application",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "software_assessment.pdf(3MB)",
-              })}
+              documentName="software_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
@@ -182,11 +188,31 @@ const ReviewBarrier: React.FunctionComponent = () => {
               data-h2-margin="b(bottom-left, m)"
               style={{ listStyleType: "disc" }}
             >
-              <li>Example Resource #1</li>
-              <li>Example Resource #2</li>
-              <li>Example Resource #3</li>
-              <li>Example Resource #4</li>
-              <li>Example Resource #5</li>
+              <li>
+                {intl.formatMessage({
+                  defaultMessage: "Example Resource #1",
+                })}
+              </li>
+              <li>
+                {intl.formatMessage({
+                  defaultMessage: "Example Resource #2",
+                })}
+              </li>
+              <li>
+                {intl.formatMessage({
+                  defaultMessage: "Example Resource #3",
+                })}
+              </li>
+              <li>
+                {intl.formatMessage({
+                  defaultMessage: "Example Resource #4",
+                })}
+              </li>
+              <li>
+                {intl.formatMessage({
+                  defaultMessage: "Example Resource #5",
+                })}
+              </li>
             </ul>
           </div>
 
