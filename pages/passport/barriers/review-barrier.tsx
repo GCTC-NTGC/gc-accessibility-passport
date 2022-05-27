@@ -13,11 +13,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Review or edit your barrier: Noise in the workplace",
+        defaultMessage: "Review or edit barrier: Noise in the workplace",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Review or edit your barrier: Noise in the workplace - GC Workplace Accessibility Passport",
+          "Review or edit barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         { title: "My passport", href: "/passport" },
