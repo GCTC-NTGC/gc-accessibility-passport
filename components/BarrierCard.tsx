@@ -87,13 +87,10 @@ export const BarrierCard: React.FunctionComponent<{
       </ul>
       <div>
         <p>
-          {intl.formatMessage(
-            {
-              defaultMessage:
-                "{title} is particularly helpful for me because...",
-            },
-            { title },
-          )}
+          {intl.formatMessage({
+            defaultMessage:
+              "I uploaded the following file(s) to provide more context for this solution...",
+          })}
         </p>
         <div data-h2-display="b(flex)">
           <span data-h2-margin="b(right, xs)" data-h2-display="b(flex)">
