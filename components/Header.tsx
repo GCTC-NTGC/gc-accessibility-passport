@@ -93,7 +93,6 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-radius="b(s)"
                   data-h2-font-size="b(caption) m(normal)"
                   {...colorMap["blue"]["outline"]}
-                  title={editButton.title}
                 >
                   {editButton.title}
                 </a>

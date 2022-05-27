@@ -25,7 +25,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
   };
   const back = (msg: string): React.ReactNode => (
     <Link href="/passport/barriers/solutions/identify-a-solution">
-      <a title={msg}>{msg}</a>
+      <a>{msg}</a>
     </Link>
   );
   const bold = (msg: string): React.ReactNode => (
