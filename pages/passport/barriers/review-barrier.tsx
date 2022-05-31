@@ -5,11 +5,11 @@ import { colorMap } from "../../../components/Button";
 import Layout from "../../../components/Layout";
 import Page, { LeftSection, RightSection } from "../../../components/Page";
 import { BarrierCard } from "../../../components/BarrierCard";
+import { strong } from "../../../helpers/format";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <Layout
       title={intl.formatMessage({

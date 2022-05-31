@@ -8,6 +8,7 @@ import { Checklist, Input } from "../../../../components/formComponents";
 import { Checkbox } from "../../../../components/formComponents/Checklist";
 import FormFooter from "../../../../components/FormFooter";
 import Layout from "../../../../components/Layout";
+import { strong } from "../../../../helpers/format";
 import { errorMessages } from "../../../../messages";
 
 type FormValues = {
@@ -28,7 +29,6 @@ const IdentifyASolution2: React.FunctionComponent = () => {
       <a>{msg}</a>
     </Link>
   );
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
 
   const situations: Checkbox[] = [
     {

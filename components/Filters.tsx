@@ -7,6 +7,7 @@ import {
   focusPreviousItem,
   getFocusableElements,
 } from "../helpers/focus";
+import { strong } from "../helpers/format";
 import Button from "./Button";
 
 type Parent = {
@@ -44,7 +45,6 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
 }) => {
   const intl = useIntl();
   const { register } = useFormContext();
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
 
   // List of barriers that are displayed in the barriers section.
   const [resultsState, setResultsState] = React.useState<Result[] | null>(

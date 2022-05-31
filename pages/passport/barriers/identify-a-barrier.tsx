@@ -7,6 +7,7 @@ import Filters from "../../../components/Filters";
 import { Input, TextArea } from "../../../components/formComponents";
 import FormFooter from "../../../components/FormFooter";
 import Layout from "../../../components/Layout";
+import { strong } from "../../../helpers/format";
 
 type FormValues = {
   name: string;
@@ -38,8 +39,6 @@ const IdentifyABarrier: React.FunctionComponent = () => {
   const onSubmit = async (): Promise<void> => {
     push(`/passport/barriers/solutions/identify-a-solution`);
   };
-
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
 
   const parentBarrierCategories = [
     {
