@@ -63,16 +63,17 @@ const Passport: React.FunctionComponent = () => {
               </li>
             </ul>
             <div
-              data-h2-display="b(flex)"
+              data-h2-display="b(block) s(flex)"
               data-h2-justify-content="b(space-between)"
               style={{ gap: "1rem" }}
             >
               <Link href="/passport/barriers/identify-a-barrier">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
@@ -85,9 +86,10 @@ const Passport: React.FunctionComponent = () => {
               <Link href="/passport/share-my-passport">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
@@ -100,9 +102,10 @@ const Passport: React.FunctionComponent = () => {
               <Link href="/passport/manage-permissions">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
@@ -156,7 +159,7 @@ const Passport: React.FunctionComponent = () => {
                 defaultMessage: "Emergency Information and Manager Details",
               })}
             </h2>
-            <div data-h2-display="b(flex)">
+            <div data-h2-display="b(flex)" data-h2-flex-wrap="b(wrap)">
               <div style={{ flex: "1" }} data-h2-margin="b(right, l)">
                 <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                   {intl.formatMessage({
@@ -206,7 +209,7 @@ const Passport: React.FunctionComponent = () => {
                       <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
-                      <a>my_evacuation_plan.pdf(3MB)</a>
+                      <a>my_evacuation_plan.pdf (3MB)</a>
                     </Link>
                   </div>
                   <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
@@ -217,7 +220,7 @@ const Passport: React.FunctionComponent = () => {
                       <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
-                      <a>my_paramedical_needs.pdf(3MB)</a>
+                      <a>my_paramedical_needs.pdf (3MB)</a>
                     </Link>
                   </div>
                 </div>
