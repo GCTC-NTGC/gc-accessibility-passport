@@ -43,11 +43,11 @@ The checkIntl script can be run with different flags and options. For more detai
 
 For example, to ensure translations in the project are up to date:
 
-1. Run `npm run i18n`.
-2. Run `npm run check-intl`. This generates a **untranslated.json** file in the admin project's lang folder.
+1. Run `npm run intl-extract`. This script parses the `/pages` and `/components` folders for all the react-intl messages. The messages are injected into **en.json**.
+2. Run `npm run check-intl`. This generates a **untranslated.json** file in the project's `/lang` folder.
 3. Send **untranslated.json** for translation, asking them to only translate the "defaultMessage" fields.
 4. Save the translated version which comes back as **newTranslations.json** in the same lang folder.
-5. Run `npm run check-intl-merge`.
+5. Run `npm run check-intl-merge`. This merges the **newTranslations.json** file with the **fr.json** adding the new translated messages, and updating any old ones too.
 6. If you see any warnings about untranslated entries which simply match in English and French, add the key to the array in **whitelist.json** and repeat step 4.
 
 ### On source control
