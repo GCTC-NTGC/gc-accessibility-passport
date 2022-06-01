@@ -1,1 +1,416 @@
-{}
+{
+  "+MlP0C": {
+    "defaultMessage": "Sélectionner une organisation…"
+  },
+  "+aSIAf": {
+    "defaultMessage": "Obstacle de Frank : Le bruit en milieu de travail"
+  },
+  "/4OWb9": {
+    "defaultMessage": "Partager les informations de votre passeport ou"
+  },
+  "0BnPD/": {
+    "defaultMessage": "Obstacles pour examen"
+  },
+  "0QJmAz": {
+    "defaultMessage": "Modifier les informations de mon gestionnaire"
+  },
+  "0ZkQxR": {
+    "defaultMessage": "Partager les informations de mon passeport – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "1A+zET": {
+    "defaultMessage": "Communiquer avec l’équipe de l’accessibilité, adaptation et technologie informatique adaptée (AATIA)"
+  },
+  "1Ep4tR": {
+    "defaultMessage": "Le bruit en milieu de travail"
+  },
+  "1uR9G9": {
+    "defaultMessage": "Partagé avec vos collègues"
+  },
+  "2Ybowt": {
+    "defaultMessage": "Voici un résumé de votre passeport pour l’accessibilité en milieu de travail du GC. Sélectionnez les liens ci-dessous pour :"
+  },
+  "3bt594": {
+    "defaultMessage": "Obstacle de Frank : Le bruit en milieu de travail – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "3ozvFC": {
+    "defaultMessage": "Renseignements essentiels"
+  },
+  "42Yx5m": {
+    "defaultMessage": "Documents et dossiers"
+  },
+  "4BCrfP": {
+    "defaultMessage": "Partager les informations de mon passeport"
+  },
+  "4h9Soz": {
+    "defaultMessage": "Coordonnées en cas d’urgence et détails du gestionnaire"
+  },
+  "5rvE/6": {
+    "defaultMessage": "Cette section devrait être remplie conjointement par l’employé et son gestionnaire. Son objectif est de consigner les solutions prises ci-dessus (p. ex., les services d’outils adaptatifs ou les mesures) qu’un gestionnaire a convenu de fournir."
+  },
+  "6jkPnh": {
+    "defaultMessage": "Activer le lien pour entrer les renseignements de votre gestionnaire. Cela facilitera le partage des informations de votre passeport avec eux."
+  },
+  "6mtYKo": {
+    "defaultMessage": "Casque à réduction de bruit"
+  },
+  "6scDh6": {
+    "defaultMessage": "Exemple de ressource no 2"
+  },
+  "6wec9n": {
+    "defaultMessage": "Gérer les autorisations d’accès"
+  },
+  "7eClGS": {
+    "defaultMessage": "Le bruit en milieu de travail"
+  },
+  "7kK9nL": {
+    "defaultMessage": "Exemple de conteneur d’obstacles no 5"
+  },
+  "7uOSyF": {
+    "defaultMessage": "Activer le lien “Visualiser le passeport” à côté du nom de chaque employé afin de consulter les informations de leur passeport et de prendre des mesures à l’égard de toutes les solutions qu’ils ont demandées."
+  },
+  "7vtKKO": {
+    "defaultMessage": "Le bruit en milieu de travail peut avoir une incidence sur la concentration et l’ouïe et peut causer des maux de tête ou des distractions."
+  },
+  "8ASfjF": {
+    "defaultMessage": "Exemple de ressource no 1"
+  },
+  "8Y8fyU": {
+    "defaultMessage": "Accès à un espace calme"
+  },
+  "9Ik+3p": {
+    "defaultMessage": "Sélectionner un ou plusieurs obstacles à partager…"
+  },
+  "AX9Xk8": {
+    "defaultMessage": "Exemple de ressource no 4"
+  },
+  "AZxfMW": {
+    "defaultMessage": "Partager avec quelqu’un de nouveau"
+  },
+  "BAWJVM": {
+    "defaultMessage": "Employés ayant des passeports partagés"
+  },
+  "C2pDTd": {
+    "defaultMessage": "Afficher le passeport"
+  },
+  "E2zecs": {
+    "defaultMessage": "Exemple de ressource no 5"
+  },
+  "ECkqWQ": {
+    "defaultMessage": "Vous trouverez ci-dessous une ou plusieurs solutions à l’obstacle que constitue le bruit en milieu de travail. Examinez et mettez en oeuvre la solution et indiquez son statut."
+  },
+  "Eh4LEV": {
+    "defaultMessage": "Communiquer avec l’AATIA"
+  },
+  "F8gyNc": {
+    "defaultMessage": "Votre gestionnaire est responsable de vous fournir les outils et les mesures de soutien nécessaires pour réussir dans votre travail. Ajouter les coordonnées de votre gestionnaire dans cette section de votre passeport. L’ajout des coordonnées de votre gestionnaire ici vous donne la possibilité de partager vos informations de passeport avec votre gestionnaire."
+  },
+  "FgydNe": {
+    "defaultMessage": "Afficher"
+  },
+  "GJpnAY": {
+    "defaultMessage": "Exemple de ressource no 3"
+  },
+  "GW+bC5": {
+    "defaultMessage": "Tableau de bord du gestionnaire"
+  },
+  "HxYi6+": {
+    "defaultMessage": "Solution de Frank : Casque à réduction de bruit"
+  },
+  "IAxZ2m": {
+    "defaultMessage": "Ci-dessous se trouvent vos obstacles énumérés dans deux catégories : obstacles avec des solutions mises en place; obstacles avec des solutions en cours de discussion ou de mise en œuvre. Sélectionner les liens d’affichage dans chaque module d’obstacle pour voir les renseignements complets."
+  },
+  "J0+JSC": {
+    "defaultMessage": "Identifier un nouvel obstacle"
+  },
+  "K6/Bwz": {
+    "defaultMessage": "En tant que gestionnaire de l’employé, vous pouvez consulter et traiter toutes les informations de passeport qui vous sont partagées. L’employé peut refuser l’accès à son passeport en tout temps. Le passeport de l’employé consigne toutes les actions."
+  },
+  "KAW7Xn": {
+    "defaultMessage": "Modifier les informations du gestionnaire"
+  },
+  "KKolL+": {
+    "defaultMessage": "Courriel de travail du gestionnaire"
+  },
+  "KSiHXr": {
+    "defaultMessage": "Sélectionner une ou plusieurs cases à cocher Informations de passeport et utiliser le menu déroulant pour partager ces informations avec un gestionnaire ou un collègue."
+  },
+  "KaNml5": {
+    "defaultMessage": "Prénom du gestionnaire"
+  },
+  "KthclQ": {
+    "defaultMessage": "Mon gestionnaire"
+  },
+  "LAFA3v": {
+    "defaultMessage": "Le casque à réduction de bruit est conçu pour réduire l’exposition au bruit de fond non désiré."
+  },
+  "LMpYRm": {
+    "defaultMessage": "Solutions en place"
+  },
+  "M9AkYT": {
+    "defaultMessage": "Bruit en milieu de travail"
+  },
+  "Mujfr/": {
+    "defaultMessage": "Activer le lien pour communiquer avec l’équipe de l’AATIA pour une séance d’information ou une évaluation."
+  },
+  "NA/bJb": {
+    "defaultMessage": "Puisque votre gestionnaire est responsable d’établir des objectifs de travail et d’évaluer votre rendement, il a tout intérêt à comprendre les obstacles que vous pourriez rencontrer en milieu de travail. Il doit aussi être responsable, du moins en partie, de la mise en œuvre des solutions nécessaires pour vous aider à réussir."
+  },
+  "NoBPbt": {
+    "defaultMessage": "Mon employé et moi avons eu une conversation sur les obstacles et les solutions"
+  },
+  "O95R3Z": {
+    "defaultMessage": "Téléphone"
+  },
+  "PLWMv3": {
+    "defaultMessage": "Partager les informations de mon passeport avec :"
+  },
+  "QXdDd/": {
+    "defaultMessage": "En tant que votre gestionnaire, Sui a accès aux informations de passeport suivantes :"
+  },
+  "QZ2s1R": {
+    "defaultMessage": "Visualiser/Traiter les solutions partagées"
+  },
+  "QhDw81": {
+    "defaultMessage": "Mon passeport – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "Qy3zv0": {
+    "defaultMessage": "Mon passeport"
+  },
+  "QzwdAH": {
+    "defaultMessage": "Milieu de travail physique."
+  },
+  "RN8MwM": {
+    "defaultMessage": "Mon tableau de bord"
+  },
+  "RTgrDS": {
+    "defaultMessage": "Gérer l’accès aux informations de votre passeport"
+  },
+  "S0qnRm": {
+    "defaultMessage": "Exemple d’obstacle no 2"
+  },
+  "SPbNmi": {
+    "defaultMessage": "Passeport de Frank Turot"
+  },
+  "SWg7V5": {
+    "defaultMessage": "Prendre des mesures"
+  },
+  "Tw4Ilq": {
+    "defaultMessage": "Passeport de Frank Turot – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "TwH02P": {
+    "defaultMessage": "Gérer les autorisations"
+  },
+  "Tz68NS": {
+    "defaultMessage": "Frank a proposé <strong>organisateur/outil de planification des tâches/application logicielle</strong> comme solution à cet obstacle."
+  },
+  "U/cN0/": {
+    "defaultMessage": "En cliquant sur le bouton ci-dessous, vous acceptez, en tant que gestionnaire de Frank, que vous mettiez en œuvre cette solution pour lui dès que possible. Frank sera avisé, et cette entente apparaîtra dans l’historique de l’obstacle pour référence ultérieure."
+  },
+  "U01yNx": {
+    "defaultMessage": "Organisateur/outil de planification des tâches/application logicielle"
+  },
+  "U4EjYD": {
+    "defaultMessage": "Solutions tentées"
+  },
+  "U6hu4b": {
+    "defaultMessage": "Supprimer tout accès"
+  },
+  "U7DX/R": {
+    "defaultMessage": "Gérer les autorisations – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "UaOI5P": {
+    "defaultMessage": "Fermer la boîte de dialogue"
+  },
+  "VvNAr/": {
+    "defaultMessage": "Secrétariat du Conseil du Trésor du Canada"
+  },
+  "VxsU6V": {
+    "defaultMessage": "Description de l’obstacle"
+  },
+  "WwEEH6": {
+    "defaultMessage": "Vous pouvez traiter un obstacle/une trousse de solution qu’un employé a partagé avec vous en sélectionnant le lien Afficher ci-dessous."
+  },
+  "Y5IVZp": {
+    "defaultMessage": "J’accepte de traiter cette solution"
+  },
+  "Z3x/Ww": {
+    "defaultMessage": "accès à un espace calme"
+  },
+  "ZoZAYo": {
+    "defaultMessage": "Activer le lien pour partager les informations avec un nouveau collègue ou gestionnaire."
+  },
+  "aTQbfI": {
+    "defaultMessage": "Informations du gestionnaire"
+  },
+  "aVGgMs": {
+    "defaultMessage": "03/avril/2022"
+  },
+  "b75Csk": {
+    "defaultMessage": "Titre du gestionnaire"
+  },
+  "bMAwSo": {
+    "defaultMessage": "Frank n’a pas marqué aucune solution comme inefficace pour cet obstacle en particulier."
+  },
+  "bzJxE3": {
+    "defaultMessage": "Aucune solution en cours."
+  },
+  "bzaykh": {
+    "defaultMessage": "Gérer les autorisations"
+  },
+  "c/KktL": {
+    "defaultMessage": "Ressources"
+  },
+  "cM86JM": {
+    "defaultMessage": "Partager mon passeport"
+  },
+  "dRjGjt": {
+    "defaultMessage": "Vous trouverez ci-dessous un résumé de votre obstacle et les solutions que votre employé a identifiées. Sélectionner le lien d’affichage dans chaque module de solution interactive pour le consulter ou prendre toute mesure requise."
+  },
+  "dbXbe+": {
+    "defaultMessage": "Vos coordonnées en cas d’urgence"
+  },
+  "djJp6c": {
+    "defaultMessage": "Historique"
+  },
+  "e3+nnq": {
+    "defaultMessage": "Solutions en cours"
+  },
+  "f7UyYh": {
+    "defaultMessage": "Partager mon passeport"
+  },
+  "fQ7tw4": {
+    "defaultMessage": "Sélectionner Afficher pour donner suite aux informations de passeport de l’employé."
+  },
+  "gDtgRh": {
+    "defaultMessage": "Aucune solution en place."
+  },
+  "gQ5D0r": {
+    "defaultMessage": "Communiquer avec un gestionnaire de cas ou un agent OPMA"
+  },
+  "gUADEH": {
+    "defaultMessage": "Casque à réduction de bruit"
+  },
+  "gdBkAb": {
+    "defaultMessage": "Exemple de conteneur d’obstacles no 4"
+  },
+  "gsd9cs": {
+    "defaultMessage": "Activer le lien pour communiquer avec un professionnel de l’adaptation en milieu de travail dans votre organisation."
+  },
+  "h043eg": {
+    "defaultMessage": "Solution de Frank : Casque à réduction de bruit - Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "iB229T": {
+    "defaultMessage": "Partagé avec votre gestionnaire"
+  },
+  "icUCOG": {
+    "defaultMessage": "Solutions actuelles"
+  },
+  "itxH92": {
+    "defaultMessage": "Supprimer l’accès à la liste des obstacles"
+  },
+  "jVDpPg": {
+    "defaultMessage": "Personne-ressource en cas d’urgence"
+  },
+  "kJGlh1": {
+    "defaultMessage": "Frank a proposé <strong>l’accès à un espace tranquille</strong> comme solution à cet obstacle."
+  },
+  "kai0l1": {
+    "defaultMessage": "Informations de mon gestionnaire"
+  },
+  "keHh9P": {
+    "defaultMessage": "Informations sur votre gestionnaire"
+  },
+  "krEziQ": {
+    "defaultMessage": "Communiquer avec nous"
+  },
+  "l0RhM6": {
+    "defaultMessage": "Entente du Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "lFDrH2": {
+    "defaultMessage": "Les modules ci-dessous vous présentent les solutions que votre employé a partagées avec vous pour affichage ou traitement."
+  },
+  "lVbp6u": {
+    "defaultMessage": "Exemple de conteneur d’obstacles no 3"
+  },
+  "lqxU06": {
+    "defaultMessage": "Frank a ajouté cet obstacle à son passeport."
+  },
+  "mBR+cn": {
+    "defaultMessage": "Entente de mise en œuvre"
+  },
+  "n5HjWV": {
+    "defaultMessage": "Frank a proposé un <strong>casque à réduction de bruit</strong> comme solution à cet obstacle."
+  },
+  "nl/Qql": {
+    "defaultMessage": "Exemple de conteneur d’obstacles no 1"
+  },
+  "o/42q7": {
+    "defaultMessage": "Sélectionner une option…"
+  },
+  "ohXQNf": {
+    "defaultMessage": "Description de la solution"
+  },
+  "p+ZNr7": {
+    "defaultMessage": "Nom du gestionnaire"
+  },
+  "pbjV3i": {
+    "defaultMessage": "Frank n’a marqué aucune solution qui fonctionne pour cet obstacle en particulier."
+  },
+  "piqQDc": {
+    "defaultMessage": "Examiner et modifier les obstacles et les solutions que vous avez identifiés."
+  },
+  "q0gYiY": {
+    "defaultMessage": "Tableau de bord du gestionnaire - Passeport d’accessibilité en milieu de travail du GC"
+  },
+  "r407jg": {
+    "defaultMessage": "En cas d’urgence…"
+  },
+  "r7N8iy": {
+    "defaultMessage": "Bienvenue à votre passeport, Frank"
+  },
+  "rzj35s": {
+    "defaultMessage": "Exemple de ressource no 3"
+  },
+  "sFMRpq": {
+    "defaultMessage": "Documentation d’urgence"
+  },
+  "sVMnvI": {
+    "defaultMessage": "Exemple de ressource no 1"
+  },
+  "sy+pv5": {
+    "defaultMessage": "Courriel"
+  },
+  "tTM7jZ": {
+    "defaultMessage": "Remplisser cette section avec votre gestionnaire."
+  },
+  "tucJz+": {
+    "defaultMessage": "Afficher et gérer l’accès aux informations de votre passeport. Activer les liens ci-dessous pour supprimer l’accès."
+  },
+  "ucrFVs": {
+    "defaultMessage": "Casque à réduction de bruit"
+  },
+  "w8MkUV": {
+    "defaultMessage": "Informations de mon gestionnaire – Passeport d’accessibilité en milieu de travail du GC"
+  },
+  "wAufjs": {
+    "defaultMessage": "Exemple de ressource no 2"
+  },
+  "wRRzCm": {
+    "defaultMessage": "Enregistrer les informations de mon gestionnaire"
+  },
+  "xvZt8S": {
+    "defaultMessage": "Coordonnées en cas d’urgence des employés"
+  },
+  "yDaeKj": {
+    "defaultMessage": "Coordonnées des employés"
+  },
+  "yic+03": {
+    "defaultMessage": "2 solutions en attente d’action"
+  },
+  "ymGzIc": {
+    "defaultMessage": "Organisation"
+  },
+  "zStw2I": {
+    "defaultMessage": "Modifier les coordonnées en cas d’urgence"
+  }
+}
