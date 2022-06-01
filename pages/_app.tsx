@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "../styles/hydrogen.css";
 import "@reach/dialog/styles.css";
 import "../styles/dialog.css";
-import French from "../lang/fr.json";
+import French from "../lang/frCompiled.json";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useMemo } from "react";
