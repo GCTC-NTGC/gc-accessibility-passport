@@ -16,16 +16,16 @@ type FormValues = {
   password: string;
 };
 
-const Login: React.FunctionComponent = () => {
+const SignIn: React.FunctionComponent = () => {
   const intl = useIntl();
   const [, setErrorMsg] = useState("");
   const [isOpen, setOpen] = React.useState<boolean>(false);
   const [user, setUser] = React.useState<User>({
-    isLoggedIn: false,
+    isSignedIn: false,
     name: "",
     isManager: false,
   });
-  // here we just check if user is already logged in and redirect to profile
+  // here we just check if user is already signed in and redirect to profile
   const { mutateUser } = useUser({
     redirectTo: `${
       user.isManager ? "/manager/manager-dashboard" : "/passport"
@@ -35,7 +35,7 @@ const Login: React.FunctionComponent = () => {
 
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = async () => {
     setUser({
       ...user,
       isManager: false,
@@ -43,7 +43,7 @@ const Login: React.FunctionComponent = () => {
     setOpen(true); // Open select role dialog.
   };
 
-  const handleLogin = async (userData: User): Promise<void> => {
+  const handleSignIn = async (userData: User): Promise<void> => {
     const body = {
       name: userData.name,
       isManager: userData.isManager,
@@ -51,7 +51,7 @@ const Login: React.FunctionComponent = () => {
 
     try {
       mutateUser(
-        await fetchJson("/api/login", {
+        await fetchJson("/api/sign-in", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -72,18 +72,33 @@ const Login: React.FunctionComponent = () => {
       isManager,
     });
 
-    handleLogin(user);
+    handleSignIn(user);
   };
 
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Log in to your passport",
-        description: "Heading for login page.",
+        defaultMessage: "Sign in to your passport",
+        description: "Heading for sign in page.",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Login - GC Workplace Accessibility Passport",
+        defaultMessage: "Sign in - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Home",
+            description: "Breadcrumb title.",
+          }),
+          href: "/",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Sign in",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
       formLayout
       data-h2-width="b(75) s(50)"
       data-h2-padding="b(top-bottom, l) b(right-left, m) m(right-left, xl)"
@@ -134,7 +149,7 @@ const Login: React.FunctionComponent = () => {
               data-h2-padding="b(all, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Login",
+                defaultMessage: "Sign in",
               })}
             </Button>
           </FormFooter>
@@ -145,4 +160,4 @@ const Login: React.FunctionComponent = () => {
   );
 };
 
-export default Login;
+export default SignIn;

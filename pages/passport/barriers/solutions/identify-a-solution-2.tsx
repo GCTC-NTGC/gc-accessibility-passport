@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
-import { Checklist, Input, TextArea } from "../../components/formComponents";
-import { Checkbox } from "../../components/formComponents/Checklist";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
-import { errorMessages } from "../../messages";
+import Button, { colorMap } from "../../../../components/Button";
+import { Checklist, Input } from "../../../../components/formComponents";
+import { Checkbox } from "../../../../components/formComponents/Checklist";
+import FormFooter from "../../../../components/FormFooter";
+import Layout from "../../../../components/Layout";
+import { strong } from "../../../../helpers/format";
+import { errorMessages } from "../../../../messages";
 
 type FormValues = {
   solutions: string[] | undefined;
@@ -20,16 +21,13 @@ const IdentifyASolution2: React.FunctionComponent = () => {
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push("/review-barrier");
+  const onSubmit = async (): Promise<void> => {
+    push("/passport/barriers/review-barrier");
   };
   const back = (msg: string): React.ReactNode => (
-    <Link href="/solutions/identify-a-solution">
-      <a title={msg}>{msg}</a>
+    <Link href="/passport/barriers/solutions/identify-a-solution">
+      <a>{msg}</a>
     </Link>
-  );
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
   );
 
   const situations: Checkbox[] = [
@@ -77,9 +75,32 @@ const IdentifyASolution2: React.FunctionComponent = () => {
         defaultMessage: "Customize your solution",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Customize your solution - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Customize your solution - GC Workplace Accessibility Passport",
       })}
       formLayout
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Identify a barrier",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport/barriers/identify-a-barrier",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Propose Solutions",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -88,9 +109,9 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <bold>Noise-cancelling headphones</bold> as a proposed solution to <bold>Noise in the Workplace</bold>",
+                    "You've selected <strong>Noise-cancelling headphones</strong> as a proposed solution to <strong>Noise in the Workplace</strong>",
                 },
-                { bold },
+                { strong },
               )}
             </h2>
             <p
@@ -181,9 +202,9 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "<bold>REMINDER</bold>: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
+                    "<strong>REMINDER</strong>: When you share your barrier, the solutions, situations you identified and any documentation you have uploaded will be shared as a package with your manager or your colleague.",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <p>
@@ -198,7 +219,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               href: "/passport",
             }}
           >
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"

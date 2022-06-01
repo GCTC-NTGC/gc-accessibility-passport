@@ -7,6 +7,7 @@ import {
   focusPreviousItem,
   getFocusableElements,
 } from "../helpers/focus";
+import { strong } from "../helpers/format";
 import Button from "./Button";
 
 type Parent = {
@@ -44,9 +45,6 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
 }) => {
   const intl = useIntl();
   const { register } = useFormContext();
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
 
   // List of barriers that are displayed in the barriers section.
   const [resultsState, setResultsState] = React.useState<Result[] | null>(
@@ -287,9 +285,9 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                                           {intl.formatMessage(
                                             {
                                               defaultMessage:
-                                                "You are currently viewing {inputName}s related to <bold>{name}</bold>",
+                                                "You are currently viewing {inputName}s related to <strong>{name}</strong>",
                                             },
-                                            { bold, name, inputName },
+                                            { strong, name, inputName },
                                           )}
                                         </p>
                                         <ul ref={resultRef}>

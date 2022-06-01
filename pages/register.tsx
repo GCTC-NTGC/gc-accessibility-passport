@@ -24,13 +24,13 @@ const Register: React.FunctionComponent = () => {
   const [, setErrorMsg] = useState("");
   const [isOpen, setOpen] = React.useState<boolean>(false);
   const [user, setUser] = React.useState<User>({
-    isLoggedIn: false,
+    isSignedIn: false,
     name: "",
     isManager: false,
   });
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  // here we just check if user is already logged in and redirect to profile
+  // here we just check if user is already signed in and redirect to profile
   const { mutateUser } = useUser({
     redirectTo: `${
       user.isManager ? "/manager/manager-dashboard" : "/passport"
@@ -39,14 +39,14 @@ const Register: React.FunctionComponent = () => {
   });
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     setUser({
-      isLoggedIn: true,
+      isSignedIn: true,
       name: `${data.firstName}`,
       isManager: false,
     });
     setOpen(true); // Open select role dialog.
   };
 
-  const handleLogin = async (userData: User): Promise<void> => {
+  const handleSignIn = async (userData: User): Promise<void> => {
     const body = {
       name: userData.name,
       isManager: userData.isManager,
@@ -54,7 +54,7 @@ const Register: React.FunctionComponent = () => {
 
     try {
       mutateUser(
-        await fetchJson("/api/login", {
+        await fetchJson("/api/sign-in", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -75,7 +75,7 @@ const Register: React.FunctionComponent = () => {
       isManager,
     });
 
-    handleLogin(user);
+    handleSignIn(user);
   };
 
   const passwordHints = [
@@ -102,6 +102,21 @@ const Register: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "Register - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Home",
+            description: "Breadcrumb title.",
+          }),
+          href: "/",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Register",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
       formLayout
       data-h2-width="b(75) s(50)"
       data-h2-padding="b(top-bottom, l) b(right-left, m) m(right-left, xl)"
@@ -197,7 +212,7 @@ const Register: React.FunctionComponent = () => {
             cancelButton={{
               href: "/",
               title: intl.formatMessage({
-                defaultMessage: "Already have an account? Log in instead.",
+                defaultMessage: "Already have an account? Sign in instead.",
               }),
             }}
           >

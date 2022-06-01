@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
+import { colorMap } from "../../components/Button";
 import { PassportCard } from "../../components/PassportCard";
 import Layout from "../../components/Layout";
 import Page, { LeftSection, RightSection } from "../../components/Page";
@@ -9,17 +9,23 @@ import Link from "next/link";
 const ManagerDashboard: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
   return (
     <Layout
       title={intl.formatMessage({
         defaultMessage: "Manager dashboard",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Manager dashboard - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Manager dashboard - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -36,9 +42,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               })}
             </h2>
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Frank Turot",
-              })}
+              title="Frank Turot"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
@@ -47,9 +51,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               }}
             />
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Shannon Ghiles",
-              })}
+              title="Taylor Ghiles"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
@@ -58,9 +60,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               }}
             />
             <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Margaret Turing",
-              })}
+              title="Margaret Turing"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",

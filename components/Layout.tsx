@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Head from "next/head";
 import { useIntl } from "react-intl";
+import Breadcrumbs, { BreadcrumbsProps } from "./Breadcrumbs";
 
 interface LayoutProps {
   title?: string | React.ReactNode;
@@ -10,6 +11,7 @@ interface LayoutProps {
   center?: boolean;
   headTitle?: string;
   formLayout?: boolean;
+  crumbs: BreadcrumbsProps["links"];
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = ({
@@ -19,9 +21,12 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
   headTitle,
   formLayout,
   children,
+  crumbs,
   ...rest
 }) => {
   const intl = useIntl();
+
+  const links = [...crumbs];
   return (
     <>
       <Head>
@@ -42,9 +47,9 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
       >
         <div>
           <Header title={title} editButton={editButton} center={center} />
+          <Breadcrumbs links={links}></Breadcrumbs>
           <div
             id="content"
-            tabIndex={-1}
             {...(formLayout
               ? {
                   "data-h2-width": "m(50)",

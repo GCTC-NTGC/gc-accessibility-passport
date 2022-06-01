@@ -1,26 +1,39 @@
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { BarrierCard } from "../components/BarrierCard";
+import { colorMap } from "../../../components/Button";
+import Layout from "../../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../../components/Page";
+import { BarrierCard } from "../../../components/BarrierCard";
+import { strong } from "../../../helpers/format";
 
 const ReviewBarrier: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Review or edit your barrier: Noise in the workplace",
+        defaultMessage: "Review or edit barrier: Noise in the workplace",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Review or edit your barrier: Noise in the workplace - GC Workplace Accessibility Passport",
+          "Review or edit barrier: Noise in the workplace - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -32,12 +45,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Barrier Description",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Barrier Description",
+              })}
             </h4>
             <p
               data-h2-padding="b(all, s)"
@@ -50,12 +60,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Shared Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Shared Solutions",
+              })}
             </h4>
             <p
               data-h2-padding="b(all, s)"
@@ -64,24 +71,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "The modules below present you with the solutions that you have shared with your manager to view or action. You can select the links in the upper right-hand corner of each solution box to view details, edit its content, or delete it from your Passport.",
+                  "The modules below present you with the solutions that you have shared with your manager to view or action. Links to view, edit or delete each of the solutions linked to this barrier are provided.",
               })}
             </p>
             <BarrierCard
               title={intl.formatMessage({
                 defaultMessage: "Noise cancelling headphones",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "my_hearing_assessment.pdf(3MB)",
-              })}
+              documentName="my_hearing_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -100,24 +105,22 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <BarrierCard
               title={intl.formatMessage({
                 defaultMessage: "Access to quiet space",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "location_assessment.pdf(3MB)",
-              })}
+              documentName="location_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -136,7 +139,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <BarrierCard
@@ -144,17 +147,15 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 defaultMessage:
                   "Organizer / task planning tool/software application",
               })}
-              documentName={intl.formatMessage({
-                defaultMessage: "software_assessment.pdf(3MB)",
-              })}
+              documentName="software_assessment.pdf(3MB)"
               actionLinks={[
                 {
                   title: intl.formatMessage({ defaultMessage: "View" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Edit" }),
-                  href: "/solutions/view",
+                  href: "/passport/barriers/solutions/review-solution",
                 },
                 {
                   title: intl.formatMessage({ defaultMessage: "Delete" }),
@@ -173,16 +174,13 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 title: intl.formatMessage({
                   defaultMessage: "Review",
                 }),
-                href: "solutions/view",
+                href: "/passport/barriers/solutions/review-solution",
               }}
             />
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Current Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Current Solutions",
+              })}
             </h4>
             <p
               data-h2-padding="b(all, s)"
@@ -194,12 +192,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Attempted Solutions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Attempted Solutions",
+              })}
             </h4>
             <p
               data-h2-padding="b(all, s)"
@@ -216,12 +211,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
         <RightSection>
           <div>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(all, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Editing tools",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Editing tools",
+              })}
             </h4>
             <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
@@ -229,7 +221,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                   "Select the tools below to edit the barrier/solution information that appears on this page or identify a new solution for this barrier.",
               })}
             </p>
-            <Link href="/barriers/identify-a-barrier">
+            <Link href="/passport/barriers/identify-a-barrier">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -244,7 +236,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 })}
               </a>
             </Link>
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -263,20 +255,17 @@ const ReviewBarrier: React.FunctionComponent = () => {
           </div>
           <div data-h2-margin="b(top-bottom, l)">
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Permissions",
-                },
-                { bold },
-              )}
+              {intl.formatMessage({
+                defaultMessage: "Permissions",
+              })}
             </h4>
             <div>
               <p data-h2-margin="b(bottom, xs)">
                 {intl.formatMessage(
                   {
-                    defaultMessage: "<bold>My manager (can approve)</bold>",
+                    defaultMessage: "<strong>My manager (can approve)</strong>",
                   },
-                  { bold },
+                  { strong },
                 )}
               </p>
               <div
@@ -284,11 +273,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-justify-content="b(space-between)"
                 data-h2-align-items="b(center)"
               >
-                <p data-h2-margin="b(all, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "Jennifer Rotterdam",
-                  })}
-                </p>
+                <p data-h2-margin="b(all, none)">Samira Hana</p>
                 <Link href="#">
                   <a>
                     {intl.formatMessage({
@@ -301,9 +286,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
-                  defaultMessage: "<bold>Others (can view only)</bold>",
+                  defaultMessage: "<strong>Others (can view only)</strong>",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <div
@@ -311,11 +296,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
               data-h2-justify-content="b(space-between)"
               data-h2-align-items="b(center)"
             >
-              <p data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage: "Barnabus Sui",
-                })}
-              </p>
+              <p data-h2-margin="b(all, none)">Barnabus Sui</p>
               <Link href="#">
                 <a>
                   {intl.formatMessage({
@@ -341,12 +322,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
             </Link>
           </div>
           <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-            {intl.formatMessage(
-              {
-                defaultMessage: "History",
-              },
-              { bold },
-            )}
+            {intl.formatMessage({
+              defaultMessage: "History",
+            })}
           </h4>
           <p data-h2-margin="b(bottom, none)">
             {intl.formatMessage({
@@ -357,9 +335,9 @@ const ReviewBarrier: React.FunctionComponent = () => {
             {intl.formatMessage(
               {
                 defaultMessage:
-                  "You proposed <bold>noise cancelling headphones</bold> as a solution to this barrier.",
+                  "You proposed <strong>noise cancelling headphones</strong> as a solution to this barrier.",
               },
-              { bold },
+              { strong },
             )}
           </p>
           <hr data-h2-margin="b(top, s)"></hr>

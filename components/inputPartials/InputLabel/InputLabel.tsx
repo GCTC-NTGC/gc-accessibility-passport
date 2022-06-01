@@ -60,7 +60,7 @@ export const InputLabel: React.FC<InputLabelProps> = ({
             type="button"
             className="input-label-context-button"
             data-h2-margin="b(left, xxs)"
-            title="Toggle Context"
+            title={intl.formatMessage({ defaultMessage: "Toggle Context" })}
             onClick={clickHandler}
           >
             {contextIsActive ? (
