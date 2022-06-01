@@ -24,7 +24,7 @@ export const PassportCard: React.FunctionComponent<{
       >
         {title}
       </p>
-      <p data-h2-margin="b(right, l)">
+      <p data-h2-margin="b(right, l) b(top-bottom, none)">
         {intl.formatMessage({
           defaultMessage: "2 solutions awaiting action",
         })}
