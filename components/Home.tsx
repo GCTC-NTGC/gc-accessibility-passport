@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
+import { strong } from "../helpers/format";
 
 const Home: React.FunctionComponent = () => {
   const intl = useIntl();
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
   return (
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">

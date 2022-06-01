@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import { Checkbox } from "../../components/formComponents";
 import Layout from "../../components/Layout";
 import Page, { RightSection, LeftSection } from "../../components/Page";
+import { strong } from "../../helpers/format";
 import { errorMessages } from "../../messages";
 
 type FormValues = {
@@ -20,7 +21,7 @@ const ViewSolution: React.FunctionComponent = () => {
   const onSubmit = async (): Promise<void> => {
     alert("A notification has been sent!");
   };
-  const strong = (msg: string): React.ReactNode => <strong>{msg}</strong>;
+
   return (
     <Layout
       title={intl.formatMessage({
