@@ -273,7 +273,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-justify-content="b(space-between)"
                 data-h2-align-items="b(center)"
               >
-                <p data-h2-margin="b(all, none)">Jennifer Rotterdam</p>
+                <p data-h2-margin="b(all, none)">Samira Hana</p>
                 <Link href="#">
                   <a>
                     {intl.formatMessage({
