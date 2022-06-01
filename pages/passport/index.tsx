@@ -250,10 +250,10 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-margin="b(bottom, none)"
                   data-h2-font-weight="b(700)"
                 >
-                  Tracy Huddle
+                  Alasie Sikku
                 </p>
                 <p data-h2-margin="b(top-bottom, none)">
-                  tracy.huddle@example.gov.ca
+                  alasie.sikku@example.gov.ca
                 </p>
                 <p data-h2-margin="b(top, none)">
                   {intl.formatMessage({

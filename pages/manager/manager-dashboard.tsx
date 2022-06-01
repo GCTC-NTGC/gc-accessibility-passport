@@ -51,7 +51,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
               }}
             />
             <PassportCard
-              title="Shannon Ghiles"
+              title="Taylor Ghiles"
               link={{
                 title: intl.formatMessage({
                   defaultMessage: "View passport",
