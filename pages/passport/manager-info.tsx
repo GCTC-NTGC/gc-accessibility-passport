@@ -23,7 +23,7 @@ const ManagerInfo: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    push("/manager/manager-dashboard");
+    push("/passport");
   };
   return (
     <Layout
