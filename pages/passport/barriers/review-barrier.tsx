@@ -305,7 +305,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 </a>
               </Link>
             </div>
-            <Link href="/share-my-passport">
+            <Link href="/passport/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
