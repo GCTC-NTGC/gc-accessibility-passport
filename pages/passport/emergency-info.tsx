@@ -10,36 +10,48 @@ import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
 import Page, { LeftSection, RightSection } from "../../components/Page";
 import Button from "../../components/Button";
+import { strong } from "../../helpers/format";
 
 type FormValues = {
   currentEmail: string;
   newEmail: string;
   password: string;
 };
-const bold = (msg: string): React.ReactNode => (
-  <span data-h2-font-weight="b(700)">{msg}</span>
-);
+
 const EmergencyInfo: React.FunctionComponent = () => {
   const intl = useIntl();
   const { push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit: SubmitHandler<FormValues> = async () => {
-    push("/passport"); // TODO: should return to manager dashboard if user is manager.
+    push("/passport");
   };
 
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Emergency Information",
+        defaultMessage: "Emergency information",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Emergency Information - GC Workplace Accessibility Passport",
+          "Emergency information - GC Workplace Accessibility Passport",
       })}
       data-h2-width="b(100) l(75)"
       data-h2-padding="b(all, none)"
-      crumbs={[]}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Emergency information",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -48,26 +60,26 @@ const EmergencyInfo: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "In emergency situations, it is incredibly important that everyone has access to the information they need. This page is an opportunity for you to concisely describe any information that is crucial for your manager or colleagues to know during an emergency. ",
+                    "In emergency situations, it is incredibly important that everyone has access to the information they need. This page is an opportunity for you to concisely describe any information that is crucial for your manager or colleagues to know during an emergency.",
                 })}
               </p>
               <div data-h2-margin="b(top, l)">
                 <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
                   {intl.formatMessage({
-                    defaultMessage: "Critical Information",
+                    defaultMessage: "Critical information",
                   })}
                 </h2>
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      " Please describe any crucial information required by your manager in order to help you during an emergency.",
+                      "Please describe any crucial information required by your manager in order to help you during an emergency.",
                   })}
                 </p>
                 <TextArea
                   id="description"
                   name="description"
                   label={intl.formatMessage({
-                    defaultMessage: "Critical Emergency Information",
+                    defaultMessage: "Critical emergency information",
                   })}
                   rows={10}
                 />{" "}
@@ -75,7 +87,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
               <div data-h2-margin="b(top, l)">
                 <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
                   {intl.formatMessage({
-                    defaultMessage: "Emergency Contact",
+                    defaultMessage: "Emergency contact",
                   })}
                 </h2>
                 <p>
@@ -84,15 +96,14 @@ const EmergencyInfo: React.FunctionComponent = () => {
                       "The individual you indicate below will be contacted in the event of an emergency.",
                   })}
                 </p>
-
-                <div data-h2-display="b(flex)">
-                  <div style={{ flex: 1 }} data-h2-padding="b(right, m)">
+                <div data-h2-display="b(block) s(flex)" style={{ gap: "1rem" }}>
+                  <div style={{ flex: 1 }}>
                     <Input
                       id="firstName"
                       name="firstName"
                       type="text"
                       label={intl.formatMessage({
-                        defaultMessage: "First Name",
+                        defaultMessage: "First name",
                       })}
                     />
                   </div>
@@ -102,7 +113,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
                       name="lastName"
                       type="text"
                       label={intl.formatMessage({
-                        defaultMessage: "Last Name",
+                        defaultMessage: "Last name",
                       })}
                     />
                   </div>
@@ -115,7 +126,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
                 />
                 <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, l)">
                   {intl.formatMessage({
-                    defaultMessage: "Emergency Documentation and files",
+                    defaultMessage: "Emergency documentation and files",
                   })}
                 </h2>
                 <p>
@@ -130,77 +141,66 @@ const EmergencyInfo: React.FunctionComponent = () => {
                       "Please ensure you do not upload any medical information.",
                   })}
                 </p>
-                <p>
+                <label htmlFor="file">
                   {intl.formatMessage({
                     defaultMessage: "Attach supplementary information",
                   })}
-                </p>
+                </label>
                 <div
                   data-h2-border="b(black, all, solid, s)"
                   data-h2-margin="b(top, s)"
                   data-h2-padding="b(all, m)"
                   data-h2-display="b(flex)"
                 >
+                  <input type="file" id="file" />
+                </div>
+                <div
+                  data-h2-margin="b(top-bottom, s)"
+                  data-h2-display="b(block) s(flex)"
+                >
+                  <span data-h2-margin="b(right, xs)">
+                    <PaperClipIcon style={{ width: "1.2rem" }} />
+                  </span>
+                  <Link href="#">
+                    <a data-h2-margin="b(right, xs)">
+                      my_paramedical_needs.pdf (3MB)
+                    </a>
+                  </Link>
                   <Link href={"#"}>
-                    <a data-h2-margin="b(right, m)">{"Upload"}</a>
+                    <a
+                      data-h2-margin="b(left, auto)"
+                      data-h2-display="b(block)"
+                    >
+                      Remove
+                    </a>
                   </Link>
                 </div>
-
                 <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-margin="b(top, s)"
+                  data-h2-margin="b(top-bottom, s)"
+                  data-h2-display="b(block) s(flex)"
                 >
-                  <p
-                    data-h2-margin="b(all, none) b(right, m)"
-                    data-h2-font-style="b(underline)"
-                  >
-                    {" "}
-                    <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                    <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_evacuation_plan.pdf(3MB)",
-                        })}
-                      </a>
-                    </Link>
-                  </p>
-                  <div>
-                    <Link href={"#"} key={""}>
-                      <a data-h2-margin="b(right, s)">Remove</a>
-                    </Link>
-                  </div>
+                  <span data-h2-margin="b(right, xs)">
+                    <PaperClipIcon style={{ width: "1.2rem" }} />
+                  </span>
+                  <Link href="#">
+                    <a data-h2-margin="b(right, xs)">
+                      my_evacuation_plan.pdf (3MB)
+                    </a>
+                  </Link>
+                  <Link href={"#"}>
+                    <a
+                      data-h2-margin="b(left, auto)"
+                      data-h2-display="b(block)"
+                    >
+                      Remove
+                    </a>
+                  </Link>
                 </div>
-                <div
-                  data-h2-display="b(flex)"
-                  data-h2-justify-content="b(space-between)"
-                  data-h2-margin="b(top, s)"
-                >
-                  <p
-                    data-h2-margin="b(all, none) b(right, m)"
-                    data-h2-font-style="b(underline)"
-                  >
-                    {" "}
-                    <PaperClipIcon style={{ width: "1.2rem" }}> </PaperClipIcon>
-                    <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_paramedical_needs.pdf(3MB)",
-                        })}
-                      </a>
-                    </Link>
-                  </p>
-                  <div>
-                    <Link href={"#"} key={""}>
-                      <a data-h2-margin="b(right, s)">Remove</a>
-                    </Link>
-                  </div>
-                </div>
-              </div>{" "}
+              </div>
               <div data-h2-margin="b(top, m)">
                 <FormFooter
                   cancelButton={{
-                    href: "/manager/manager-dashboard",
+                    href: "/passport",
                   }}
                 >
                   <Button
@@ -211,7 +211,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
                     data-h2-padding="b(all, s)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "Save My Emergency Information",
+                      defaultMessage: "Save my emergency information",
                     })}
                   </Button>
                 </FormFooter>
@@ -226,16 +226,16 @@ const EmergencyInfo: React.FunctionComponent = () => {
                 {
                   defaultMessage: "Permissions",
                 },
-                { bold },
+                { strong },
               )}
             </h4>
             <div>
               <p data-h2-margin="b(bottom, xs)">
                 {intl.formatMessage(
                   {
-                    defaultMessage: "<bold>My manager (can approve)</bold>",
+                    defaultMessage: "<strong>My manager (can approve)</strong>",
                   },
-                  { bold },
+                  { strong },
                 )}
               </p>
               <div
@@ -243,11 +243,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
                 data-h2-justify-content="b(space-between)"
                 data-h2-align-items="b(center)"
               >
-                <p data-h2-margin="b(all, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "Jennifer Rotterdam",
-                  })}
-                </p>
+                <p data-h2-margin="b(all, none)">Samira Hana</p>
                 <Link href="#">
                   <a>
                     {intl.formatMessage({
@@ -260,9 +256,9 @@ const EmergencyInfo: React.FunctionComponent = () => {
             <p data-h2-margin="b(bottom, none)">
               {intl.formatMessage(
                 {
-                  defaultMessage: "<bold>Others (can view only)</bold>",
+                  defaultMessage: "<strong>Others (can view only)</strong>",
                 },
-                { bold },
+                { strong },
               )}
             </p>
             <div
@@ -270,11 +266,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
               data-h2-justify-content="b(space-between)"
               data-h2-align-items="b(center)"
             >
-              <p data-h2-margin="b(all, none)">
-                {intl.formatMessage({
-                  defaultMessage: "Barnabus Sui",
-                })}
-              </p>
+              <p data-h2-margin="b(all, none)">Barnabus Sui</p>
               <Link href="#">
                 <a>
                   {intl.formatMessage({
@@ -283,7 +275,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
                 </a>
               </Link>
             </div>
-            <Link href="/share-my-passport">
+            <Link href="/passport/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
