@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { colorMap } from "../components/Button";
-import { Input, TextArea } from "../components/formComponents";
-import FormFooter from "../components/FormFooter";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import Button from "../components/Button";
+import { colorMap } from "../../components/Button";
+import { Input, TextArea } from "../../components/formComponents";
+import FormFooter from "../../components/FormFooter";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import Button from "../../components/Button";
 
 type FormValues = {
   currentEmail: string;
@@ -39,6 +39,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
       })}
       data-h2-width="b(100) l(75)"
       data-h2-padding="b(all, none)"
+      crumbs={[]}
     >
       <Page>
         <LeftSection>
