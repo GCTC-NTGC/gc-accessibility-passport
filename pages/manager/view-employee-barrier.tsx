@@ -43,7 +43,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(top, none)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Below you will find a summary of your barrier and the solutions that your employee has identified. Select the view link within each interactive solution module to view it or take any required action.",
+                  "Here you will find a summary of the barrier and the solutions that your employee has identified. Select the view link within each interactive solution module to view it or take any required action.",
               })}
             </p>
             <h2
@@ -157,7 +157,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "Frank hasn't marked any solutions as working for this particular barrier.",
+                  "Frank hasn't marked any solutions for this barrier.",
               })}
             </p>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
@@ -172,7 +172,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "Frank hasn't marked any solutions as ineffective for this particular barrier.",
+                  "Frank hasn't marked any solutions as ineffective for this barrier.",
               })}
             </p>
           </div>

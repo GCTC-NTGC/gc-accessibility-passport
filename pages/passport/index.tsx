@@ -32,7 +32,7 @@ const Passport: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Below is a summary of your GC Workplace Accessibility Passport. Select the links below to:",
+                  "Here is a summary of your GC Workplace Accessibility Passport. Select the links below to:",
               })}
             </p>
             <ul
@@ -80,7 +80,7 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-radius="b(s)"
                 >
                   {intl.formatMessage({
-                    defaultMessage: "Identify a new barrier",
+                    defaultMessage: "Identify another barrier",
                   })}
                 </a>
               </Link>
@@ -124,7 +124,7 @@ const Passport: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Below are your Barriers listed under two categories: Barriers with implemented solutions; Barriers with solutions in discussion or implementation. Select the view links within each barrier module to see its full information.",
+                  "Barriers are listed under two categories: Barriers with implemented solutions; Barriers with solutions underway. Select the view links within each module to see its full information.",
               })}
             </p>
             <div>
@@ -274,7 +274,7 @@ const Passport: React.FunctionComponent = () => {
                     data-h2-margin="b(bottom, m)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "Edit manager info",
+                      defaultMessage: "Edit manager information",
                     })}
                   </a>
                 </Link>
@@ -317,7 +317,8 @@ const Passport: React.FunctionComponent = () => {
             </ul>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(all, none)">
               {intl.formatMessage({
-                defaultMessage: "Contact a Case Manager/DTA Officer",
+                defaultMessage:
+                  "Contact a Case Manager/Workplace Accommodation Professional",
               })}
             </h2>
             <p data-h2-margin="b(bottom, m)">

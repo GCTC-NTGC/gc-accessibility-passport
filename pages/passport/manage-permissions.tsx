@@ -39,13 +39,13 @@ const ManagePermissions: React.FunctionComponent = () => {
           <div data-h2-margin="b(bottom, l)">
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
               {intl.formatMessage({
-                defaultMessage: "Manage access to your Passport information",
+                defaultMessage: "Manage access to my Passport information",
               })}
             </h2>
             <p data-h2-margin="b(bottom, l)">
               {intl.formatMessage({
                 defaultMessage:
-                  "View and manage access to your passport information.  Activate the links below to remove access.",
+                  "View and manage access to your passport information. Activate the links to remove access.",
               })}
             </p>
             <h3
@@ -76,7 +76,7 @@ const ManagePermissions: React.FunctionComponent = () => {
               data-h2-margin="b(bottom, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Shared with your colleagues",
+                defaultMessage: "Shared with my colleagues",
               })}
             </h3>
             <PermissionsCard
@@ -96,7 +96,7 @@ const ManagePermissions: React.FunctionComponent = () => {
           <p data-h2-font-size="b(normal)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
               defaultMessage:
-                "Activate the link to share information with a new colleagues or manager.",
+                "Activate the link to share information with another colleague or manager.",
             })}
           </p>
           <div>
@@ -132,7 +132,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Edit my manager info",
+                  defaultMessage: "Edit my manager information",
                 })}
               </a>
             </Link>
