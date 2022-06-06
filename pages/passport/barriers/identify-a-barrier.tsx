@@ -82,7 +82,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       title={intl.formatMessage({ defaultMessage: "Identify a barrier" })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Identify a barrier - GC Workplace Accessibility Passport",
+          "Identify a Barrier - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         {
@@ -107,7 +107,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Identify a barrier. A barrier means anything that prevents you from participating in your work environment. For the purposes of completing the Passport, a barrier can be work or task specific.",
+                  "Identify a barrier. A barrier is anything that prevents you from accomplishing your tasks in the workplace. For the purposes of completing the Passport, a barrier can be work or task specific.",
               })}
             </p>
 

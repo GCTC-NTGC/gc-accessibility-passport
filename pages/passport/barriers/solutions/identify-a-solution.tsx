@@ -128,7 +128,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
+          "Identify a Solution for Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         {
@@ -236,7 +236,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "When you share this barrier, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit solutions later if your situation changes.",
+                    "When you share this barrier/solution information, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit your solutions later if your situation changes.",
                 })}
               </p>
               <p>

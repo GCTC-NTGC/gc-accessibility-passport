@@ -51,7 +51,7 @@ const AccountManagement: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "This page allows you to manage basic account information such as your email address, password, and data.",
+                    "This page allows you to manage your account information, including your email address, password, and other personal data.",
                 })}
               </p>
               <p>

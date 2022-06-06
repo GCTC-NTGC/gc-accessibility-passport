@@ -71,7 +71,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "The modules below present you with the solutions that you have shared with your manager to view or action. Links to view, edit or delete each of the solutions linked to this barrier are provided.",
+                  "The modules present you with the solutions that you have shared with your manager to view or action. Select the links to view, edit or delete each of the solutions linked to this barrier.",
               })}
             </p>
             <BarrierCard
@@ -247,8 +247,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage:
-                    "Identify an additional solution for this barrier",
+                  defaultMessage: "Identify another solution for this barrier",
                 })}
               </a>
             </Link>
