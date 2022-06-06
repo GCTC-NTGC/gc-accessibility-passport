@@ -316,7 +316,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(top-bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Share with someone new",
+                  defaultMessage: "Share with another person",
                 })}
               </a>
             </Link>

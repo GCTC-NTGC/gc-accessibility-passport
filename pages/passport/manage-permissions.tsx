@@ -111,7 +111,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Share with someone new",
+                  defaultMessage: "Share with another person",
                 })}
               </a>
             </Link>
