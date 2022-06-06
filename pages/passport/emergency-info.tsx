@@ -13,9 +13,10 @@ import Button from "../../components/Button";
 import { strong } from "../../helpers/format";
 
 type FormValues = {
-  currentEmail: string;
-  newEmail: string;
-  password: string;
+  description: string;
+  firstName: string;
+  lastName: string;
+  telephone: string;
 };
 
 const EmergencyInfo: React.FunctionComponent = () => {
@@ -44,6 +45,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
             defaultMessage: "My passport",
             description: "Breadcrumb title.",
           }),
+          href: "/passport",
         },
         {
           title: intl.formatMessage({
@@ -57,7 +59,7 @@ const EmergencyInfo: React.FunctionComponent = () => {
         <LeftSection>
           <FormProvider {...methods}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <p>
+              <p data-h2-margin="b(top, none)">
                 {intl.formatMessage({
                   defaultMessage:
                     "In emergency situations, it is incredibly important that everyone has access to the information they need. This page is an opportunity for you to concisely describe any information that is crucial for your manager or colleagues to know during an emergency.",
@@ -220,14 +222,11 @@ const EmergencyInfo: React.FunctionComponent = () => {
           </FormProvider>
         </LeftSection>
         <RightSection>
-          <div data-h2-margin="b(top-bottom, l)">
-            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
-              {intl.formatMessage(
-                {
-                  defaultMessage: "Permissions",
-                },
-                { strong },
-              )}
+          <div>
+            <h4 data-h2-font-size="b(h4)" data-h2-margin="b(top-bottom, none)">
+              {intl.formatMessage({
+                defaultMessage: "Permissions",
+              })}
             </h4>
             <div>
               <p data-h2-margin="b(bottom, xs)">
