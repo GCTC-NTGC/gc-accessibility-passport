@@ -41,7 +41,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(all, none)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Here you will find a summary of the barrier and the solutions that your employee has identified. Select the view link within each interactive solution module to view it or take any required action.",
+                  "Here you will find a summary of your barrier and the solutions you have identified. Select the view or edit links within each interactive solution module to view or modify its details. Select the delete link within each module to remove a solution from your passport.",
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
