@@ -13,11 +13,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Review or edit barrier: Noise in the workplace",
+        defaultMessage: "Review or Edit your Barrier: Noise in the Workplace",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Review or edit barrier: Noise in the workplace - GC Workplace Accessibility Passport",
+          "Review or Edit your Barrier: Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         {
@@ -218,7 +218,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Select the tools below to edit the barrier/solution information that appears on this page or identify a new solution for this barrier.",
+                  "Select the tools on this page to edit the barrier/solution information or identify a new solution for this barrier.",
               })}
             </p>
             <Link href="/passport/barriers/identify-a-barrier">
@@ -232,7 +232,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Edit this barrier's information",
+                  defaultMessage: "Edit my Barrier Information",
                 })}
               </a>
             </Link>
@@ -334,7 +334,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             {intl.formatMessage(
               {
                 defaultMessage:
-                  "You proposed <strong>noise cancelling headphones</strong> as a solution to this barrier.",
+                  "You chose <strong>noise-cancelling headphones</strong> as your solution.",
               },
               { strong },
             )}

@@ -38,7 +38,7 @@ const Home: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "For the purposes of the Passport, a barrier is anything that hinders the full and equal participation in the workplace. A solution is any adaptive tool or support measure that will address the barrier and enable you to perform tasks effectively and efficiently.",
+                  "For the Passport, a barrier is anything that prevents your full and equal participation in the workplace. A solution is any adaptive tool or support measure that will enable you to perform tasks effectively and efficiently.",
               })}
             </p>
             <p>
@@ -212,8 +212,7 @@ const Home: React.FunctionComponent = () => {
                     <p>
                       <a href="#">
                         {intl.formatMessage({
-                          defaultMessage:
-                            "Library of barrier and solution examples",
+                          defaultMessage: "Library of Barriers and Solutions",
                         })}
                       </a>
                     </p>
@@ -292,8 +291,7 @@ const Home: React.FunctionComponent = () => {
                     <p>
                       <a href="#">
                         {intl.formatMessage({
-                          defaultMessage:
-                            "Library of barrier and solution examples",
+                          defaultMessage: "Library of Barriers and Solutions",
                         })}
                       </a>
                     </p>

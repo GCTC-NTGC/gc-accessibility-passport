@@ -66,7 +66,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
     {
       id: 1,
       name: intl.formatMessage({
-        defaultMessage: "Access to quiet place",
+        defaultMessage: "Access to a quiet space",
       }),
       categoryId: 1,
     },
@@ -124,11 +124,11 @@ const IdentifyASolution: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Identify a solution for Noise in the Workplace",
+        defaultMessage: "Identify a solution for: Noise in the Workplace.",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Identify a Solution for Noise in the Workplace - GC Workplace Accessibility Passport",
+          "Identify a solution for: Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         {
@@ -172,7 +172,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
           </div>
           <div>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
-              {intl.formatMessage({ defaultMessage: "Solution information" })}
+              {intl.formatMessage({ defaultMessage: "Solution Description" })}
             </h2>
             <Alert
               icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
