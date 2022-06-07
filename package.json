@@ -8,7 +8,7 @@
     "lint": "next lint",
     "h2-watch": "h2-watch",
     "h2-build": "npx h2-build",
-    "intl-extract": "formatjs extract './{pages,components}/**/*.{js,ts,tsx}' --ignore './**/*.d.ts' --out-file ./lang/en.json --id-interpolation-pattern [sha512:contenthash:base64:6]",
+    "intl-extract": "formatjs extract './{pages,components,messages}/**/*.{js,ts,tsx}' --ignore './**/*.d.ts' --out-file ./lang/en.json --id-interpolation-pattern [sha512:contenthash:base64:6]",
     "intl-compile": "formatjs compile ./lang/fr.json --out-file ./lang/frCompiled.json",
     "check-intl": "node ./tools/checkIntl.js --en ./lang/en.json --fr ./lang/fr.json --rm-orphaned --output-untranslated ./lang/untranslated.json --whitelist ./lang/whitelist.json",
     "check-intl-merge": "node ./tools/checkIntl.js --en ./lang/en.json --fr ./lang/fr.json --rm-orphaned --output-untranslated ./lang/untranslated.json --whitelist ./lang/whitelist.json --merge-fr ./lang/newTranslations.json"
