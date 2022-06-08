@@ -7,7 +7,7 @@ import { Input, Select } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
 import { errorMessages } from "../../messages";
-import jsonData from "../../public/resources/departments.json";
+import departmentsJson from "../../public/resources/departments.json";
 
 type FormValues = {
   firstName: string;
@@ -19,12 +19,13 @@ type FormValues = {
 
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
-  const { push } = useRouter();
+  const { locale, push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
     push("/manager/manager-dashboard");
   };
+
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
@@ -144,7 +145,21 @@ const ManagerInfo: React.FunctionComponent = () => {
               rules={{
                 required: intl.formatMessage(errorMessages.required),
               }}
-              options={jsonData.departments}
+              options={
+                locale === "en"
+                  ? departmentsJson.map(({ department_number, en }) => {
+                      return {
+                        value: department_number,
+                        label: en,
+                      };
+                    })
+                  : departmentsJson.map(({ department_number, fr }) => {
+                      return {
+                        value: department_number,
+                        label: fr,
+                      };
+                    })
+              }
             />
           </div>
           <div>
