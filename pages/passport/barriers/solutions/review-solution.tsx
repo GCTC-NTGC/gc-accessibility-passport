@@ -20,8 +20,24 @@ const ViewSolution: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    alert("Marked as effective!");
+    if (effective) {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as effective!",
+          description: "Alert message when solution marked as effective.",
+        }),
+      );
+    } else {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as ineffective!",
+          description: "Alert message when solution marked as ineffective.",
+        }),
+      );
+    }
   };
+
+  const [effective, setEffective] = React.useState(false);
 
   return (
     <Layout
@@ -178,6 +194,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(false);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as ineffective",
@@ -189,6 +208,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(true);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as working",

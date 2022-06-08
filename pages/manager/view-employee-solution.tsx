@@ -19,7 +19,12 @@ const ViewSolution: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    alert("A notification has been sent!");
+    alert(
+      intl.formatMessage({
+        defaultMessage: "A notification has been sent!",
+        description: "Alert message when notification has been sent.",
+      }),
+    );
   };
 
   return (
