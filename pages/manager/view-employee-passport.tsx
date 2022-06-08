@@ -42,7 +42,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "You can action a barrier/solution package that an employee has shared with you by selecting the View link below.",
+                  "You can action a barrier/solution that an employee has shared with you by selecting the View link below.",
               })}
             </p>
             <p data-h2-font-weight="b(700)">
@@ -54,7 +54,7 @@ const ViewEmployeePassport: React.FunctionComponent = () => {
             <div></div>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, m)">
               {intl.formatMessage({
-                defaultMessage: "Barriers for review",
+                defaultMessage: "Review barriers",
               })}
             </h2>
             <div

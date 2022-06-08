@@ -78,7 +78,7 @@ const SignIn: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Sign in to your passport",
+        defaultMessage: "Sign into your GC Workplace Accessibility Passport",
         description: "Heading for sign in page.",
       })}
       headTitle={intl.formatMessage({

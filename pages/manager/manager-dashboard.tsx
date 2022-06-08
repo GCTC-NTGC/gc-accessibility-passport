@@ -105,7 +105,8 @@ const ManagerDashboard: React.FunctionComponent = () => {
             </ul>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(all, none)">
               {intl.formatMessage({
-                defaultMessage: "Contact a Case Manager/DTA Officer",
+                defaultMessage:
+                  "Contact a Case Manager/Workplace Accommodation Professional",
               })}
             </h2>
             <p data-h2-margin="b(bottom, m)">

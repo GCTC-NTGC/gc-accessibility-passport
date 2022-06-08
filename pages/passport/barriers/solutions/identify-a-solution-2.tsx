@@ -109,7 +109,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "You've selected <strong>Noise-cancelling headphones</strong> as a proposed solution to <strong>Noise in the Workplace</strong>",
+                    "You chose <strong>noise-cancelling headphones</strong> as your solution.",
                 },
                 { strong },
               )}
@@ -132,7 +132,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Not the right barrier? You can <back>head back and search for another</back>.",
+                    "Not the right barrier? You can <back>return to search for another</back>.",
                 },
                 { back },
               )}
@@ -148,7 +148,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "It’s important that your passport provides just enough context about how a solution can be helpful so that it is implemented appropriately. Please select situations in which this solution works best from the list below. You can select one or more from the list, or even add your own if you want to be more specific.",
+                  "Your passport should provide just enough context and details about your solution to help with implementation. Select one or more situations in which this solution works best. You can add your own if it does not appear on the list.",
               })}
             </p>
             <Checklist
@@ -173,13 +173,13 @@ const IdentifyASolution2: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "This section allows you to upload any recommendations or the results of non-medical assessments (e.g., ergonomic or occupational assessment results) that could accompany any request you might like to make for the solution you have identified.",
+                  "This section allows you to upload any recommendations or the results of non-medical assessments that could accompany any request you might like to make for the solution you have identified (e.g., ergonomic or occupational assessment results).",
               })}
             </p>
             <p data-h2-font-weight="b(600)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Please ensure that you have not uploaded medical information.",
+                  "Please ensure that you have not uploaded any medical information.",
               })}
             </p>
             <Input
@@ -240,7 +240,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
               data-h2-padding="b(all, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Save and review the barrier info",
+                defaultMessage: "Save and review the barrier information",
               })}
             </Button>
           </FormFooter>

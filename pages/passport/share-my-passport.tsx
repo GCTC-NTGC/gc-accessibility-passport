@@ -26,7 +26,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
     {
       value: "example_barrier_container_1",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #1",
+        defaultMessage: "Example barrier/solution information #1",
       }),
     },
     {
@@ -36,19 +36,19 @@ const ShareMyPassport: React.FunctionComponent = () => {
     {
       value: "example_barrier_container_3",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #3",
+        defaultMessage: "Example barrier/solution information #3",
       }),
     },
     {
       value: "example_barrier_container_4",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #4",
+        defaultMessage: "Example barrier/solution information #4",
       }),
     },
     {
       value: "example_barrier_container_5",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #5",
+        defaultMessage: "Example barrier/solution information #5",
       }),
     },
   ];

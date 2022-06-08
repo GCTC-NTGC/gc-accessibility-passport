@@ -13,11 +13,11 @@ const ReviewBarrier: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Review or edit barrier: Noise in the workplace",
+        defaultMessage: "Review or Edit your Barrier: Noise in the Workplace",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Review or edit barrier: Noise in the workplace - GC Workplace Accessibility Passport",
+          "Review or Edit your Barrier: Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
       crumbs={[
         {
@@ -41,7 +41,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(all, none)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Below you will find a summary of your barrier and the solutions you have identified. Select the view or edit links within each interactive solution module to view or modify its details. Select the delete link within each module to remove a solution from your passport.",
+                  "Here you will find a summary of your barrier and the solutions you have identified. Select the view or edit links within each interactive solution module to view or modify its details. Select the delete link within each module to remove a solution from your passport.",
               })}
             </p>
             <h4 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
@@ -71,7 +71,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             >
               {intl.formatMessage({
                 defaultMessage:
-                  "The modules below present you with the solutions that you have shared with your manager to view or action. Links to view, edit or delete each of the solutions linked to this barrier are provided.",
+                  "The modules present you with the solutions that you have shared with your manager to view or action. Select the links to view, edit or delete each of the solutions linked to this barrier.",
               })}
             </p>
             <BarrierCard
@@ -218,7 +218,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             <p data-h2-margin="b(bottom, m)">
               {intl.formatMessage({
                 defaultMessage:
-                  "Select the tools below to edit the barrier/solution information that appears on this page or identify a new solution for this barrier.",
+                  "Select the tools on this page to edit the barrier/solution information or identify a new solution for this barrier.",
               })}
             </p>
             <Link href="/passport/barriers/identify-a-barrier">
@@ -232,7 +232,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Edit this barrier's information",
+                  defaultMessage: "Edit my Barrier Information",
                 })}
               </a>
             </Link>
@@ -247,8 +247,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage:
-                    "Identify an additional solution for this barrier",
+                  defaultMessage: "Identify another solution for this barrier",
                 })}
               </a>
             </Link>
@@ -316,7 +315,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-margin="b(top-bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Share with someone new",
+                  defaultMessage: "Share with another person",
                 })}
               </a>
             </Link>
@@ -335,7 +334,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
             {intl.formatMessage(
               {
                 defaultMessage:
-                  "You proposed <strong>noise cancelling headphones</strong> as a solution to this barrier.",
+                  "You chose <strong>noise-cancelling headphones</strong> as your solution.",
               },
               { strong },
             )}

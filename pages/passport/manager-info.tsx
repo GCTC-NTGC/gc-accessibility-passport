@@ -56,13 +56,13 @@ const ManagerInfo: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Your manager is responsible for providing you with the tools and support measures to succeed in your work. Add your manager’s contact information into this section of your Passport. Adding your manager’s contact information here gives you the option to share your Passport information with your manager.",
+                  "You can share information from your Passport with your manager. Add details about your manager here.",
               })}
             </p>
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Because your manager is accountable for setting work objectives and evaluating your performance, they have a vested interest in understanding the barriers you may encounter in the workplace. They also need to be accountable, at least in part, for implementing the solutions needed to equip you to succeed.",
+                  "Your manager is accountable for setting work objectives and evaluating your performance. They are also responsible, at least in part, for implementing the solutions needed to equip you to succeed.",
               })}
             </p>
           </div>

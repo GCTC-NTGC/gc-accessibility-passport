@@ -74,8 +74,7 @@ export const BarrierCard: React.FunctionComponent<{
       </div>
       <p data-h2-margin="b(bottom, none)">
         {intl.formatMessage({
-          defaultMessage:
-            "This solution applies to me in following situations:",
+          defaultMessage: "This solution applies in the following situations:",
         })}
       </p>
       <ul data-h2-margin="b(bottom-left, m)" style={{ listStyleType: "disc" }}>

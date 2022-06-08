@@ -30,7 +30,7 @@ const Home: React.FunctionComponent = () => {
               {intl.formatMessage(
                 {
                   defaultMessage:
-                    "Your <strong>Government of Canada (GC) Workplace Accessibility Passport</strong> is the tool to document the barriers you might face in the workplace and the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection process, or a learning event.",
+                    "Your <strong>Government of Canada (GC) Workplace Accessibility Passport</strong> provides a good place to document the barriers you might face as well as the adaptive tools and support measures that you need to succeed in your job. You will be asked to document the barriers and potential solutions in different work situations such as remote workplace, selection processes, or learning events.",
                 },
                 { strong },
               )}
@@ -38,7 +38,7 @@ const Home: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "For the purposes of the Passport, a barrier is anything that hinders the full and equal participation in the workplace. A solution is any adaptive tool or support measure that will address the barrier and enable you to perform tasks effectively and efficiently.",
+                  "For the Passport, a barrier is anything that prevents your full and equal participation in the workplace. A solution is any adaptive tool or support measure that will enable you to perform tasks effectively and efficiently.",
               })}
             </p>
             <p>
@@ -58,7 +58,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "Support conversations between you and your manager about what you might need",
+                      "Your Passport can support conversations between you and your manager about what you might need",
                   })}
                 </p>
               </li>
@@ -103,7 +103,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "Start by identifying barriers and solutions. This information will be saved by the application.",
+                      "Start by identifying barriers and solutions. This information will be saved by the passport application.",
                   })}
                 </p>
               </li>
@@ -141,7 +141,7 @@ const Home: React.FunctionComponent = () => {
         >
           <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
-              defaultMessage: "Help and resources",
+              defaultMessage: "Using the GC Workplace Passport",
               description: "Heading for section in homepage.",
             })}
           </h2>
@@ -212,8 +212,7 @@ const Home: React.FunctionComponent = () => {
                     <p>
                       <a href="#">
                         {intl.formatMessage({
-                          defaultMessage:
-                            "Library of barrier and solution examples",
+                          defaultMessage: "Library of Barriers and Solutions",
                         })}
                       </a>
                     </p>
@@ -231,7 +230,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "Your Passport specifically relates to workplace situations. Please do not include any information about medical conditions or treatments.",
+                      "Your Passport relates to workplace situations. Please do not include any information about medical diagnoses, conditions, or treatments.",
                   })}
                 </p>
               </div>
@@ -239,7 +238,7 @@ const Home: React.FunctionComponent = () => {
             <div>
               <h3 data-h2-font-size="b(h5)">
                 {intl.formatMessage({
-                  defaultMessage: "For managers",
+                  defaultMessage: "For Managers",
                   description:
                     "Heading in help and resources section for managers",
                 })}
@@ -254,7 +253,7 @@ const Home: React.FunctionComponent = () => {
                 <p>
                   {intl.formatMessage({
                     defaultMessage:
-                      "The Government of Canada (GC) Workplace Accessibility Passport is designed to help managers create an inclusive work environment by providing the tools and measures each employee needs to succeed in their job.",
+                      "The Government of Canada (GC) Workplace Accessibility Passport is designed to help managers create an inclusive work environment and provide the tools and measures each employee needs to succeed in their job.",
                   })}
                 </p>
                 <ul
@@ -292,8 +291,7 @@ const Home: React.FunctionComponent = () => {
                     <p>
                       <a href="#">
                         {intl.formatMessage({
-                          defaultMessage:
-                            "Library of barrier and solution examples",
+                          defaultMessage: "Library of Barriers and Solutions",
                         })}
                       </a>
                     </p>
