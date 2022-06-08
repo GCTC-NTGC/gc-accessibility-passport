@@ -19,7 +19,12 @@ const ViewSolution: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    alert("A notification has been sent!");
+    alert(
+      intl.formatMessage({
+        defaultMessage: "A notification has been sent!",
+        description: "Alert message when notification has been sent.",
+      }),
+    );
   };
 
   return (
@@ -63,7 +68,7 @@ const ViewSolution: React.FunctionComponent = () => {
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
-                "Below is a solution(s) to the Noise in the workplace barrier. Review and action  the solution and indicate its status.",
+                "Here, you will find one or more solutions to the Noise in the workplace barrier. Review, action the solution and indicate its status.",
             })}
           </p>
           <div>
@@ -122,7 +127,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   <p>
                     {intl.formatMessage({
                       defaultMessage:
-                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., adaptive tools services, or measures) that a manager has agreed to provide.",
+                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., tools,  services, or support measures) that a manager has agreed to provide.",
                     })}
                   </p>
                   <ul
@@ -154,7 +159,7 @@ const ViewSolution: React.FunctionComponent = () => {
                     <p data-h2-margin="b(top, none) b(bottom, m)">
                       {intl.formatMessage({
                         defaultMessage:
-                          "By clicking the button below, you are agreeing, as Frank’s manager, that you will implement this solution for them as soon as possible. Frank will be notified, and this agreement will show up in the barrier’s history for later reference.",
+                          "By clicking this button, you are agreeing, as Frank’s manager, that you will implement this solution as soon as possible. Frank will be notified, and this agreement will appear in the barrier’s history.",
                       })}
                     </p>
                   </div>

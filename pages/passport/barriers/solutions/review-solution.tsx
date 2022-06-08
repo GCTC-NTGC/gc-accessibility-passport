@@ -20,8 +20,24 @@ const ViewSolution: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    alert("Marked as effective!");
+    if (effective) {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as effective!",
+          description: "Alert message when solution marked as effective.",
+        }),
+      );
+    } else {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as ineffective!",
+          description: "Alert message when solution marked as ineffective.",
+        }),
+      );
+    }
   };
+
+  const [effective, setEffective] = React.useState(false);
 
   return (
     <Layout
@@ -61,7 +77,7 @@ const ViewSolution: React.FunctionComponent = () => {
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
-                "Below is a summary of your solution information.  You can review a solution, action a solution, and identify a solution's status.",
+                "Here is a summary of your GC Workplace Accessibility Passport. Select the links to:",
             })}
           </p>
           <div>
@@ -117,7 +133,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   <p>
                     {intl.formatMessage({
                       defaultMessage:
-                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., adaptive tools services, or measures) that a manager has agreed to provide.",
+                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., tools,  services, or support measures) that a manager has agreed to provide.",
                     })}
                   </p>
                   <ul
@@ -178,6 +194,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(false);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as ineffective",
@@ -189,6 +208,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(true);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as working",
