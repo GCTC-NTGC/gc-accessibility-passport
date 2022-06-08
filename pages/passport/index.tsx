@@ -227,7 +227,7 @@ const Passport: React.FunctionComponent = () => {
                     </Link>
                   </div>
                 </div>
-                <Link href="#">
+                <Link href="/passport/emergency-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"
