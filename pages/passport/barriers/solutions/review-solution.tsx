@@ -61,7 +61,7 @@ const ViewSolution: React.FunctionComponent = () => {
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
-                "Below is a summary of your solution information.  You can review a solution, action a solution, and identify a solution's status.",
+                "Here is a summary of your GC Workplace Accessibility Passport. Select the links to:",
             })}
           </p>
           <div>
@@ -117,7 +117,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   <p>
                     {intl.formatMessage({
                       defaultMessage:
-                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., adaptive tools services, or measures) that a manager has agreed to provide.",
+                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., tools,  services, or support measures) that a manager has agreed to provide.",
                     })}
                   </p>
                   <ul

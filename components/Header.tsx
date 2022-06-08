@@ -127,8 +127,7 @@ const Header: React.FunctionComponent<Header> = ({
                 </h1>
                 <p data-h2-text-align="b(center)" data-h2-margin="b(all, m)">
                   {intl.formatMessage({
-                    defaultMessage:
-                      "Private, secure accessibility documentation",
+                    defaultMessage: "Private and secure documentation",
                     description: "Sub-heading for homepage.",
                   })}
                 </p>

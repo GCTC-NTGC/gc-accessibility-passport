@@ -63,7 +63,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
         <p>
           {intl.formatMessage({
             defaultMessage:
-              "The passport owner role allows you to view, edit, and share your own passport.",
+              "As a passport owner, you can create, view, edit, and share your passport information.",
           })}
         </p>
         <p>

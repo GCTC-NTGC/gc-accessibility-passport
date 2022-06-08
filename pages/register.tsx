@@ -96,7 +96,8 @@ const Register: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Register to create a passport",
+        defaultMessage:
+          "Register to create a GC Workplace Accessibility Passport.",
         description: "Heading for register page.",
       })}
       headTitle={intl.formatMessage({
@@ -201,7 +202,7 @@ const Register: React.FunctionComponent = () => {
               name="confirmPassword"
               type="password"
               label={intl.formatMessage({
-                defaultMessage: "Confirm Password",
+                defaultMessage: "Confirm your password",
               })}
               rules={{
                 required: intl.formatMessage(errorMessages.required),
