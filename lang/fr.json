@@ -1038,5 +1038,101 @@
   },
   "yUiPFn": {
     "defaultMessage": "Vous avez proposé <strong>des écouteurs à suppression de bruit</strong> comme solution à cet obstacle."
+  },
+  "+FMYJn": {
+    "defaultMessage": "Identifié comme inefficace!",
+    "description": "Alert message when solution marked as ineffective."
+  },
+  "02fZPe": {
+    "defaultMessage": "Renseignements urgents"
+  },
+  "1IHj76": {
+    "defaultMessage": "Identifié comme efficace!",
+    "description": "Alert message when solution marked as effective."
+  },
+  "1OE+rg": {
+    "defaultMessage": "Renseignements urgents – Passeport pour l’accessibilité en milieu de travail du GC"
+  },
+  "5qi5WQ": {
+    "defaultMessage": "La présente section vous permet de téléverser tout document pertinent permettant à votre gestionnaire de comprendre toute exigence précise durant une situation d’urgence donnée."
+  },
+  "AZxfMW": {
+    "defaultMessage": "Partagez avec une nouvelle personne"
+  },
+  "AvBSV+": {
+    "defaultMessage": "Zut alors!",
+    "description": "Title displayed for a table error loading state."
+  },
+  "B7fcr5": {
+    "defaultMessage": "Chargemen ten cours",
+    "description": "Title displayed for a table initial loading state."
+  },
+  "Bvr4b6": {
+    "defaultMessage": "Requis",
+    "description": "Displayed next to required form inputs."
+  },
+  "DCs4+k": {
+    "defaultMessage": "La personne indiquée ci-dessous sera contactée en cas d’urgence."
+  },
+  "EnANmA": {
+    "defaultMessage": "Un avis a été envoyé!",
+    "description": "Alert message when notification has been sent."
+  },
+  "HUce0G": {
+    "defaultMessage": "Durant une situation d’urgence, il est extrêmement important de permettre à tout le monde d’avoir accès à l’information requise. Cette page vous permet de décrire brièvement tous les renseignements cruciaux que vos collègues ou votre gestionnaire doivent savoir en cas d’urgence. "
+  },
+  "KC/sxi": {
+    "defaultMessage": "Ceci est un champ requis.",
+    "description": "Error message that this field must filled for the form to be valid."
+  },
+  "Q5Sr4w": {
+    "defaultMessage": "Personne à contacter en cas d’urgence"
+  },
+  "TLtFDE": {
+    "defaultMessage": "Enregistrer mes informations d’urgence"
+  },
+  "WUC9pX": {
+    "defaultMessage": "Facultatif",
+    "description": "Displayed next to optional form inputs."
+  },
+  "ZhQEUx": {
+    "defaultMessage": "Ce champ ne doit contenir que des dates à venir.",
+    "description": "Error message that the provided date must be in the future."
+  },
+  "adbcoS": {
+    "defaultMessage": "Ce champ doit suivre le modèle suivant +123243234.",
+    "description": "Error message that the field must contain a phone number validated by the specified pattern."
+  },
+  "euOEhz": {
+    "defaultMessage": "Renseignements cruciaux"
+  },
+  "fewhRo": {
+    "defaultMessage": "Veuillez vous assurer de ne pas téléverser de renseignements médicaux."
+  },
+  "oBz/8a": {
+    "defaultMessage": "Numéro de téléphone"
+  },
+  "ocZmf+": {
+    "defaultMessage": "Documents et dossiers d’urgence"
+  },
+  "pONqz8": {
+    "defaultMessage": "Prénom"
+  },
+  "rk8q7A": {
+    "defaultMessage": "Veuillez décrire tout renseignement crucial exigé par votre gestionnaire, dans le but de vous venir en aide lors d’une situation d’urgence."
+  },
+  "rtbojB": {
+    "defaultMessage": "Renseignements d’urgence cruciaux"
+  },
+  "trzCtG": {
+    "defaultMessage": "La valeur doit être plus grande que {value}",
+    "description": "Error message that the provided value must be greater than some referenced minimum value."
+  },
+  "txUL0F": {
+    "defaultMessage": "Nom de famille"
+  },
+  "yP48k+": {
+    "defaultMessage": "Renseignements d’urgence",
+    "description": "Breadcrumb title."
   }
 }
