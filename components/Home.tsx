@@ -1,9 +1,135 @@
+import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import { strong } from "../helpers/format";
 
 const Home: React.FunctionComponent = () => {
   const intl = useIntl();
+
+  const employeeLinks = [
+    {
+      title: intl.formatMessage({
+        defaultMessage: "GC Workplace Accessibility Passport Canada.ca page",
+        description: "Employee link text #1",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/accessibility-public-service/government-canada-workplace-accessibility-passport.html",
+        description: "Employee link #1",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage:
+          "GC Workplace Accessibility Passport Rich Text Format Form",
+        description: "Employee link text #2",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/gc-workplace-accessibility-passport-document.rtf",
+        description: "Employee link #2",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Passport instructions",
+        description: "Employee link text #3",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.gcpedia.gc.ca/gcwiki/images/4/43/Basic_Instructions_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_Basic_Instructions_(The_7_Steps).docx",
+        description: "Employee link #3",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Frequently Asked Questions (FAQs)",
+        description: "Employee link text #4",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx",
+        description: "Employee link #4",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Library of Barriers and Solutions",
+        description: "Employee link text #5",
+      }),
+      link: intl.formatMessage({
+        defaultMessage: "#",
+        description: "Employee link #5",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Examples of Completed Passports",
+        description: "Employee link text #6",
+      }),
+      link: intl.formatMessage({
+        defaultMessage: "#",
+        description: "Employee link #6",
+      }),
+    },
+  ];
+
+  const managerLinks = [
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Passport Canada.ca page",
+        description: "Manager link text #1",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.gcpedia.gc.ca/gcwiki/images/9/98/GC_Workplace_Accessibility_Passport_Form_(Jan_24_2022).docx",
+        description: "Manager link #1",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Passport guidance",
+        description: "Manager link text #2",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.gcpedia.gc.ca/gcwiki/images/4/43/Basic_Instructions_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_Basic_Instructions_(The_7_Steps).docx",
+        description: "Manager link #2",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Frequently Asked Questions (FAQs)",
+        description: "Manager link text #3",
+      }),
+      link: intl.formatMessage({
+        defaultMessage:
+          "https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx",
+        description: "Manager link #3",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Library of Barriers and Solutions",
+        description: "Manager link text #4",
+      }),
+      link: intl.formatMessage({
+        defaultMessage: "#",
+        description: "Manager link #4",
+      }),
+    },
+    {
+      title: intl.formatMessage({
+        defaultMessage: "Examples of Completed Passports",
+        description: "Manager link text #5",
+      }),
+      link: intl.formatMessage({
+        defaultMessage: "#",
+        description: "Manager link #5",
+      }),
+    },
+  ];
+
   return (
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">
@@ -171,61 +297,16 @@ const Home: React.FunctionComponent = () => {
                   data-h2-margin="b(bottom-left, m)"
                   style={{ listStyleType: "disc" }}
                 >
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport Canada.ca page",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/9/98/GC_Workplace_Accessibility_Passport_Form_(Jan_24_2022).docx">
-                        {intl.formatMessage({
-                          defaultMessage:
-                            "GC Workplace Accessibility Passport Form (Word Version)",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/4/43/Basic_Instructions_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_Basic_Instructions_(The_7_Steps).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport instructions",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Frequently Asked Questions (FAQs)",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Library of Barriers and Solutions",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Examples of Completed Passports",
-                        })}
-                      </a>
-                    </p>
-                  </li>
+                  {employeeLinks &&
+                    employeeLinks.map(({ title, link }) => (
+                      <li key={title}>
+                        <p>
+                          <Link href={link}>
+                            <a>{title}</a>
+                          </Link>
+                        </p>
+                      </li>
+                    ))}
                 </ul>
                 <p>
                   {intl.formatMessage({
@@ -260,51 +341,16 @@ const Home: React.FunctionComponent = () => {
                   data-h2-margin="b(bottom-left, m)"
                   style={{ listStyleType: "disc" }}
                 >
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport Canada.ca page",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/b/b1/Guidance_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_General_Guidance_.docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport guidance",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Frequently Asked Questions (FAQs)",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Library of Barriers and Solutions",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Examples of Completed Passports",
-                        })}
-                      </a>
-                    </p>
-                  </li>
+                  {managerLinks &&
+                    managerLinks.map(({ title, link }) => (
+                      <li key={title}>
+                        <p>
+                          <Link href={link}>
+                            <a>{title}</a>
+                          </Link>
+                        </p>
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>

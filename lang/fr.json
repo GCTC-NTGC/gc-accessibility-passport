@@ -348,9 +348,6 @@
   "+i6kfV": {
     "defaultMessage": "Sélectionnez un rôle"
   },
-  "+p4ntU": {
-    "defaultMessage": "Page Passeport Canada.ca"
-  },
   "/VnDMl": {
     "defaultMessage": "Autre"
   },
@@ -389,9 +386,6 @@
   },
   "3wbEhz": {
     "defaultMessage": "Sélectionnez une ou plusieurs situations..."
-  },
-  "4+pQMC": {
-    "defaultMessage": "Instructions du passeport"
   },
   "47FYwb": {
     "defaultMessage": "Annuler"
@@ -517,9 +511,6 @@
   },
   "G5RVE2": {
     "defaultMessage": "Consignez l’accord entre vous et votre gestionnaire concernant les outils ou les mesures d’adaptation du milieu de travail à fournir."
-  },
-  "H96byv": {
-    "defaultMessage": "Foire aux questions (FAQ)"
   },
   "HBqCn/": {
     "defaultMessage": "Courriel actuel"
@@ -651,17 +642,11 @@
     "defaultMessage": "Politique de confidentialité",
     "description": "Label for the privacy link in the Footer."
   },
-  "W8Fkfw": {
-    "defaultMessage": "Guide du passeport"
-  },
   "YTDh7Q": {
     "defaultMessage": "Aucune obstacle trouvée."
   },
   "YXH1/n": {
     "defaultMessage": "Sélectionnez l’un des liens ci-dessous pour enregistrer votre obstacle et la consulter; ou pour l’enregistrer et en ajouter une autre."
-  },
-  "Z5EN8d": {
-    "defaultMessage": "Formulaire du Passeport pour l’accessibilité en milieu de travail du GC (Version Word)"
   },
   "ZE77nf": {
     "defaultMessage": "Canada.ca",
@@ -747,9 +732,6 @@
   },
   "lPiStM": {
     "defaultMessage": "Gérer votre compte - Passeport pour l’accessibilité en milieu de travail du GC"
-  },
-  "lZp3ZB": {
-    "defaultMessage": "Exemples de passeports remplis"
   },
   "lxbsBd": {
     "defaultMessage": "Accueil",
@@ -856,9 +838,6 @@
   },
   "1PKZnN": {
     "defaultMessage": "Identifier un obstacle. Un obstacle signifie tout ce qui vous empêche d’accomplir vos tâches dans votre environnement de travail. Aux fins de remplir le Passeport, un obstacle peut être spécifique au travail ou à une tâche."
-  },
-  "1YMdPR": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions"
   },
   "1erloT": {
     "defaultMessage": "Communiquer avec un gestionnaire de cas ou un professionnel de l'adaptation en milieu de travail"
@@ -1134,5 +1113,57 @@
   "yP48k+": {
     "defaultMessage": "Renseignements d’urgence",
     "description": "Breadcrumb title."
+  },
+  "/UqgOs": {
+    "defaultMessage": "Instructions du passeport",
+    "description": "Employee link text #3"
+  },
+  "1PLyRX": {
+    "defaultMessage": "Guide du passeport",
+    "description": "Manager link text #2"
+  },
+  "Co+y3a": {
+    "defaultMessage": "Foire aux questions (FAQ)",
+    "description": "Manager link text #3"
+  },
+  "HYyxhX": {
+    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+    "description": "Employee link text #5"
+  },
+  "J7+Hl0": {
+    "defaultMessage": "Passeport pour l'accessibilité en milieu de travail version rtf",
+    "description": "Employee link text #2"
+  },
+  "KTXCII": {
+    "defaultMessage": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
+    "description": "Employee link #1"
+  },
+  "P5+Zjh": {
+    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+    "description": "Manager link text #4"
+  },
+  "SaDNJW": {
+    "defaultMessage": "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/passeport-pour-laccessibilite-en-milieu-de-travail-du-gc-document.rtf",
+    "description": "Employee link #2"
+  },
+  "T4gD7Q": {
+    "defaultMessage": "Foire aux questions (FAQ)",
+    "description": "Employee link text #4"
+  },
+  "gfL0+v": {
+    "defaultMessage": "Exemples de passeports remplis",
+    "description": "Manager link text #5"
+  },
+  "hZZaJn": {
+    "defaultMessage": "Page Canada.ca Passeport pour l'accessibilté en milieu de travail",
+    "description": "Employee link text #1"
+  },
+  "mxXiw9": {
+    "defaultMessage": "Exemples de passeports remplis",
+    "description": "Employee link text #6"
+  },
+  "rBlC6E": {
+    "defaultMessage": "Page Passeport Canada.ca",
+    "description": "Manager link text #1"
   }
 }
