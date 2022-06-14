@@ -9,6 +9,24 @@ import Link from "next/link";
 const ManagerDashboard: React.FunctionComponent = () => {
   const intl = useIntl();
 
+  const employees = [
+    {
+      id: 1,
+      name: "Frank Turot",
+      path: "/manager/view-employee-passport",
+    },
+    {
+      id: 2,
+      name: "Taylor Ghiles",
+      path: "#",
+    },
+    {
+      id: 3,
+      name: "Margaret Turing",
+      path: "#",
+    },
+  ];
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -41,33 +59,23 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 defaultMessage: "Employees with shared passports",
               })}
             </h2>
-            <PassportCard
-              title="Frank Turot"
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "/manager/view-employee-passport",
-              }}
-            />
-            <PassportCard
-              title="Taylor Ghiles"
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "#",
-              }}
-            />
-            <PassportCard
-              title="Margaret Turing"
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "#",
-              }}
-            />
+            {employees &&
+              employees.map(({ id, name, path }) => (
+                <PassportCard
+                  key={id}
+                  title={name}
+                  link={{
+                    title: intl.formatMessage(
+                      {
+                        defaultMessage: "View {name}'s passport",
+                        description: "Passport card link text",
+                      },
+                      { name },
+                    ),
+                    href: path,
+                  }}
+                />
+              ))}
           </div>
         </LeftSection>
         <RightSection>
