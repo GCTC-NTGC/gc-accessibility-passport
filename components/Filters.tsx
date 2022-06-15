@@ -9,6 +9,7 @@ import {
 } from "../helpers/focus";
 import { strong } from "../helpers/format";
 import Button from "./Button";
+import { isEqual } from "lodash";
 
 type Parent = {
   id: number;
@@ -47,23 +48,27 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
   const { register } = useFormContext();
 
   // List of barriers that are displayed in the barriers section.
-  const [resultsState, setResultsState] = React.useState<Result[] | null>(
-    results.filter(({ categoryId }) => categoryId === 1),
-  );
+  const [resultsState, setResultsState] = React.useState<Result[] | null>(null);
   // List of categories that are displayed in the categories section.
   const [categoriesState, setCategoriesState] = React.useState<
     Category[] | null
-  >(categories);
-  const [activeParent, setActiveParent] = React.useState(1);
-  const [activeCategory, setActiveCategory] = React.useState(1);
+  >(null);
+  const [activeParent, setActiveParent] = React.useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = React.useState<number | null>(
+    null,
+  );
 
   const onParentCategoryClick = (id: number): void => {
     setActiveParent(id);
-    setCategoriesState(categories.filter(({ parentId }) => parentId === id));
+    const newCategories = categories.filter(({ parentId }) => parentId === id);
+    if (!isEqual(categoriesState, newCategories))
+      setCategoriesState(newCategories);
+    setResultsState(null);
   };
   const onCategoryClick = (id: number): void => {
     setActiveCategory(id);
-    setResultsState(results.filter(({ categoryId }) => categoryId === id));
+    const newResults = results.filter(({ categoryId }) => categoryId === id);
+    if (!isEqual(resultsState, newResults)) setResultsState(newResults);
   };
 
   const parentRef = React.useRef<HTMLUListElement | null>(null);
@@ -334,25 +339,28 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                                         </ul>
                                       </div>
                                     ) : (
-                                      <p
-                                        role="status"
-                                        data-h2-position="b(absolute)"
-                                        data-h2-font-size="b(caption) m(normal)"
-                                        data-h2-margin="b(all, none)"
-                                        data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                                        data-h2-bg-color="b(darkgray)"
-                                        data-h2-font-color="b(white)"
-                                        style={{
-                                          top: "0",
-                                          left: "100%",
-                                          width: "100%",
-                                          height: "19rem",
-                                        }}
-                                      >
-                                        {intl.formatMessage({
-                                          defaultMessage: "No Barriers found.",
-                                        })}
-                                      </p>
+                                      resultsState?.length === 0 && (
+                                        <p
+                                          role="status"
+                                          data-h2-position="b(absolute)"
+                                          data-h2-font-size="b(caption) m(normal)"
+                                          data-h2-margin="b(all, none)"
+                                          data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                          data-h2-bg-color="b(darkgray)"
+                                          data-h2-font-color="b(white)"
+                                          style={{
+                                            top: "0",
+                                            left: "100%",
+                                            width: "100%",
+                                            height: "19rem",
+                                          }}
+                                        >
+                                          {intl.formatMessage({
+                                            defaultMessage:
+                                              "No Barriers found.",
+                                          })}
+                                        </p>
+                                      )
                                     )}
                                   </>
                                 )}
@@ -362,24 +370,26 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
                         </ul>
                       </>
                     ) : (
-                      <p
-                        role="status"
-                        data-h2-position="b(absolute)"
-                        data-h2-font-size="b(caption) m(normal)"
-                        data-h2-margin="b(all, none)"
-                        data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                        data-h2-bg-color="b(lightgray)"
-                        style={{
-                          top: "0",
-                          left: "20%",
-                          width: "80%",
-                          height: "19rem",
-                        }}
-                      >
-                        {intl.formatMessage({
-                          defaultMessage: "No categories found.",
-                        })}
-                      </p>
+                      categoriesState?.length === 0 && (
+                        <p
+                          role="status"
+                          data-h2-position="b(absolute)"
+                          data-h2-font-size="b(caption) m(normal)"
+                          data-h2-margin="b(all, none)"
+                          data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                          data-h2-bg-color="b(lightgray)"
+                          style={{
+                            top: "0",
+                            left: "20%",
+                            width: "80%",
+                            height: "19rem",
+                          }}
+                        >
+                          {intl.formatMessage({
+                            defaultMessage: "No categories found.",
+                          })}
+                        </p>
+                      )
                     )}
                   </>
                 )}
