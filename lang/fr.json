@@ -68,9 +68,6 @@
   "BAWJVM": {
     "defaultMessage": "Employés ayant des passeports partagés"
   },
-  "C2pDTd": {
-    "defaultMessage": "Afficher le passeport"
-  },
   "E2zecs": {
     "defaultMessage": "Exemple de ressource no 5"
   },
@@ -1141,5 +1138,13 @@
   "k9aMGd": {
     "defaultMessage": "<link>Exemples de passeports remplis</link>",
     "description": "Employee link text #4"
+  },
+  "rRlGQb": {
+    "defaultMessage": "Afficher le passeport de {name}",
+    "description": "Passport card link text"
+  },
+  "aU+8uX": {
+    "defaultMessage": "Afficher {name}",
+    "description": "Passport card barrier link text"
   }
 }
