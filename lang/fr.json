@@ -1114,44 +1114,32 @@
     "defaultMessage": "Renseignements d’urgence",
     "description": "Breadcrumb title."
   },
-  "J7+Hl0": {
-    "defaultMessage": "Passeport pour l'accessibilité en milieu de travail version rtf",
-    "description": "Employee link text #2"
-  },
-  "KTXCII": {
-    "defaultMessage": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
-    "description": "Employee link #1"
-  },
-  "SaDNJW": {
-    "defaultMessage": "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/passeport-pour-laccessibilite-en-milieu-de-travail-du-gc-document.rtf",
-    "description": "Employee link #2"
-  },
-  "hZZaJn": {
-    "defaultMessage": "Page Canada.ca Passeport pour l’accessibilité en milieu de travail",
-    "description": "Employee link text #1"
-  },
-  "rBlC6E": {
-    "defaultMessage": "Page Passeport Canada.ca",
-    "description": "Manager link text #1"
-  },
-  "ZsyH8c": {
-    "defaultMessage": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
-    "description": "Manager link #1"
-  },
-  "GcLfbO": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+  "2SSY8y": {
+    "defaultMessage": "<link>Bibliothèque d’obstacles et de solutions</link>",
     "description": "Employee link text #3"
   },
-  "QuCxX9": {
-    "defaultMessage": "Exemples de passeports remplis",
+  "Ej1vgT": {
+    "defaultMessage": "<link>Passeport pour l'accessibilité en milieu de travail version rtf</link>",
+    "description": "Employee link text #2"
+  },
+  "Kt+d4+": {
+    "defaultMessage": "<link>Exemples de passeports remplis</link>",
     "description": "Manager link text #3"
   },
-  "mzJorh": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+  "Sb+Ubj": {
+    "defaultMessage": "<link>Page Canada.ca Passeport pour l’accessibilité en milieu de travail</link>",
+    "description": "Manager link text #1"
+  },
+  "TcG1eq": {
+    "defaultMessage": "<link>Page Canada.ca Passeport pour l’accessibilité en milieu de travail</link>",
+    "description": "Employee link text #1"
+  },
+  "c4+KYd": {
+    "defaultMessage": "<link>Bibliothèque d’obstacles et de solutions</link>",
     "description": "Manager link text #2"
   },
-  "qp/alT": {
-    "defaultMessage": "Exemples de passeports remplis",
+  "k9aMGd": {
+    "defaultMessage": "<link>Exemples de passeports remplis</link>",
     "description": "Employee link text #4"
   }
 }
