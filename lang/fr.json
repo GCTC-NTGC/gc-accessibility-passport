@@ -1114,22 +1114,6 @@
     "defaultMessage": "Renseignements d’urgence",
     "description": "Breadcrumb title."
   },
-  "/UqgOs": {
-    "defaultMessage": "Instructions du passeport",
-    "description": "Employee link text #3"
-  },
-  "1PLyRX": {
-    "defaultMessage": "Guide du passeport",
-    "description": "Manager link text #2"
-  },
-  "Co+y3a": {
-    "defaultMessage": "Foire aux questions (FAQ)",
-    "description": "Manager link text #3"
-  },
-  "HYyxhX": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
-    "description": "Employee link text #5"
-  },
   "J7+Hl0": {
     "defaultMessage": "Passeport pour l'accessibilité en milieu de travail version rtf",
     "description": "Employee link text #2"
@@ -1138,32 +1122,36 @@
     "defaultMessage": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
     "description": "Employee link #1"
   },
-  "P5+Zjh": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
-    "description": "Manager link text #4"
-  },
   "SaDNJW": {
     "defaultMessage": "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/passeport-pour-laccessibilite-en-milieu-de-travail-du-gc-document.rtf",
     "description": "Employee link #2"
-  },
-  "T4gD7Q": {
-    "defaultMessage": "Foire aux questions (FAQ)",
-    "description": "Employee link text #4"
-  },
-  "gfL0+v": {
-    "defaultMessage": "Exemples de passeports remplis",
-    "description": "Manager link text #5"
   },
   "hZZaJn": {
     "defaultMessage": "Page Canada.ca Passeport pour l’accessibilité en milieu de travail",
     "description": "Employee link text #1"
   },
-  "mxXiw9": {
-    "defaultMessage": "Exemples de passeports remplis",
-    "description": "Employee link text #6"
-  },
   "rBlC6E": {
     "defaultMessage": "Page Passeport Canada.ca",
     "description": "Manager link text #1"
+  },
+  "ZsyH8c": {
+    "defaultMessage": "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
+    "description": "Manager link #1"
+  },
+  "GcLfbO": {
+    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+    "description": "Employee link text #3"
+  },
+  "QuCxX9": {
+    "defaultMessage": "Exemples de passeports remplis",
+    "description": "Manager link text #3"
+  },
+  "mzJorh": {
+    "defaultMessage": "Bibliothèque d’obstacles et de solutions",
+    "description": "Manager link text #2"
+  },
+  "qp/alT": {
+    "defaultMessage": "Exemples de passeports remplis",
+    "description": "Employee link text #4"
   }
 }
