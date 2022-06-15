@@ -345,9 +345,6 @@
   "+i6kfV": {
     "defaultMessage": "Sélectionnez un rôle"
   },
-  "+p4ntU": {
-    "defaultMessage": "Page Passeport Canada.ca"
-  },
   "/VnDMl": {
     "defaultMessage": "Autre"
   },
@@ -386,9 +383,6 @@
   },
   "3wbEhz": {
     "defaultMessage": "Sélectionnez une ou plusieurs situations..."
-  },
-  "4+pQMC": {
-    "defaultMessage": "Instructions du passeport"
   },
   "47FYwb": {
     "defaultMessage": "Annuler"
@@ -514,9 +508,6 @@
   },
   "G5RVE2": {
     "defaultMessage": "Consignez l’accord entre vous et votre gestionnaire concernant les outils ou les mesures d’adaptation du milieu de travail à fournir."
-  },
-  "H96byv": {
-    "defaultMessage": "Foire aux questions (FAQ)"
   },
   "HBqCn/": {
     "defaultMessage": "Courriel actuel"
@@ -648,17 +639,11 @@
     "defaultMessage": "Politique de confidentialité",
     "description": "Label for the privacy link in the Footer."
   },
-  "W8Fkfw": {
-    "defaultMessage": "Guide du passeport"
-  },
   "YTDh7Q": {
     "defaultMessage": "Aucune obstacle trouvée."
   },
   "YXH1/n": {
     "defaultMessage": "Sélectionnez l’un des liens ci-dessous pour enregistrer votre obstacle et la consulter; ou pour l’enregistrer et en ajouter une autre."
-  },
-  "Z5EN8d": {
-    "defaultMessage": "Formulaire du Passeport pour l’accessibilité en milieu de travail du GC (Version Word)"
   },
   "ZE77nf": {
     "defaultMessage": "Canada.ca",
@@ -744,9 +729,6 @@
   },
   "lPiStM": {
     "defaultMessage": "Gérer votre compte - Passeport pour l’accessibilité en milieu de travail du GC"
-  },
-  "lZp3ZB": {
-    "defaultMessage": "Exemples de passeports remplis"
   },
   "lxbsBd": {
     "defaultMessage": "Accueil",
@@ -853,9 +835,6 @@
   },
   "1PKZnN": {
     "defaultMessage": "Identifier un obstacle. Un obstacle signifie tout ce qui vous empêche d’accomplir vos tâches dans votre environnement de travail. Aux fins de remplir le Passeport, un obstacle peut être spécifique au travail ou à une tâche."
-  },
-  "1YMdPR": {
-    "defaultMessage": "Bibliothèque d’obstacles et de solutions"
   },
   "1erloT": {
     "defaultMessage": "Communiquer avec un gestionnaire de cas ou un professionnel de l'adaptation en milieu de travail"
@@ -1131,6 +1110,34 @@
   "yP48k+": {
     "defaultMessage": "Renseignements d’urgence",
     "description": "Breadcrumb title."
+  },
+  "2SSY8y": {
+    "defaultMessage": "<link>Bibliothèque d’obstacles et de solutions</link>",
+    "description": "Employee link text #3"
+  },
+  "Ej1vgT": {
+    "defaultMessage": "<link>Passeport pour l'accessibilité en milieu de travail version rtf</link>",
+    "description": "Employee link text #2"
+  },
+  "Kt+d4+": {
+    "defaultMessage": "<link>Exemples de passeports remplis</link>",
+    "description": "Manager link text #3"
+  },
+  "Sb+Ubj": {
+    "defaultMessage": "<link>Page Canada.ca Passeport pour l’accessibilité en milieu de travail</link>",
+    "description": "Manager link text #1"
+  },
+  "TcG1eq": {
+    "defaultMessage": "<link>Page Canada.ca Passeport pour l’accessibilité en milieu de travail</link>",
+    "description": "Employee link text #1"
+  },
+  "c4+KYd": {
+    "defaultMessage": "<link>Bibliothèque d’obstacles et de solutions</link>",
+    "description": "Manager link text #2"
+  },
+  "k9aMGd": {
+    "defaultMessage": "<link>Exemples de passeports remplis</link>",
+    "description": "Employee link text #4"
   },
   "rRlGQb": {
     "defaultMessage": "Afficher le passeport de {name}",
