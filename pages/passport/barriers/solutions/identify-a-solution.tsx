@@ -6,7 +6,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Alert from "../../../../components/Alert";
 import Button from "../../../../components/Button";
-import Filters from "../../../../components/Filters";
+import Worksheet from "../../../../components/Worksheet";
 import { Input, TextArea } from "../../../../components/formComponents";
 import FormFooter from "../../../../components/FormFooter";
 import Layout from "../../../../components/Layout";
@@ -225,7 +225,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
                 )}
               </p>
             </div>
-            <Filters
+            <Worksheet
               parents={parentSolutionCategories}
               categories={solutionCategories}
               results={solutions}
