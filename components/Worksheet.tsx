@@ -67,8 +67,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
   };
   const onCategoryClick = (id: number): void => {
     setActiveCategory(id);
-    const newResults = results.filter(({ categoryId }) => categoryId === id);
-    if (!isEqual(resultsState, newResults)) setResultsState(newResults);
+    setResultsState(results.filter(({ categoryId }) => categoryId === id));
   };
 
   const parentRef = React.useRef<HTMLUListElement | null>(null);
@@ -179,8 +178,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
   return (
     <section
       data-h2-border="b(black, all, solid, s)"
-      style={{ height: "19rem", overflow: "auto" }}
-      data-h2-position="b(relative)"
+      data-h2-bg-color="b(lightgray)"
     >
       <nav
         aria-label={intl.formatMessage({
@@ -192,8 +190,8 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
           ref={parentRef}
           style={{
             top: "0",
-            width: "105%", // {Todo: This is a hack for now until the designers comes back }
-            height: "19rem",
+            width: "25%",
+            height: "20rem",
           }}
         >
           {parents.map(({ id: parentId, name }) => {
@@ -212,6 +210,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                   mode="inline"
                   onClick={() => onParentCategoryClick(parentId)}
                   aria-expanded={activeParent === parentId}
+                  data-h2-font-style="b(underline)"
                 >
                   {name}
                 </Button>
@@ -221,11 +220,12 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                       <>
                         <ul
                           data-h2-position="b(absolute)"
+                          data-h2-border="b(black, left, solid, s)"
                           style={{
                             top: "0",
-                            left: "20%",
-                            width: "40%",
-                            height: "19rem",
+                            left: "100%",
+                            width: "100%",
+                            height: "20rem",
                           }}
                           ref={categoryRef}
                         >
@@ -264,6 +264,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                                     "data-h2-font-color": "b(white)",
                                   })}
                                   data-h2-text-align="b(left)"
+                                  data-h2-font-style="b(underline)"
                                 >
                                   {name}
                                 </Button>
@@ -272,11 +273,12 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                                     {resultsState && resultsState.length > 0 ? (
                                       <div
                                         data-h2-position="b(absolute)"
+                                        data-h2-border="b(black, left, solid, s)"
                                         style={{
                                           top: "0",
                                           left: "100%",
-                                          width: "100%",
-                                          height: "19rem",
+                                          width: "201%",
+                                          height: "20rem",
                                         }}
                                         {...(activeCategory === categoryId && {
                                           "data-h2-bg-color": "b(darkgray)",
@@ -351,8 +353,8 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                                           style={{
                                             top: "0",
                                             left: "100%",
-                                            width: "100%",
-                                            height: "19rem",
+                                            width: "201%",
+                                            height: "20rem",
                                           }}
                                         >
                                           {intl.formatMessage({
@@ -380,9 +382,9 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                           data-h2-bg-color="b(lightgray)"
                           style={{
                             top: "0",
-                            left: "20%",
-                            width: "80%",
-                            height: "19rem",
+                            left: "100%",
+                            width: "201%",
+                            height: "20rem",
                           }}
                         >
                           {intl.formatMessage({
