@@ -29,7 +29,7 @@ type Result = {
   checked?: boolean;
 };
 
-interface FiltersProps {
+interface WorksheetProps {
   parents: Parent[];
   categories: Category[];
   results: Result[];
@@ -37,7 +37,7 @@ interface FiltersProps {
   setResultValue: (value: string) => void;
 }
 
-const Filters: React.FunctionComponent<FiltersProps> = ({
+const Worksheet: React.FunctionComponent<WorksheetProps> = ({
   parents,
   categories,
   results,
@@ -402,4 +402,4 @@ const Filters: React.FunctionComponent<FiltersProps> = ({
   );
 };
 
-export default Filters;
+export default Worksheet;

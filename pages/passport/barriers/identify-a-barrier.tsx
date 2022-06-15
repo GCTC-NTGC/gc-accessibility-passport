@@ -3,7 +3,7 @@ import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import Button from "../../../components/Button";
-import Filters from "../../../components/Filters";
+import Worksheet from "../../../components/Worksheet";
 import { Input, TextArea } from "../../../components/formComponents";
 import FormFooter from "../../../components/FormFooter";
 import Layout from "../../../components/Layout";
@@ -151,7 +151,7 @@ const IdentifyABarrier: React.FunctionComponent = () => {
               </p>
             </div>
             <div>
-              <Filters
+              <Worksheet
                 parents={parentBarrierCategories}
                 categories={barrierCategories}
                 results={barriers}
