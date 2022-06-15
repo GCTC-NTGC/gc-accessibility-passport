@@ -9,6 +9,17 @@ import { PassportCard } from "../../components/PassportCard";
 
 const Passport: React.FunctionComponent = () => {
   const intl = useIntl();
+
+  const barriers = [
+    {
+      id: 1,
+      name: intl.formatMessage({
+        defaultMessage: "Noise in the workplace",
+      }),
+      path: "/passport/barriers/review-barrier",
+    },
+  ];
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -133,15 +144,28 @@ const Passport: React.FunctionComponent = () => {
                   defaultMessage: "Solutions in place",
                 })}
               </h2>
-              <PassportCard
-                title="Noise in the workplace"
-                link={{
-                  title: intl.formatMessage({
-                    defaultMessage: "View",
-                  }),
-                  href: "/passport/barriers/review-barrier",
-                }}
-              />
+              {barriers &&
+                barriers.map(({ id, name, path }) => {
+                  const nameLowercase = name.toLowerCase();
+                  return (
+                    <PassportCard
+                      key={id}
+                      title={name}
+                      link={{
+                        title: intl.formatMessage(
+                          {
+                            defaultMessage: "View {name}",
+                            description: "Passport card barrier link text",
+                          },
+                          {
+                            name: nameLowercase,
+                          },
+                        ),
+                        href: path,
+                      }}
+                    />
+                  );
+                })}
             </div>
             <div>
               <h2 data-h2-font-size="b(h3)" data-h2-margin="b(top, m)">

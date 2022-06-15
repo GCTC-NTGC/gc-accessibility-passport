@@ -1,9 +1,52 @@
+import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import { strong } from "../helpers/format";
 
 const Home: React.FunctionComponent = () => {
   const intl = useIntl();
+
+  const employeeLinks = [
+    {
+      id: 1,
+      en: "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/accessibility-public-service/government-canada-workplace-accessibility-passport.html",
+      fr: "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
+    },
+    {
+      id: 2,
+      en: "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/gc-workplace-accessibility-passport-document.rtf",
+      fr: "https://www.canada.ca/content/dam/tbs-sct/documents/accessibility-publi-service/passeport-pour-laccessibilite-en-milieu-de-travail-du-gc-document.rtf",
+    },
+    {
+      id: 3,
+      en: "#",
+      fr: "#",
+    },
+    {
+      id: 4,
+      en: "#",
+      fr: "#",
+    },
+  ];
+
+  const managerLinks = [
+    {
+      id: 1,
+      en: "https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/diversity-inclusion-public-service/accessibility-public-service/government-canada-workplace-accessibility-passport.html",
+      fr: "https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/diversite-equite-matiere-emploi/accessibilite-fonction-publique/passeport-accessibilite-milieu-travail-gouvernement-canada.html",
+    },
+    {
+      id: 2,
+      en: "#",
+      fr: "#",
+    },
+    {
+      id: 3,
+      en: "#",
+      fr: "#",
+    },
+  ];
+
   return (
     <section>
       <div data-h2-display="b(flex)" data-h2-flex-direction="b(column) s(row)">
@@ -173,57 +216,106 @@ const Home: React.FunctionComponent = () => {
                 >
                   <li>
                     <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport Canada.ca page",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/9/98/GC_Workplace_Accessibility_Passport_Form_(Jan_24_2022).docx">
-                        {intl.formatMessage({
+                      {intl.formatMessage(
+                        {
                           defaultMessage:
-                            "GC Workplace Accessibility Passport Form (Word Version)",
-                        })}
-                      </a>
+                            "<link>GC Workplace Accessibility Passport Canada.ca page</link>",
+                          description: "Employee link text #1",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? employeeLinks.find((link) => link.id === 1)
+                                      ?.en
+                                  : employeeLinks.find((link) => link.id === 1)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/4/43/Basic_Instructions_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_Basic_Instructions_(The_7_Steps).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport instructions",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>GC Workplace Accessibility Passport Rich Text Format Form</link>",
+                          description: "Employee link text #2",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? employeeLinks.find((link) => link.id === 2)
+                                      ?.en
+                                  : employeeLinks.find((link) => link.id === 2)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Frequently Asked Questions (FAQs)",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>Library of Barriers and Solutions</link>",
+                          description: "Employee link text #3",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? employeeLinks.find((link) => link.id === 3)
+                                      ?.en
+                                  : employeeLinks.find((link) => link.id === 3)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Library of Barriers and Solutions",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Examples of Completed Passports",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>Examples of Completed Passports</link>",
+                          description: "Employee link text #4",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? employeeLinks.find((link) => link.id === 4)
+                                      ?.en
+                                  : employeeLinks.find((link) => link.id === 4)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                 </ul>
@@ -262,47 +354,80 @@ const Home: React.FunctionComponent = () => {
                 >
                   <li>
                     <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport Canada.ca page",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>GC Workplace Accessibility Passport Canada.ca page</link>",
+                          description: "Manager link text #1",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? managerLinks.find((link) => link.id === 1)
+                                      ?.en
+                                  : managerLinks.find((link) => link.id === 1)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/b/b1/Guidance_updated_Sept_2020_-_GC_Workplace_Accessibility_Passport_General_Guidance_.docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Passport guidance",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>Library of Barriers and Solutions</link>",
+                          description: "Manager link text #2",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? managerLinks.find((link) => link.id === 2)
+                                      ?.en
+                                  : managerLinks.find((link) => link.id === 2)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                   <li>
                     <p>
-                      <a href="https://www.gcpedia.gc.ca/gcwiki/images/3/36/Passport_-_Frequently-Asked_Questions_(April_2021).docx">
-                        {intl.formatMessage({
-                          defaultMessage: "Frequently Asked Questions (FAQs)",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Library of Barriers and Solutions",
-                        })}
-                      </a>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <a href="#">
-                        {intl.formatMessage({
-                          defaultMessage: "Examples of Completed Passports",
-                        })}
-                      </a>
+                      {intl.formatMessage(
+                        {
+                          defaultMessage:
+                            "<link>Examples of Completed Passports</link>",
+                          description: "Manager link text #3",
+                        },
+                        {
+                          link: (msg: string) => (
+                            <a
+                              href={
+                                intl.locale === "en"
+                                  ? managerLinks.find((link) => link.id === 3)
+                                      ?.en
+                                  : managerLinks.find((link) => link.id === 3)
+                                      ?.fr
+                              }
+                            >
+                              {msg}
+                            </a>
+                          ),
+                        },
+                      )}
                     </p>
                   </li>
                 </ul>
