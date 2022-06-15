@@ -60,10 +60,14 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
 
   const onParentCategoryClick = (id: number): void => {
     setActiveParent(id);
+    console.log(categories);
+    console.log(id);
     const newCategories = categories.filter(({ parentId }) => parentId === id);
+    console.log(newCategories);
     if (!isEqual(categoriesState, newCategories))
       setCategoriesState(newCategories);
     setResultsState(null);
+    setActiveCategory(null);
   };
   const onCategoryClick = (id: number): void => {
     setActiveCategory(id);
@@ -179,6 +183,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
     <section
       data-h2-border="b(black, all, solid, s)"
       data-h2-bg-color="b(lightgray)"
+      style={{ overflow: "auto" }}
     >
       <nav
         aria-label={intl.formatMessage({
@@ -187,6 +192,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
       >
         <ul
           data-h2-position="b(relative)"
+          data-h2-border="b(black, right, solid, s)"
           ref={parentRef}
           style={{
             top: "0",
@@ -220,7 +226,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                       <>
                         <ul
                           data-h2-position="b(absolute)"
-                          data-h2-border="b(black, left, solid, s)"
+                          data-h2-border="b(black, right, solid, s)"
                           style={{
                             top: "0",
                             left: "100%",
@@ -229,146 +235,152 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                           }}
                           ref={categoryRef}
                         >
-                          {categories.map(({ id: categoryId, name }, index) => {
-                            return (
-                              <li
-                                key={categoryId}
-                                data-h2-margin="b(all, none)"
-                                data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                                data-h2-bg-color="b(lightgray)"
-                                {...(activeCategory === categoryId && {
-                                  "data-h2-bg-color": "b(darkgray)",
-                                  "data-h2-font-color": "b(white)",
-                                })}
-                              >
-                                <Button
-                                  innerRef={
-                                    index === 0 ? firstCategoryRef : null
-                                  }
-                                  color="white"
-                                  mode="inline"
-                                  tabIndex={-1}
-                                  onClick={() => onCategoryClick(categoryId)}
-                                  onKeyDown={(
-                                    e: React.KeyboardEvent<HTMLButtonElement>,
-                                  ) =>
-                                    onBarrierCategoryKeyDown(
-                                      e,
-                                      categoryId,
-                                      parentId,
-                                    )
-                                  }
-                                  data-category-id={categoryId}
-                                  aria-expanded={activeCategory === categoryId}
+                          {categoriesState.map(
+                            ({ id: categoryId, name }, index) => {
+                              return (
+                                <li
+                                  key={categoryId}
+                                  data-h2-margin="b(all, none)"
+                                  data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                  data-h2-border="b(black, left, solid, s)"
+                                  data-h2-bg-color="b(lightgray)"
                                   {...(activeCategory === categoryId && {
+                                    "data-h2-bg-color": "b(darkgray)",
                                     "data-h2-font-color": "b(white)",
                                   })}
-                                  data-h2-text-align="b(left)"
-                                  data-h2-font-style="b(underline)"
                                 >
-                                  {name}
-                                </Button>
-                                {activeCategory === categoryId && (
-                                  <>
-                                    {resultsState && resultsState.length > 0 ? (
-                                      <div
-                                        data-h2-position="b(absolute)"
-                                        data-h2-border="b(black, left, solid, s)"
-                                        style={{
-                                          top: "0",
-                                          left: "100%",
-                                          width: "201%",
-                                          height: "20rem",
-                                        }}
-                                        {...(activeCategory === categoryId && {
-                                          "data-h2-bg-color": "b(darkgray)",
-                                        })}
-                                      >
-                                        <p
-                                          data-h2-margin="b(all, none)"
-                                          data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                                          data-h2-font-color="b(white)"
-                                        >
-                                          {intl.formatMessage(
-                                            {
-                                              defaultMessage:
-                                                "You are currently viewing {inputName}s related to <strong>{name}</strong>",
-                                            },
-                                            { strong, name, inputName },
-                                          )}
-                                        </p>
-                                        <ul ref={resultRef}>
-                                          {resultsState.map(
-                                            ({ id: resultId, name }) => {
-                                              return (
-                                                <li
-                                                  data-h2-margin="b(all, none)"
-                                                  data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                                                  key={resultId}
-                                                  data-h2-bg-color="b(darkgray)"
-                                                  data-h2-font-color="b(white)"
-                                                >
-                                                  <input
-                                                    {...register(inputName)}
-                                                    tabIndex={-1}
-                                                    type="radio"
-                                                    value={name}
-                                                    id={`${inputName}-${resultId}`}
-                                                    onKeyDown={(
-                                                      e: React.KeyboardEvent<HTMLInputElement>,
-                                                    ) =>
-                                                      onKeyDown(
-                                                        e,
-                                                        resultId,
-                                                        categoryId,
-                                                        parentId,
-                                                        name,
-                                                      )
-                                                    }
-                                                    onClick={() =>
-                                                      setResultValue(name)
-                                                    }
-                                                  />
-                                                  <label
-                                                    htmlFor={`${inputName}-${resultId}`}
-                                                  >
-                                                    {name}
-                                                  </label>
-                                                </li>
-                                              );
-                                            },
-                                          )}
-                                        </ul>
-                                      </div>
-                                    ) : (
-                                      resultsState?.length === 0 && (
-                                        <p
-                                          role="status"
+                                  <Button
+                                    innerRef={
+                                      index === 0 ? firstCategoryRef : null
+                                    }
+                                    color="white"
+                                    mode="inline"
+                                    tabIndex={-1}
+                                    onClick={() => onCategoryClick(categoryId)}
+                                    onKeyDown={(
+                                      e: React.KeyboardEvent<HTMLButtonElement>,
+                                    ) =>
+                                      onBarrierCategoryKeyDown(
+                                        e,
+                                        categoryId,
+                                        parentId,
+                                      )
+                                    }
+                                    data-category-id={categoryId}
+                                    aria-expanded={
+                                      activeCategory === categoryId
+                                    }
+                                    {...(activeCategory === categoryId && {
+                                      "data-h2-font-color": "b(white)",
+                                    })}
+                                    data-h2-text-align="b(left)"
+                                    data-h2-font-style="b(underline)"
+                                  >
+                                    {name}
+                                  </Button>
+                                  {activeCategory === categoryId && (
+                                    <>
+                                      {resultsState &&
+                                      resultsState.length > 0 ? (
+                                        <div
                                           data-h2-position="b(absolute)"
-                                          data-h2-font-size="b(caption) m(normal)"
-                                          data-h2-margin="b(all, none)"
-                                          data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
-                                          data-h2-bg-color="b(darkgray)"
-                                          data-h2-font-color="b(white)"
                                           style={{
                                             top: "0",
                                             left: "100%",
-                                            width: "201%",
+                                            width: "203%",
                                             height: "20rem",
                                           }}
-                                        >
-                                          {intl.formatMessage({
-                                            defaultMessage:
-                                              "No Barriers found.",
+                                          {...(activeCategory ===
+                                            categoryId && {
+                                            "data-h2-bg-color": "b(darkgray)",
                                           })}
-                                        </p>
-                                      )
-                                    )}
-                                  </>
-                                )}
-                              </li>
-                            );
-                          })}
+                                        >
+                                          <p
+                                            data-h2-margin="b(all, none)"
+                                            data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                            data-h2-font-color="b(white)"
+                                          >
+                                            {intl.formatMessage(
+                                              {
+                                                defaultMessage:
+                                                  "You are currently viewing {inputName}s related to <strong>{name}</strong>",
+                                              },
+                                              { strong, name, inputName },
+                                            )}
+                                          </p>
+                                          <ul ref={resultRef}>
+                                            {resultsState.map(
+                                              ({ id: resultId, name }) => {
+                                                return (
+                                                  <li
+                                                    data-h2-margin="b(all, none)"
+                                                    data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                                    key={resultId}
+                                                    data-h2-bg-color="b(darkgray)"
+                                                    data-h2-font-color="b(white)"
+                                                  >
+                                                    <input
+                                                      {...register(inputName)}
+                                                      tabIndex={-1}
+                                                      type="radio"
+                                                      value={name}
+                                                      id={`${inputName}-${resultId}`}
+                                                      onKeyDown={(
+                                                        e: React.KeyboardEvent<HTMLInputElement>,
+                                                      ) =>
+                                                        onKeyDown(
+                                                          e,
+                                                          resultId,
+                                                          categoryId,
+                                                          parentId,
+                                                          name,
+                                                        )
+                                                      }
+                                                      onClick={() =>
+                                                        setResultValue(name)
+                                                      }
+                                                    />
+                                                    <label
+                                                      htmlFor={`${inputName}-${resultId}`}
+                                                    >
+                                                      {name}
+                                                    </label>
+                                                  </li>
+                                                );
+                                              },
+                                            )}
+                                          </ul>
+                                        </div>
+                                      ) : (
+                                        resultsState?.length === 0 && (
+                                          <p
+                                            role="status"
+                                            data-h2-position="b(absolute)"
+                                            data-h2-font-size="b(caption) m(normal)"
+                                            data-h2-margin="b(all, none)"
+                                            data-h2-padding="b(top-bottom, xs) b(right-left, xs)"
+                                            data-h2-bg-color="b(darkgray)"
+                                            data-h2-font-color="b(white)"
+                                            style={{
+                                              top: "0",
+                                              left: "100%",
+                                              width: "203%",
+                                              height: "20rem",
+                                            }}
+                                          >
+                                            {intl.formatMessage({
+                                              defaultMessage:
+                                                "No Barriers found.",
+                                            })}
+                                          </p>
+                                        )
+                                      )}
+                                    </>
+                                  )}
+                                </li>
+                              );
+                            },
+                          )}
                         </ul>
                       </>
                     ) : (
@@ -383,7 +395,7 @@ const Worksheet: React.FunctionComponent<WorksheetProps> = ({
                           style={{
                             top: "0",
                             left: "100%",
-                            width: "201%",
+                            width: "203%",
                             height: "20rem",
                           }}
                         >

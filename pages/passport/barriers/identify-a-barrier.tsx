@@ -45,6 +45,10 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       id: 1,
       name: intl.formatMessage({ defaultMessage: "Disability" }),
     },
+    {
+      id: 2,
+      name: intl.formatMessage({ defaultMessage: "Work Situation" }),
+    },
   ];
   const barrierCategories: BarrierCategory[] = [
     {
@@ -56,6 +60,46 @@ const IdentifyABarrier: React.FunctionComponent = () => {
       id: 2,
       parentId: 1,
       name: intl.formatMessage({ defaultMessage: "Hard of hearing" }),
+    },
+    {
+      id: 3,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Office workplace" }),
+    },
+    {
+      id: 4,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Selection process" }),
+    },
+    {
+      id: 5,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Remote workplace" }),
+    },
+    {
+      id: 6,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Hybrid workplace" }),
+    },
+    {
+      id: 7,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Learning event" }),
+    },
+    {
+      id: 8,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Training Course" }),
+    },
+    {
+      id: 9,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "In-person meetings" }),
+    },
+    {
+      id: 10,
+      parentId: 2,
+      name: intl.formatMessage({ defaultMessage: "Virtual meetings" }),
     },
   ];
 
@@ -74,6 +118,14 @@ const IdentifyABarrier: React.FunctionComponent = () => {
         defaultMessage: "Background Noise",
       }),
       categoryId: 2,
+    },
+    {
+      id: 3,
+      name: intl.formatMessage({
+        defaultMessage: "Noise in the Workplace",
+      }),
+      categoryId: 3,
+      checked: true,
     },
   ];
 
