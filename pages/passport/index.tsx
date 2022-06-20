@@ -89,6 +89,7 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
+                  className="button-blue-solid"
                 >
                   {intl.formatMessage({
                     defaultMessage: "Identify another barrier",
@@ -106,6 +107,7 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
+                  className="button-blue-solid"
                 >
                   {intl.formatMessage({
                     defaultMessage: "Share my passport information",
@@ -123,6 +125,7 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
+                  className="button-blue-solid"
                 >
                   {intl.formatMessage({
                     defaultMessage: "Manage permissions",
@@ -260,6 +263,7 @@ const Passport: React.FunctionComponent = () => {
                     data-h2-radius="b(s)"
                     data-h2-display="b(block)"
                     data-h2-margin="b(bottom, m)"
+                    className="button-blue-solid"
                   >
                     {intl.formatMessage({
                       defaultMessage: "Edit emergency info",
@@ -296,6 +300,7 @@ const Passport: React.FunctionComponent = () => {
                     data-h2-radius="b(s)"
                     data-h2-display="b(block)"
                     data-h2-margin="b(bottom, m)"
+                    className="button-blue-solid"
                   >
                     {intl.formatMessage({
                       defaultMessage: "Edit manager information",
@@ -360,6 +365,7 @@ const Passport: React.FunctionComponent = () => {
                 data-h2-text-align="b(center)"
                 data-h2-radius="b(s)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Get in touch",
@@ -388,6 +394,7 @@ const Passport: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Contact the AAACT",

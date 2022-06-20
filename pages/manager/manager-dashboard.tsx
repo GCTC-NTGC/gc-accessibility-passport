@@ -132,6 +132,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 data-h2-text-align="b(center)"
                 data-h2-radius="b(s)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Get in touch",
@@ -160,6 +161,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Contact the AAACT",

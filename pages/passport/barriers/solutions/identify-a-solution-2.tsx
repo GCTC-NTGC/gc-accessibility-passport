@@ -226,6 +226,7 @@ const IdentifyASolution2: React.FunctionComponent = () => {
                 data-h2-text-align="b(center)"
                 data-h2-radius="b(s)"
                 data-h2-margin="b(right, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Save and add another solution",
