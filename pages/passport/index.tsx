@@ -157,7 +157,7 @@ const Passport: React.FunctionComponent = () => {
                       link={{
                         title: intl.formatMessage(
                           {
-                            defaultMessage: "View {name}",
+                            defaultMessage: "View: {name}",
                             description: "Passport card barrier link text",
                           },
                           {
