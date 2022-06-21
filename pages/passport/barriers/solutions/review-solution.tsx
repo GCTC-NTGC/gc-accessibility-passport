@@ -242,6 +242,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 data-h2-padding="b(all, s)"
                 data-h2-radius="b(s)"
                 data-h2-display="b(inline-block)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Edit this solution's information",

@@ -130,6 +130,7 @@ const AccountManagement: React.FunctionComponent = () => {
               data-h2-text-align="b(center)"
               data-h2-radius="b(s)"
               data-h2-margin="b(bottom, m)"
+              className="button-blue-solid"
             >
               {intl.formatMessage({
                 defaultMessage: "Reset my password",
@@ -145,6 +146,7 @@ const AccountManagement: React.FunctionComponent = () => {
               data-h2-text-align="b(center)"
               data-h2-radius="b(s)"
               data-h2-margin="b(bottom, m)"
+              className="button-blue-solid"
             >
               {intl.formatMessage({
                 defaultMessage: "Download my data",
@@ -160,6 +162,7 @@ const AccountManagement: React.FunctionComponent = () => {
               data-h2-text-align="b(center)"
               data-h2-radius="b(s)"
               data-h2-margin="b(bottom, m)"
+              className="button-blue-solid"
             >
               {intl.formatMessage({
                 defaultMessage: "Delete my account",

@@ -230,6 +230,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 data-h2-display="b(block)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Edit my Barrier Information",
@@ -245,6 +246,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 data-h2-display="b(block)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Identify another solution for this barrier",
@@ -313,6 +315,7 @@ const ReviewBarrier: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 data-h2-display="b(block)"
                 data-h2-margin="b(top-bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Share with another person",
