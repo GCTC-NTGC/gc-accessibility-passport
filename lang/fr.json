@@ -1139,12 +1139,12 @@
     "defaultMessage": "<link>Exemples de passeports remplis</link>",
     "description": "Employee link text #4"
   },
-  "rRlGQb": {
-    "defaultMessage": "Afficher le passeport de {name}",
-    "description": "Passport card link text"
-  },
-  "aU+8uX": {
-    "defaultMessage": "Afficher {name}",
+  "UhZuDF": {
+    "defaultMessage": "Afficher : {name}",
     "description": "Passport card barrier link text"
+  },
+  "d00qHv": {
+    "defaultMessage": "Afficher le passeport de : {name}",
+    "description": "Passport card link text"
   }
 }

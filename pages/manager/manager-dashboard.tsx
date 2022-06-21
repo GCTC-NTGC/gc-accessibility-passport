@@ -67,7 +67,7 @@ const ManagerDashboard: React.FunctionComponent = () => {
                   link={{
                     title: intl.formatMessage(
                       {
-                        defaultMessage: "View {name}'s passport",
+                        defaultMessage: "View: {name}'s passport",
                         description: "Passport card link text",
                       },
                       { name },
