@@ -3,6 +3,7 @@ import { XIcon } from "@heroicons/react/outline";
 
 import Overlay from "./Overlay";
 import Content from "./Content";
+import { useIntl } from "react-intl";
 
 export type Color = "ts-primary";
 
@@ -37,6 +38,8 @@ const Dialog: React.FC<DialogProps> = ({
   closeButton,
   children,
 }) => {
+  const intl = useIntl();
+
   return (
     <Overlay
       isOpen={isOpen}
@@ -76,7 +79,9 @@ const Dialog: React.FC<DialogProps> = ({
                     "data-h2-font-color": "b(white)",
                   })}
             >
-              <span data-h2-visibility="b(invisible)">Close dialog</span>
+              <span data-h2-visibility="b(invisible)">
+                {intl.formatMessage({ defaultMessage: "Close dialog" })}
+              </span>
               <XIcon className="dialog-close__icon" />
             </button>
           )}

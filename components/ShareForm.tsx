@@ -91,17 +91,8 @@ const ShareForm: React.FunctionComponent<ShareFormProps> = ({
               data-h2-justify-content="b(space-between)"
               data-h2-align-items="b(center)"
             >
-              <Link
-                href={`/${pathname.split("/")[1]}/share`}
-                key={intl.formatMessage({
-                  defaultMessage: "cancel",
-                })}
-              >
-                <a
-                  title={intl.formatMessage({
-                    defaultMessage: "cancel",
-                  })}
-                >
+              <Link href={`/${pathname.split("/")[1]}/share`} key="cancel">
+                <a>
                   {intl.formatMessage({
                     defaultMessage: "cancel",
                   })}

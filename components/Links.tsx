@@ -37,18 +37,14 @@ const Links: React.FunctionComponent<LinksProps> = ({ links }) => {
         ? links.map(({ title, link }) => (
             <li key={title}>
               <Link href={link}>
-                <a title={title} data-h2-font-size="b(caption)">
-                  {title}
-                </a>
+                <a data-h2-font-size="b(caption)">{title}</a>
               </Link>
             </li>
           ))
         : resources.map(({ title, link }) => (
             <li key={title}>
               <Link href={link}>
-                <a title={title} data-h2-font-size="b(caption)">
-                  {title}
-                </a>
+                <a data-h2-font-size="b(caption)">{title}</a>
               </Link>
             </li>
           ))}

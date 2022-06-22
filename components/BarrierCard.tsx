@@ -43,7 +43,7 @@ export const BarrierCard: React.FunctionComponent<{
           {actionLinks &&
             actionLinks.map(({ title, href }) => {
               return (
-                <Link href={href} key={""}>
+                <Link href={href} key={title}>
                   <a data-h2-margin="b(right, s)">{title}</a>
                 </Link>
               );
@@ -74,8 +74,7 @@ export const BarrierCard: React.FunctionComponent<{
       </div>
       <p data-h2-margin="b(bottom, none)">
         {intl.formatMessage({
-          defaultMessage:
-            "This solution applies to me in following situations:",
+          defaultMessage: "This solution applies in the following situations:",
         })}
       </p>
       <ul data-h2-margin="b(bottom-left, m)" style={{ listStyleType: "disc" }}>
@@ -87,13 +86,10 @@ export const BarrierCard: React.FunctionComponent<{
       </ul>
       <div>
         <p>
-          {intl.formatMessage(
-            {
-              defaultMessage:
-                "{title} is particularly helpful for me because...",
-            },
-            { title },
-          )}
+          {intl.formatMessage({
+            defaultMessage:
+              "I uploaded the following file(s) to provide more context for this solution...",
+          })}
         </p>
         <div data-h2-display="b(flex)">
           <span data-h2-margin="b(right, xs)" data-h2-display="b(flex)">

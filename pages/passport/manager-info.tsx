@@ -7,7 +7,7 @@ import { Input, Select } from "../../components/formComponents";
 import FormFooter from "../../components/FormFooter";
 import Layout from "../../components/Layout";
 import { errorMessages } from "../../messages";
-import jsonData from "../../public/resources/departments.json";
+import departmentsJson from "../../public/resources/departments.json";
 
 type FormValues = {
   firstName: string;
@@ -19,20 +19,37 @@ type FormValues = {
 
 const ManagerInfo: React.FunctionComponent = () => {
   const intl = useIntl();
-  const { push } = useRouter();
+  const { locale, push } = useRouter();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push("/manager/manager-dashboard");
+  const onSubmit = async (): Promise<void> => {
+    push("/passport");
   };
+
   return (
     <Layout
       title={intl.formatMessage({ defaultMessage: "My Manager's Information" })}
       headTitle={intl.formatMessage({
-        defaultMessage: "My Manager's Information - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "My Manager's Information - GC Workplace Accessibility Passport",
       })}
       center={true}
       formLayout
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manager Info",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -40,13 +57,13 @@ const ManagerInfo: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Your manager is responsible for providing you with the tools and support measures to succeed in your work. Add your manager’s contact information into this section of your Passport. Adding your manager’s contact information here gives you the option to share your Passport information with your manager.",
+                  "You can share information from your Passport with your manager. Add details about your manager here.",
               })}
             </p>
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Because your manager is accountable for setting work objectives and evaluating your performance, they have a vested interest in understanding the barriers you may encounter in the workplace. They also need to be accountable, at least in part, for implementing the solutions needed to equip you to succeed.",
+                  "Your manager is accountable for setting work objectives and evaluating your performance. They are also responsible, at least in part, for implementing the solutions needed to equip you to succeed.",
               })}
             </p>
           </div>
@@ -128,7 +145,21 @@ const ManagerInfo: React.FunctionComponent = () => {
               rules={{
                 required: intl.formatMessage(errorMessages.required),
               }}
-              options={jsonData.departments}
+              options={
+                locale === "en"
+                  ? departmentsJson.map(({ department_number, en }) => {
+                      return {
+                        value: department_number,
+                        label: en,
+                      };
+                    })
+                  : departmentsJson.map(({ department_number, fr }) => {
+                      return {
+                        value: department_number,
+                        label: fr,
+                      };
+                    })
+              }
             />
           </div>
           <div>

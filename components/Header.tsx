@@ -50,7 +50,7 @@ const Header: React.FunctionComponent<Header> = ({
             <Image
               src="/logo_goc_colour.svg"
               alt={intl.formatMessage({
-                defaultMessage: "Canada's Logo.",
+                defaultMessage: "Government of Canada",
                 description: "Alt text for the Canada logo in the Header.",
               })}
               width="300"
@@ -62,15 +62,17 @@ const Header: React.FunctionComponent<Header> = ({
           data-h2-flex-item="b(1of1) m(1of2)"
           data-h2-text-align="b(center) m(right)"
         >
-          <Link href={`/${pathname}`} locale={locale === "en" ? "fr" : "en"}>
-            {locale === "en" ? "Français" : "English"}
+          <Link href={`${pathname}`} locale={locale === "en" ? "fr" : "en"}>
+            <a lang={locale === "en" ? "fr" : "en"}>
+              {locale === "en" ? "Français" : "English"}
+            </a>
           </Link>
         </div>
       </div>
       <div data-h2-position="b(relative)" data-h2-font-color="b(black)">
         <Image src="/TBS-OPSA-bg.png" alt="" layout="fill" objectFit="cover" />
         <Nav />
-        {user?.isLoggedIn && pathname !== "/" ? (
+        {user?.isSignedIn && pathname !== "/" ? (
           <div
             data-h2-position="b(relative)"
             data-h2-padding="b(all, m) s(right-left, xl)"
@@ -91,7 +93,6 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-radius="b(s)"
                   data-h2-font-size="b(caption) m(normal)"
                   {...colorMap["blue"]["outline"]}
-                  title={editButton.title}
                 >
                   {editButton.title}
                 </a>
@@ -100,7 +101,7 @@ const Header: React.FunctionComponent<Header> = ({
           </div>
         ) : (
           <>
-            {pathname === "/login" || pathname === "/register" ? (
+            {pathname === "/sign-in" || pathname === "/register" ? (
               <div
                 data-h2-position="b(relative)"
                 data-h2-padding="b(all, m) s(left, xl)"
@@ -126,8 +127,7 @@ const Header: React.FunctionComponent<Header> = ({
                 </h1>
                 <p data-h2-text-align="b(center)" data-h2-margin="b(all, m)">
                   {intl.formatMessage({
-                    defaultMessage:
-                      "Private, secure accessibility documentation",
+                    defaultMessage: "Private and secure documentation",
                     description: "Sub-heading for homepage.",
                   })}
                 </p>
@@ -138,21 +138,11 @@ const Header: React.FunctionComponent<Header> = ({
                   data-h2-margin="b(all, m) s(right-left, xxl)"
                 >
                   <div {...homeLinksStyling}>
-                    <Link href="/">
+                    <Link href="/sign-in">
                       <a>
                         {intl.formatMessage({
                           defaultMessage: "Get started",
                           description: "Get started button on homepage.",
-                        })}
-                      </a>
-                    </Link>
-                  </div>
-                  <div {...homeLinksStyling}>
-                    <Link href="/login">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "Sign in",
-                          description: "Sign in button on homepage.",
                         })}
                       </a>
                     </Link>

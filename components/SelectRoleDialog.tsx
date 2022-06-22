@@ -33,7 +33,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
                 onClick={() => handleSelectRole(false)}
               >
                 {intl.formatMessage({
-                  defaultMessage: "Log in to my own passport",
+                  defaultMessage: "Sign in to my own passport",
                 })}
               </Button>
             </div>
@@ -47,7 +47,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
                 onClick={() => handleSelectRole(true)}
               >
                 {intl.formatMessage({
-                  defaultMessage: "Log in as a manager",
+                  defaultMessage: "Sign in as a manager",
                 })}
               </Button>
             </div>
@@ -57,13 +57,13 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
         <p>
           {intl.formatMessage({
             defaultMessage:
-              "When logging into the passport application, you have the opportunity to access two different roles: a passport owner, and a manager.",
+              "When signing in to the passport application, you have the opportunity to access two different roles: a passport owner, and a manager.",
           })}
         </p>
         <p>
           {intl.formatMessage({
             defaultMessage:
-              "The passport owner role allows you to view, edit, and share your own passport.",
+              "As a passport owner, you can create, view, edit, and share your passport information.",
           })}
         </p>
         <p>

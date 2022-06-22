@@ -3,11 +3,12 @@ import Link from "next/link";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
-import { Checkbox } from "../../components/formComponents";
-import Layout from "../../components/Layout";
-import Page, { RightSection, LeftSection } from "../../components/Page";
-import { errorMessages } from "../../messages";
+import Button, { colorMap } from "../../../../components/Button";
+import { Checkbox } from "../../../../components/formComponents";
+import Layout from "../../../../components/Layout";
+import Page, { RightSection, LeftSection } from "../../../../components/Page";
+import { strong } from "../../../../helpers/format";
+import { errorMessages } from "../../../../messages";
 
 type FormValues = {
   managerConversation: boolean;
@@ -18,12 +19,26 @@ const ViewSolution: React.FunctionComponent = () => {
   const intl = useIntl();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    alert("Marked as effective!");
+  const onSubmit = async (): Promise<void> => {
+    if (effective) {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as effective!",
+          description: "Alert message when solution marked as effective.",
+        }),
+      );
+    } else {
+      alert(
+        intl.formatMessage({
+          defaultMessage: "Marked as ineffective!",
+          description: "Alert message when solution marked as ineffective.",
+        }),
+      );
+    }
   };
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+
+  const [effective, setEffective] = React.useState(false);
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -34,13 +49,35 @@ const ViewSolution: React.FunctionComponent = () => {
         defaultMessage:
           "View/Action your solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport/barriers/review-barrier",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise-cancelling headphones",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
-                "Below is a summary of your solution information.  You can review a solution, action a solution, and identify a solution's status.",
+                "Here is a summary of your GC Workplace Accessibility Passport. Select the links to:",
             })}
           </p>
           <div>
@@ -69,7 +106,8 @@ const ViewSolution: React.FunctionComponent = () => {
                     data-h2-font-size="b(h3)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "GC Workplace Accessibility Passport Agreement",
+                      defaultMessage:
+                        "GC Workplace Accessibility Passport Agreement",
                     })}
                   </h2>
                   <p data-h2-margin="b(top, none)">
@@ -95,7 +133,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   <p>
                     {intl.formatMessage({
                       defaultMessage:
-                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., adaptive tools services, or measures) that a manager has agreed to provide.",
+                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., tools,  services, or support measures) that a manager has agreed to provide.",
                     })}
                   </p>
                   <ul
@@ -156,6 +194,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(false);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as ineffective",
@@ -167,6 +208,9 @@ const ViewSolution: React.FunctionComponent = () => {
                     mode="solid"
                     data-h2-font-style="b(underline)"
                     data-h2-padding="b(all, s)"
+                    onClick={() => {
+                      setEffective(true);
+                    }}
                   >
                     {intl.formatMessage({
                       defaultMessage: "Mark this solution as working",
@@ -191,7 +235,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   "Select the link below to edit the solution information that appears on this page.",
               })}
             </p>
-            <Link href="/solutions/identify-a-solution">
+            <Link href="/passport/barriers/solutions/identify-a-solution">
               <a
                 {...colorMap.blue.solid}
                 data-h2-font-style="b(underline)"
@@ -217,9 +261,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 <PaperClipIcon style={{ width: "1.25rem" }} />
               </span>
               <a href="#" data-h2-display="b(inline-block)">
-                {intl.formatMessage({
-                  defaultMessage: "my_ergonomic_assessment.pdf(3MB)",
-                })}
+                my_ergonomic_assessment.pdf(3MB)
               </a>
             </div>
           </div>
@@ -238,9 +280,9 @@ const ViewSolution: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
+                      "Frank proposed <strong>Noise cancelling headphones</strong> as a solution to this barrier.",
                   },
-                  { bold },
+                  { strong },
                 )}
               </p>
             </div>

@@ -63,6 +63,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
         errorPosition={errorPosition}
       >
         <input
+          aria-required={rules.required ? "true" : "false"}
           data-h2-padding="b(all, xxs)"
           data-h2-radius="b(s)"
           data-h2-border="b(darkgray, all, solid, s)"

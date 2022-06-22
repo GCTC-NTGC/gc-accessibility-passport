@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import { Checkbox } from "../../components/formComponents";
 import Layout from "../../components/Layout";
 import Page, { RightSection, LeftSection } from "../../components/Page";
+import { strong } from "../../helpers/format";
 import { errorMessages } from "../../messages";
 
 type FormValues = {
@@ -17,12 +18,15 @@ const ViewSolution: React.FunctionComponent = () => {
   const intl = useIntl();
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    alert("A notification has been sent!");
+  const onSubmit = async (): Promise<void> => {
+    alert(
+      intl.formatMessage({
+        defaultMessage: "A notification has been sent!",
+        description: "Alert message when notification has been sent.",
+      }),
+    );
   };
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -32,13 +36,39 @@ const ViewSolution: React.FunctionComponent = () => {
         defaultMessage:
           "Frank’s Solution: Noise-cancelling headphones - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+          href: "/manager/manager-dashboard",
+        },
+        {
+          title: "Frank Turot",
+          href: "/manager/view-employee-passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise in the workplace",
+            description: "Breadcrumb title.",
+          }),
+          href: "/manager/view-employee-barrier",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Noise cancelling headphones",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
           <p data-h2-margin="b(top, none) b(bottom, m)">
             {intl.formatMessage({
               defaultMessage:
-                "Below is a solution(s) to the Noise in the workplace barrier. Review and action  the solution and indicate its status.",
+                "Here, you will find one or more solutions to the Noise in the workplace barrier. Review, action the solution and indicate its status.",
             })}
           </p>
           <div>
@@ -97,7 +127,7 @@ const ViewSolution: React.FunctionComponent = () => {
                   <p>
                     {intl.formatMessage({
                       defaultMessage:
-                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., adaptive tools services, or measures) that a manager has agreed to provide.",
+                        "This section should be completed jointly by the employee and their manager. Its purpose is to record the solutions- taken from above (e.g., tools,  services, or support measures) that a manager has agreed to provide.",
                     })}
                   </p>
                   <ul
@@ -129,7 +159,7 @@ const ViewSolution: React.FunctionComponent = () => {
                     <p data-h2-margin="b(top, none) b(bottom, m)">
                       {intl.formatMessage({
                         defaultMessage:
-                          "By clicking the button below, you are agreeing, as Frank’s manager, that you will implement this solution for them as soon as possible. Frank will be notified, and this agreement will show up in the barrier’s history for later reference.",
+                          "By clicking this button, you are agreeing, as Frank’s manager, that you will implement this solution as soon as possible. Frank will be notified, and this agreement will appear in the barrier’s history.",
                       })}
                     </p>
                   </div>
@@ -164,9 +194,7 @@ const ViewSolution: React.FunctionComponent = () => {
                 <LinkIcon style={{ width: "1rem" }} />
               </span>
               <a href="#" data-h2-display="b(inline-block)">
-                {intl.formatMessage({
-                  defaultMessage: "my_ergonomic_assessment.pdf(3MB)",
-                })}
+                my_ergonomic_assessment.pdf(3MB)
               </a>
             </div>
           </div>
@@ -185,9 +213,9 @@ const ViewSolution: React.FunctionComponent = () => {
                 {intl.formatMessage(
                   {
                     defaultMessage:
-                      "Frank proposed <bold>Noise cancelling headphones</bold> as a solution to this barrier.",
+                      "Frank proposed <strong>Noise cancelling headphones</strong> as a solution to this barrier.",
                   },
-                  { bold },
+                  { strong },
                 )}
               </p>
             </div>

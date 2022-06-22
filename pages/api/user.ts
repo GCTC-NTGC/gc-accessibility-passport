@@ -3,7 +3,7 @@ import { sessionOptions } from "../../lib/session";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export type User = {
-  isLoggedIn: boolean;
+  isSignedIn: boolean;
   name: string;
   isManager: boolean;
 };
@@ -19,11 +19,11 @@ async function userRoute(
     // to get more information on the user if needed
     res.json({
       ...req.session.user,
-      isLoggedIn: true,
+      isSignedIn: true,
     });
   } else {
     res.json({
-      isLoggedIn: false,
+      isSignedIn: false,
       name: "",
       isManager: false,
     });

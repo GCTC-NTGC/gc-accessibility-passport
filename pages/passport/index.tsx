@@ -2,13 +2,24 @@ import { PaperClipIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { PassportCard } from "../components/PassportCard";
+import { colorMap } from "../../components/Button";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { PassportCard } from "../../components/PassportCard";
 
 const Passport: React.FunctionComponent = () => {
   const intl = useIntl();
+
+  const barriers = [
+    {
+      id: 1,
+      name: intl.formatMessage({
+        defaultMessage: "Noise in the workplace",
+      }),
+      path: "/passport/barriers/review-barrier",
+    },
+  ];
+
   return (
     <Layout
       title={intl.formatMessage({
@@ -17,6 +28,14 @@ const Passport: React.FunctionComponent = () => {
       headTitle={intl.formatMessage({
         defaultMessage: "My Passport - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -24,7 +43,7 @@ const Passport: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Below is a summary of your GC Workplace Accessibility Passport. Select the links below to:",
+                  "Here is a summary of your GC Workplace Accessibility Passport. Select the links below to:",
               })}
             </p>
             <ul
@@ -55,32 +74,36 @@ const Passport: React.FunctionComponent = () => {
               </li>
             </ul>
             <div
-              data-h2-display="b(flex)"
+              data-h2-display="b(block) s(flex)"
               data-h2-justify-content="b(space-between)"
               style={{ gap: "1rem" }}
             >
-              <Link href="/barriers/identify-a-barrier">
+              <Link href="/passport/barriers/identify-a-barrier">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
+                  data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
                   {intl.formatMessage({
-                    defaultMessage: "Identify a new barrier",
+                    defaultMessage: "Identify another barrier",
                   })}
                 </a>
               </Link>
-              <Link href="/share-my-passport">
+              <Link href="/passport/share-my-passport">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
+                  data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
@@ -89,13 +112,15 @@ const Passport: React.FunctionComponent = () => {
                   })}
                 </a>
               </Link>
-              <Link href="/manage-permissions">
+              <Link href="/passport/manage-permissions">
                 <a
                   {...colorMap.blue.solid}
+                  data-h2-margin="b(bottom, s) s(none)"
                   data-h2-padding="b(all, s)"
                   data-h2-width="b(100)"
-                  data-h2-display="b(flex)"
+                  data-h2-display="b(block) s(flex)"
                   data-h2-align-items="b(center)"
+                  data-h2-justify-content="b(center)"
                   data-h2-text-align="b(center)"
                   data-h2-radius="b(s)"
                 >
@@ -110,7 +135,7 @@ const Passport: React.FunctionComponent = () => {
             <p>
               {intl.formatMessage({
                 defaultMessage:
-                  "Below are your Barriers listed under two categories: Barriers with implemented solutions; Barriers with solutions in discussion or implementation. Select the view links within each barrier module to see its full information.",
+                  "Barriers are listed under two categories: Barriers with implemented solutions; Barriers with solutions underway. Select the view links within each module to see its full information.",
               })}
             </p>
             <div>
@@ -119,20 +144,28 @@ const Passport: React.FunctionComponent = () => {
                   defaultMessage: "Solutions in place",
                 })}
               </h2>
-              <p data-h2-bg-color="b(lightblue)" data-h2-padding="b(all, m)">
-                {intl.formatMessage({
-                  defaultMessage: "The barriers below require your attention.",
+              {barriers &&
+                barriers.map(({ id, name, path }) => {
+                  const nameLowercase = name.toLowerCase();
+                  return (
+                    <PassportCard
+                      key={id}
+                      title={name}
+                      link={{
+                        title: intl.formatMessage(
+                          {
+                            defaultMessage: "View {name}",
+                            description: "Passport card barrier link text",
+                          },
+                          {
+                            name: nameLowercase,
+                          },
+                        ),
+                        href: path,
+                      }}
+                    />
+                  );
                 })}
-              </p>
-              <PassportCard
-                title="Noise in the workplace"
-                link={{
-                  title: intl.formatMessage({
-                    defaultMessage: "View",
-                  }),
-                  href: "/review-barrier",
-                }}
-              />
             </div>
             <div>
               <h2 data-h2-font-size="b(h3)" data-h2-margin="b(top, m)">
@@ -153,7 +186,7 @@ const Passport: React.FunctionComponent = () => {
                 defaultMessage: "Emergency Information and Manager Details",
               })}
             </h2>
-            <div data-h2-display="b(flex)">
+            <div data-h2-display="b(flex)" data-h2-flex-wrap="b(wrap)">
               <div style={{ flex: "1" }} data-h2-margin="b(right, l)">
                 <h2 data-h2-font-size="b(h4)" data-h2-margin="b(bottom, none)">
                   {intl.formatMessage({
@@ -172,7 +205,7 @@ const Passport: React.FunctionComponent = () => {
                   {intl.formatMessage({
                     defaultMessage: "In the event of an emergency...",
                   })}
-                </p>{" "}
+                </p>
                 <p
                   data-h2-margin="b(bottom, none)"
                   data-h2-font-weight="b(700)"
@@ -181,16 +214,8 @@ const Passport: React.FunctionComponent = () => {
                     defaultMessage: "Emergency Contact",
                   })}
                 </p>
-                <p data-h2-margin="b(top-bottom, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "Gal Turot",
-                  })}
-                </p>
-                <p data-h2-margin="b(top, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "(555)555-5555",
-                  })}
-                </p>
+                <p data-h2-margin="b(top-bottom, none)">Gal Turot</p>
+                <p data-h2-margin="b(top, none)">(555)555-5555</p>
                 <div>
                   <p
                     data-h2-margin="b(bottom, none)"
@@ -208,16 +233,10 @@ const Passport: React.FunctionComponent = () => {
                       data-h2-display="b(flex)"
                       data-h2-margin="b(right, xs)"
                     >
-                      <PaperClipIcon style={{ width: "1.2rem" }}>
-                        {" "}
-                      </PaperClipIcon>
+                      <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_evacuation_plan.pdf(3MB)",
-                        })}
-                      </a>
+                      <a>my_evacuation_plan.pdf (3MB)</a>
                     </Link>
                   </div>
                   <div data-h2-margin="b(bottom, m)" data-h2-display="b(flex)">
@@ -225,20 +244,14 @@ const Passport: React.FunctionComponent = () => {
                       data-h2-display="b(flex)"
                       data-h2-margin="b(right, xs)"
                     >
-                      <PaperClipIcon style={{ width: "1.2rem" }}>
-                        {" "}
-                      </PaperClipIcon>
+                      <PaperClipIcon style={{ width: "1.2rem" }} />
                     </span>
                     <Link href="#">
-                      <a>
-                        {intl.formatMessage({
-                          defaultMessage: "my_paramedical_needs.pdf(3MB)",
-                        })}
-                      </a>
+                      <a>my_paramedical_needs.pdf (3MB)</a>
                     </Link>
                   </div>
                 </div>
-                <Link href="#">
+                <Link href="/passport/emergency-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"
@@ -264,21 +277,17 @@ const Passport: React.FunctionComponent = () => {
                   data-h2-margin="b(bottom, none)"
                   data-h2-font-weight="b(700)"
                 >
-                  {intl.formatMessage({
-                    defaultMessage: "Tracy Huddle",
-                  })}
+                  Alasie Sikku
                 </p>
                 <p data-h2-margin="b(top-bottom, none)">
-                  {intl.formatMessage({
-                    defaultMessage: "tracy.huddle@example.gov.ca",
-                  })}
+                  alasie.sikku@example.gov.ca
                 </p>
                 <p data-h2-margin="b(top, none)">
                   {intl.formatMessage({
                     defaultMessage: "Treasury Board of Canada Secretariat",
                   })}
                 </p>
-                <Link href="/manager/manager-info">
+                <Link href="/passport/manager-info">
                   <a
                     {...colorMap.blue.solid}
                     data-h2-padding="b(all, s)"
@@ -289,7 +298,7 @@ const Passport: React.FunctionComponent = () => {
                     data-h2-margin="b(bottom, m)"
                   >
                     {intl.formatMessage({
-                      defaultMessage: "Edit manager info",
+                      defaultMessage: "Edit manager information",
                     })}
                   </a>
                 </Link>
@@ -332,7 +341,8 @@ const Passport: React.FunctionComponent = () => {
             </ul>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(all, none)">
               {intl.formatMessage({
-                defaultMessage: "Contact a Case Manager/DTA Officer",
+                defaultMessage:
+                  "Contact a Case Manager/Workplace Accommodation Professional",
               })}
             </h2>
             <p data-h2-margin="b(bottom, m)">

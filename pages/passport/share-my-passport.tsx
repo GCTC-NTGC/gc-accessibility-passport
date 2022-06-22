@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Button from "../components/Button";
-import { Checklist, Select } from "../components/formComponents";
-import { Checkbox } from "../components/formComponents/Checklist";
-import FormFooter from "../components/FormFooter";
-import Layout from "../components/Layout";
-import { errorMessages } from "../messages";
+import Button from "../../components/Button";
+import { Checklist, Select } from "../../components/formComponents";
+import { Checkbox } from "../../components/formComponents/Checklist";
+import FormFooter from "../../components/FormFooter";
+import Layout from "../../components/Layout";
+import { errorMessages } from "../../messages";
 
 type FormValues = {
   barriers: string[];
@@ -26,7 +26,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
     {
       value: "example_barrier_container_1",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #1",
+        defaultMessage: "Example barrier/solution information #1",
       }),
     },
     {
@@ -36,19 +36,19 @@ const ShareMyPassport: React.FunctionComponent = () => {
     {
       value: "example_barrier_container_3",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #3",
+        defaultMessage: "Example barrier/solution information #3",
       }),
     },
     {
       value: "example_barrier_container_4",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #4",
+        defaultMessage: "Example barrier/solution information #4",
       }),
     },
     {
       value: "example_barrier_container_5",
       label: intl.formatMessage({
-        defaultMessage: "Example barrier container #5",
+        defaultMessage: "Example barrier/solution information #5",
       }),
     },
   ];
@@ -62,6 +62,21 @@ const ShareMyPassport: React.FunctionComponent = () => {
         defaultMessage:
           "Share my passport information - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Share my passport",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <div
         data-h2-width="m(50)"

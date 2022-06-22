@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../components/Button";
-import Layout from "../components/Layout";
-import Page, { LeftSection, RightSection } from "../components/Page";
-import { PermissionsCard } from "../components/formComponents/PermissionsCard";
+import { colorMap } from "../../components/Button";
+import Layout from "../../components/Layout";
+import Page, { LeftSection, RightSection } from "../../components/Page";
+import { PermissionsCard } from "../../components/formComponents/PermissionsCard";
 import Link from "next/link";
 
 const ManagePermissions: React.FunctionComponent = () => {
@@ -18,19 +18,34 @@ const ManagePermissions: React.FunctionComponent = () => {
         defaultMessage:
           "Manage permissions - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Manage Permissions",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
           <div data-h2-margin="b(bottom, l)">
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
               {intl.formatMessage({
-                defaultMessage: "Manage access to your Passport information",
+                defaultMessage: "Manage access to my Passport information",
               })}
             </h2>
             <p data-h2-margin="b(bottom, l)">
               {intl.formatMessage({
                 defaultMessage:
-                  "View and manage access to your passport information.  Activate the links below to remove access.",
+                  "View and manage access to your passport information. Activate the links to remove access.",
               })}
             </p>
             <h3
@@ -44,9 +59,7 @@ const ManagePermissions: React.FunctionComponent = () => {
             </h3>
             <div data-h2-margin="b(bottom, l)">
               <PermissionsCard
-                title={intl.formatMessage({
-                  defaultMessage: "Sui Kiyoko",
-                })}
+                title="Sui Kiyoko"
                 actionLinks={[
                   intl.formatMessage({
                     defaultMessage: "Remove all access",
@@ -63,13 +76,11 @@ const ManagePermissions: React.FunctionComponent = () => {
               data-h2-margin="b(bottom, s)"
             >
               {intl.formatMessage({
-                defaultMessage: "Shared with your colleagues",
+                defaultMessage: "Shared with my colleagues",
               })}
             </h3>
             <PermissionsCard
-              title={intl.formatMessage({
-                defaultMessage: "Priyanka Luka",
-              })}
+              title="Priyanka Luka"
               actionLinks={[
                 intl.formatMessage({
                   defaultMessage: "Remove all access",
@@ -85,11 +96,11 @@ const ManagePermissions: React.FunctionComponent = () => {
           <p data-h2-font-size="b(normal)" data-h2-margin="b(top, none)">
             {intl.formatMessage({
               defaultMessage:
-                "Activate the link to share information with a new colleagues or manager.",
+                "Activate the link to share information with another colleague or manager.",
             })}
           </p>
           <div>
-            <Link href="/share-my-passport">
+            <Link href="/passport/share-my-passport">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -100,7 +111,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Share with someone new",
+                  defaultMessage: "Share with another person",
                 })}
               </a>
             </Link>
@@ -110,7 +121,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                   "Activate the link to enter your manager’s information. This will make it easier to share your passport information with them.",
               })}
             </p>
-            <Link href="/manager/manager-info">
+            <Link href="/passport/manager-info">
               <a
                 {...colorMap.blue.solid}
                 data-h2-padding="b(all, s)"
@@ -121,7 +132,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-margin="b(bottom, m)"
               >
                 {intl.formatMessage({
-                  defaultMessage: "Edit my manager info",
+                  defaultMessage: "Edit my manager information",
                 })}
               </a>
             </Link>

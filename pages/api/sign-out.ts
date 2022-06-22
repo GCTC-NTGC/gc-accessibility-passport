@@ -3,9 +3,9 @@ import { sessionOptions } from "../../lib/session";
 import { NextApiRequest, NextApiResponse } from "next";
 import type { User } from "../../pages/api/user";
 
-export default withIronSessionApiRoute(logoutRoute, sessionOptions);
+export default withIronSessionApiRoute(signOutRoute, sessionOptions);
 
-function logoutRoute(req: NextApiRequest, res: NextApiResponse<User>): void {
+function signOutRoute(req: NextApiRequest, res: NextApiResponse<User>): void {
   req.session.destroy();
-  res.json({ isLoggedIn: false, name: "", isManager: false });
+  res.json({ isSignedIn: false, name: "", isManager: false });
 }

@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import Alert from "../../components/Alert";
-import Button from "../../components/Button";
-import Filters from "../../components/Filters";
-import { Input, TextArea } from "../../components/formComponents";
-import FormFooter from "../../components/FormFooter";
-import Layout from "../../components/Layout";
+import Alert from "../../../../components/Alert";
+import Button from "../../../../components/Button";
+import Filters from "../../../../components/Filters";
+import { Input, TextArea } from "../../../../components/formComponents";
+import FormFooter from "../../../../components/FormFooter";
+import Layout from "../../../../components/Layout";
 
 type Solution = {
   id: number;
@@ -38,18 +38,14 @@ const IdentifyASolution: React.FunctionComponent = () => {
   });
   const { handleSubmit, setValue } = methods;
   const setSolutionValue = (value: string): void => setValue("solution", value);
-  const onSubmit = async (data: FormValues): Promise<void> => {
-    push(`/solutions/identify-a-solution-2`);
+  const onSubmit = async (): Promise<void> => {
+    push(`/passport/barriers/solutions/identify-a-solution-2`);
   };
 
   const solutionCont = (msg: string): React.ReactNode => (
-    <Link href="/barriers/identify-a-solution-2">
+    <Link href="/passport/barriers/solutions/identify-a-solution-2">
       <a title="msg">{msg}</a>
     </Link>
-  );
-
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(600)">{msg}</span>
   );
 
   const parentSolutionCategories = [
@@ -70,7 +66,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
     {
       id: 1,
       name: intl.formatMessage({
-        defaultMessage: "Access to quiet place",
+        defaultMessage: "Access to a quiet space",
       }),
       categoryId: 1,
     },
@@ -128,12 +124,34 @@ const IdentifyASolution: React.FunctionComponent = () => {
   return (
     <Layout
       title={intl.formatMessage({
-        defaultMessage: "Identify a solution for Noise in the Workplace",
+        defaultMessage: "Identify a solution for: Noise in the Workplace.",
       })}
       headTitle={intl.formatMessage({
         defaultMessage:
-          "Identify a solution for Noise in the Workplace - GC Workplace Accessibility Passport",
+          "Identify a solution for: Noise in the Workplace - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My passport",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Identify a barrier",
+            description: "Breadcrumb title.",
+          }),
+          href: "/passport/barriers/identify-a-barrier",
+        },
+        {
+          title: intl.formatMessage({
+            defaultMessage: "Propose Solutions",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
       formLayout
     >
       <FormProvider {...methods}>
@@ -154,7 +172,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
           </div>
           <div>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(top, none)">
-              {intl.formatMessage({ defaultMessage: "Solution information" })}
+              {intl.formatMessage({ defaultMessage: "Solution Description" })}
             </h2>
             <Alert
               icon={<ExclamationCircleIcon style={{ width: "1.25rem" }} />}
@@ -218,7 +236,7 @@ const IdentifyASolution: React.FunctionComponent = () => {
               <p>
                 {intl.formatMessage({
                   defaultMessage:
-                    "When you share this barrier, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit solutions later if your situation changes.",
+                    "When you share this barrier/solution information, the solutions you identified will be shared as a package with your manager or your colleague. Note that you can identify as many solutions to a barrier as you need using this page. You can even add or edit your solutions later if your situation changes.",
                 })}
               </p>
               <p>

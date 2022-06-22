@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
-import Button, { colorMap } from "../../components/Button";
+import { colorMap } from "../../components/Button";
 import { PassportCard } from "../../components/PassportCard";
 import Layout from "../../components/Layout";
 import Page, { LeftSection, RightSection } from "../../components/Page";
@@ -9,17 +9,41 @@ import Link from "next/link";
 const ManagerDashboard: React.FunctionComponent = () => {
   const intl = useIntl();
 
-  const bold = (msg: string): React.ReactNode => (
-    <span data-h2-font-weight="b(700)">{msg}</span>
-  );
+  const employees = [
+    {
+      id: 1,
+      name: "Frank Turot",
+      path: "/manager/view-employee-passport",
+    },
+    {
+      id: 2,
+      name: "Taylor Ghiles",
+      path: "#",
+    },
+    {
+      id: 3,
+      name: "Margaret Turing",
+      path: "#",
+    },
+  ];
+
   return (
     <Layout
       title={intl.formatMessage({
         defaultMessage: "Manager dashboard",
       })}
       headTitle={intl.formatMessage({
-        defaultMessage: "Manager dashboard - GC Workplace Accessibility Passport",
+        defaultMessage:
+          "Manager dashboard - GC Workplace Accessibility Passport",
       })}
+      crumbs={[
+        {
+          title: intl.formatMessage({
+            defaultMessage: "My Dashboard",
+            description: "Breadcrumb title.",
+          }),
+        },
+      ]}
     >
       <Page>
         <LeftSection>
@@ -35,39 +59,23 @@ const ManagerDashboard: React.FunctionComponent = () => {
                 defaultMessage: "Employees with shared passports",
               })}
             </h2>
-            <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Frank Turot",
-              })}
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "/manager/view-employee-passport",
-              }}
-            />
-            <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Shannon Ghiles",
-              })}
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "#",
-              }}
-            />
-            <PassportCard
-              title={intl.formatMessage({
-                defaultMessage: "Margaret Turing",
-              })}
-              link={{
-                title: intl.formatMessage({
-                  defaultMessage: "View passport",
-                }),
-                href: "#",
-              }}
-            />
+            {employees &&
+              employees.map(({ id, name, path }) => (
+                <PassportCard
+                  key={id}
+                  title={name}
+                  link={{
+                    title: intl.formatMessage(
+                      {
+                        defaultMessage: "View {name}'s passport",
+                        description: "Passport card link text",
+                      },
+                      { name },
+                    ),
+                    href: path,
+                  }}
+                />
+              ))}
           </div>
         </LeftSection>
         <RightSection>
@@ -105,7 +113,8 @@ const ManagerDashboard: React.FunctionComponent = () => {
             </ul>
             <h2 data-h2-font-size="b(h4)" data-h2-margin="b(all, none)">
               {intl.formatMessage({
-                defaultMessage: "Contact a Case Manager/DTA Officer",
+                defaultMessage:
+                  "Contact a Case Manager/Workplace Accommodation Professional",
               })}
             </h2>
             <p data-h2-margin="b(bottom, m)">

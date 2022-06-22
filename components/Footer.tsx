@@ -60,11 +60,10 @@ export const Footer: React.FunctionComponent = () => {
           data-h2-text-align="b(center)"
           data-h2-padding="b(all, s)"
         >
-          <Link href="/">
+          <Link href="#">
             <a>
               {intl.formatMessage({
-                defaultMessage:
-                  "Accessibility statement, privacy statement, and notice",
+                defaultMessage: "Read our Accessibility Statement",
               })}
             </a>
           </Link>
@@ -138,7 +137,7 @@ export const Footer: React.FunctionComponent = () => {
                 <Image
                   src="/logo_canada.png"
                   alt={intl.formatMessage({
-                    defaultMessage: "Canada's Logo.",
+                    defaultMessage: "Symbol of the Government of Canada",
                     description: "Alt text for the Canada logo in the Footer.",
                   })}
                   width="250"

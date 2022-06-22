@@ -2,8 +2,7 @@ import "../styles/globals.css";
 import "../styles/hydrogen.css";
 import "@reach/dialog/styles.css";
 import "../styles/dialog.css";
-import English from "../lang/en.json";
-import French from "../lang/fr.json";
+import French from "../lang/frCompiled.json";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useMemo } from "react";
@@ -16,14 +15,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   const { locale = "en" } = useRouter();
 
   const messages = useMemo(() => {
-    switch (locale) {
-      case "en":
-        return English;
-      case "fr":
-        return French;
-      default:
-        return English;
-    }
+    return locale === "fr" ? French : undefined;
   }, [locale]);
 
   const { pathname } = useRouter();
