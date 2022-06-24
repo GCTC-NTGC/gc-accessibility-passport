@@ -20,7 +20,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
   const methods = useForm<FormValues>();
   const { handleSubmit } = methods;
   const onSubmit = async (): Promise<void> => {
-    push(`/passport`);
+    push(`/passport/manage-permissions`);
   };
   const barriers: Checkbox[] = [
     {
@@ -133,7 +133,7 @@ const ShareMyPassport: React.FunctionComponent = () => {
               }}
             >
               <Button
-                type="button" // changing it for now as we want to stay on the page for the prototype
+                type="submit"
                 color="blue"
                 mode="solid"
                 data-h2-font-style="b(underline)"
