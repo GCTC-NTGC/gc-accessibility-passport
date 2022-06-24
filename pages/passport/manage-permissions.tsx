@@ -109,6 +109,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 data-h2-display="b(block)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Share with another person",
@@ -130,6 +131,7 @@ const ManagePermissions: React.FunctionComponent = () => {
                 data-h2-radius="b(s)"
                 data-h2-display="b(block)"
                 data-h2-margin="b(bottom, m)"
+                className="button-blue-solid"
               >
                 {intl.formatMessage({
                   defaultMessage: "Edit my manager information",

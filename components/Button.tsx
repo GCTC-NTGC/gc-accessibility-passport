@@ -11,6 +11,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   block?: boolean;
   /** Get access to the DOM element by passing a react ref.  */
   innerRef?: React.LegacyRef<HTMLButtonElement>;
+  /** The class of button. */
+  className?: string | undefined;
 }
 
 export const colorMap: Record<
@@ -108,6 +110,9 @@ export const Button: React.FC<ButtonProps> = ({
         overflowWrap: "break-word",
         width: block ? "100%" : "auto",
       }}
+      className={
+        color === "blue" && mode === "solid" ? "button-blue-solid" : ""
+      }
       ref={innerRef}
       {...rest}
     >
