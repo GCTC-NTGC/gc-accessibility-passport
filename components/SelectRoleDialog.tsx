@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useIntl } from "react-intl";
 import Button from "./Button";
-import AlertDialog from "./AlertDialog";
+import Dialog from "./Dialog";
 
 interface SelectRoleDialogProps {
   isOpen: boolean;
@@ -15,7 +15,10 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
   const intl = useIntl();
   return (
     <>
-      <AlertDialog
+      <Dialog
+        onDismiss={() => {
+          /* do nothing */
+        }}
         isOpen={isOpen}
         title={intl.formatMessage({ defaultMessage: "Select a role" })}
         footer={
@@ -75,7 +78,7 @@ const SelectRoleDialog: React.FunctionComponent<SelectRoleDialogProps> = ({
               "You can switch roles at any time using the link in the main site navigation.",
           })}
         </p>
-      </AlertDialog>
+      </Dialog>
     </>
   );
 };
