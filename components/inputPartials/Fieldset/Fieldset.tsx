@@ -22,7 +22,7 @@ export interface FieldsetProps {
   hideOptional?: boolean;
 }
 
-export const Fieldset: React.FC<FieldsetProps> = ({
+const Fieldset: React.FC<FieldsetProps> = ({
   legend,
   name,
   required,
@@ -38,21 +38,30 @@ export const Fieldset: React.FC<FieldsetProps> = ({
     <fieldset
       name={name}
       disabled={disabled}
+      aria-required={required ? "true" : undefined}
       style={{
         border: "0 none",
         padding: "0",
       }}
       data-h2-margin="b(bottom, xxs)"
     >
+      <legend data-h2-visibility="b(invisible)">{legend}</legend>
       <div
         data-h2-display="b(flex)"
         data-h2-flex-wrap="b(wrap)"
+        data-h2-align-items="b(center)"
+        data-h2-justify-content="b(flex-start)"
         data-h2-margin="b(bottom, xxs)"
       >
-        <div style={{ flex: "1" }}>
-          <legend data-h2-font-size="b(caption)">{legend}</legend>
-        </div>
-        <div>
+        <span
+          aria-hidden="true"
+          role="presentation"
+          data-h2-font-size="b(caption)"
+          data-h2-margin="b(right, xxs)"
+        >
+          {legend}
+        </span>
+        <div data-h2-display="b(flex)" data-h2-align-items="(center)">
           {
             /** If hideOptional is true, only show text if required is true. */
             (required || !hideOptional) && (
@@ -60,11 +69,13 @@ export const Fieldset: React.FC<FieldsetProps> = ({
                 data-h2-font-size="b(caption)"
                 {...(required
                   ? { "data-h2-font-color": "b(red)" }
-                  : { "data-h2-font-color": "b(darkgray" })}
+                  : { "data-h2-font-color": "b(darkgray)" })}
               >
+                (
                 {required
                   ? intl.formatMessage(commonMessages.required)
                   : intl.formatMessage(commonMessages.optional)}
+                )
               </span>
             )
           }
@@ -73,24 +84,28 @@ export const Fieldset: React.FC<FieldsetProps> = ({
               type="button"
               className="input-label-context-button"
               data-h2-margin="b(left, xxs)"
-              title="Toggle Context"
               onClick={() =>
                 setContextIsActive((currentState) => !currentState)
               }
             >
-              <>
-                {contextIsActive ? (
-                  <XCircleIcon
-                    style={{ width: "calc(1rem/1.25)" }}
-                    data-h2-font-color="b(lightblue)"
-                  />
-                ) : (
-                  <QuestionMarkCircleIcon
-                    style={{ width: "calc(1rem/1.25)" }}
-                    data-h2-font-color="b(lightblue)"
-                  />
-                )}
-              </>
+              <span data-h2-visibility="b(invisible)">
+                {intl.formatMessage({
+                  defaultMessage: "Toggle context",
+                  description:
+                    "Label to toggle the context description of a field set.",
+                })}
+              </span>
+              {contextIsActive ? (
+                <XCircleIcon
+                  style={{ width: "calc(1rem/1.25)" }}
+                  data-h2-font-color="b(lightblue)"
+                />
+              ) : (
+                <QuestionMarkCircleIcon
+                  style={{ width: "calc(1rem/1.25)" }}
+                  data-h2-font-color="b(lightblue)"
+                />
+              )}
             </button>
           )}
         </div>
