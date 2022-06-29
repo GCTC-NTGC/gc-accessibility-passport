@@ -781,9 +781,6 @@
   "tLHSl5": {
     "defaultMessage": "Outils d’édition"
   },
-  "tMTwju": {
-    "defaultMessage": "Inverser le contexte"
-  },
   "tnRDuU": {
     "defaultMessage": "Révoquer"
   },
@@ -1146,5 +1143,13 @@
   "d00qHv": {
     "defaultMessage": "Afficher le passeport de : {name}",
     "description": "Passport card link text"
+  },
+  "2W9CMn": {
+    "defaultMessage": "Activer ou désactiver le contexte",
+    "description": "Label to toggle the context description of a field set."
+  },
+  "jhImZp": {
+    "defaultMessage": "Activer ou désactiver le contexte",
+    "description": "Label to toggle the context description of an input."
   }
 }
