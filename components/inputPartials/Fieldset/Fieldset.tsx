@@ -22,7 +22,7 @@ export interface FieldsetProps {
   hideOptional?: boolean;
 }
 
-const Fieldset: React.FC<FieldsetProps> = ({
+export const Fieldset: React.FC<FieldsetProps> = ({
   legend,
   name,
   required,
